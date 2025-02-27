@@ -1,3 +1,5 @@
+[![FINOS - Forming](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-forming.svg)](https://community.finos.org/docs/governance/Software-Projects/project-lifecycle)
+
 # The Camunda 7 Documentation Sources
 
 This repository contains the sources of the Camunda 7 documentation.
@@ -7,7 +9,7 @@ Instead, change the [theme](//github.com/camunda/camunda-docs-theme).
 
 ## Contributing
 
-Have a look at our [contribution guide](https://github.com/camunda/camunda-bpm-platform/blob/master/CONTRIBUTING.md) for our general contribution guidelines. See the following sections for how to work with the docs.
+Have a look at our [contribution guide](https://github.com/finos/flowave-bpm-platform/blob/main/CONTRIBUTING.md) for our general contribution guidelines. See the following sections for how to work with the docs.
 
 ## Installing Hugo
 
@@ -33,10 +35,6 @@ hugo server --baseUrl="http://localhost"
 
 You can then browse the docs under [http://localhost:1313/](http://localhost:1313/).
 Hugo will automatically detect when you change a file and refresh the page in the browser.
-
-## License
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/80x15.png"></a> The content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 
 ## Writing Docs
 
@@ -183,3 +181,9 @@ _Note: For screenshot of the enterprise webapps, you can use the automatic scree
 [Hugo Installation]: https://gohugo.io/getting-started/installing/#install-hugo-from-tarball
 [OpenOffice]: https://www.openoffice.org/download/index.html
 [OpenSans]: https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans
+
+## License
+
+Copyright 2025 FINOS
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/80x15.png"></a> The content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
