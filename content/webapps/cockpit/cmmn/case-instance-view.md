@@ -2,6 +2,7 @@
 
 title: 'Case Instance View'
 weight: 20
+expiryDate: 2025-08-31
 
 menu:
   main:

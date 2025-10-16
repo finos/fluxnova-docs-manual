@@ -2,6 +2,7 @@
 
 title: 'Dashboard'
 weight: 5
+expiryDate: 2025-08-31
 
 menu:
   main:

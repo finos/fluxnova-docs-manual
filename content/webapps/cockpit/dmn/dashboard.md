@@ -30,7 +30,9 @@ You can also click on the name of a decision requirements definition to go to th
 This plugin provides you with a list of deployed decision requirements definitions. You can click on the name of a decision requirements definition to go to the [decision requirements definition view][decision-requirements-definition-view] and access more details, like the decision requirements definition diagram or executed [decision requirements definition instances view][decision-requirements-definition-instance-view]. 
 
 
+{{< comment >}}
 # Search
+
 
 {{< enterprise >}}
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
@@ -48,7 +50,8 @@ Furthermore, you can copy a link to the current search query to your clipboard b
   The decision instance search operates on the history endpoint of the engine. In case the requested historic data is not persisted to the database, then the search does not deliver the desired results.
 {{< /note >}}
 
-[decision-definition-view]: {{< ref "/webapps/cockpit/dmn/decision-definition-view.md" >}}
-[decision-instance-view]: {{< ref "/webapps/cockpit/dmn/decision-instance-view.md" >}}
-[decision-requirements-definition-view]: {{< ref "/webapps/cockpit/dmn/decision-requirements-definition-view.md" >}}
-[decision-requirements-definition-instance-view]: {{< ref "/webapps/cockpit/dmn/decision-requirements-instance-view.md" >}}
+[decision-definition-view]: < ref "/webapps/cockpit/dmn/decision-definition-view.md" >
+[decision-instance-view]: < ref "/webapps/cockpit/dmn/decision-instance-view.md" >
+[decision-requirements-definition-view]: < ref "/webapps/cockpit/dmn/decision-requirements-definition-view.md" >
+[decision-requirements-definition-instance-view]: < ref "/webapps/cockpit/dmn/decision-requirements-instance-view.md" >
+{{< /comment >}}

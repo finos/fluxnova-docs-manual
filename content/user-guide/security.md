@@ -310,7 +310,7 @@ An implementation of this interface registered as validator will be provided wit
 ## User operation log settings for synchronous operations affecting multiple entities
 
 Some of the synchronous APIs can be used to perform actions on multiple entities, potentially affecting large amounts of data. For some use-cases it is necessary to have a log of those
-operations for audit reasons (see [Auditing of Cockpit Operations]({{< ref "/webapps/cockpit/auditing.md" >}}) for more information).
+operations for audit reasons.
 
 Without constraints, the process engine can create potentially unlimited numbers of user operation log entries. A user operation log entry technically consists of multiple database entries in
 the `ACT_HI_OP_LOG` table. The amount of table entries depends on the number of properties logged for the user operation log. Example: A synchronous message correlation will log up to three properties (`messageName`, `nrOfVariables`, `processInstance`) depending on some conditions. A synchronous message correlation operation with 1000 affected process instances would yield 3000 new rows in the user operation log database table.

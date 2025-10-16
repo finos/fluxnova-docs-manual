@@ -2,6 +2,7 @@
 
 title: 'Instance Restart'
 weight: 50
+expiryDate: 2025-08-31
 
 menu:
   main:

@@ -182,10 +182,6 @@ If you need to apply multiple minor versions, you MUST execute the database alte
 
 This section explains how to perform a [patch-level update]({{< ref "/update/patch-level.md" >}}) for your database schema. The *patch level* is the version number "after the second dot". For example, update from `7.14.2` to `7.14.3`.
 
-{{< enterprise >}}
-Please note that Patch Level Updates are only provided to enterprise customers. They are not available in the community edition.
-{{< /enterprise >}}
-
 Between patch levels, the structure of the database schema does not change. The database structure of all patch releases is backward compatible with the corresponding minor version. For example, the database schema of all `7.14.x` versions are backward compatible with the `7.14.0` schema.
 
 The one exception to this is a bug in the database schema itself. If you are affected by such a bug, you have the option to run a patch script. The following list contains all available patch scripts, information on what the fixes are related to, and a link to the corresponding [Fluxnova Jira](https://jira.camunda.com/projects/CAM) issue:

@@ -2,6 +2,7 @@
 
 title: 'Live Editing of DMN Decisions'
 weight: 30
+expiryDate: 2025-08-31
 
 menu:
   main:

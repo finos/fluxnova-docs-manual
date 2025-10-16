@@ -2,6 +2,7 @@
 
 title: 'History in Cockpit'
 weight: 40
+expiryDate: 2025-08-31
 
 menu:
   main:

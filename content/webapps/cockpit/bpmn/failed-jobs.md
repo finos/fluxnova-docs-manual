@@ -30,8 +30,7 @@ After clicking on **Retry**, the engine will re-trigger the jobs and increment t
 
 {{< img src="../../img/cockpit-instance-job-retry.png" title="Process instance job retry" >}}
 
-Alternatively, you can change the retries of jobs asynchronously via the [Batch Operation]({{< ref "/webapps/cockpit/batch/batch-operation.md" >}}) "Set retries of Jobs belonging to process instances".
-
+{{< comment >}}
 # Bulk Retry
 
 {{< enterprise >}}
@@ -41,3 +40,4 @@ Alternatively, you can change the retries of jobs asynchronously via the [Batch 
 {{< img src="../../img/cockpit-bulk-retry.png" title="Batch Retry" >}}
 
 You can also perform a synchronous bulk retry of failed jobs. This feature is available in the [process definition view]({{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}) in the Job Definitions tab. If you hit this button, you will increment the number of retries for all the defined jobs of the process definition.
+{{< /comment >}}

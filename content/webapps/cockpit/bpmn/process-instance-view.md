@@ -42,7 +42,7 @@ However, if the number of called process instances exceeds one, then clicking th
 
 {{< img src="../../img/cockpit-detailed-information-view.png" title="Detailed Information Panel" >}}
 
-Use the detailed information panel to get an overview of the variables, incidents, called process instances, user tasks and external tasks that the process instance contains. Furthermore, you can access the [instance modification]({{< ref "/webapps/cockpit/bpmn/process-instance-modification.md" >}}) tab. Depending on the selected activity instance in the rendered diagram, the panel lists the corresponding information. You can also focus on the activity instance via a scope link in the table.
+Use the detailed information panel to get an overview of the variables, incidents, called process instances, user tasks and external tasks that the process instance contains. 
 
 In addition to the instance information you can [edit variables]({{< relref "#edit-variables" >}}) or change the assignees of user tasks.
 
