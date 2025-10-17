@@ -48,10 +48,6 @@ Process `exampleProcess:2`:
 
 <div data-bpmn-diagram="../bpmn/process-instance-migration/example2"></div>
 
-{{< enterprise >}}
-  The Fluxnova enterprise edition provides a user interface to migrate process instances in [Fluxnova Cockpit]({{< ref "/webapps/cockpit/bpmn/process-instance-migration.md" >}})
-{{< /enterprise >}}
-
 # Process Instance Migration by Example
 
 We can define a migration plan using the API entrance point `RuntimeService#createMigrationPlan`.

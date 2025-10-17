@@ -584,8 +584,6 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.report`
 
-See the [Reports]({{< ref "/webapps/cockpit/reporting.md" >}}) section for an example report plugin.
-
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
 ```Javascript

@@ -88,7 +88,7 @@ Add a filter for process instances by filtering for a `boolean` value.
 
 Add a filter for process instances by filtering for a `numeric` (double, integer, long or short) value.
 
-
+{{< comment >}}
 ## History View
 
 Add a filter to the [process definition history view][process-definition-history-view]. Select filters for variables, the start date and time, the activity ID or the business key of process instances as in [the runtime view](#runtime-view). In addition, select filters for completed, running or process instances with a certain end date and time.
@@ -112,8 +112,7 @@ Add a filter for process instances by filtering for already completed or still r
 Add a filter for process instances by end date. Please note that the date must be set in accordance to the [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) standard and that this option is only available in the [process definition history view][process-definition-history-view]. Again choose between `before` and `after` to filter for instances that were ended before or after the given date. For example, click on `before` to obtain the selection..
 
 
-[process-definition-history-view]: {{< ref "/webapps/cockpit/bpmn/process-history-views.md#process-definition-history-view" >}}
-
+[process-definition-history-view]: < ref "/webapps/cockpit/bpmn/process-history-views.md#process-definition-history-view" >
 
 # Delete Multiple Running Process Instances
 
@@ -144,6 +143,7 @@ Please note that this feature is only included in the enterprise edition of Flux
 This feature allows you to inspect documentation added in the Fluxnova Modeler. To do so, open the Documentation tab. Elements with a documentation are indicated with a {{< glyphicon name="info-sign" >}} in the diagram. The documentation table lists all documented elements. Click on a table row to highlight the element in the diagram.
 
 To view long documentations, click on the {{< glyphicon name="info-sign" >}} on the element or the documentation link in the table. This opens a modal which displays the formated documentation in a textbox. To copy the documentation to the clipboard, click on {{< glyphicon name="copy" >}} button.
+{{< /comment >}}
 
 # Set Job priority
 
@@ -180,4 +180,4 @@ For more drill down options on call activities you can check out the [process in
 and the [process history views][process-history-views].
 
 
-[process-history-views]: {{< ref "/webapps/cockpit/bpmn/process-history-views.md" >}}
+[process-history-views]: < ref "/webapps/cockpit/bpmn/process-history-views.md" >

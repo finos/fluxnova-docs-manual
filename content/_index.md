@@ -102,9 +102,8 @@ Once you completed a Getting Started Guide, you may find the following topics us
 
 ## Getting Help
 
-In case you get stuck on a problem make sure to [ask for Help in the Forums](https://forum.camunda.io) or on [Stack Overflow](http://stackoverflow.com/questions/tagged/camunda)
+In case you get stuck on a problem make sure to ask for Help in the {{< forumref >}} or on [Stack Overflow](http://stackoverflow.com/questions/tagged/fluxnova)
 
 ## Community Extensions
 
 A number of [Community Extensions](/introduction/extensions/) enhance Fluxnova with additional capabilities.
-Browse the [Fluxnova Community Hub](https://github.com/fluxnova-community-hub) for information on [building a Fluxnova Community Extension](https://github.com/fluxnova-community-hub/community), discover new Fluxnova Community Extension open source projects to contribute to, and more.

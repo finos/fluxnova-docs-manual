@@ -36,7 +36,7 @@ After you have successfully unpacked your distribution of the Fluxnova Platform,
 This script will start the application server and open a welcome screen in your web browser. If the page does not open, go to [http://localhost:8080/fluxnova-welcome/index.html](http://localhost:8080/fluxnova-welcome/index.html).
 
 {{< note title="Getting Help" class="info" >}}
-If you have trouble setting up the Fluxnova Platform, you can ask for assistance in the [Fluxnova Users Forum](https://forum.camunda.org/).
+If you have trouble setting up the Fluxnova Platform, you can ask for assistance in the {{< forumref >}}
 {{< /note >}}
 
 

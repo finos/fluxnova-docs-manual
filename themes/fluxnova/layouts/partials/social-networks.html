@@ -4,9 +4,11 @@
       <span class="cam-docs-stackoverflow"></span>
     </a>
   </li>
+  {{ if $.Site.Params.forum.name }}
   <li>
-    <a target="_blank" title="Fluxnova Forum" href="//forum.fluxnova.finos.org">
+    <a target="_blank" title="{{ $.Site.Params.forum.name }}" href="{{ $.Site.Params.forum.url }}">
       <span class="cam-docs-chat"></span>
     </a>
   </li>
+  {{ end }}
 </ul><!-- / .social -->

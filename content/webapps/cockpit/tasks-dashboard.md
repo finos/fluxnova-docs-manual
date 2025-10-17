@@ -28,6 +28,7 @@ In this category you can see how many open tasks exist. There is also an overvie
 
 This category provides you an overview which shows how all open tasks which are assigned to a group are distributed between the individual groups.
 
+{{< comment >}}
 ## Search Tasks
 {{< enterprise >}}
   Please note that this feature is only included in the enterprise edition of Fluxnova, it is not 
@@ -45,3 +46,4 @@ Furthermore, you can copy a link to the current search query to your clipboard b
 You can use the links in the results to jump to the corresponding process instances. If the task isn't finished yet, the link
 directs you to the runtime data of the process instance. If the task is finished, you can use the link to move to the
 historic view of the process instance.
+{{< /comment >}}

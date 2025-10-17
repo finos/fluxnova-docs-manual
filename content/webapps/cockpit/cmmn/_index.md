@@ -3,6 +3,7 @@
 title: 'CMMN Cases in Cockpit'
 weight: 35
 layout: 'section-list'
+expiryDate: 2025-08-31
 
 menu:
   main:

@@ -18,6 +18,9 @@ blackfriday:
 
 params:
   canonicalBasePath: "https://docs.fluxnova.finos.org"
+  forum:
+    url: "https://github.com/finos/fluxnova-bpm-platform/discussions"
+    name: "Fluxnova Forum"
   section:
     id: "manual"
     version: "develop"

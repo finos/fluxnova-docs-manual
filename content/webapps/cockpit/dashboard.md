@@ -22,6 +22,7 @@ On the right hand side, you see an overview of deployed process definitions, dec
 
 Additional [plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) can be added to the dashboard.
 
+{{< comment >}}
 # Metrics
 
 {{< enterprise >}}
@@ -34,7 +35,7 @@ At the bottom of the dashboard, the metrics plugin displays graphs with metrics 
 You can select to display the details for the current day, the current week or the current month. By clicking on the metrics graphs and dragging the cursor 
 in either direction, you can select a specified range of time. You can also modify the range of time by using the mouse wheel. By clicking on the link that
 appears under the graph, you are forwarded to the respective search with preselected query parameters.
-
+{{< /comment >}}
 
 # Multi Engine
 

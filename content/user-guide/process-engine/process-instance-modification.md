@@ -30,10 +30,6 @@ To perform such an operation, the process engine offers the *process instance mo
  An activity which tries to modify its own process instance can cause undefined behavior, which should be avoided.
 {{< /note >}}
 
-{{< enterprise >}}
-  The Fluxnova enterprise edition provides a user interface to compose process instance modifications visually on the BPMN diagram in [Fluxnova Cockpit]({{< ref "/webapps/cockpit/bpmn/process-instance-modification.md" >}})
-{{< /enterprise >}}
-
 # Process Instance Modification by Example
 
 As an example, consider the following process model:

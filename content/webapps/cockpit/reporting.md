@@ -2,6 +2,7 @@
 
 title: 'Reports'
 weight: 60
+expiryDate: 2025-08-31
 
 menu:
   main:

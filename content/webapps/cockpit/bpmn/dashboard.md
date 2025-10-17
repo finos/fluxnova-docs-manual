@@ -42,6 +42,7 @@ You can also switch to the preview tab which displays the rendered process model
 [process-definition-view]: {{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}
 [failed-jobs]: {{< ref "/webapps/cockpit/bpmn/failed-jobs.md" >}}
 
+{{< comment >}}
 # Process Instances Search
 
 {{< enterprise >}}
@@ -63,6 +64,7 @@ You can perform batch operation on process instances matching search criteria by
 {{< note title="Heads-up!" class="info" >}}
   The process instance search operates on the history endpoint of the engine. In case the requested historic data is not persisted to the database, then the search does not deliver the desired results.
 {{< /note >}}
+{{< /comment >}}
 
 ## CSV Export for Process Instances
 
@@ -166,6 +168,7 @@ button to open a modal dialog.
 
 {{< img src="../../img/cockpit-edit-not-in-criterion-modal.png" title="IN Operator Modal" >}}
 
+{{< comment >}}
 # Delete process definitions
 
 {{< enterprise >}}
@@ -176,4 +179,5 @@ Please note that this feature is only included in the enterprise edition of Flux
 
 Each process definition in the dashboard has a delete action. This action allows to delete all versions of a process definition.
 When proceeding with this action, you can always choose to enable/disable skipping custom listeners. However, if the process definition has process instances running, enabling the cascading flag becomes mandatory.
+{{< /comment >}}
 

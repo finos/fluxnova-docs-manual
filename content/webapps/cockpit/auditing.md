@@ -2,6 +2,7 @@
 
 title: 'Auditing of Cockpit Operations'
 weight: 45
+expiryDate: 2025-08-31
 
 menu:
   main:

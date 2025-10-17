@@ -28,7 +28,7 @@ There are some things which have not changed yet:
 *   The `activiti:` [Custom Extensions]({{< ref "/reference/bpmn20/custom-extensions/_index.md" >}}) are kept.
     A Fluxnova namespace will be introduced soon but backwards compatibility will be ensured.
 
-We based our fork on Camunda 7.24, which is based on the database schema of Activiti 5.11. So please [update](http://www.activiti.org/userguide/index.html#databaseUpgrade) your project to this database using the update scripts provided by Activiti. If you are using a newer version, best ask for assistance in the [Forum](http://fluxnova.finos.org/community/forum.html).
+We based our fork on Camunda 7.24, which is based on the database schema of Activiti 5.11. So please [update](http://www.activiti.org/userguide/index.html#databaseUpgrade) your project to this database using the update scripts provided by Activiti. If you are using a newer version, best ask for assistance in the {{< forumref >}}.
 
 
 # Exchange Library

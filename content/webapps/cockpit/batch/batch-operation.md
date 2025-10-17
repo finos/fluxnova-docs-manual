@@ -2,6 +2,7 @@
 
 title: 'Batch operation'
 weight: 10
+expiryDate: 2025-08-31
 
 menu:
   main:

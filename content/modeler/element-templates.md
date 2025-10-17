@@ -29,9 +29,3 @@ Once applied, they configure the diagram element with pre-defined values for BPM
 
 As seen in the _Mail Task_ example above the modeler allows properties of custom elements to be edited, too.
 
-
-## Learn More
-
-Refer to the following resources to learn more about element templates:
-
-* [Element Template documentation](https://github.com/fluxnova/fluxnova-modeler/tree/master/docs/element-templates)
