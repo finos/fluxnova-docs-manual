@@ -33,7 +33,7 @@ The breadcrumbs show the process hierarchy. Opening an expanded subprocess opens
 
 When migrating collapsed subprocesses, be aware that the collapsed shapes hide other activities. The wizard only displays connections for the current layer.
 
-{{< img src="../../img/drilldown/migration.png" alt="Migration view for collapsed subprocesses">}}
+{{< img outdated="true" src="../../img/drilldown/migration.png" alt="Migration view for collapsed subprocesses">}}
 
 Additionally, collapsed subprocesses can have two badges:
 

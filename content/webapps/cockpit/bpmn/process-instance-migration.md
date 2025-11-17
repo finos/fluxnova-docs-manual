@@ -18,11 +18,11 @@ menu:
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/migration/step1_overview.png" title="Process Instance Migration" >}}
+{{< img outdated="true" src="../../img/migration/step1_overview.png" title="Process Instance Migration" >}}
 
 You can migrate running process instances from their current process definition version to another version of that definition or another process definition altogether. You can access the migration page by navigating to the process definition or instance view of a process with multiple versions.
 
-{{< img src="../../img/migration/accessing_2.png" title="Link to Process Instance Migration Page from Process Definition Page" >}}
+{{< img outdated="true" src="../../img/migration/accessing_2.png" title="Link to Process Instance Migration Page from Process Definition Page" >}}
 
 Performing a migration consists of four steps:
 
@@ -44,7 +44,7 @@ Activities that have running instances, but are not mapped to a target activity,
 
 ## Create a new mapping
 
-{{< img src="../../img/migration/step1_createMapping.png" title="Creating a new mapping" >}}
+{{< img outdated="true" src="../../img/migration/step1_createMapping.png" title="Creating a new mapping" >}}
 
 To create a mapping for an activity, hover over the activity and click on the arrow button <button class="btn btn-xs"><i class="glyphicon glyphicon-share-alt"></i></button> in the lower right corner of the activity. This enters the mapping mode. An arrow following your mouse movements is created and possible target activities are highlighted. Clicking on one of the highlighted activities in the target diagram creates a mapping from the source activity to the selected target activity. Clicking anywhere else or pressing ESC exits the edit mode.
 
@@ -63,7 +63,7 @@ Checking the link diagrams navigation checkbox causes view changes of one diagra
 
 ## Check incorrect mappings
 
-{{< img src="../../img/migration/step1_errorPopover.png" title="Report for an incorrect mapping" >}}
+{{< img outdated="true" src="../../img/migration/step1_errorPopover.png" title="Report for an incorrect mapping" >}}
 
 If you create a mapping that is incorrect, a red error indicator <span class="badge" style="background-color: #d9534f; border: 1px solid #d43f3a;">
   <span class="glyphicon glyphicon-remove"></span>
@@ -89,26 +89,26 @@ You can also click on an activity to show a green arrow pointing from the source
 
 After finishing defining the flow-node mapping, click on the **Set Variables** button to proceed.
 
-{{< img src="../../img/migration/step2.png" title="Set variables for migration" >}}
+{{< img outdated="true" src="../../img/migration/step2.png" title="Set variables for migration" >}}
 
 The next step allows you to set variables into the process instances’ scope.
 
-{{< img src="../../img/migration/step2_modal.png" title="Set variables for migration – add variable" >}}
+{{< img outdated="true" src="../../img/migration/step2_modal.png" title="Set variables for migration – add variable" >}}
 
 When you click on the **Add Variable** button, a modal dialog opens where you can define the variable name, type, and value.
 
-{{< img src="../../img/migration/step2_validation.png" title="Set variables for migration – variable validation" >}}
+{{< img outdated="true" src="../../img/migration/step2_validation.png" title="Set variables for migration – variable validation" >}}
 
 The Engine validates the variable against the migration plan validation rules and Cockpit displays the result for each variable in the **Valid** column of the table. 
 If a variable invalidates the migration plan, Cockpit opens a popover with the respective validation errors.
 
-{{< img src="../../img/migration/step2_edit.png" title="Set variables for migration – edit variable" >}}
+{{< img outdated="true" src="../../img/migration/step2_edit.png" title="Set variables for migration – edit variable" >}}
 
 You can still edit the variables you have just added. For instance, if a variable invalidates the migration plan, you can easily correct it to proceed with the process instance migration.
 
 # Select instances
 
-{{< img src="../../img/migration/step3.png" title="Select instances for migration" >}}
+{{< img outdated="true" src="../../img/migration/step3.png" title="Select instances for migration" >}}
 
 After finishing the **Set Variables** step, click **Select Instances** to proceed to instance selection. 
 
@@ -127,7 +127,7 @@ If you do not explicitly select any instances, all instances of the source proce
 
 # Confirm Migration
 
-{{< img src="../../img/migration/step4.png" title="Confirm Migration" >}}
+{{< img outdated="true" src="../../img/migration/step4.png" title="Confirm Migration" >}}
 
 In the next step, you see an overview of the migration that you are about to execute. This page displays the exact id of the source and target process definition as well as the number of process instances you are about to migrate. It also contains a tabular display of the migration plan. You can configure options for the migration such as whether the migration should be performed asynchronously as a batch and whether custom listeners and IO mappings should be skipped.
 
@@ -136,13 +136,13 @@ By clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-eye-
 
 # Check Migration Result
 
-{{< img src="../../img/migration/step5_batch.png" title="Executing migration asynchronously" >}}
+{{< img outdated="true" src="../../img/migration/step5_batch.png" title="Executing migration asynchronously" >}}
 
 After clicking `Execute Migration`, the result screen is displayed. If the migration was performed successfully, that is indicated on this page. For asynchronous migrations, a link to the [batch page]({{< ref "/webapps/cockpit/batch/monitoring.md" >}}) is displayed where the progress of the batch can be observed.
 
 ## Error: Migration Plan invalid
 
-{{< img src="../../img/migration/step5_error.png" title="Invalid migration plan" >}}
+{{< img outdated="true" src="../../img/migration/step5_error.png" title="Invalid migration plan" >}}
 
 If the migration plan contains errors, they are displayed on this page. No instances are migrated in this case. You can go back to the first step to fix the errors.
 

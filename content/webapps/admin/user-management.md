@@ -13,7 +13,7 @@ menu:
 
 # Users Menu
 
-{{< img src="../img/admin-users.png" title="User Menu" >}}
+{{< img outdated="true" src="../img/admin-users.png" title="User Menu" >}}
 
 The Users menu allows you to add, edit and delete user profiles. Furthermore, you can manage group membership and change passwords.
 
@@ -31,7 +31,7 @@ You can also access the My Profile menu from any of the web applications by clic
 
 # Initial User Setup
 
-{{< img src="../img/admin-initial-user-setup.png" title="Initial User Setup" >}}
+{{< img outdated="true" src="../img/admin-initial-user-setup.png" title="Initial User Setup" >}}
 
 If no administrator account is configured, a setup screen will be shown on first access of a process engine through Cockpit or Tasklist . This screen allows you to configure an initial user account with administrator rights.
 Administrator users are not global but per engine. Thus, you will need to set up an admin user for each separate engine.

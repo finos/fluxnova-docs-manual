@@ -22,7 +22,7 @@ You can use the reports section of cockpit to display custom statistics and repo
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../img/duration-report.png" title="Process Instance Duration Report" >}}
+{{< img outdated="true" src="../img/duration-report.png" title="Process Instance Duration Report" >}}
 
 This report shows the average, minimum and maximum duration for a selected process definition and version for a given timeframe. Monthly and quarterly aggregation of the duration times are supported. You can hover over a bar in the bars chart to see the exact values below the chart. You can also switch to the table view to see the exact values for every month or quarter.
 
@@ -34,7 +34,7 @@ Pressing the download buttons above the chart triggers the export of the results
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../img/historic-task-instance-report.png" title="Historic Task Instance Report" >}}
+{{< img outdated="true" src="../img/historic-task-instance-report.png" title="Historic Task Instance Report" >}}
 
 This report contains two types of report. There is a completed tasks report which shows all tasks which are completed within a given timeframe. It is 
 possible to group these tasks by task definition key or by process definition key.

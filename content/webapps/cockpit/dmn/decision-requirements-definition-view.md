@@ -16,7 +16,7 @@ menu:
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/cockpit-decision-requirements-definition-view.png" title="Decision Requirements Definition View" >}}
+{{< img outdated="true" src="../../img/cockpit-decision-requirements-definition-view.png" title="Decision Requirements Definition View" >}}
 
 On the decision requirements definition view, you can find a diagram of the deployed decision requirements definition.
 Use the mouse to navigate through the diagram. By turning the mouse wheel you can zoom in and out.
@@ -37,7 +37,7 @@ Below the diagram you find the decision instances tab and the decision requireme
 
 You can maximize the table view or the detailed information panel by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-resize-full"></i></button> button, respectively the <button class="btn btn-xs"><i class="glyphicon glyphicon-menu-up"></i></button> button, at the bottom left of the table view.
 
-{{< img src="../../img/cockpit-decision-definition-requirement-decision-instances-tab.png" title="Decision Instances Tab" >}}
+{{< img outdated="true" src="../../img/cockpit-decision-definition-requirement-decision-instances-tab.png" title="Decision Instances Tab" >}}
 
 In the decision instances tab, you can find a listing of all decision instances for this definition. You can also search for decision instances which fulfill certain search criteria. To do so, click in the search box and select the parameters to search for. You can also begin typing to find the required parameter faster. You have to specify the value of the selected property to perform the search and you can combine multiple search pills to narrow down the search results.
 
@@ -52,7 +52,7 @@ The same principle also applies to case definitions and case instances.
 Clicking on the ID of the decision instance takes you to the [decision instance view]({{< ref "/webapps/cockpit/dmn/decision-instance-view.md" >}}).
 Clicking on the decision definition takes you to the [decision definition view]({{< ref "/webapps/cockpit/dmn/decision-definition-view.md" >}})
 
-{{< img src="../../img/cockpit-decision-definition-requirement-decision-drd-tab.png" title="Decision Requirements Definition Instances Tab" >}}
+{{< img outdated="true" src="../../img/cockpit-decision-definition-requirement-decision-drd-tab.png" title="Decision Requirements Definition Instances Tab" >}}
 
 In the decision requirements definition instances tab, you can find a listing of all instances of the current decision requirements definition. You can also search for decision instances which fulfill certain search criteria. To do so, click in the search box and select the parameters to search for. You can also begin typing to find the required parameter faster. You have to specify the value of the selected property to perform the search and you can combine multiple search pills to narrow down the search results.
 

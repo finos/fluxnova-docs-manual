@@ -23,7 +23,7 @@ At the top of the process definition view and the process instance view, you can
 
 # Process Definition History View
 
-{{< img src="../../img/cockpit-history-view-process-definition-history.png" title="Process Definition History" >}}
+{{< img outdated="true" src="../../img/cockpit-history-view-process-definition-history.png" title="Process Definition History" >}}
 
 In the history view of the process definition you see an overview of all of the running and completed process instances. On the bottom of the screen, a [filter][process-definition-view-filter] can be applied and you have the option of selecting to only see process instances in a specific state. Running and completed instances can be selected.
 
@@ -35,7 +35,7 @@ Furthermore, you can maximize the diagram view or the detailed information panel
 
 ## Heatmap
 
-{{< img src="../../img/cockpit-heatmap.png" title="Process Definition Heatmap" >}}
+{{< img outdated="true" src="../../img/cockpit-heatmap.png" title="Process Definition Heatmap" >}}
 
 The history view of a process definition contains a `Heat` button in the top-right corner of the process diagram. Clicking this button activates the heatmap view. In this view, a heatmap is overlayed on the BPMN diagram showing which nodes and sequence flows have the most activity. Activity is measured by the number of tokens which have been processed by the node or sequence flow.
 
@@ -44,7 +44,7 @@ It is still possible to interact with the diagram while the heatmap is shown (e.
 
 # Process Instance History View
 
-{{< img src="../../img/cockpit-history-view-process-instance-history.png" title="Process Instance History" >}}
+{{< img outdated="true" src="../../img/cockpit-history-view-process-instance-history.png" title="Process Instance History" >}}
 
 In the history view of the process instance you see instance-specific information. On the left side of the screen, a [filter][process-definition-view-filter] can be applied and you have the option of selecting to only see process instances in specific states. Running, completed and canceled process instances can be viewed as well as task-specific activity states.
 

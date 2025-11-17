@@ -11,7 +11,7 @@ menu:
 ---
 
 
-{{< img src="../img/tasklist-create-filter.png" title="Create Filter" >}}
+{{< img outdated="true" src="../img/tasklist-create-filter.png" title="Create Filter" >}}
 
 
 In Tasklist, you can create and select filters. You can use these filters to create lists of tasks, sorted by specified criteria. To create a filter, select *Create a Filter*. You will then see a screen as depicted in the above image. You have several options to configure your filter:
@@ -33,7 +33,7 @@ Several of the filter criteria accept expressions as values. These expressions a
 
 # Common Filters
 
-{{< img src="../img/tasklist-filter-detail.png" title="Filter Details" >}}
+{{< img outdated="true" src="../img/tasklist-filter-detail.png" title="Filter Details" >}}
 
 In the table below we list some of the more common and useful filters that you can create in Tasklist and how to set them up.
 

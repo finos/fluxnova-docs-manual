@@ -30,25 +30,25 @@ Here you can see the various points at which you are able to add your own plugin
 
 **Name:** `tasklist.navbar.action`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-navbar-action.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-navbar-action.png" title="Plugin Point" >}}
 
 ---
 
 **Name:** `tasklist.task.action`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-task-action.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-task-action.png" title="Plugin Point" >}}
 
 ---
 
 **Name:** `tasklist.header`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-tasklist-header.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-tasklist-header.png" title="Plugin Point" >}}
 
 ---
 
 **Name:** `tasklist.task.detail`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-task-detail.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-task-detail.png" title="Plugin Point" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -66,13 +66,13 @@ This additional data is passed into the render function:
 
 **Name:** `tasklist.list`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-list.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-list.png" title="Plugin Point" >}}
 
 ---
 
 **Name:** `tasklist.card`.
 
-{{< img src="../img/plugin-points/tasklist-plugin-card.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/plugin-points/tasklist-plugin-card.png" title="Plugin Point" >}}
 
 This additional data is passed into the render function:
 

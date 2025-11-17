@@ -44,7 +44,7 @@ properties: {
 
 **Name:** `admin.dashboard.section`
 
-{{< img src="../img/admin-start-page-view.png" title="Dashboard" >}}
+{{< img outdated="true" src="../img/admin-start-page-view.png" title="Dashboard" >}}
 
 With Fluxnova.5, the Admin webapp gets a dashboard based on plugins similar to the [Cockpit dashboard ones]({{< ref "/webapps/cockpit/extend/plugins.md" >}}#dashboard).
 

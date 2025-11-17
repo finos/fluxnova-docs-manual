@@ -11,7 +11,7 @@ menu:
 
 ---
 
-{{< img src="../../img/cockpit-decision-definition-view.png" title="Decision Definition View" >}}
+{{< img outdated="true" src="../../img/cockpit-decision-definition-view.png" title="Decision Definition View" >}}
 
 On the decision definition view, you can find a table or literal expression of the deployed decision definition. You can change the version of the decision definition in the dropdown menu on the left side. The table or literal expression is then updated accordingly. You can also navigate to the deployment of the selected version that contains the decision definition. Clicking the `navigate to deployment` button will take you to the [deployment view]({{< ref "/webapps/cockpit/deployment-view.md" >}}). You can maximize the table view or the detailed information panel by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-resize-full"></i></button> button, respectively the <button class="btn btn-xs"><i class="glyphicon glyphicon-menu-up"></i></button> button, at the bottom left of the table view.
 

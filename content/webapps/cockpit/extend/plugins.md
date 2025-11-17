@@ -13,7 +13,7 @@ menu:
 
 Cockpit defines a plugin concept to add own functionality without being forced to extend or hack the Cockpit web application. You can add plugins at various plugin points, e.g., the processes dashboard as shown in the following example:
 
-{{< img src="../../img/cockpit-plugin.png" title="Cockpit Plugin" >}}
+{{< img outdated="true" src="../../img/cockpit-plugin.png" title="Cockpit Plugin" >}}
 
 
 # The Nature of a Cockpit Plugin
@@ -193,7 +193,7 @@ properties: {
 
 ## Navigation
 
-{{< img src="../../img/plugin-points/plugin-point-navigation.png" title="Navigation" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-navigation.png" title="Navigation" >}}
 
 **Name:** `cockpit.navigation`
 
@@ -211,7 +211,7 @@ properties: {
 
 **Name:** `cockpit.login`
 
-{{< img src="../../img/plugin-points/plugin-point-login-custom.png" title="Login" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-login-custom.png" title="Login" >}}
 
 The `cockpit.login` plugin point allows to add your custom views at the place where the web app renders the login form.
 
@@ -221,7 +221,7 @@ This plugin point is available for all web apps. Just change the canonical app n
 
 **Name:** `cockpit.dashboard`
 
-{{< img src="../../img/plugin-points/plugin-point-dashboard-custom.png" title="Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-dashboard-custom.png" title="Dashboard" >}}
 
 The `cockpit.dashboard` plugin point will allow to add your custom views at the bottom of the dashboard.
 
@@ -229,31 +229,31 @@ The `cockpit.dashboard` plugin point will allow to add your custom views at the 
 
 **Name:** `cockpit.dashboard.metrics`
 
-{{< img src="../../img/plugin-points/plugin-point-dashboard-metrics-view.png" title="Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-dashboard-metrics-view.png" title="Dashboard" >}}
 
 ## Processes Dashboard
 
 **Name:** `cockpit.processes.dashboard`
 
-{{< img src="../../img/plugin-points/plugin-point-cockpit-processes-dashboard.png" title="Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-cockpit-processes-dashboard.png" title="Dashboard" >}}
 
 ## Decisions Dashboard
 
 **Name:** `cockpit.decisions.dashboard`
 
-{{< img src="../../img/plugin-points/plugin-point-cockpit-decisions-dashboard.png" title="Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-cockpit-decisions-dashboard.png" title="Dashboard" >}}
 
 ## Cases Dashboard
 
 **Name:** `cockpit.cases.dashboard`
 
-{{< img src="../../img/plugin-points/plugin-point-cockpit-cases-dashboard.png" title="Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-cockpit-cases-dashboard.png" title="Dashboard" >}}
 
 ## Process Definition Runtime Tab
 
 **Name:** `cockpit.processDefinition.runtime.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-process-definition-details.png" title="Process Definition Runtime Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-process-definition-details.png" title="Process Definition Runtime Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -271,7 +271,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.processInstance.runtime.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-process-instance-details.png" title="Process Instance Runtime Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-process-instance-details.png" title="Process Instance Runtime Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -289,7 +289,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.processDefinition.runtime.action`
 
-{{< img src="../../img/plugin-points/plugin-point-process-definition-runtime-action.png" title="Process Definition Runtime Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-process-definition-runtime-action.png" title="Process Definition Runtime Action" >}}
 
 This additional data is passed into the render function:
 
@@ -299,7 +299,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.processInstance.runtime.action`
 
-{{< img src="../../img/plugin-points/plugin-point-process-instance-runtime-action.png" title="Process Instance Runtime Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-process-instance-runtime-action.png" title="Process Instance Runtime Action" >}}
 
 This additional data is passed into the render function:
 
@@ -309,19 +309,19 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.processDefinition.view`
 
-{{< img src="../../img/plugin-points/plugin-point-cockpit-process-definition-view.png" title="Process Definition View" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-cockpit-process-definition-view.png" title="Process Definition View" >}}
 
 ## Process Instance View
 
 **Name:** `cockpit.processInstance.view`
 
-{{< img src="../../img/plugin-points/plugin-point-cockpit-process-instance-view.png" title="Process Instance View" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-cockpit-process-instance-view.png" title="Process Instance View" >}}
 
 ## Process Definition Diagram Overlay
 
 **Name:** `cockpit.processDefinition.diagram.plugin`
 
-{{< img src="../../img/plugin-points/plugin-point-definition-diagram-overlay.png" title="Definition Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-definition-diagram-overlay.png" title="Definition Diagram Overlay" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay.
@@ -347,7 +347,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.processInstance.diagram.plugin`
 
-{{< img src="../../img/plugin-points/plugin-point-instance-diagram-overlay.png" title="Instance Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-instance-diagram-overlay.png" title="Instance Diagram Overlay" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay. See [Process Definition Diagram Overlay](#process-definition-diagram-overlay) for an example.
@@ -361,7 +361,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.jobDefinition.action`
 
-{{< img src="../../img/plugin-points/plugin-point-job-definition-action.png" title="Job Definition Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-job-definition-action.png" title="Job Definition Action" >}}
 
 This additional data is passed into the render function:
 
@@ -371,7 +371,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionDefinition.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-definition-tab.png" title="Decision Definition Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-definition-tab.png" title="Decision Definition Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -389,7 +389,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionDefinition.action`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-definition-action.png" title="Decision Definition Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-definition-action.png" title="Decision Definition Action" >}}
 
 This additional data is passed into the render function:
 
@@ -399,7 +399,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionDefinition.table`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-definition-table.png" title="Decision Definition Table" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-definition-table.png" title="Decision Definition Table" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay. See [Process Definition Diagram Overlay](#process-definition-diagram-overlay) for an example.
@@ -412,7 +412,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionInstance.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-instance-tab.png" title="Decision Instance Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-instance-tab.png" title="Decision Instance Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -430,7 +430,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionInstance.action`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-instance-action.png" title="Decision Instance Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-instance-action.png" title="Decision Instance Action" >}}
 
 This additional data is passed into the render function:
 
@@ -440,7 +440,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.decisionInstance.table`
 
-{{< img src="../../img/plugin-points/plugin-point-decision-instance-table.png" title="Decision Instance Table" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-decision-instance-table.png" title="Decision Instance Table" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay. See [Process Definition Diagram Overlay](#process-definition-diagram-overlay) for an example.
@@ -453,7 +453,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseDefinition.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-case-definition-tab.png" title="Case Definition Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-definition-tab.png" title="Case Definition Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -471,7 +471,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseDefinition.action`
 
-{{< img src="../../img/plugin-points/plugin-point-case-definition-action.png" title="Case Definition Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-definition-action.png" title="Case Definition Action" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -489,13 +489,13 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseDefinition.diagram.overlay`
 
-{{< img src="../../img/plugin-points/plugin-point-case-definition-diagram-overlay.png" title="Case Definition Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-definition-diagram-overlay.png" title="Case Definition Diagram Overlay" >}}
 
 ## Case Definition Diagram Plugin
 
 **Name:** `cockpit.caseDefinition.diagram.plugin`
 
-{{< img src="../../img/plugin-points/plugin-point-case-definition-diagram-overlay.png" title="Case Definition Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-definition-diagram-overlay.png" title="Case Definition Diagram Overlay" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay. See [Process Definition Diagram Overlay](#process-definition-diagram-overlay) for an example.
@@ -508,7 +508,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseInstance.tab`
 
-{{< img src="../../img/plugin-points/plugin-point-case-instance-tab.png" title="Case Instance Tab" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-instance-tab.png" title="Case Instance Tab" >}}
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 
@@ -526,7 +526,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseInstance.action`
 
-{{< img src="../../img/plugin-points/plugin-point-case-instance-action.png" title="Case Instance Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-instance-action.png" title="Case Instance Action" >}}
 
 This additional data is passed into the render function:
 
@@ -536,13 +536,13 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.caseInstance.diagram.overlay`
 
-{{< img src="../../img/plugin-points/plugin-point-case-instance-diagram-overlay.png" title="Case Instance Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-instance-diagram-overlay.png" title="Case Instance Diagram Overlay" >}}
 
 ## Case Instance Diagram Plugin
 
 **Name:** `cockpit.caseInstance.diagram.plugin`
 
-{{< img src="../../img/plugin-points/plugin-point-case-instance-diagram-overlay.png" title="Case Instance Diagram Overlay" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-case-instance-diagram-overlay.png" title="Case Instance Diagram Overlay" >}}
 
 Diagram overlay plugins are a little different from other plugins.
 This plugin point does not receive a DOM node to render into but an instance of the Diagram viewer to create an overlay. See [Process Definition Diagram Overlay](#process-definition-diagram-overlay) for an example.
@@ -556,7 +556,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.repository.resource.action`
 
-{{< img src="../../img/plugin-points/plugin-point-repository-resource-action.png" title="Repository Resource Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-repository-resource-action.png" title="Repository Resource Action" >}}
 
 This additional data is passed into the render function:
 
@@ -567,7 +567,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.repository.resource.detail`
 
-{{< img src="../../img/plugin-points/plugin-point-repository-resource-detail.png" title="Repository Resource Detail" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-repository-resource-detail.png" title="Repository Resource Detail" >}}
 
 This additional data is passed into the render function:
 
@@ -578,7 +578,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.tasks.dashboard`
 
-{{< img src="../../img/plugin-points/plugin-point-task-dashboard.png" title="Open Task Dashboard" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-task-dashboard.png" title="Open Task Dashboard" >}}
 
 ## Report View
 
@@ -596,7 +596,7 @@ properties: {
 
 **Name:** `cockpit.batch.operation`
 
-{{< img src="../../img/plugin-points/plugin-point-batch-operation.png" title="Custom Plugin" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-batch-operation.png" title="Custom Plugin" >}}
 
 The render function can be used to create a form for custom payloads to your batch operation.
 
@@ -638,7 +638,7 @@ export default {
 
 **Name:** `cockpit.incident.action`
 
-{{< img src="../../img/plugin-points/plugin-point-incident-action.png" title="Incident Action" >}}
+{{< img outdated="true" src="../../img/plugin-points/plugin-point-incident-action.png" title="Incident Action" >}}
 
 This additional data is passed into the render function:
 

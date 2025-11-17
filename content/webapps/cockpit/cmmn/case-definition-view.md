@@ -15,7 +15,7 @@ menu:
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/cmmn/case-definition-view.png" title="Case Definition View" >}}
+{{< img outdated="true" src="../../img/cmmn/case-definition-view.png" title="Case Definition View" >}}
 
 On the case definition view, you can find a diagram of the deployed case definition. Use the mouse to navigate through the diagram. By turning the mouse wheel you can zoom in and out. Hold the left mouse button to pan the diagram in the desired direction.
 

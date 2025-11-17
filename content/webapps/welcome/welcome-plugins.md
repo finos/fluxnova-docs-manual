@@ -18,8 +18,8 @@ In addition to the [configurable custom links]({{< ref "/webapps/welcome/configu
 
 **Name:** `welcome.dashboard`.
 
-{{< img src="../img/welcome-dashboard-plugin.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/welcome-dashboard-plugin.png" title="Plugin Point" >}}
 
 **Name:** `welcome.profile`.
 
-{{< img src="../img/welcome-profile-plugin.png" title="Plugin Point" >}}
+{{< img outdated="true" src="../img/welcome-profile-plugin.png" title="Plugin Point" >}}

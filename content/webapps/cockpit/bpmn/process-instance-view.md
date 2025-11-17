@@ -11,7 +11,7 @@ menu:
 
 ---
 
-{{< img src="../../img/cockpit-process-instances-view.png" title="Process Instance View" >}}
+{{< img outdated="true" src="../../img/cockpit-process-instances-view.png" title="Process Instance View" >}}
 
 Open the process instance view by selecting a process instance from the [process definition view][process-definition-view] instance list. This view allows you to drill down into a single process instance and explore its running activities as well as the variables, tasks, jobs, etc.
 Beside the diagram view the process will be displayed as an [activity instance tree view]({{< relref "#activity-instance-tree" >}}). Variables that belong to the instance will be listed in a variables table of the [detailed information panel]({{< relref "#detailed-information-panel" >}}). Now you can select single or multiple ('ctrl + click') flow nodes in the interactive BPMN 2.0 diagram or you can select an activity instance within the activity tree view. As diagram, tree view and variables table correspond with each other, the selected flow node will also be selected in the tree and the associated variables will be shown and vice versa.
@@ -23,13 +23,13 @@ Furthermore, you can maximize the diagram view or the detailed information panel
 
 # Activity Instance Tree
 
-{{< img src="../../img/cockpit-activity-instance-tree-view.png" title="Activity Instance Tree" >}}
+{{< img outdated="true" src="../../img/cockpit-activity-instance-tree-view.png" title="Activity Instance Tree" >}}
 
 The activity instance tree contains a node for each activity that is currently active in the process instance. It allows you to select activity instances to explore their details. Concurrently, the selected instance will be marked in the rendered process diagram and the corresponding variables will be listed in the detailed information panel.
 
 # Call Activity Drill Down
 
-{{< img src="../../img/cockpit-call-activity-instance-drill-down.png" title="Call Activity Drill Down" >}}
+{{< img outdated="true" src="../../img/cockpit-call-activity-instance-drill-down.png" title="Call Activity Drill Down" >}}
 
 Call activity instances that call at least one process instance have an overlay on the upper right corner that links to their called process instances.
 
@@ -62,7 +62,7 @@ In the variables tab, you can filter for variables by variable name, activity in
 
 # Add Variables
 
-{{< img src="../../img/cockpit-add-variables.png" title="Add Variables" >}}
+{{< img outdated="true" src="../../img/cockpit-add-variables.png" title="Add Variables" >}}
 
 Hit the {{< glyphicon name="plus" >}} button on the right side to add variables to a process instance. You can choose between different data types. Please note that variables will be overwritten if you add a new variable with an existing name.
 
@@ -76,6 +76,6 @@ Edit variables in the list of variables by using the {{< glyphicon name="pencil"
 
 # Cancel a Process Instance
 
-{{< img src="../../img/cockpit-cancel-process-instance.png" title="Cancel Instances" >}}
+{{< img outdated="true" src="../../img/cockpit-cancel-process-instance.png" title="Cancel Instances" >}}
 
 In the process instance view you can cancel a single process instance. Hit the {{< glyphicon name="remove" >}} button on the right side. In the dialog that appears, you can choose to skip custom listeners and to skip I/O mappings. After you have completed this step, a confirmation dialog appears and the runtime data of the canceled instance is deleted.

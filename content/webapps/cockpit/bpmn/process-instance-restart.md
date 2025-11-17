@@ -27,7 +27,7 @@ In the history view, you can restart process instances individually or by a batc
 # Perform Restart 
 
 
-{{< img src="../../img/cockpit-restart.png" title="Process Instance Restart" >}}
+{{< img outdated="true" src="../../img/cockpit-restart.png" title="Process Instance Restart" >}}
 
 A restart of a terminated process instance includes instructions which are displayed in the bottom of the screen, after you have selected the restart tab in the history view (1).  
 
@@ -44,7 +44,7 @@ When restarting a process instance, you have the option to *start before* or *st
 
 ## Instance selection  
 
-{{< img src="../../img/cockpit-restart-instance-selection.png" title="Instance Selection" >}}
+{{< img outdated="true" src="../../img/cockpit-restart-instance-selection.png" title="Instance Selection" >}}
 
 When you click on **Select Instances**, a modal opens. Initially, all instances are displayed. 
 You can use the filter bar above the list of instances to filter the displayed instances.
@@ -59,7 +59,7 @@ When you have made your selection you can proceed by clicking the red button. Th
 
 ## Confirm Restart 
 
-{{< img src="../../img/cockpit-restart-confirm.png" title="Confirm Restart" >}}
+{{< img outdated="true" src="../../img/cockpit-restart-confirm.png" title="Confirm Restart" >}}
 
 Here you see two sections. The option section allows you to specify options related to the execution of the restart.
 

@@ -11,7 +11,7 @@ menu:
 
 ---
 
-{{< img src="../img/dashboard.png" title="Cockpit Dashboard" >}}
+{{< img outdated="true" src="../img/dashboard.png" title="Cockpit Dashboard" outdated="true" >}}
 
 The dashboard of Cockpit provides a quick overview of running and historic operations as well as details about deployments. 
 
@@ -29,7 +29,7 @@ Additional [plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) can be ad
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../img/dashboard-metrics.png" title="Cockpit Dashboard Metrics" >}}
+{{< img outdated="true" src="../img/dashboard-metrics.png" title="Cockpit Dashboard Metrics" >}}
 
 At the bottom of the dashboard, the metrics plugin displays graphs with metrics for executed activity instances, evaluated decision instances and executed jobs. 
 You can select to display the details for the current day, the current week or the current month. By clicking on the metrics graphs and dragging the cursor 

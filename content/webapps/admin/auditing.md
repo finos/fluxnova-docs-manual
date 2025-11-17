@@ -25,7 +25,7 @@ It is often desired to inspect which user performed which operation for auditing
 Please see the [complete table]({{< ref "/user-guide/process-engine/history/user-operation-log.md#accessing-the-user-operation-log" >}}) of APIs that produce User Operation Logs.
 
 # Operation Log in Admin
-{{< img src="../img/admin-system-audit.png" title="Operation Log" >}}
+{{< img outdated="true" src="../img/admin-system-audit.png" title="Operation Log" >}}
 
 Admin provides the possibility to audit the activities which each user performs. You can find the Operation Log in the `System` submenu. The table is a representation of the history of various user operations, and it provides information about changes performed in the past. The rows are grouped by an operation to provide clear insights on the changes produced by each operation. Results can be filtered using the search bar at the top. You can add columns using the dropdown in the top right. They can be removed by clicking the <button class="btn btn-xs"><i class="glyphicon glyphicon-remove"></i></button> next to the corresponding table header.
 
@@ -37,4 +37,4 @@ You can filter the results by a timespan in which the operation occurred. Click 
 
 ## Operations of a specific Entity
 If you are only interested in operations concerning Authorizations, you can use the `Entity Type` filter. For a complete list of logged operations, check out [History and Audit Event Log](/user-guide/process-engine/history/#glossary-of-operations-logged-in-the-user-operation-log).
-{{< img src="../img/admin-audit-entity.png" title="Filter by Type" >}}
+{{< img outdated="true" src="../img/admin-audit-entity.png" title="Filter by Type" >}}

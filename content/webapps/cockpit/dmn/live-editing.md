@@ -19,7 +19,7 @@ menu:
 
 DMN tables can be changed directly in Cockpit. Clicking on the {{< glyphicon name="pencil" text=" Edit">}} button will open a dialog which contains an editable version of the DMN table. This button is only available for DMN resources. The edit dialog can also be opened by clicking on the {{< glyphicon name="pencil">}} icon on the [DMN definition page]({{< ref "/webapps/cockpit/dmn/decision-definition-view.md" >}}).
 
-{{< img src="../../img/cockpit-edit-dmn-dialog.png" title="Cockpit Edit DMN Dialog" >}}
+{{< img outdated="true" src="../../img/cockpit-edit-dmn-dialog.png" title="Cockpit Edit DMN Dialog" >}}
 
 Gray cells on the table display technical details like variable names and types. Changing this data might lead to incompatibility with existing definitions, especially if the decision table is integrated in a BPMN process.
 

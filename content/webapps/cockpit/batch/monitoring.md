@@ -12,7 +12,7 @@ menu:
 
 ---
 
-{{< img src="../../img/batch.png" title="Batch View Page" >}}
+{{< img outdated="true" src="../../img/batch.png" title="Batch View Page" >}}
 
 The batch page displays the status of running and completed batches. It allows displaying details of a batch such as the start- and end-time or the number of remaining jobs. For failed jobs, it displays the error message and allows a retry or deletion of the job.
 

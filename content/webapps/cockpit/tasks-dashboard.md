@@ -16,7 +16,7 @@ You can use the open tasks dashboard to see how the open tasks are distributed b
 Refer to the [Cockpit Plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) section for information about 
 adding a custom open task dashboard plugin.
 
-{{< img src="../img/task-dashboard.png" title="Open Task Dashboard" >}}
+{{< img outdated="true" src="../img/task-dashboard.png" title="Open Task Dashboard" >}}
 
 ## Open Tasks
 

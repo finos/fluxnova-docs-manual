@@ -15,7 +15,7 @@ menu:
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/cmmn/case-instance-view.png" title="Case Instance View" >}}
+{{< img outdated="true" src="../../img/cmmn/case-instance-view.png" title="Case Instance View" >}}
 
 Open the case instance view by selecting a case instance from the [case definition view][case-definition-view] instance list. This view allows you to drill down into a single case instance and explore its activities as well as the variables, tasks, etc.
 
@@ -23,7 +23,7 @@ Furthermore, you can maximize the diagram view or the detailed information panel
 
 # Detailed Information Panel
 
-{{< img src="../../img/cmmn/detailed-information-view.png" title="Detailed Information Panel" >}}
+{{< img outdated="true" src="../../img/cmmn/detailed-information-view.png" title="Detailed Information Panel" >}}
 
 You can access various information regarding the specific instance by selecting the applicable tab at the bottom of the screen:
 
@@ -47,21 +47,21 @@ In the Executed Decision Instances tab you find an overview of all decision inst
 
 # Add Variables
 
-{{< img src="../../img/cmmn/add-variables.png" title="Add Variables" >}}
+{{< img outdated="true" src="../../img/cmmn/add-variables.png" title="Add Variables" >}}
 
 Hit the {{< glyphicon name="plus" >}} button on the right side to add variables to a case instance. You can choose between different data types. Please note that variables will be overwritten if you add a new variable with an existing name.
 
 
 # Edit Variables
 
-{{< img src="../../img/cmmn/edit-variables.png" title="Edit Variables" >}}
+{{< img outdated="true" src="../../img/cmmn/edit-variables.png" title="Edit Variables" >}}
 
 Edit variables in the list of variables by using the {{< glyphicon name="pencil" >}} symbol. This feature allows you to change the value of variables as well as the type. A validation of the date format and for the value of integers happens on client side. If you enter NULL, the variable will be converted to a string type.
 
 
 # Terminate a Case Instance
 
-{{< img src="../../img/cmmn/terminate-case.png" title="Terminate Case Instance" >}}
+{{< img outdated="true" src="../../img/cmmn/terminate-case.png" title="Terminate Case Instance" >}}
 
 In the case instance view you can terminate a single case instance. Hit the {{< glyphicon name="remove" >}} button on the right side.
 
