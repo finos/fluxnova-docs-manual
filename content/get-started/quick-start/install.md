@@ -48,7 +48,7 @@ Make sure to use a Java version from [Fluxnova's list of supported environments]
 
 # Fluxnova Platform
 
-First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers](/manual/latest/installation/full/). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform-7).
+First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers](/manual/latest/installation/full/). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform).
 
 After downloading the distribution, unpack it inside a directory of your choice.
 

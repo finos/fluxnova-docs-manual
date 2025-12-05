@@ -7458,10 +7458,23 @@ a:focus {
   display: block;
 }
 /* line 92, styles\_content.less */
+.page-content figure .outdated-note {
+  text-align: center;
+  position: absolute;
+  font-size: medium;
+  color: white;
+  background: #00ce97;
+  background: rgba(0, 206, 151, 0.7);
+  width: 80%;
+  height: auto;
+  left: 10%;
+  top: 40%;
+}
+/* line 105, styles\_content.less */
 .page-content figure.image {
   text-align: center;
 }
-/* line 94, styles\_content.less */
+/* line 107, styles\_content.less */
 .page-content figure.image > span {
   max-width: 100%;
   border: 1px solid #777777;
@@ -7469,37 +7482,37 @@ a:focus {
   display: inline-block;
   margin: auto;
 }
-/* line 101, styles\_content.less */
+/* line 114, styles\_content.less */
 .page-content figure.image.no-lightbox {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 104, styles\_content.less */
+/* line 117, styles\_content.less */
 .page-content figure.image.no-lightbox > span {
   border: none;
   padding: 0;
 }
-/* line 110, styles\_content.less */
+/* line 123, styles\_content.less */
 .page-content figure.image ul {
   text-align: left;
 }
-/* line 115, styles\_content.less */
+/* line 128, styles\_content.less */
 .page-content figure.clickable {
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-/* line 120, styles\_content.less */
+/* line 133, styles\_content.less */
 .page-content figure.clickable > span {
   border-color: #00ce97;
 }
-/* line 124, styles\_content.less */
+/* line 137, styles\_content.less */
 .page-content figure.clickable:before,
 .page-content figure.clickable:after {
   display: block;
   position: absolute;
 }
-/* line 130, styles\_content.less */
+/* line 143, styles\_content.less */
 .page-content figure.clickable:before {
   width: 30px;
   height: 30px;
@@ -7516,7 +7529,7 @@ a:focus {
   color: #fff;
   transition: font-size 0.128s ease, top 0.128s ease, right 0.128s ease, width 0.128s ease, height 0.128s ease;
 }
-/* line 152, styles\_content.less */
+/* line 165, styles\_content.less */
 .page-content figure.clickable:after {
   width: 78px;
   height: 78px;
@@ -7527,7 +7540,7 @@ a:focus {
   background-color: rgba(0, 206, 151, 0.9);
   transform: rotateZ(45deg);
 }
-/* line 163, styles\_content.less */
+/* line 176, styles\_content.less */
 .page-content figure.clickable:hover:before {
   width: 34px;
   height: 34px;
@@ -7535,31 +7548,31 @@ a:focus {
   right: 0px;
   font-size: 22px;
 }
-/* line 173, styles\_content.less */
+/* line 186, styles\_content.less */
 .page-content .menu-pages {
   border-top: 1px dotted #eeeeee;
   padding-top: 15px;
   margin-top: 15px;
 }
-/* line 179, styles\_content.less */
+/* line 192, styles\_content.less */
 .page-content table {
   font-size: 12px;
 }
-/* line 182, styles\_content.less */
+/* line 195, styles\_content.less */
 .page-content th,
 .page-content td {
   white-space: normal;
 }
-/* line 188, styles\_content.less */
+/* line 201, styles\_content.less */
 .page-content .dl-horizontal dt {
   white-space: normal;
   margin-top: -3px;
 }
-/* line 196, styles\_content.less */
+/* line 209, styles\_content.less */
 .content-header {
   position: relative;
 }
-/* line 207, styles\_content.less */
+/* line 220, styles\_content.less */
 .edit-on-github,
 .social {
   position: absolute;
@@ -7569,22 +7582,22 @@ a:focus {
   border-radius: 0 0 6px 6px;
   padding: 1px 6px 0 6px;
 }
-/* line 217, styles\_content.less */
+/* line 230, styles\_content.less */
 .edit-on-github {
   right: 15px;
 }
-/* line 220, styles\_content.less */
+/* line 233, styles\_content.less */
 .edit-on-github a:after {
   display: none;
 }
-/* line 224, styles\_content.less */
+/* line 237, styles\_content.less */
 .edit-on-github span,
 .edit-on-github i {
   display: inline-block;
   white-space: nowrap;
   vertical-align: middle;
 }
-/* line 231, styles\_content.less */
+/* line 244, styles\_content.less */
 .edit-on-github i {
   transition: max-width 0.218s ease, margin 0.218s ease;
   display: inline-block;
@@ -7592,46 +7605,46 @@ a:focus {
   overflow: hidden;
   margin-left: -3px;
 }
-/* line 240, styles\_content.less */
+/* line 253, styles\_content.less */
 .edit-on-github:hover i {
   margin-left: 3px;
   max-width: 120px;
 }
-/* line 247, styles\_content.less */
+/* line 260, styles\_content.less */
 .social {
   left: 15px;
   list-style: none;
   margin: 0;
 }
-/* line 252, styles\_content.less */
+/* line 265, styles\_content.less */
 .social li {
   display: inline-block;
   margin: 0;
   padding: 0;
 }
-/* line 259, styles\_content.less */
+/* line 272, styles\_content.less */
 h1.page-title {
   padding-bottom: 10px;
   border-bottom: 1px solid currentColor;
   margin-bottom: 15px;
   margin-top: 45px;
 }
-/* line 267, styles\_content.less */
+/* line 280, styles\_content.less */
 dt {
   font-size: 110%;
 }
-/* line 270, styles\_content.less */
+/* line 283, styles\_content.less */
 dd {
   margin: 0.5em 0 1em 2em;
 }
-/* line 276, styles\_content.less */
+/* line 289, styles\_content.less */
 .gs-download-step-panel,
 .note,
 pre.console,
 figure.image {
   margin: 15px 30px;
 }
-/* line 284, styles\_content.less */
+/* line 297, styles\_content.less */
 pre.console {
   background-color: #333333;
   color: #11d511;
@@ -7639,11 +7652,11 @@ pre.console {
   border: 1px solid black;
   border-radius: 3px;
 }
-/* line 292, styles\_content.less */
+/* line 305, styles\_content.less */
 [data-bpmn-diagram] .bjs-powered-by {
   display: none;
 }
-/* line 297, styles\_content.less */
+/* line 310, styles\_content.less */
 .note {
   font-weight: 400;
   padding: 6px 12px;
@@ -7654,7 +7667,7 @@ pre.console {
   font-size: 15px;
   line-height: 25px;
 }
-/* line 307, styles\_content.less */
+/* line 320, styles\_content.less */
 .note:before {
   content: '';
   display: block;
@@ -7666,78 +7679,78 @@ pre.console {
   height: 30px;
   transform: rotateZ(45deg);
 }
-/* line 320, styles\_content.less */
+/* line 333, styles\_content.less */
 .note > h3 {
   margin-top: 6px;
   font-size: 16px;
   font-weight: 400;
 }
-/* line 326, styles\_content.less */
+/* line 339, styles\_content.less */
 .note p:last-child {
   margin-bottom: 0;
 }
-/* line 330, styles\_content.less */
+/* line 343, styles\_content.less */
 .note.docs-primary,
 .note.enterprise-feature {
   border-color: #A7A9AC;
 }
-/* line 333, styles\_content.less */
+/* line 346, styles\_content.less */
 .note.docs-primary:before,
 .note.enterprise-feature:before {
   background-color: #A7A9AC;
 }
-/* line 337, styles\_content.less */
+/* line 350, styles\_content.less */
 .note.docs-success {
   border-color: #5cb85c;
 }
-/* line 339, styles\_content.less */
+/* line 352, styles\_content.less */
 .note.docs-success:before {
   background-color: #5cb85c;
 }
-/* line 343, styles\_content.less */
+/* line 356, styles\_content.less */
 .note.docs-info {
   border-color: #5bc0de;
 }
-/* line 345, styles\_content.less */
+/* line 358, styles\_content.less */
 .note.docs-info:before {
   background-color: #5bc0de;
 }
-/* line 349, styles\_content.less */
+/* line 362, styles\_content.less */
 .note.docs-warning {
   border-color: #f0ad4e;
 }
-/* line 351, styles\_content.less */
+/* line 364, styles\_content.less */
 .note.docs-warning:before {
   background-color: #f0ad4e;
 }
-/* line 355, styles\_content.less */
+/* line 368, styles\_content.less */
 .note.docs-danger {
   border-color: #d9534f;
 }
-/* line 357, styles\_content.less */
+/* line 370, styles\_content.less */
 .note.docs-danger:before {
   background-color: #d9534f;
 }
-/* line 364, styles\_content.less */
+/* line 377, styles\_content.less */
 .gs-download-step-panel {
   border-left: 5px solid #5cb85c;
 }
-/* line 368, styles\_content.less */
+/* line 381, styles\_content.less */
 .gs-download-step-panel .panel-heading h4 {
   margin-top: 0;
   margin-bottom: 20px;
 }
-/* line 372, styles\_content.less */
+/* line 385, styles\_content.less */
 .gs-download-step-panel .panel-heading p {
   margin-bottom: 0;
 }
-/* line 375, styles\_content.less */
+/* line 388, styles\_content.less */
 .gs-download-step-panel .panel-heading a:hover,
 .gs-download-step-panel .panel-heading a:focus {
   text-shadow: none;
   box-shadow: none;
 }
-/* line 382, styles\_content.less */
+/* line 395, styles\_content.less */
 .gs-download-step-panel .panel-body {
   padding-top: 0;
   padding-bottom: 0;
@@ -7745,17 +7758,17 @@ pre.console {
   overflow: hidden;
   transition: max-height 0.218s ease, padding 0.218s ease;
 }
-/* line 390, styles\_content.less */
+/* line 403, styles\_content.less */
 .gs-download-step-panel .toggle-instructions {
   cursor: pointer;
 }
-/* line 394, styles\_content.less */
+/* line 407, styles\_content.less */
 .gs-download-step-panel.open .panel-body {
   padding-top: 15px;
   padding-bottom: 15px;
   max-height: 600px;
 }
-/* line 402, styles\_content.less */
+/* line 415, styles\_content.less */
 .lightbox {
   position: fixed;
   overflow: hidden;
@@ -7768,7 +7781,7 @@ pre.console {
   z-index: 1039;
   cursor: pointer;
 }
-/* line 414, styles\_content.less */
+/* line 427, styles\_content.less */
 .lightbox .content {
   max-width: 100%;
   max-height: 100%;
@@ -7781,30 +7794,30 @@ pre.console {
   background-color: #fff;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
 }
-/* line 427, styles\_content.less */
+/* line 440, styles\_content.less */
 .lightbox img {
   display: block;
   max-width: 100%;
   background-color: #fff;
 }
-/* line 433, styles\_content.less */
+/* line 446, styles\_content.less */
 .lightbox.open {
   bottom: 0;
 }
-/* line 438, styles\_content.less */
+/* line 451, styles\_content.less */
 code {
   padding: 0;
 }
-/* line 442, styles\_content.less */
+/* line 455, styles\_content.less */
 .docs-intro {
   padding: 0 15px;
   font-size: 120%;
 }
-/* line 448, styles\_content.less */
+/* line 461, styles\_content.less */
 .table-cmmn-events > tbody > tr > td {
   vertical-align: middle;
 }
-/* line 451, styles\_content.less */
+/* line 464, styles\_content.less */
 .table-cmmn-events .glyphicon-ok {
   color: #f0ad4e;
 }

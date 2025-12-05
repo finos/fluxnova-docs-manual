@@ -10,21 +10,21 @@ menu:
 
 ---
 
-{{< img src="../img/tasklist-dashboard-detail.png" title="Tasklist Dashboard" >}}
+{{< img outdated="true" src="../img/tasklist-dashboard-detail.png" title="Tasklist Dashboard" >}}
 
 On the dashboard of Tasklist you see an overview of pending tasks. On the left side of the screen, an overview of the [filters][tasklist-filters] is displayed. On the upper right side of the screen, you can set a follow-up or due date, you can claim, unclaim and reassign tasks and you can add comments. Underneath that section, the embedded form is displayed (please note that external task forms cannot be displayed here), you can switch to the task history, you can see the diagram view or you can view the description of the user task.
 
 
 # Toggle view
 
-{{< img src="../img/tasklist-toggle-view.png" title="Tasklist View" >}}
+{{< img outdated="true" src="../img/tasklist-toggle-view.png" title="Tasklist View" >}}
 
 Tasklist offers you the option of toggling the view options on the dashboard. You can select to have a focus on the [filters][tasklist-filters], the [filter results][filter-results], the [task view][task-view] or to display the full dashboard. To do so, hit the respective *toggle view* button. At any time, you can choose to instantly set full focus on the task view by hitting the *expand* button.
 
 
 # Start a process
 
-{{< img src="../img/tasklist-start-process.png" title="Start Process" >}}
+{{< img outdated="true" src="../img/tasklist-start-process.png" title="Start Process" >}}
 
 To start a process instance via Tasklist, click on *Start process* in the header menu and select a process out of the displayed list of process definitions. If no process definitions are listed here, please verify that your process application is deployed correctly.
 
@@ -33,7 +33,7 @@ Depending on whether you have defined a [start form]({{< ref "/user-guide/task-f
 
 # Create a standalone task
 
-{{< img src="../img/tasklist-start-task.png" title="Standalone Tasks" >}}
+{{< img outdated="true" src="../img/tasklist-start-task.png" title="Standalone Tasks" >}}
 
 Tasklist offers you the possibility of creating standalone tasks. To do so, click on the *Create task* button. In the screen that appears, you can define a name of the task, the assignee and you can add a description. Once you click on *Save*, the task is created.
 
@@ -42,7 +42,7 @@ Now the standalone task becomes visible in the filter results and can be handled
 
 # Filter results
 
-{{< img src="../img/tasklist-filter-results.png" title="Filter Results" >}}
+{{< img outdated="true" src="../img/tasklist-filter-results.png" title="Filter Results" >}}
 
 Here you can see an overview of all tasks for the selected [filter][tasklist-filters]. The filter with the lowest priority is displayed first. After selecting the appropriate filter, you will see an overview of all tasks, sorted by a specified criteria (by default it is sorted by the creation date). You can change the sorting of the tasks by clicking on the name of the sorting property. You can toggle between ascending and descending order.
 
@@ -53,7 +53,7 @@ To start working on the task, simply select the task.
 
 ## Search for tasks
 
-{{< img src="../img/tasklist-task-search.png" title="Task Search" >}}
+{{< img outdated="true" src="../img/tasklist-task-search.png" title="Task Search" >}}
 
 Above the filter results, you have the option of searching for user tasks within the selected filter results. To do so, click in the search box and select the parameters to search for. You can also begin typing to find the required parameter faster. Depending on the selected property, you have to specify the value of the property. Some properties also allow operators other than equal, e.g., `'like'`, which allows to search for a task where the entered value is a substring of the property value. The `'in'` operator allows you to provide a comma-separated list of possible values.
 
@@ -64,7 +64,7 @@ If you are searching for a variable of type string, which has a numeric, boolean
 Furthermore, you can copy a link to the current search query to your clipboard by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-link"></i></button> button and you can save search queries to your local browser storage by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and inserting a name in the drop down menu that appears. You can then retrieve the search query by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and selecting the chosen name in the drop down menu.
 
 ### Case insensitive search
-{{< img src="../img/tasklist-case-insensitive.png" title="Task Search" >}}
+{{< img outdated="true" src="../img/tasklist-case-insensitive.png" title="Task Search" >}}
 
 Sometimes it is not relevant for your search whether the value is capitalized or not. For search queries for Process-, Task- and Case Variables, you can configure if the search should be performed case sensitive or case insensitive. A case insensitive search for `'Fruits Inc.'` will also return matches for values like `'fruits inc.'` or `'FRUITS Inc.'`.
 
@@ -85,11 +85,11 @@ Occasionally, you may search for multiple query criterion values. The `IN` opera
 To use the `IN` operator, select a query criterion that supports the `IN` operator, and provide the values as a comma-separated list. To adjust the comma-separated list of values,
 start editing by clicking on the value. You can expand the value in a modal dialog for easier editing by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-resize-full"></i></button> button.
 
-{{< img src="../img/tasklist-in-operator-modal.png" title="IN Operator Modal" >}}
+{{< img outdated="true" src="../img/tasklist-in-operator-modal.png" title="IN Operator Modal" >}}
 
 # Task view
 
-{{< img src="../img/tasklist-task-view.png" title="Task Detail View" >}}
+{{< img outdated="true" src="../img/tasklist-task-view.png" title="Task Detail View" >}}
 
 On the right section of the dashboard, you can see the task view. Here you can work on tasks and perform the following operational actions.
 
@@ -111,7 +111,7 @@ In Tasklist you can add and view comments on specific tasks. After selecting a t
 
 # Task Detail Tabs
 
-{{< img src="../img/tasklist-task-view-tabs.png" title="Detail Tabs" >}}
+{{< img outdated="true" src="../img/tasklist-task-view-tabs.png" title="Detail Tabs" >}}
 
 In the lower section of the task view there are several tabs which can be selected to display both the task form itself and additional information related to this user task.
 

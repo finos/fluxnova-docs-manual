@@ -12,7 +12,7 @@ menu:
 ---
 
 
-{{< img src="../../img/cockpit-failed-job-drill-down.png" title="Failed Job Drill Down" >}}
+{{< img outdated="true" src="../../img/cockpit-failed-job-drill-down.png" title="Failed Job Drill Down" >}}
 
 Unresolved incidents of a process instance or a sub process instance are indicated by Cockpit as failed jobs. To localize which instance of a process failed, Cockpit allows you to drill down to the unresolved incident by using the process status dots. Hit a red status dot of the affected instance in the Process Definition View to get an overview of all incidents. The *Incidents* tab in the [Detailed Information Panel]({{< ref "/webapps/cockpit/bpmn/process-instance-view.md#detailed-information-panel" >}}) lists the failed activities with additional information. Furthermore, you have the possibility of going down to the failing instance of a sub process.
 
@@ -28,7 +28,7 @@ A modal dialog opens where you can:
 
 After clicking on **Retry**, the engine will re-trigger the jobs and increment their retry values in the database so the Job Executor can acquire and execute the jobs again.
 
-{{< img src="../../img/cockpit-instance-job-retry.png" title="Process instance job retry" >}}
+{{< img outdated="true" src="../../img/cockpit-instance-job-retry.png" title="Process instance job retry" >}}
 
 {{< comment >}}
 # Bulk Retry
@@ -37,7 +37,7 @@ After clicking on **Retry**, the engine will re-trigger the jobs and increment t
   Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/cockpit-bulk-retry.png" title="Batch Retry" >}}
+{{< img outdated="true" src="../../img/cockpit-bulk-retry.png" title="Batch Retry" >}}
 
 You can also perform a synchronous bulk retry of failed jobs. This feature is available in the [process definition view]({{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}) in the Job Definitions tab. If you hit this button, you will increment the number of retries for all the defined jobs of the process definition.
 {{< /comment >}}

@@ -18,7 +18,7 @@ menu:
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
 {{< /enterprise >}}
 
-{{< img src="../../img/cockpit-modification.png" title="Process Instance Modification" >}}
+{{< img outdated="true" src="../../img/cockpit-modification.png" title="Process Instance Modification" >}}
 
 In the detail view, you can modify the process instance's execution state. A modification can be one or multiple of the following operations:
 
@@ -42,7 +42,7 @@ In the modification tab you can then configure the specification of the instruct
 
 ## Cancel Running Activity Instances
 
-{{< img src="../../img/cockpit-modification-cancel.png" title="Cancel Modification" >}}
+{{< img outdated="true" src="../../img/cockpit-modification-cancel.png" title="Cancel Modification" >}}
 
 When canceling activity instances you can select the instances of the activity you want to cancel. You can select them by their instance ID using the Select Instances button on the right. To better distinguish between activity instances, you can also show variables assigned to this instance using the {{< glyphicon name="eye-open" >}} button.
 
@@ -51,7 +51,7 @@ When canceling all instances of an activity using the {{< glyphicon name="plus-s
 
 ## Start New Activity Instances
 
-{{< img src="../../img/cockpit-modification-start.png" title="Modification Start" >}}
+{{< img outdated="true" src="../../img/cockpit-modification-start.png" title="Modification Start" >}}
 
 When starting a new activity instance, you have the option to start before or start after the activity. Using startBefore, the activity will be executed. StartAfter is only possible if there is only one sequence flow going out of the activity. In both cases you have the option to create new variables which are created or updated with the creation of the activity. Starting an activity instantiates all parent scopes (e.g., embedded sub process that contains the activity) that are not instantiated yet before the actual activity is executed.
 
@@ -62,7 +62,7 @@ When starting activities with a multi-instance flag, there is the option to eith
 
 # Review Modification Instructions
 
-{{< img src="../../img/cockpit-modification-review.png" title="Modification Review" >}}
+{{< img outdated="true" src="../../img/cockpit-modification-review.png" title="Modification Review" >}}
 
 At any point during the creation of the modification, you can show the payload of the modification by clicking the {{< glyphicon name="eye-open" >}} button. This will show the request payload that will be sent via the [REST API]({{< ref "/reference/rest/_index.md" >}}).
 
@@ -74,17 +74,17 @@ To perform the modification, you have to click on *Apply modifications*. Then yo
 
 # Perform a Batch Modification
 
-{{< img src="../../img/cockpit-batch-modification-view.png" title="Batch Modification View" >}}
+{{< img outdated="true" src="../../img/cockpit-batch-modification-view.png" title="Batch Modification View" >}}
 
 
 When multiple process instances are required to be modified the batch modification feature can be used. To perform batch modifications, you need to click on the *Modify* tab in the process definition view.
 
-{{< img src="../../img/cockpit-batch-modification-detail.png" title="Batch Modification Detail View" >}}
+{{< img outdated="true" src="../../img/cockpit-batch-modification-detail.png" title="Batch Modification Detail View" >}}
 
 
 The batch modification operation is handled similarly to the modification of a single process instance.
 
-{{< img src="../../img/cockpit-batch-modification-instance-selection.png" title="Instance Selection" >}}
+{{< img outdated="true" src="../../img/cockpit-batch-modification-instance-selection.png" title="Instance Selection" >}}
 
 However, to get to the **Apply Modifications** modal, first click **Select Instances**. This opens another modal which allows you to select the process instances the modification should be applied to.
 
@@ -97,7 +97,7 @@ Selecting all instances might create a high load on the database and application
 When you have made your selection click on **Modify Selected Instances**. This leads you to the **Apply Modification** modal.
 
 
-{{< img src="../../img/cockpit-batch-modification-options.png" title="Additions Options" >}}
+{{< img outdated="true" src="../../img/cockpit-batch-modification-options.png" title="Additions Options" >}}
 
 
 Here you have two additional options to select - *Asynchronous* and *Only Cancel Currently Active Activity Instances*. By default both options are checked.

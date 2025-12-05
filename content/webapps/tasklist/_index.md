@@ -12,4 +12,4 @@ menu:
 
 Tasklist is a web application that allows you to work on User Tasks. Tasklist is part of the Fluxnova distribution and ready to use by opening [http://localhost:8080/fluxnova/app/tasklist](http://localhost:8080/fluxnova/app/tasklist).
 
-{{< img src="img/tasklist-dashboard.png" title="Tasklist Dashboard" >}}
+{{< img outdated="true" src="img/tasklist-dashboard.png" title="Tasklist Dashboard" >}}

@@ -15,7 +15,7 @@ Spring boot starters allow to enable behavior of your spring-boot application by
 
 These starters will pre-configure the Fluxnova process engine, REST API and Web applications, so they can easily be used in a standalone process application.
 
-If you are not familiar with [Spring Boot](http://projects.spring.io/spring-boot/), read the [getting started](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started) guide or use the [Fluxnova Initializr](https://start.camunda.com/).
+If you are not familiar with [Spring Boot](http://projects.spring.io/spring-boot/), read the [getting started](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started) guide.
 
 To enable Fluxnova auto configuration, add the following dependency to your ```pom.xml```:
 

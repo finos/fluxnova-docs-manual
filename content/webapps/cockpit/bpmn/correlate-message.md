@@ -15,7 +15,7 @@ menu:
 When an execution waits in a message-catching flow-node, you can use [Message Correlation][] to 
 continue the execution. Cockpit offers a [Batch Operation][] to correlate messages.
 
-{{< img src="../../img/correlate-message/batch-operation.png" alt="Correlate Message Batch Operation" caption="" >}}
+{{< img outdated="true" src="../../img/correlate-message/batch-operation.png" alt="Correlate Message Batch Operation" caption="" >}}
 
 You can configure the batch operation as follows:
 
@@ -31,11 +31,11 @@ You can configure the batch operation as follows:
 You can find a {{< glyphicon name="envelope" >}} button on the right side next to the BPMN diagram 
 on the process definition and instance view.
 
-{{< img src="../../img/correlate-message/process-action.png" alt="Process action to correlate a message" caption="Process action to correlate a message" >}}
+{{< img outdated="true" src="../../img/correlate-message/process-action.png" alt="Process action to correlate a message" caption="Process action to correlate a message" >}}
 
 If you click this button, a modal dialog opens:
 
-{{< img src="../../img/correlate-message/modal-dialog.png" alt="Modal dialog to correlate a message" caption="Modal dialog to correlate a message" >}}
+{{< img outdated="true" src="../../img/correlate-message/modal-dialog.png" alt="Modal dialog to correlate a message" caption="Modal dialog to correlate a message" >}}
 
 When you click into the text input field, you can choose a message name from a list of suggestions.
 
@@ -52,7 +52,7 @@ You can open the modal dialog prefilled with the message name by clicking the {{
 in the upper right corner of a message-catching flow-node. To make the button visible, hover over a 
 message-catching flow-node.
 
-{{< img src="../../img/correlate-message/diagram-overlay-button.png" alt="Diagram overlay button" caption="Diagram overlay button" >}}
+{{< img outdated="true" src="../../img/correlate-message/diagram-overlay-button.png" alt="Diagram overlay button" caption="Diagram overlay button" >}}
 
 {{< note title="Known limitations" class="info" >}}
 Not all message-catching flow-nodes in a BPMN diagram are covered with overlays or are present

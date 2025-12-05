@@ -15,5 +15,5 @@ Completed the <a href="/get-started">Getting Started Guides</a>? Now discover wh
 
 This page collects links to hands-on examples around Fluxnova.
 
-* [Examples](https://github.com/finos/fluxnova-bpm-examples) (On Github)
-* [Fluxnova Consulting Examples](https://github.com/finos/fluxnova-consulting) (On Github)
+* [Examples](https://github.com/finos/fluxnova-examples) (On Github)
+* more to come.

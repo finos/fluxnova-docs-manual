@@ -3,5 +3,10 @@
       src="{{ .Get "src" }}"
       {{ if (.Get "title") }}
           title="{{ with .Get "title"}}{{.}}{{ end }}"
-      {{ end }} /></span>
+      {{ end }} />
+      {{ if (.Get "outdated") }}
+      <div class="outdated-note">
+          <p>You're seeing an image from an earlier product here. A new, up-to-date screenshot is on its way!</p>
+      </div>
+      {{ end }}</span>
 </figure>

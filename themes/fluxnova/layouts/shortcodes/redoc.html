@@ -1,0 +1,61 @@
+{{- $file := .Get 0 -}}
+{{- $url := "" -}}
+{{- $otheroptions := .Get 1 -}}
+
+{{ if hasPrefix $file "http"}}
+    {{- $url = $file -}}
+{{ else }}
+    {{ if (fileExists (print .Page.File.Dir $file)) -}}
+        <!-- First try as relative path -->
+        {{- $url = (print .Page.Site.BaseURL .Page.File.Dir $file) -}}
+    {{ else }}
+        {{ if $.Site.Params.openApiBaseURL }}
+            <!-- Then as project parameter on openAPI base URL-->
+            {{- $url = $.Site.Params.openApiBaseURL -}}
+            {{ if (strings.Contains $url "%s") }}
+              {{- $url = (printf $url $.Site.Params.version) -}}
+            {{ end }}
+            {{- $url = (urls.JoinPath $url $file) -}}
+        {{ else }}
+            <!-- Then as project-relative path-->
+            {{- $url = (print .Page.Site.BaseURL $file) -}}
+        {{- end }}
+    {{- end }}
+{{- end -}}
+
+        <!-- CSS style overrides for Redoc API docs -->
+        <style>
+          #redoc input { height: 64px; }
+          span[type="put"], span[type="get"], span[type="delete"], span[type="post"], span[type="options"], span[type="patch"], span[type="basic"], span[type="link"], span[type="head"] {
+              border-radius: 4px;
+            }
+          #redoc h2 { margin-top: 0px;}
+        </style>
+
+    <!--
+    Redoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <redoc 
+        spec-url='{{ $url }}' 
+        hide-hostname="true" 
+        suppress-warnings="true" 
+        lazy-rendering  
+        native-scrollbars 
+        scroll-y-offset=".js-navbar-scroll" 
+        theme='{
+            "colors": {
+              "primary": {
+                "main": "#00ce97"
+              }
+            }
+          }'
+        {{ $otheroptions }}>
+    </redoc>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"></script>

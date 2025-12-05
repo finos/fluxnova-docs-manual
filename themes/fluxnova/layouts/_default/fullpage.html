@@ -1,0 +1,9 @@
+<meta name="generator" content="Hugo {{hugo.Version}}" />
+  <link rel="icon" href="{{.Site.BaseURL}}img/Fluxnova_icon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{.Site.BaseURL}}img/Fluxnova_icon.png" type="image/png" />
+
+  {{ $styles := resources.Get "css/docs.css" | fingerprint }}
+
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{ .Content }}
+{{ partial "footer.html" . }}
