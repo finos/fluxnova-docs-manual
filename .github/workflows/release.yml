@@ -1,0 +1,50 @@
+name: Release and Publish Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'release/*'
+
+jobs:
+  build-and-publish:
+    name: Build and Publish Documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # To push to gh-pages branch
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # for hugo to get git info
+
+      - name: Get version
+        id: get_version
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            FULL_VERSION=${{ github.event.inputs.version }}
+          else
+            FULL_VERSION=${GITHUB_REF_NAME#v}
+          fi
+          MINOR_VERSION=$(echo "$FULL_VERSION" | cut -d. -f1,2)
+          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
+          echo "minor_version=${MINOR_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.145.0'
+          extended: true
+
+      - name: Build website
+        run: hugo --minify
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: manual/${{ steps.get_version.outputs.minor_version }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'docs: publish website for ${{ steps.get_version.outputs.version }}'
