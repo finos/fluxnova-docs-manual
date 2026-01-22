@@ -1,10 +1,7 @@
 name: Release and Publish Documentation
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - 'release/*'
+  pull_request:
 
 jobs:
   build-and-publish:
