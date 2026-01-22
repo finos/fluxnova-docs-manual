@@ -35,7 +35,7 @@ params:
   javadocsBaseURL: "https://docs.fluxnova.finos.org/javadocs/%s"
   
   github:
-    repositoryName: "finos/fluxnova-docs-manual"
+    # repositoryName: "finos/fluxnova-docs-manual"
     branch: "main"    
 
 outputs:
