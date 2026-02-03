@@ -31,7 +31,7 @@ jobs:
           echo "minor_version=${MINOR_VERSION}" >> $GITHUB_OUTPUT
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.145.0'
           extended: true
