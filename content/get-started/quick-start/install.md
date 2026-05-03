@@ -43,12 +43,12 @@ java -version
 If you need to install Java Runtime Environment, you can [find the download from Oracle here](https://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 
 {{< note class="info" title="Supported Java versions" >}}
-Make sure to use a Java version from [Fluxnova's list of supported environments](/manual/latest/introduction/supported-environments/#java-runtime).
+Make sure to use a Java version from [Fluxnova's list of supported environments](/introduction/supported-environments/#java).
 {{< /note >}}
 
 # Fluxnova Platform
 
-First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers](/manual/latest/installation/full/). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform).
+First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers](/introduction/supported-environments/). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](/introduction/downloading-fluxnova/).
 
 After downloading the distribution, unpack it inside a directory of your choice.
 
@@ -58,7 +58,7 @@ This script will start the application server. Open your web browser and navigat
 
 # Fluxnova Modeler
 
-Download the Fluxnova Modeler from [the download page](https://fluxnova.finos.org/download/modeler/).
+Download the Fluxnova Modeler from [the download page](/introduction/downloading-fluxnova/).
 
 After downloading the Modeler, simply unzip the download in a folder of your choice.
 
