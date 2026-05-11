@@ -31,9 +31,10 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 
 ## Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin
 
-* Apache Tomcat 9.0 / 10.1
-* JBoss EAP 7.4 / 8.0
-* WildFly Application Server 23.0 / 26.0 / 33.0 / 35.0
+* Apache Tomcat 10.1
+* JBoss EAP 8.0
+* WildFly Application Server 33.0 / 35.0 / 37.0
+* Oracle WebLogic Server 14.1.2
 
 # Databases
 
@@ -42,8 +43,8 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 * MySQL  8.0
 * Oracle 19c / 23ai
 * IBM DB2 11.5 (excluding IBM z/OS for all versions)
-* PostgreSQL 14 / 15 / 16 / 17
-* Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16
+* PostgreSQL 15 / 16 / 17 / 18
+* Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16 / 17
 * Microsoft SQL Server 2017 / 2019 / 2022 (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
 * Microsoft Azure SQL with Fluxnova-supported SQL Server compatibility levels 
   (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-fluxnova" >}})): 
@@ -71,11 +72,12 @@ Clustered or replicated databases are supported given the following conditions. 
 
 # Fluxnova Modeler
 
-[Supported environments](https://docs.camunda.io/docs/reference/supported-environments/#camunda-modeler) for Fluxnova Modeler have moved to [docs.camunda.io](https://docs.camunda.io/).
+[Supported environments for Fluxnova Modeler -Windows ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742061267)  
+[Supported environments for Fluxnova Modeler -Mac ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742038638)  
 
 # Maintenance Policy
 
-Check our [Enterprise Announcements page](/enterprise/announcement/) for confirmed changes to our supported environments in upcoming releases.
+Check our [Announcements page](https://github.com/finos/fluxnova-bpm-platform/discussions/categories/announcements) for confirmed changes to our supported environments in upcoming releases.
 
 ## Adding Environments
 

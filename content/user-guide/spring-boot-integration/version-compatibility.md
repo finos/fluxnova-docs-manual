@@ -32,6 +32,11 @@ Other combinations must be thoroughly tested before being used in production.
     <td>1.0.x</td>
     <td>3.4.x</td>
   </tr>
+  <tr>
+    <td>2.0.x</td>
+    <td>2.0.x</td>
+    <td>3.5.x</td>
+  </tr>
 </table>
 
 \* For these versions, use the following Maven coordinates:
@@ -70,3 +75,4 @@ configure `dependencyManagement` in your application, e.g. add the following whe
   </dependencies>
 </dependencyManagement>
 ```
+

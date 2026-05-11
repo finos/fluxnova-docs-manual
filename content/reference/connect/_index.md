@@ -70,7 +70,7 @@ to ensure correct versions for every Fluxnova project.
 </dependencies>
 ```
 
-Fluxnova Connect is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Cfluxnova-connect).
+Fluxnova Connect is published to [maven central](https://mvnrepository.com/artifact/org.finos.fluxnova.connect).
 
 {{< note title="Process engine plugin" class="info" >}}
 If you are using Connect in the Fluxnova process engine, you also need the `fluxnova-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< ref "/user-guide/process-engine/connectors.md" >}}).
@@ -82,6 +82,4 @@ Fluxnova Connect uses [fluxnova-commons-logging](https://github.com/finos/fluxno
 a logging backend. To enable logging a SLF4J implementation has to be part of
 your classpath. For example `slf4j-simple`, `log4j12` or `logback-classic`.
 
-To also enable logging for the Apache HTTP client you can use a [SLF4J
-bridge](http://www.slf4j.org/legacy.html) like `jcl-over-slf4j` as the Apache HTTP Client doesn't support
-SLF4J.
+Apache HTTP Client 5.x has built-in SLF4J support, so no additional bridges are required for HTTP client logging.

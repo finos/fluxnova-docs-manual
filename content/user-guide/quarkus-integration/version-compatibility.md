@@ -23,6 +23,10 @@ Only these default combinations are recommended (and supported) by Fluxnova.
     <td>1.0.x</td>
     <td>3.15.x</td>
   </tr>
+  <tr>
+    <td>2.0.x</td>
+    <td>3.27.x</td>
+  </tr>
 </table>
 
 In case a certain Quarkus version has a bug, you can override the existing Quarkus version by adding the following

@@ -65,6 +65,7 @@ See the [TTL configuration section](#history-time-to-live) for how to set TTL.
 * Case Instances: The time when the instance completes.
 * Batches: The time when the batch completes.
 
+For process instances in a hierarchy (e.g. a process instance that is started by another process instance via a BPMN Call Activity), history cleanup is only started after the root process instance has completed, even if child instances complete earlier.
 The end time is persisted in the corresponding instance tables `ACT_HI_PROCINST`, `ACT_HI_CASEINST`, `ACT_HI_DECINST` and `ACT_HI_BATCH`.
 
 ### Instance removal time

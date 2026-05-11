@@ -9,14 +9,10 @@ menu:
     identifier: "user-guide-cockpit-pi-modification"
     parent: "user-guide-cockpit-bpmn"
     pre: "Modify the execution state of a running process instance."
-    name: "Instance Modification"
+    name: "Process Instance Modification"
 
 ---
 
-
-{{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
-{{< /enterprise >}}
 
 {{< img outdated="true" src="../../img/cockpit-modification.png" title="Process Instance Modification" >}}
 
@@ -47,6 +43,14 @@ In the modification tab you can then configure the specification of the instruct
 When canceling activity instances you can select the instances of the activity you want to cancel. You can select them by their instance ID using the Select Instances button on the right. To better distinguish between activity instances, you can also show variables assigned to this instance using the {{< glyphicon name="eye-open" >}} button.
 
 When canceling all instances of an activity using the {{< glyphicon name="plus-sign" text=" All">}} button, all instances which exist at the moment this instruction is executed will be canceled. This will also cancel instances which were created in the same modification (e.g., using a startBefore instruction before the cancel instruction). In most cases, you probably want to explicitly state the instances to cancel.
+
+{{< img outdated="true" src="../../img/cockpit-modification-cancel-in-progress.png" title="Cancellation Modification in progress" >}}
+
+During the activity cancellation process, an orange badge in the top left corner of the activity indicates how many activity instances will be affected by this modification.
+
+{{< img outdated="true" src="../../img/cockpit-modification-cancel-done.png" title="Cancellation Modification done" >}}
+
+Once the cancellation was successful, an orange badge in the lower right hand corner of the activity indicates the number of instances that were cancelled.
 
 
 ## Start New Activity Instances

@@ -34,8 +34,10 @@ a new connector configurator.
 ```java
 package org.finos.fluxnova.connect.example;
 
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
+import org.finos.fluxnova.connect.httpclient.HttpConnector;
 import org.finos.fluxnova.connect.httpclient.impl.AbstractHttpConnector;
 import org.finos.fluxnova.connect.spi.ConnectorConfigurator;
 
@@ -46,9 +48,12 @@ public class HttpConnectorConfigurator implements ConnectorConfigurator<HttpConn
   }
 
   public void configure(HttpConnector connector) {
+    PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
+    connectionManager.setDefaultMaxPerRoute(10);
+    connectionManager.setMaxTotal(200);
+    
     CloseableHttpClient client = HttpClients.custom()
-      .setMaxConnPerRoute(10)
-      .setMaxConnTotal(200)
+      .setConnectionManager(connectionManager)
       .build();
     ((AbstractHttpConnector) connector).setHttpClient(client);
   }
@@ -64,6 +69,10 @@ information see the [extending Connect]({{< ref "/reference/connect/extending-co
 ```
 org.finos.fluxnova.connect.example.HttpConnectorConfigurator
 ```
+
+{{< note title="Apache HTTP Client 5.x Migration" class="info" >}}
+Starting from Fluxnova 2.0.0, the Connect HTTP connector uses Apache HTTP Client 5.x. While the high-level Connect API remains the same, custom configurations and extensions need to use the new HttpClient 5.x packages (`org.apache.hc.client5.*` and `org.apache.hc.core5.*`) instead of the previous 4.x packages (`org.apache.http.*`).
+{{< /note >}}
 
 # Requests
 

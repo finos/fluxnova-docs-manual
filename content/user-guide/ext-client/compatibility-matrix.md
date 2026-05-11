@@ -24,6 +24,10 @@ Each version of Fluxnova is bound to a specific version of the **External Task C
     <td>1.0.x</td>
     <td>3.1.x</td>
   </tr>
+  <tr>
+    <td>2.0.x</td>
+    <td>3.1.x</td>
+  </tr>
 </table>
 
 Only these default combinations are recommended (and supported) by Fluxnova. Nevertheless, each version of the External

@@ -239,6 +239,33 @@ The following is a list with the most commonly used process engine configuration
   </tr>
 
   <tr>
+    <td><code>validateAuthResourceIdExists</code></td>
+    <td>Boolean</td>
+    <td>
+      Enables validation of referenced entities when authorizations are persisted.
+      <p>
+        When set to <code>true</code>, the process engine validates that all referenced
+        users, groups, and resources exist before saving an authorization.
+      </p>
+      <p>
+        This validation is performed independently of whether authorization checks
+        are enabled.
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>true</code>
+      </p>
+
+      <p>
+        The validation applies to all authorization resource types supported by
+        the process engine. For a complete list of resources, see
+        <a href="{{< ref "/user-guide/process-engine/authorization-service.md#resources" >}}">
+            Authorization Resources
+        </a>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
     <td><code>autoStoreScriptVariables</code></td>
     <td>Boolean</td>
     <td>
@@ -931,7 +958,7 @@ The following is a list with the most commonly used process engine configuration
         should still perform output mapping. When set to <code>true</code>, output mapping will not be done for any
         activity that was canceled. This might be helpful when it is not certain which variables will be available when
         the activity is canceled (e.g. when an external task does not return an expected variable).</p>
-        <p>This flag is often used together with <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">camunda:errorEventDefinition</a> extension elements on external service tasks.</p>
+        <p>This flag is often used together with <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">fluxnova:errorEventDefinition</a> extension elements on external service tasks.</p>
         <p>Default value: <code>false</code></p>
     </td>
   </tr>

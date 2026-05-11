@@ -122,6 +122,12 @@ The resource pattern can be changed using properties (see [properties](#fluxnova
 
 Applies the authorization configuration to the process engine. If not configured, the `fluxnova` default values are used (see [properties](#fluxnova-engine-properties)).
 
+
+{{< note title="" class="info" >}}
+  Starting with **Fluxnova 2.0.0**, the engine validates authorization references by default (see `fluxnova.bpm.authorization.validate-auth-resource-id-exists` below).
+{{< /note >}}
+
+
 ## Overriding the Default Configuration
 
 Provide a bean implementing one of the marker interfaces. For example to customize the datasource configuration:
@@ -279,13 +285,13 @@ The available properties are as follows:
 <tr>
 <td><code>.version</code></td>
 <td>Version of the process engine</td>
-<td>Read only value, e.g., 7.4.0</td>
+<td>Read only value, e.g., 2.0.0</td>
 </tr>
 
 <tr>
 <td><code>.formatted-version</code></td>
 <td>Formatted version of the process engine</td>
-<td>Read only value, e.g., (v7.4.0)</td>
+<td>Read only value, e.g., (v2.0.0)</td>
 </tr>
 
 <tr>
@@ -754,9 +760,24 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
   <td><code>300,000</code></td>
 </tr>
 
-<tr><td colspan="4"><b>Authorization</b></td></tr>
+<tr><td colspan="4"><b>REST API</b></td></tr>
 <tr>
-<td rowspan="4"><code>fluxnova.bpm.authorization</code></td>
+<td><code>fluxnova.bpm.rest-api.fetch-and-lock</code></td>
+<td><code>.queue-capacity</code></td>
+<td>Configure the blocking queue limit of long-polling ‘Fetch and Lock’ requests.</td>
+<td><code>200</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>.unique-worker-request</code></td>
+<td>If the flag is activated, pending requests with the same workerId are cancelled when a new request is received.</td>
+<td><code>false</code></td>
+</tr>
+
+<tr><td colspan="5"><b>Authorization</b></td></tr>
+<tr>
+<td rowspan="5"><code>fluxnova.bpm.authorization</code></td>
 <td><code>.enabled</code></td>
 <td>Enables authorization</td>
 <td><i>Fluxnova default value</i></td>
@@ -777,6 +798,16 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 <tr>
 <td><code>.tenant-check-enabled</code></td>
 <td>Performs tenant checks to ensure that an authenticated user can only access data that belongs to one of his tenants.</td>
+<td><code>true</code></td>
+</tr>
+
+
+<tr>
+<td><code>.validate-auth-resource-id-exists</code></td>
+<td>
+Enables validation of authorization references when authorizations are persisted (users, groups, and resource references).
+This validation is performed independently of whether authorization checks are enabled.
+</td>
 <td><code>true</code></td>
 </tr>
 
@@ -853,7 +884,7 @@ The method of configuration described above does not cover all process engine pr
 property that is not exposed (i.e. listed above) you can use generic-properties.
 
 ```yaml
-camunda:
+fluxnova:
   bpm:
     generic-properties:
       properties:
@@ -878,10 +909,22 @@ fluxnova.bpm:
   filter:
     create: All tasks
 ```
+
+
+Configure authorization validation via exposed properties:
+
+```yaml
+fluxnova:
+  bpm:
+    authorization:
+      enabled: true
+      validate-auth-resource-id-exists: true
+```
+
 Override configuration using generic properties:
 
 ```yaml
-camunda:
+fluxnova:
   bpm:
     generic-properties:
       properties:

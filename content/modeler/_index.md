@@ -1,15 +1,13 @@
 ---
 
 title: 'Fluxnova Modeler'
-layout: 'section-list'
-weight: 45
-aliases:
-  - modeler/fluxnova-modeler
+weight: 25
 
 menu:
   main:
     name: "Modeler"
     identifier: "modeler"
+    parent: "manual"
     pre: "Desktop Application for modeling BPMN, DMN and CMMN. *Works with Fluxnova 1.0.0 and above.*"
 
 ---

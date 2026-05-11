@@ -21,13 +21,12 @@ This guide uses a number of variables to denote common path names and constants:
 * `$WILDFLY_HOME` points to the JBoss EAP/WildFly application server main directory.
 * `$WILDFLY_VERSION` denotes the version of WildFly application server.
 * `$WILDFLY_DISTRIBUTION` represents the downloaded pre-packaged Fluxnova distribution for WildFly, e.g. `fluxnova-bpm-wildfly-$PLATFORM_VERSION.zip` or `fluxnova-bpm-wildfly-$PLATFORM_VERSION.tar.gz`.
-* `$PLATFORM_VERSION` denotes the version of Fluxnova you want to install or already have installed, e.g. `7.0.0`.
+* `$PLATFORM_VERSION` denotes the version of Fluxnova you want to install or already have installed, e.g. `1.0.0`.
 {{< /note >}}
 
 ## Setup
 
-* For WildFly ≥27 / JBoss EAP 8, download the [Fluxnova WildFly distribution](https://downloads.camunda.cloud/release/camunda-bpm/wildfly/).
-* For WildFly ≤26 / JBoss EAP 7, download the [`camunda-wildfly26-modules`](https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/wildfly/camunda-wildfly26-modules/).
+Download the Fluxnova WildFly distribution.
 
 ### Copy Modules
 
@@ -61,7 +60,7 @@ Add the Fluxnova subsystem as extension:
 
 Configure the thread pool for the Fluxnova Job Executor:
 
-Since Fluxnova.5, the configuration of the thread pool is done in the Fluxnova subsystem, not in the JBoss Threads subsystem anymore like it was done before 7.5.
+Since Fluxnova, the configuration of the thread pool is done in the Fluxnova subsystem, not in the JBoss Threads subsystem anymore like it was done before.
 The thread pool creation and shutdown is now controlled through the Fluxnova subsystem.
 You are able to configure it through the following new configuration elements in the `job-executor` element of the subsystem XML configuration.
 
@@ -133,12 +132,7 @@ typically `bin`.
             pool-name="ProcessEngine">
   <connection-url>jdbc:h2:./fluxnova-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
   <driver>h2</driver>
-  <security user-name="sa" password="sa"/> <!-- for WildFly ≥27 / JBoss EAP 8 -->
-  <!-- for WildFly ≤26 / JBoss EAP 7
-  <security>
-    <user-name>sa</user-name>
-    <password>sa</password>
-  </security> -->
+  <security user-name="sa" password="sa"/>
 </datasource>
 ```
 Using H2 as a database is ideal for development purposes but is not recommended for usage in a productive environment.
@@ -157,9 +151,8 @@ This section describes how to install optional dependencies. None of these are r
 The following steps are required to deploy the web application:
 
 1. Download the Fluxnova web application that contains the web applications from our Maven Artifactory.
-    Alternatively, switch to the private repository for the enterprise version (credentials from license required).
-    * For [WildFly ≥27 / JBoss EAP 8](https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/webapp/camunda-webapp-wildfly/), the name of the artifact is `$PLATFORM_VERSION/camunda-webapp-wildfly-$PLATFORM_VERSION.war`.
-    * For [WildFly ≤26 / JBoss EAP 7](https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/webapp/camunda-webapp-jboss/), the name of the artifact is `$PLATFORM_VERSION/camunda-webapp-jboss-$PLATFORM_VERSION.war`.
+    The name of the artifact is `$PLATFORM_VERSION/fluxnova-webapp-wildfly-$PLATFORM_VERSION.war`.
+   
 2. Optionally, you may change the context path to which the application will be deployed (default is `/fluxnova`).
     Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
 3. Copy the war file to `$WILDFLY_HOME/standalone/deployments`.
@@ -172,9 +165,8 @@ The following steps are required to deploy the web application:
 The following steps are required to deploy the REST API:
 
 1. Download the REST API web application archive from our Maven Artifactory.
-   Alternatively, switch to the private repository for the enterprise version (credentials from license required).
-    * For [WildFly ≥27 / JBoss EAP 8](https://artifacts.camunda.com/artifactory/public/org/finos/fluxnova/bpm/camunda-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/camunda-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
-    * For [WildFly ≤26 / JBoss EAP 7](https://artifacts.camunda.com/artifactory/public/org/finos/fluxnova/bpm/camunda-engine-rest/), the name of the artifact is `$PLATFORM_VERSION/camunda-engine-rest-$PLATFORM_VERSION-wildfly.war`.
+    * https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest-jakarta/, the name of the artifact is `$PLATFORM_VERSION/fluxnova-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
+   
 2. Optionally, you may change the context path to which the REST API will be deployed (default is `/engine-rest`).
    Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
 3. Copy the war file to `$WILDFLY_HOME/standalone/deployments`.
@@ -224,9 +216,6 @@ Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTI
 * `org/finos/fluxnova/spin/fluxnova-spin-core`
 * `org/finos/fluxnova/spin/fluxnova-spin-dataformat-json-jackson`
 * `org/finos/fluxnova/spin/fluxnova-spin-dataformat-xml-dom-jakarta`
-  * **Heads-up:** add this module only for WildFly ≥27 / JBoss EAP 8.
-* `org/finos/fluxnova/spin/fluxnova-spin-dataformat-xml-dom`
-  * **Heads-up:** add this module only for WildFly ≤26 / JBoss EAP 7.
 * `org/finos/fluxnova/bpm/fluxnova-engine-plugin-spin`
 * `org/finos/fluxnova/commons/fluxnova-commons-utils`
 * `com/fasterxml/jackson/core/jackson-core`
@@ -273,7 +262,6 @@ See one of the following ways to fix this:
  * Exclude the JAX-RS subsystem and add the Jackson dependencies, with the version which is used by the Fluxnova Spin Plugin.
  * This solution is also shown in the [Jackson Annotation Example for WildFly](https://github.com/finos/fluxnova-bpm-examples/blob/master/wildfly/jackson-annotations) in the Fluxnova example repository.
 
-See this [Forum Post](https://forum.camunda.org/t/camunda-json-marshalling-and-jsonignore/271/19) for other approaches and information.
 
 #### Problem With Deployments Using the REST API
 

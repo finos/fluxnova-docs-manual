@@ -180,3 +180,19 @@ When initializing the engine, a check is performed in order to determine if the 
 This behaviour can be disabled by setting the `skipIsolationLevelCheck` flag to `true`. Doing this will prevent an exception from being thrown and a warning message will be logged instead.
 
 [See here]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}) for more details about this and other properties.
+
+## Autocommit Configuration
+
+Fluxnova is designed to operate in a transactional mode. Misconfiguring a datasource with `defaultAutocommit` set to `true` is known to cause data inconsistency, deadlocks, and unexpected runtime behavior.
+
+During engine initialization, a check is performed in order to determine if the autocommit set to true. If it is, an exception will be thrown.
+
+To disable `defaultAutocommit` verification you can bypass the exception using the `skipAutoCommitCheck` property. While this prevents the engine from failing at startup, a warning will still be logged.
+
+```xml
+<bean id="processEngineConfiguration" class="org.finos.fluxnova.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+  <property name="dataSource" ref="dataSource" />
+  <property name="skipAutoCommitCheck" value="true" />
+    ...
+</bean>
+```

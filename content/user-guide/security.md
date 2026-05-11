@@ -121,6 +121,32 @@ Similar considerations as for authentication apply. For an in-depth discussion, 
 
 Authorizations can be used to restrict a user from accessing a data object (such as a process or a task) and can be used to restrict how the user can interact with such data objects (read-only vs. modifications). Authorizations in Fluxnova are very powerful and it is recommended to read the corresponding [documentation entry on authorizations]({{< ref "/user-guide/process-engine/authorization-service.md" >}}).
 
+### Validating Authorization References
+
+When working with authorizations, it is possible to create authorization entries
+that reference users, groups, or resources which no longer exist (for example,
+after deleting identity data or cleaning up resources).
+
+To prevent invalid or inconsistent authorization data, the process engine can
+validate all referenced entities when authorizations are persisted.
+
+This behavior can be enabled via the process engine configuration property
+`validateAuthResourceIdExists`.
+
+When enabled, the engine ensures that:
+
+* Referenced users exist
+* Referenced groups exist
+* Referenced resources (such as process definitions, deployments, tasks, etc.)
+  exist
+
+If a referenced entity cannot be resolved, the authorization is rejected.
+
+{{< note title="Heads-up!" class="warning" >}}
+This validation is independent of whether authorization checks are enabled.
+It applies to saving authorizations only and does not affect runtime permission checks.
+{{< /note >}}
+
 ### Prevent: Enumerating user accounts by brute-force creating new users
 
 Under certain circumstances, an attacker can enumerate user accounts by brute-force creating new users:
@@ -403,18 +429,16 @@ The exact configuration and the defaults differ among application servers.
 
 Please find below external documentation on how to configure your application server correctly:
 
-* Tomcat 9.0+
+* Tomcat 10.1+
     * Official Documentation
-        * [Security Considerations](https://tomcat.apache.org/tomcat-9.0-doc/security-howto.html#Valves)
-        * [Error Reporter Valve](https://tomcat.apache.org/tomcat-9.0-doc/config/valve.html#Error_Report_Valve)
+        * [Security Considerations](https://tomcat.apache.org/tomcat-10.1-doc/security-howto.html#Valves)
+        * [Error Reporter Valve](https://tomcat.apache.org/tomcat-10.1-doc/config/valve.html#Error_Report_Valve)
     * Alternative Resources
         * [Securing Tomcat](https://wiki.owasp.org/index.php/Securing_tomcat)
-* Wildfly 12.0+: Official Documentation
+* Wildfly 33.0+: Official Documentation
     * [Servlet Container Configuration](https://docs.jboss.org/author/display/WFLY/Undertow%20subsystem%20configuration.html#108626010_Undertowsubsystemconfiguration-Servletcontainerconfiguration)
-    * [Model Reference](https://wildscribe.github.io/WildFly/12.0/subsystem/undertow/servlet-container/index.html#attr-stack-trace-on-error)
-* JBoss EAP 7.0+: Official Documentation
-    * [Servlet Container Configuration](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/configuration_guide/reference_material#idm139812627222560)
-    * [Model Refernce](https://wildscribe.github.io/JBoss%20EAP/7.0/subsystem/undertow/servlet-container/index.html#attr-stack-trace-on-error)
+    * [Model Reference](https://docs.wildfly.org/33/wildscribe/subsystem/undertow/servlet-container/index.html#attr-stack-trace-on-error)
+
 * Fluxnova Run/Spring Boot 2.3+
     * Official Documentation
         * [Javadocs about ErrorProperties.IncludeStacktrace](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/api/org/springframework/boot/autoconfigure/web/ErrorProperties.IncludeStacktrace.html)

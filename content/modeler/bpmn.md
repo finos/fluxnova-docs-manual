@@ -1,7 +1,7 @@
 ---
 
 title: 'Modeling BPMN in Fluxnova Modeler'
-weight: 10
+weight: 70
 
 menu:
   main:
