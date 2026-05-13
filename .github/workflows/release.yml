@@ -2,6 +2,11 @@ name: Release and Publish Documentation
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.2.0)'
+        required: true
+        type: string
   push:
     branches:
       - 'release/*'
@@ -11,20 +16,22 @@ jobs:
     name: Build and Publish Documentation
     runs-on: ubuntu-latest
     permissions:
-      contents: write # To push to gh-pages branch
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # for hugo to get git info
+          fetch-depth: 0
 
       - name: Get version
         id: get_version
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            FULL_VERSION=${{ github.event.inputs.version }}
+            FULL_VERSION="${{ github.event.inputs.version }}"
           else
-            FULL_VERSION=${GITHUB_REF_NAME#v}
+            # Extracts version from branch name (e.g., release/v1.2.0 -> 1.2.0)
+            FULL_VERSION=${GITHUB_REF_NAME#release/}
+            FULL_VERSION=${FULL_VERSION#v}
           fi
           MINOR_VERSION=$(echo "$FULL_VERSION" | cut -d. -f1,2)
           echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
@@ -37,14 +44,33 @@ jobs:
           extended: true
 
       - name: Build website
-        run: hugo --minify
+        # We override baseURL so Hugo generates correct internal links for the subfolder
+        run: |
+          hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/manual/${{ steps.get_version.outputs.minor_version }}/"
 
-      - name: Publish to GitHub Pages
+      - name: Create Root Redirect
+        # This creates an index.html at the root that sends users to the latest version
+        run: |
+          mkdir -p ./root_redirect
+          echo '<meta http-equiv="refresh" content="0; url=manual/${{ steps.get_version.outputs.minor_version }}/">' > ./root_redirect/index.html
+
+      - name: Publish Versioned Documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: manual/${{ steps.get_version.outputs.minor_version }}
+          keep_files: true # Essential: keeps /manual/1.0 when publishing 1.1
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'docs: publish website for ${{ steps.get_version.outputs.version }}'
+          commit_message: 'docs: publish version ${{ steps.get_version.outputs.version }}'
+
+      - name: Publish Root Redirect
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./root_redirect
+          keep_files: true # Essential: prevents deleting the /manual directory
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'docs: update root redirect to ${{ steps.get_version.outputs.minor_version }}'
