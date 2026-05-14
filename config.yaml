@@ -17,7 +17,7 @@ blackfriday:
   plainIDAnchors: true
 
 params:
-  canonicalBasePath: "https://docs.fluxnova.finos.org"
+  canonicalBasePath: "https://gaborherr.github.io/fluxnova-docs-manual"
   version: "1.0"
   forum:
     url: "https://github.com/finos/fluxnova-modeler/discussions"
