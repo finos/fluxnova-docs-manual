@@ -1,5 +1,5 @@
 ---
-baseURL: "/"
+baseURL: "/fluxnova-docs-manual/"
 languageCode: "en-us"
 title: "Fluxnova documentation"
 theme: "fluxnova"
