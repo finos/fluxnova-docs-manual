@@ -1,11 +1,24 @@
 name: Release and Publish Documentation
 
+concurrency:
+  group: release
+  cancel-in-progress: true
+  
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
+        type: string
   push:
     branches:
       - 'release/*'
-
 jobs:
   build-and-publish:
     name: Build and Publish Documentation
@@ -24,21 +37,41 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             FULL_VERSION=${{ github.event.inputs.version }}
           else
-            FULL_VERSION=${GITHUB_REF_NAME#v}
+            FULL_VERSION=${GITHUB_REF_NAME#release/}
           fi
+          
+          # Validate version format
+          if ! [[ "$FULL_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Error: Invalid version format: $FULL_VERSION"
+            exit 1
+          fi
+          
           MINOR_VERSION=$(echo "$FULL_VERSION" | cut -d. -f1,2)
+          echo "Final version: ${FULL_VERSION}"
+          echo "Minor version: ${MINOR_VERSION}"
           echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
           echo "minor_version=${MINOR_VERSION}" >> $GITHUB_OUTPUT
-
+          
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.145.0'
           extended: true
 
-      - name: Build website
-        run: hugo --minify
+      - name: Cache Hugo resources
+        uses: actions/cache@v3
+        with:
+          path: resources
+          key: ${{ runner.os }}-hugo-${{ hashFiles('**/config.*') }}
 
+      - name: Build website
+        run: |
+          hugo --minify
+          if [ ! -d "public" ]; then
+            echo "Error: Hugo build produced no output"
+            exit 1
+          fi
+    
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
