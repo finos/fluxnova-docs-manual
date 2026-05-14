@@ -77,7 +77,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          destination_dir: manual/${{ steps.get_version.outputs.minor_version }}
+          destination_dir: docs/${{ steps.get_version.outputs.minor_version }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'docs: publish website for ${{ steps.get_version.outputs.version }}'
