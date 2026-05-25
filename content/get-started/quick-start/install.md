@@ -33,7 +33,7 @@ Afterwards, you can [install the Fluxnova Modeler](#fluxnova-modeler).
 
 Please make sure you have the following installed:
 
-* Java Runtime Environment 17
+* Java Runtime Environment 21
 
 You can verify this by using your terminal, shell, or command line:
 

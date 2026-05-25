@@ -37,7 +37,7 @@ Other starters that can be used are:
 
 # Requirements
 
-Fluxnova Spring Boot Starter requires Java 17.
+Fluxnova Spring Boot Starter requires Java 21.
 
 # Supported deployment scenarios
 
