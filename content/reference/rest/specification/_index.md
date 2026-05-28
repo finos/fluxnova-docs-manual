@@ -12,5 +12,5 @@ menu:
 
 ---
 
-For the REST API specification.Please visit: [FluxNova REST API Specification](https://fluxnova.finos.org/docs/category/fluxnova)
+For the REST API specification.Please visit: [FluxNova REST API Specification](https://fluxnova.finos.org/docs/category//api-spec)
 

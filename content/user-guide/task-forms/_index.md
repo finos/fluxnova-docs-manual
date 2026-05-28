@@ -3,7 +3,6 @@
 title: 'User Task Forms'
 weight: 100
 layout: 'section-list'
-layout: "single"
 
 menu:
   main:

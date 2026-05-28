@@ -10,8 +10,7 @@ menu:
     identifier: "user-guide-cockpit-pi-restart"
     parent: "user-guide-cockpit-bpmn"
     pre: "Restart process instances after termination."
-    name: "Instance Restart"
-
+    
 ---
 {{< enterprise >}}
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
