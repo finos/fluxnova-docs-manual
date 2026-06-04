@@ -13,7 +13,7 @@ menu:
 The fluxnova-engine Spring Framework integration is located inside a maven module and can be added to apache maven-based projects through the following dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM](/get-started/apache-maven/) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 * `fluxnova-engine-spring` maven module for Spring Framework 5

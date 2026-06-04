@@ -22,7 +22,7 @@ dependency to your `pom.xml` file:
 
 {{< note title="Fluxnova BOM" >}}
   If you use Spin in combination with the Fluxnova process engine,
-  please consult the [process engine user guide on Spin integration](/user-guide/data-formats/configuring-spin-integration/)
+  please consult the [process engine user guide on Spin integration]({{< ref "/user-guide/data-formats/configuring-spin-integration/" >}})
   on how to properly integrate Spin with the engine.
   Please import the <a class="alert-link" href="/get-started/apache-maven/">
   Fluxnova BOM</a> to ensure that you use the Fluxnova Spin version matching your process engine

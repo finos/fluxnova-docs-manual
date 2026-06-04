@@ -203,7 +203,7 @@ public class MyCustomConfiguration extends AbstractFluxnovaConfiguration {
 ## Fluxnova Engine Properties
 In addition to the bean-based way of overriding process engine configuration properties, it is also possible
 to set those properties via an <code>application.yaml</code> configuration file. Instructions on how to use it
-can be found in the <a href="https://docs.fluxnova.finos.org/get-started/spring-boot/configuration/">Spring Boot Starter Guide</a>.
+can be found in the <a href="{{< ref "/get-started/spring-boot/configuration/">}}>Spring Boot Starter Guide</a>.
 
 The available properties are as follows:
 

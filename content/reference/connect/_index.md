@@ -38,7 +38,7 @@ dependency to your `pom.xml` file:
 
 {{< note title="Fluxnova BOM" class="info" >}}
 If you use other Fluxnova projects please import the
-[Fluxnova BOM](/get-started/apache-maven/)
+[Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}})
 to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
