@@ -31,7 +31,7 @@ can be marked as completed and the execution proceeds.
 
 # Requirements
 
-External Task Client Spring Boot Starter requires Java 17.
+External Task Client Spring Boot Starter requires Java 21.
 
 ## Topic Subscription
 
