@@ -3,6 +3,10 @@ name: Publish site for PR
 on:
   pull_request:
 
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
