@@ -69,7 +69,7 @@ The LDAP identity service provides read-only access to an LDAP-based user/group 
 To use the LDAP identity service, the `fluxnova-identity-ldap.jar` library has to be added to the classloader of the process engine.
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM](/get-started/apache-maven/) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 ```xml

@@ -11,7 +11,7 @@ menu:
 
 ---
 
-Completed the <a href="/get-started">Getting Started Guides</a>? Now discover what you can build with Fluxnova.
+Completed the <a href="{{< ref "/get-started" >}}">Getting Started Guides</a>? Now discover what you can build with Fluxnova.
 
 This page collects links to hands-on examples around Fluxnova.
 

@@ -14,7 +14,7 @@ This guide gives an introduction to Fluxnova Run, a pre-packaged, lightweight di
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Fluxnova is and what it does. Check out the [Get Started guides](https://docs.fluxnova.finos.org/get-started/quick-start/) if you have never used Fluxnova before. The [Installation guide]({{< ref "/installation/fluxnova-bpm-run.md" >}}) is also worth looking at if you are completely new to Fluxnova.
+To use this guide, you should at least know what Fluxnova is and what it does. Check out the [Get Started guides]({{< ref "/get-started/quick-start/" >}}) if you have never used Fluxnova before. The [Installation guide]({{< ref "/installation/fluxnova-bpm-run.md" >}}) is also worth looking at if you are completely new to Fluxnova.
 
 This guide will teach you about Fluxnova Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Fluxnova Run. Head over to the [Installation guide]({{< ref "/installation/fluxnova-bpm-run.md" >}}) for details on how to install and start Fluxnova Run.
 

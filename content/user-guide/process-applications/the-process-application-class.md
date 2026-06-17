@@ -109,7 +109,7 @@ Both options are explained in greater detail below.
 The most convenient option for deploying a process application to a Java EE EJB container is by adding the following maven dependency to your maven project:
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM](/get-started/apache-maven/) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 ```xml

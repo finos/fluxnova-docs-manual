@@ -23,7 +23,7 @@ DMN is a modeling language for *decisions*, whereas BPMN is a language for *proc
 
 {{< note title="Fancy to save work and use a project template instead?" class="info" >}}
 
-You don't have to setup the project manually but can also use a Maven Archetype (which is like a project template), see [Maven Archetypes](/manual/latest/user-guide/process-applications/maven-archetypes/) for details. The archetype will create a project according to our best practices.
+You don't have to setup the project manually but can also use a Maven Archetype (which is like a project template), see [Maven Archetypes]({{< ref "/user-guide/process-applications/" >}}) for details. The archetype will create a project according to our best practices.
 
 {{< /note >}}
 

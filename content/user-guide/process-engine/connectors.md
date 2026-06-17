@@ -46,7 +46,7 @@ The following `connect` artifacts exist:
 # Maven Coordinates
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM](/get-started/apache-maven/) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 

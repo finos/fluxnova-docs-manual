@@ -60,7 +60,7 @@ Next, set variables for the process instance using the generic form as we learne
 Fill in the form as shown in the screenshot and make sure you use an amount that is larger or equal to 1000 in order to see the User Task *Approve Payment*.
 When you are done, click *Start*.
 
-You should see the *Approve Payment* task when you click on *All Tasks*. In this quick start, we're logged into Tasklist as an admin user, and so we can see all tasks associated with our processes. However, it's possible to create [filters in Tasklist](/manual/latest/webapps/tasklist/filters/) to determine which users can see which tasks based on [user authorization](/manual/latest/webapps/admin/authorization-management/) as well as other criteria.
+You should see the *Approve Payment* task when you click on *All Tasks*. In this quick start, we're logged into Tasklist as an admin user, and so we can see all tasks associated with our processes. However, it's possible to create [filters in Tasklist]({{< ref "/webapps/tasklist/filters/" >}}) to determine which users can see which tasks based on [user authorization]({{< ref "/webapps/admin/authorization-management/" >}}) as well as other criteria.
 
 To work on the task, select the *Form* tab and check the *approved* checkbox so that our payment retrieval gets approved.
 We should see that our worker prints something to the console.
@@ -68,7 +68,7 @@ We should see that our worker prints something to the console.
 Next, repeat the same steps, and this time, reject the payment. You should also create one instance with an amount less than 1000 to confirm that the first gateway works correctly.
 
 {{< note title="Next Step" class="info" >}}
-Now you're ready for Decision Automation. Let's have a look how you can [add Business Rules to your Process](/get-started/quick-start/decision-automation/).
+Now you're ready for Decision Automation. Let's have a look how you can [add Business Rules to your Process]({{< ref "/get-started/quick-start/decision-automation/" >}}).
 {{< /note >}}
 
 {{< get-tag repo="fluxnova-get-started-quickstart" tag="Step-4" >}}

@@ -62,7 +62,7 @@ The Spin process engine plugin provides the following configuration options:
 
 ## Maven coordinates
 
-Import the [Fluxnova BOM](/get-started/apache-maven/) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
+Import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
 
 All Spin artifacts have the group id `org.finos.fluxnova.spin`, so in order to import `fluxnova-spin-core`, we can write:
 

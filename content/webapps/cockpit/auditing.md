@@ -39,7 +39,7 @@ You can limit Results the time the operation occurred. Click in the Search field
 {{< img outdated="true" src="../img/cockpit-audit-timestamp.png" title="Filter by Timestamp" >}}
 
 ## Operations of a specific Type
-If you are only interested in a specific operation, for example, every time a process instance was manually modified, you can use the `operation` filter. Select the desired operation from the dropdown or start to type the name to filter through the list. For a complete list of logged operations, check out [History and Audit Event Log](/user-guide/process-engine/history/#glossary-of-operations-logged-in-the-user-operation-log).
+If you are only interested in a specific operation, for example, every time a process instance was manually modified, you can use the `operation` filter. Select the desired operation from the dropdown or start to type the name to filter through the list. For a complete list of logged operations, check out [History and Audit Event Log]({{< ref "/user-guide/process-engine/history/#glossary-of-operations-logged-in-the-user-operation-log" >}}).
 {{< img outdated="true" src="../img/cockpit-audit-type.png" title="Filter by Type" >}}
 
 ## Annotating Operation Logs

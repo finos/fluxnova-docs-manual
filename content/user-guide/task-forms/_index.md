@@ -3,7 +3,6 @@
 title: 'User Task Forms'
 weight: 100
 layout: 'section-list'
-layout: "single"
 
 menu:
   main:
@@ -40,7 +39,7 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
     <td>LOCATION</td>
     <td>Can be either <code>deployment</code> or <code>app</code>:
     <ul>
-      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< ref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="https://docs.fluxnova.finos.org/get-started/quick-start/deploy/#use-the-fluxnova-modeler-to-deploy-the-process">by deploying from the Fluxnova Modeler</a>), which means that it is stored in the Fluxnova database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
+      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< ref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< ref "/get-started/quick-start/deploy/#use-the-fluxnova-modeler-to-deploy-the-process">}}"by deploying from the Fluxnova Modeler</a>), which means that it is stored in the Fluxnova database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
       <li><em>app</em>: Add the file to your development project in a folder <code>src/main/webapp/forms</code>. The form file will be packaged into your deployment artifact (typically a WAR archive). During runtime it will be loaded from there.</li>
     </ul>
   </td>

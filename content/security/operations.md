@@ -11,4 +11,4 @@ menu:
 
 ---
 
-The instructions how to operate Fluxnova securely are located in our [User Guide](/user-guide/security). Make sure to read the version of the user guide that matches the Fluxnova version you use.
+The instructions how to operate Fluxnova securely are located in our [User Guide]({{< ref "/user-guide/security" >}}). Make sure to read the version of the user guide that matches the Fluxnova version you use.

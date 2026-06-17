@@ -22,10 +22,10 @@ project. It then shows how to configure and build a new DMN engine instance.
 
 The Fluxnova DMN engine is released to Maven Central.
 
-Start by importing the [`fluxnova-engine-dmn` BOM](/get-started/apache-maven/#fluxnova-dmn-engine-bom)
+Start by importing the [`fluxnova-engine-dmn` BOM]({{< ref "/get-started/apache-maven/#fluxnova-dmn-engine-bom" >}})
 to ensure correct dependency management.
 
-Next, include the [`fluxnova-engine-dmn`](/get-started/apache-maven/#fluxnova-dmn)
+Next, include the [`fluxnova-engine-dmn`]({{< ref "/get-started/apache-maven/#fluxnova-dmn" >}})
 artifact in the `dependencies` section.
 
 # Building a DMN Engine

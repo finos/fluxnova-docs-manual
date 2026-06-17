@@ -147,8 +147,8 @@ curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnov
 
 # Other Fluxnova Modules:
 
-* [DMN Engine](/manual/latest/user-guide/dmn-engine/embed/#maven-coordinates)
-* [Fluxnova Spin](/manual/latest/reference/spin)
-* [Fluxnova Connect](/manual/latest/reference/connect/#maven-coordinates)
-* [Templating Engines](/manual/latest/user-guide/process-engine/templating/#install-a-template-engine-for-an-embedded-process-engine)
-* [Spring Boot Integration](/manual/latest/user-guide/spring-boot-integration/)
+* [DMN Engine]({{< ref "/user-guide/dmn-engine/embed/#maven-coordinates" >}})
+* [Fluxnova Spin]({{< ref "/reference/spin" >}})
+* [Fluxnova Connect]({{< ref "/reference/connect/#maven-coordinates" >}})
+* [Templating Engines]({{< ref "/user-guide/process-engine/templating/#install-a-template-engine-for-an-embedded-process-engine" >}})
+* [Spring Boot Integration]({{< ref "/user-guide/spring-boot-integration/" >}})

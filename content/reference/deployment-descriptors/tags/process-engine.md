@@ -885,7 +885,7 @@ The following is a list with the most commonly used process engine configuration
   <tr>
     <td><a name="enablePasswordPolicy"></a><code>enablePasswordPolicy</code></td>
     <td>Boolean</td>
-    <td>Set to <code>true</code>, to enable a <a href="{{< ref "/user-guide/process-engine/password-policy">}}">password policy</a> for users that are managed by the engine. If a <a href="https://docs.fluxnova.finos.org/manual/latest/user-guide/process-engine/password-policy/#customize-the-password-policy">custom password policy</a> is configured, it will be enabled. Otherwise the <a href="https://docs.fluxnova.finos.org/manual/latest/user-guide/process-engine/password-policy/#built-in-password-policy">built-in password policy</a> is activated.
+    <td>Set to <code>true</code>, to enable a <a href="{{< ref "/user-guide/process-engine/password-policy" >}}">password policy</a> for users that are managed by the engine. If a <a href="{{< ref "/user-guide/process-engine/password-policy/#customize-the-password-policy">}}">custom password policy</a> is configured, it will be enabled. Otherwise the <a href="{{< ref "/user-guide/process-engine/password-policy/#built-in-password-policy">}}">built-in password policy</a> is activated.
     </td>
   </tr>
 

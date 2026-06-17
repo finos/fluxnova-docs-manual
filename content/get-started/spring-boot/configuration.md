@@ -14,7 +14,7 @@ menu:
 
 The Fluxnova Spring Boot Application created in previous step uses the default and best practice configuration, embedded in a starter. 
 There are several ways to customize or override the configuration. The easiest is to provide a set of parameters in the `application.yaml` (or `application.properties`) file. 
-The full list of supported configuration parameters can be found [here](/manual/latest/user-guide/spring-boot-integration/configuration/#fluxnova-engine-properties).
+The full list of supported configuration parameters can be found [here]({{< ref "/user-guide/spring-boot-integration/configuration/#fluxnova-engine-properties" >}}).
 
 ## Customize Configuration
 
