@@ -425,6 +425,58 @@ public class CustomScriptEngineResolver extends DefaultScriptEngineResolver {
 }
 ```
 
+# Script Preprocessing
+
+Script preprocessing allows the application to transform script content before it is executed by the script engine.
+
+This is useful when there is a need to standardize script patterns, introduce custom syntax, inject reusable logic, or apply organization-specific rules without changing every BPMN model manually.
+
+When enabled, the process engine passes each script content through one or more registered preprocessors.
+Each preprocessor receives the current script and execution context (such as script language and variable scope), and then return a transformed script for downstream execution. The final output of the preprocessing chain is then executed by the script engine.
+
+* [enableScriptPreprocessing]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#enableScriptPreprocessing" >}}) -
+  Specifies whether the script preprocessing is enabled or not.
+
+Preprocessing is controlled by a process engine flag named `enableScriptPreprocessing`. By default, script preprocessing value is **`false`** and is disabled. Setting the value to **`true`** enables it. When enabled, the process engine looks for registered script preprocessor and applies it to each script before execution.
+A preprocessor chain can be configured through engine configuration. The chain is applied in the order of registration. Multiple preprocessors run in registration order. Each preprocessor receives the output of the previous preprocessor as input. If no preprocessor is registered, the script is executed without any transformation.
+```java
+public class VariableInjectingPreprocessor implements ScriptPreprocessor {
+
+  private static final String GROOVY = "groovy";
+
+  @Override
+  public String process(ScriptPreprocessorRequest request) {
+    if (request == null) {
+      return null;
+    }
+
+    String script = request.getScript();
+    String language = request.getLanguage();
+
+    if (script == null || language == null || !GROOVY.equalsIgnoreCase(language)) {
+      // No preprocessing for non-Groovy scripts (or missing input)
+      return null;
+    }
+
+    // Inject a helper function at the beginning of the Groovy script
+    return "def log(msg) { println(msg) }\n" + script;
+  }
+
+  @Override
+  public String getName() {
+    return "VariableInjectingPreprocessor";
+  }
+}
+```
+If preprocessing is disabled, the script is executed exactly as defined in the BPMN model. 
+
+{{< note title="Operational Guidance" class="info" >}}
+ - Keep preprocessor logic deterministic, idempotent and lightweight to minimize runtime overhead.
+ - Fail-Fast : Return null early if your preprocessor cannot handle the request
+ - Handle null Gracefully: Preprocessors may receive null for script, language, or variableScope
+ - Profile preprocessing overhead separately from script execution to identify bottlenecks and optimize performance.
+{{< /note >}}
+
 # Reference Process Application Provided Classes
 
 The script can reference to process application provided classes by importing them like in the following groovy script example.

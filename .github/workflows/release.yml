@@ -47,78 +47,30 @@ jobs:
         # We override baseURL so Hugo generates correct internal links for the subfolder
         run: |
           hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/manual/${{ steps.get_version.outputs.minor_version }}/"
-      - name: Generate versions.json and "latest" redirect
-        id: generate_manifest
+
+      - name: Create Root Redirect
+        # This creates an index.html at the root that sends users to the latest version
         run: |
-          # Create a temporary directory for the gh-pages clone
-          PAGES_DIR=./gh-pages-clone
-          git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "$PAGES_DIR"
+          mkdir -p ./root_redirect
+          echo '<meta http-equiv="refresh" content="0; url=manual/${{ steps.get_version.outputs.minor_version }}/">' > ./root_redirect/index.html
 
-          # Path to the documentation directory on the gh-pages branch
-          MANUAL_DIR="$PAGES_DIR/manual"
-          
-          # Ensure the target directories for our generated files exist in the build output
-          mkdir -p ./public/manual
-          mkdir -p ./public/manual/latest
-
-          # --- Part 1: Generate versions.json ---
-          # List existing version dirs, add the new version, sort unique descending, and format as JSON
-          VERSIONS=$( ( (test -d "$MANUAL_DIR" && ls -d "$MANUAL_DIR"/*/ | xargs -n 1 basename) || true; echo "${{ steps.get_version.outputs.minor_version }}" ) \
-            | grep -v "latest" \
-            | sort -rV | uniq )
-            
-          echo "Detected versions:"
-          echo "$VERSIONS"
-
-          echo "$VERSIONS" | jq -R . | jq -s . > ./public/manual/versions.json
-          
-          echo "Generated versions.json:"
-          cat ./public/manual/versions.json
-
-          # --- Part 2: Create the 'latest' redirect ---
-          # The latest version is the first line of our sorted list
-          LATEST_VERSION=$(echo "$VERSIONS" | head -n 1)
-          
-          if [ -z "$LATEST_VERSION" ]; then
-            echo "Error: Could not determine the latest version."
-            exit 1
-          fi
-
-          echo "The latest version is: $LATEST_VERSION"
-          echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_OUTPUT
-          
-          # Create the HTML redirect file
-          REDIRECT_FILE="./public/manual/latest/index.html"
-          cat > "$REDIRECT_FILE" <<-EOF
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Redirecting to latest documentation...</title>
-            <link rel="canonical" href="/manual/${LATEST_VERSION}/" />
-            <meta charset="utf-8">
-            <meta http-equiv="refresh" content="0; url=/manual/${LATEST_VERSION}/">
-            <script>
-              window.location.replace("/manual/${LATEST_VERSION}/" + window.location.hash);
-            </script>
-          </head>
-          <body>
-            <p>You are being redirected to the <a href="/manual/${LATEST_VERSION}/">latest version of the documentation</a>.</p>
-          </body>
-          </html>
-          EOF
-
-          echo "Created redirect file at $REDIRECT_FILE"
-
-      - name: Publish to GitHub Pages
+      - name: Publish Versioned Documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: manual/${{ steps.get_version.outputs.minor_version }}
-          keep_files: true # IMPORTANT: This prevents deleting other version directories
+          keep_files: true # Essential: keeps /manual/1.0 when publishing 1.1
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: |
-            docs: publish website for ${{ steps.get_version.outputs.version }}
-            
-            - Update versions.json manifest
+          commit_message: 'docs: publish version ${{ steps.get_version.outputs.version }}'
+
+      - name: Publish Root Redirect
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./root_redirect
+          keep_files: true # Essential: prevents deleting the /manual directory
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'docs: update root redirect to ${{ steps.get_version.outputs.minor_version }}'

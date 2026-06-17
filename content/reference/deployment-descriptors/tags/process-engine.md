@@ -425,6 +425,17 @@ The following is a list with the most commonly used process engine configuration
     </td>
   </tr>
 
+  <tr id="enableScriptPreprocessing">
+    <td><code>enableScriptPreprocessing</code></td>
+    <td>Boolean</td>
+    <td>
+        If set to true, script preprocessing is enabled and each script is processed by registered preprocessor(s) in registration order, prior to script execution. Default value is <code>false</code>.
+      <p>
+        <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
+      </p>
+    </td>
+  </tr>
+
   <tr>
     <td><code>forceCloseMybatisConnectionPool</code></td>
     <td>Boolean</td>
