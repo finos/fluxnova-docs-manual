@@ -30437,7 +30437,7 @@ metaHeader.addEventListener('click', toggleMenuMeta);
  * Fetches the list of available documentation versions and populates a dropdown menu.
  **/
 function populateVersionSelector() {
-  const versionsJsonPath = '/manual/versions.json';
+  const versionsJsonPath = location.pathname.replace(/\/manual\/[^/]+\/.*/,'/manual/versions.json');
   const versionSelector = document.getElementById('version-select');
 
   fetch(versionsJsonPath)

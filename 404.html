@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      color: #dc3545;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #6c757d;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      color: #fff;
+      background-color: #007bff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    #error-state {
+      display: none;
+    }
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border-left-color: #007bff;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="loading-state">
+      <div class="spinner"></div>
+      <h2>Redirecting...</h2>
+      <p>Looking up the requested page.</p>
+    </div>
+
+    <div id="error-state">
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>The page you are looking for does not exist or has been moved.</p>
+      <a href="/manual/" id="latest-link" class="btn">Go to the latest Fluxnova Documentation</a>
+    </div>
+  </div>
+
+  <script>
+    (async function() {
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash;
+      
+      let latestVersion = '';
+
+      try {
+        const response = await fetch('/manual/versions.json');
+        if (response.ok) {
+          const versions = await response.json();
+          if (Array.isArray(versions) && versions.length > 0) {
+            latestVersion = versions[0];
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch versions.json:", error);
+      }
+
+      if (latestVersion) {
+        if (currentPath === '/') {
+          window.location.replace(`/manual/${latestVersion}/${currentHash}`);
+          return;
+        } else if (currentPath.startsWith('/manual/latest/')) {
+          const remainingPath = currentPath.substring('/manual/latest/'.length);
+          const targetUrl = `/manual/${latestVersion}/${remainingPath}${currentHash}`;
+          window.location.replace(targetUrl);
+          return; // Stop execution, browser is redirecting
+        } else {
+          document.getElementById('latest-link').href = `/manual/${latestVersion}/`;
+        }
+      } else {
+        // Fallback in case versions.json cannot be loaded
+        if (currentPath === '/') {
+          window.location.replace(`/manual/latest/${currentHash}`);
+          return;
+        }
+        document.getElementById('latest-link').href = '/manual/latest/'; 
+      }
+
+      // If we reach this point, it means no redirection happened
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('error-state').style.display = 'block';
+    })();
+  </script>
+</body>
+</html>
