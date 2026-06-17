@@ -15,15 +15,11 @@
 
 <!-- menu start -->
 
-<div class="version{{ if $.Site.Params.section.version }} versioned{{end}}">
-  {{ if $.Site.Params.section.version }}
-    {{range $.Site.Params.sections }}
-      {{ if eq $.Site.Params.section.id .id }} <span class="name">{{ .name }}</span> {{ end }}
-    {{ end }}
-
-    <span class="number"><a>{{ $.Site.Params.section.version }}</a>
-      {{ if $.Site.Params.section.versionAlias }}
-        ({{ $.Site.Params.section.versionAlias }})
+<div class="version versioned">
+  {{ if $.Site.Params.version }}
+    <span class="number"><a>Version {{ $.Site.Params.version }}</a>
+      {{ if $.Site.Params.versionAlias }}
+        ({{ $.Site.Params.versionAlias }})
       {{ end }}
     </span>
   {{ end }}
@@ -48,10 +44,8 @@
 
   <div class="content">
     <label for="version-select">Version:</label>
-    <select id="version-select" data-basepath="/{{ $.Site.Params.section.id }}" base-url="{{ $.Site.BaseURL }}">
-      {{range $.Site.Params.section.versions }}
-        <option {{if eq $.Site.Params.section.version . }} selected {{end}}>{{.}}</option>
-      {{ end }}
+    <select id="version-select" base-url="{{ $.Site.BaseURL }}">
+      <option>Loading versions...</option>
     </select>
   </div>
 </div>
