@@ -23,7 +23,7 @@ and the extensibility of CDI. The most prominent features are:
 
 {{< note title="Quarkus Engine Extension" class="info" >}}
 Since Quarkus ArC does not aim to fully implement CDI 2.0, you cannot use the full range of features the `fluxnova-engine-cdi` module provides.
-Read about the limitations in the [Quarkus Integration]({{< ref "/user-guide/quarkus-integration/cdi-integration.md#limitations" >}}) guide.
+Read about the limitations in the [Quarkus Integration]({{< relref "/user-guide/quarkus-integration/cdi-integration.md#limitations" >}}) guide.
 {{< /note >}}
 
 # Maven Dependency
@@ -31,7 +31,7 @@ Read about the limitations in the [Quarkus Integration]({{< ref "/user-guide/qua
 To use the `fluxnova-engine-cdi` module inside your application, you must include the following Maven dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 ```xml

@@ -15,7 +15,7 @@ aliases: [reference/dmn11/feel/legacy/data-types/]
 
 {{< note title="Heads Up!" class="info" >}}
 This page provides information on the legacy FEEL Engine, that was used before the 
-current <a href="{{< ref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
+current <a href="{{< relref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
 was integrated into Fluxnova.
 {{< /note >}}
 
@@ -64,5 +64,5 @@ the format `yyyy-MM-dd'T'HH:mm:ss`.
 Date types support all [comparison] operators and [ranges].
 
 
-[comparison]: {{< ref "/reference/dmn/feel/legacy/language-elements.md#comparison" >}}
-[ranges]: {{< ref "/reference/dmn/feel/legacy/language-elements.md#range" >}}
+[comparison]: {{< relref "/reference/dmn/feel/legacy/language-elements.md#comparison" >}}
+[ranges]: {{< relref "/reference/dmn/feel/legacy/language-elements.md#range" >}}

@@ -44,7 +44,7 @@ Fluxnova requires a set of resources that need to be configured at the applicati
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
 * Create a database schema for Fluxnova yourself.
-* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In WebLogic, this is done in the `bpm-platform.xml`, located in the `$WLS_HOME\modules\fluxnova-oracle-weblogic-ear-$VERSION.ear\fluxnova-oracle-weblogic-service.jar\META-INF\` folder.
 
@@ -78,7 +78,7 @@ In this section we explain how to add a datasource using the WebLogic Remote Con
 11. Click **"Create"** button to save datasource.
 12. Press **"Shopping Card"** button and commit your changes.
 
-Note that you can configure multiple datasources used by different process engine instances. See the [User Guide]({{< ref "/user-guide/_index.md" >}}) for details.
+Note that you can configure multiple datasources used by different process engine instances. See the [User Guide]({{< relref "/user-guide/_index.md" >}}) for details.
 
 
 # Required Components
@@ -148,12 +148,12 @@ First the `fluxnova-oracle-weblogic-ear-$PLATFORM_VERSION.ear` RAR file must be 
 8. Click **"Create"** button.
 9. Press **"Shopping Card"** button and commit your changes.
 {{< note title="Heads Up!" class="info" >}}
-The names of the [JNDI Bindings for Fluxnova Services]({{< ref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) consist of the name of the enterprise application deployment.
+The names of the [JNDI Bindings for Fluxnova Services]({{< relref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) consist of the name of the enterprise application deployment.
 
 **Please note:** If you change the name of the enterprise application deployment, the JNDI names change as well.
 {{< /note >}}
 {{< img outdated="true" src="../img/ear-name.png" title="EAR Name" >}}
-10. (optional) [Configure location of the bpm-platform.xml file]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}).
+10. (optional) [Configure location of the bpm-platform.xml file]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}).
 
 ### Configure the Deployment Order
 

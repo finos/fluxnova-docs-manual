@@ -19,7 +19,7 @@ Fluxnova process engine and standalone usage via API.
 # Connectors
 
 Fluxnova Connect provides a HTTP and a SOAP HTTP connector. If you want to
-add an own connector to Connect please have a look at the [extending Connect]({{< ref "/reference/connect/extending-connect.md" >}})
+add an own connector to Connect please have a look at the [extending Connect]({{< relref "/reference/connect/extending-connect.md" >}})
 section. This section also describes the usage of a `ConnectorConfigurator` to
 configure the connector instances.
 
@@ -38,7 +38,7 @@ dependency to your `pom.xml` file:
 
 {{< note title="Fluxnova BOM" class="info" >}}
 If you use other Fluxnova projects please import the
-[Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}})
+[Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}})
 to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
@@ -73,7 +73,7 @@ to ensure correct versions for every Fluxnova project.
 Fluxnova Connect is published to [maven central](https://mvnrepository.com/artifact/org.finos.fluxnova.connect).
 
 {{< note title="Process engine plugin" class="info" >}}
-If you are using Connect in the Fluxnova process engine, you also need the `fluxnova-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< ref "/user-guide/process-engine/connectors.md" >}}).
+If you are using Connect in the Fluxnova process engine, you also need the `fluxnova-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
 {{< /note >}}
 
 # Logging

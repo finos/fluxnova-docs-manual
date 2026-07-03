@@ -43,4 +43,4 @@ If you have trouble setting up the Fluxnova Platform, you can ask for assistance
 
 # Fluxnova Modeler
 
-Follow the instructions in the [Fluxnova Modeler]({{< ref "/installation/fluxnova-modeler" >}}) section.
+Follow the instructions in the [Fluxnova Modeler]({{< relref "/installation/fluxnova-modeler" >}}) section.

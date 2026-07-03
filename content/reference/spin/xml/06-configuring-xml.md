@@ -13,7 +13,7 @@ menu:
 Spin can be configured to change XML parsing, writing, and mapping settings. Spin uses JAXB and DOM to handle XML. 
 Therefore, the XML data format uses instances of `javax.xml.parsers.DocumentBuilderFactory`, 
 `javax.xml.transform.TransformerFactory`, and `javax.xml.bind.JAXBContext` that can be configured using Spin's 
-[configuration mechanism]({{< ref "/reference/spin/extending-spin.md#configuring-data-formats" >}}).
+[configuration mechanism]({{< relref "/reference/spin/extending-spin.md#configuring-data-formats" >}}).
 
 For example, a custom application may provide an implementation of `org.finos.fluxnova.spin.spi.DataFormatConfigurator` that exchanges 
 the `JAXBContext`. Spin uses and caches the context to improve performance.

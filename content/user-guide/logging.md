@@ -103,10 +103,10 @@ we set process execution-specific data in the [Mapped Diagnostic Context (MDC)](
 
 The process data is held in the MDC for the time of process execution and removed from it after the execution context is successfully left.
 In case of arising exceptions upon execution, the data is kept in the MDC until the calling context,
-i.e. the [JobExecutor]({{< ref "/user-guide/process-engine/the-job-executor.md" >}}) or the surrounding command, finished its logging.
+i.e. the [JobExecutor]({{< relref "/user-guide/process-engine/the-job-executor.md" >}}) or the surrounding command, finished its logging.
 
 The keys at which the properties are accessible in the MDC can be defined in the
-[process engine configuration]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#logging-context-parameters" >}}).
+[process engine configuration]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#logging-context-parameters" >}}).
 
 In order to access the MDC data, you need to adjust the logging pattern of your logging configuration.
 An example using Logback could look as follows
@@ -181,7 +181,7 @@ The process engine logs on the following categories
     <td>
       command context logs including executing atomic operations and bpmn stack traces during exceptions<br/>
       You can override the default <code>DEBUG</code> log level for bpmn stack traces, see the
-      <a href="{{< ref "/reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace" >}}">Logging level parameters</a> section.
+      <a href="{{< relref "/reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace" >}}">Logging level parameters</a> section.
     </td>
   </tr>
   <tr>

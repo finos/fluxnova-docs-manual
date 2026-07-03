@@ -127,7 +127,7 @@ The following examples show under which conditions an inclusive gateway will tri
    only once instead of two times. According to the BPMN 2.0 specification, since both tokens pass 
    the same sequence flow (true), the inclusive gateway should trigger twice. Finally, due to this
    behavior, only one instance of `User Task 2` will need to be completed instead of the expected two.
-   In cases like this one, it is recommended to use an [`Exclusive Gateway`]({{< ref "/reference/bpmn20/gateways/exclusive-gateway.md" >}})
+   In cases like this one, it is recommended to use an [`Exclusive Gateway`]({{< relref "/reference/bpmn20/gateways/exclusive-gateway.md" >}})
    instead of the `Inclusive Gateway 1`.
    <div data-bpmn-diagram="../bpmn/inclusive_gateway_scenario_4"></div>
 
@@ -137,17 +137,17 @@ The following examples show under which conditions an inclusive gateway will tri
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#executionlistener" >}}">camunda:executionListener</a>
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#executionlistener" >}}">camunda:executionListener</a>
     </td>
   </tr>
   <tr>
@@ -163,4 +163,4 @@ The following examples show under which conditions an inclusive gateway will tri
 # Additional Resources
 
 *   [Inclusive Gateways](http://fluxnova.finos.org/bpmn/reference.html#gateways-data-based-inclusive-gateways) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
-*   [Conditional and Default Sequence Flows]({{< ref "/reference/bpmn20/gateways/sequence-flow.md" >}})
+*   [Conditional and Default Sequence Flows]({{< relref "/reference/bpmn20/gateways/sequence-flow.md" >}})

@@ -18,7 +18,7 @@ The deployment view of Cockpit shows an overview of all deployments, their resou
 
 # Search
 
-Use the search field at the top of the list of deployments to find specific deployments. Similar to the search on the [cockpit dashboard]({{< ref "/webapps/cockpit/dashboard.md#search" >}}) and in [tasklist]({{< ref "/webapps/tasklist/dashboard.md#search-for-tasks" >}}), it is possible to search deployments using an array of available criteria.
+Use the search field at the top of the list of deployments to find specific deployments. Similar to the search on the [cockpit dashboard]({{< relref "/webapps/cockpit/dashboard.md#search" >}}) and in [tasklist]({{< relref "/webapps/tasklist/dashboard.md#search-for-tasks" >}}), it is possible to search deployments using an array of available criteria.
 
 Valid search criteria are unique ID, name (which does not need to be unique across all deployments), time of deployment and source. The deployment source can be provided when a deployment is created. A deployment that is created by the application during startup will have this property set to `process application`. If a deployment is made directly in Cockpit, the property will be set to `cockpit`, and so on. You can also search for deployments that have no deployment source set using the `Source undefined` criterion.
 

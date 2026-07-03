@@ -116,7 +116,7 @@ The below example also configures the default process engine.
 By default, the database schema is automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
 * Create a database schema for Fluxnova yourself.
-* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you can also configure the engine to **not** create tables at startup by setting the `isAutoSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In WildFly, this is done in the `standalone.xml`, located in the `$WILDFLY_DISTRIBUTION\server\wildfly-$WILDFLY_VERSION\standalone\configuration\` folder.
 
@@ -207,7 +207,7 @@ To activate Fluxnova Connect functionality for a process engine, a process engin
 
 ### Fluxnova Spin
 
-You can use the Fluxnova Spin plugin to extend the engine functionality to de-/serialize object variables from and to JSON and XML. For more information, see the [Spin Reference]({{< ref "/reference/spin/_index.md" >}}).
+You can use the Fluxnova Spin plugin to extend the engine functionality to de-/serialize object variables from and to JSON and XML. For more information, see the [Spin Reference]({{< relref "/reference/spin/_index.md" >}}).
 
 #### Setup Spin
 

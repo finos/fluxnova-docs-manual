@@ -43,7 +43,7 @@ application deployment. When using the process engine in a maven `war` project, 
 dependencies must be added as dependencies to the maven `pom.xml` file:
 
 {{< note title="" class="info" >}}
-  The [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
+  The [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
   For the community-driven template engines, please check the Maven coordinates below. 
 {{< /note >}}
 
@@ -201,6 +201,6 @@ examples' repository.
 [freemarker]: http://freemarker.org/
 [velocity]: http://velocity.apache.org/
 [fluxnova-7-template-engines-jsr223]: https://github.com/fluxnova-community-hub/fluxnova-7-template-engines-jsr223
-[use-scripts]: {{< ref "/user-guide/process-engine/scripting.md" >}}
-[script-source]: {{< ref "/user-guide/process-engine/scripting.md#script-source" >}}
+[use-scripts]: {{< relref "/user-guide/process-engine/scripting.md" >}}
+[script-source]: {{< relref "/user-guide/process-engine/scripting.md#script-source" >}}
 [xslt-example]: https://github.com/finos/fluxnova-bpm-examples/tree/master/scripttask/xslt-scripttask

@@ -12,6 +12,6 @@ menu:
 
 ---
 
-This document describes the installation of the [Full Distribution]({{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for Oracle WebLogic Application Server.
+This document describes the installation of the [Full Distribution]({{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for Oracle WebLogic Application Server.
 
 There are different options for installing the Full Distribution:

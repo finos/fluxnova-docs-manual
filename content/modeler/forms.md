@@ -14,7 +14,7 @@ menu:
 
 # Overview
 
-The Fluxnova Forms feature allows you to easily design and configure forms. Once configured, they can be [connected to a User Task or Start Event]({{< ref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) so to implement a task form in your application.
+The Fluxnova Forms feature allows you to easily design and configure forms. Once configured, they can be [connected to a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) so to implement a task form in your application.
 
 # Quickstart
 
@@ -30,7 +30,7 @@ Now you can start to build your Fluxnova Form. Add the desired elements from the
 
 {{< img src="img/build-form.png" title="Drag and drop elements to build a Fluxnova Form" >}}
 
-In the properties panel on the right hand side, you can view and edit attributes that apply to the currently selected form element. Please refer to the [Fluxnova Forms Reference]({{< ref "/reference/forms/fluxnova-forms/_index.md#configuration" >}}) to explore all configuration options for form elements.
+In the properties panel on the right hand side, you can view and edit attributes that apply to the currently selected form element. Please refer to the [Fluxnova Forms Reference]({{< relref "/reference/forms/fluxnova-forms/_index.md#configuration" >}}) to explore all configuration options for form elements.
 
 {{< img src="img/form-properties-panel.png" title="Fluxnova Form Properties Panel" >}}
 
@@ -40,4 +40,4 @@ To save your state of work, click the **File > Save File As...** button in the t
 
 ## Connect your Form to a BPMN diagram
 
-You can connect your Fluxnova Form to a User Task or Start Event, so to implement a task form in your application. Refer to the [User Task Forms guide]({{< ref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) to learn how.
+You can connect your Fluxnova Form to a User Task or Start Event, so to implement a task form in your application. Refer to the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) to learn how.

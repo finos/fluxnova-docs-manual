@@ -26,7 +26,7 @@ This documentation covers everything integration-specific about the
 [FEEL Scala Engine][] (opens external link) in the Fluxnova DMN Engine.
 
 [FEEL Scala Engine]: https://github.com/finos/feel-scala
-[input entries]: {{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
-[Input Expressions]: {{< ref "/reference/dmn/decision-table/input.md#input-expression" >}}
-[Output Entries]: {{< ref "/reference/dmn/decision-table/rule.md#output-entry-conclusion" >}}
-[Literal Expressions]: {{< ref "/reference/dmn/decision-literal-expression/_index.md" >}}
+[input entries]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
+[Input Expressions]: {{< relref "/reference/dmn/decision-table/input.md#input-expression" >}}
+[Output Entries]: {{< relref "/reference/dmn/decision-table/rule.md#output-entry-conclusion" >}}
+[Literal Expressions]: {{< relref "/reference/dmn/decision-literal-expression/_index.md" >}}

@@ -191,7 +191,7 @@ The following example shows how to assign a User Task to the person who started 
 
 First, the `camunda:initiator` extension is used to bind the user id of the person who started (_"initiated"_) the process to the variable `starter`. Then the expression `${ starter }` retrieves that value and uses it as assignee for the task.
 
-It is possible to use all process variables [visible]({{< ref "/user-guide/process-engine/variables.md#variable-scopes-and-variable-visibility" >}}) from the User Task in the expression.
+It is possible to use all process variables [visible]({{< relref "/user-guide/process-engine/variables.md#variable-scopes-and-variable-visibility" >}}) from the User Task in the expression.
 
 #### Invoking a Service / Bean
 
@@ -226,7 +226,7 @@ public class FakeLdapService {
 
 ### Assignments in Listeners
 
-It is also possible to use [task listeners]({{< ref "/user-guide/process-engine/delegation-code.md#task-listener" >}}) for handling assignments. The following example demonstrates a task listener on the `create` event:
+It is also possible to use [task listeners]({{< relref "/user-guide/process-engine/delegation-code.md#task-listener" >}}) for handling assignments. The following example demonstrates a task listener on the `create` event:
 
 ```xml
 <userTask id="task1" name="My task" >
@@ -280,7 +280,7 @@ User kermit = identityService.createUserQuery()
 
 # Reporting Bpmn Error
 
-See the documentation for [Error Boundary Events]({{< ref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}).
+See the documentation for [Error Boundary Events]({{< relref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}).
 
 To report a business error during user task operation, use `TaskService#handleBpmnError`. It can be invoked only when the task is active.
 The `#handleBpmnError` method requires a mandatory argument: `errorCode`.
@@ -307,7 +307,7 @@ The error message and variables are optional. They can provide additional inform
 
 # Reporting Bpmn Escalation
 
-See the documentation for [Catching Escalation Events]({{< ref "/reference/bpmn20/events/escalation-events.md#catching-escalation-events" >}}).
+See the documentation for [Catching Escalation Events]({{< relref "/reference/bpmn20/events/escalation-events.md#catching-escalation-events" >}}).
 
 Reporting an escalation during user task execution can be achieved via `TaskService#handleEscalation`. The user task should be active to do so. The `escalationCode` is compulsory to invoke the escalation, this code identifies a predefined escalation. If the given `escalationCode` does not exist an Process Engine Exception will be thrown. See the following example:
 
@@ -323,7 +323,7 @@ The variables are optional. They will be passed to the execution if the escalati
 
 # Completion
 
-Complete is part of the [task lifecycle]({{< ref "/webapps/tasklist/task-lifecycle.md" >}}) operation along with create, set candidate, assign, etc. (allow available via Java API). Complete a task by passing variables, optionally the process variables can be retrieved::
+Complete is part of the [task lifecycle]({{< relref "/webapps/tasklist/task-lifecycle.md" >}}) operation along with create, set candidate, assign, etc. (allow available via Java API). Complete a task by passing variables, optionally the process variables can be retrieved::
 
 ```java
 taskService.complete(taskId, variables);
@@ -348,7 +348,7 @@ The form key is a symbolic value which can be set in the BPMN XML file by using 
 `formKey` and retrieved at runtime using the process engine API.
 
 If the User Task form is displayed inside the Fluxnova Tasklist, the format of the formKey must follow
-special rules. [See the corresponding section in the user guide for details]({{< ref "/user-guide/task-forms/_index.md" >}}).
+special rules. [See the corresponding section in the user guide for details]({{< relref "/user-guide/task-forms/_index.md" >}}).
 
 In custom applications, the value of the form key attribute can be interpreted freely. Based on the specific UI technology used,
 it can reference the name of an HTML file, a JSF / Facelets template, a Vaadin / GWT view, ...
@@ -396,30 +396,30 @@ formService.submitTaskForm(taskId, properties);
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#assignee" >}}">camunda:assignee</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#candidategroups" >}}">camunda:candidateGroups</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#candidateusers" >}}">camunda:candidateUsers</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#duedate" >}}">camunda:dueDate</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#formhandlerclass" >}}">camunda:formHandlerClass</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#formkey" >}}">camunda:formKey</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#formref" >}}">camunda:formRef</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefbinding" >}}">camunda:formRefBinding</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefversion" >}}">camunda:formRefVersion</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#priority" >}}">camunda:priority</a>
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#assignee" >}}">camunda:assignee</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#candidategroups" >}}">camunda:candidateGroups</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#candidateusers" >}}">camunda:candidateUsers</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#duedate" >}}">camunda:dueDate</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formhandlerclass" >}}">camunda:formHandlerClass</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formkey" >}}">camunda:formKey</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formref" >}}">camunda:formRef</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefbinding" >}}">camunda:formRefBinding</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefversion" >}}">camunda:formRefVersion</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#priority" >}}">camunda:priority</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#formdata" >}}">camunda:formData</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#formproperty" >}}">camunda:formProperty</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#tasklistener" >}}">camunda:taskListener</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#inputoutput" >}}">camunda:inputOutput</a>
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#formdata" >}}">camunda:formData</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#formproperty" >}}">camunda:formProperty</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#tasklistener" >}}">camunda:taskListener</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
+      <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#inputoutput" >}}">camunda:inputOutput</a>
     </td>
   </tr>
   <tr>

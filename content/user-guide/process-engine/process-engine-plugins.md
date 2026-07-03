@@ -12,7 +12,7 @@ menu:
 
 
 The process engine configuration can be extended through process engine plugins. A process engine plugin is an 
-extension to the [process engine configuration]({{< ref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}).
+extension to the [process engine configuration]({{< relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}).
 
 A plugin must provide an implementation of the 
 {{< javadocref page="org/finos/fluxnova/bpm/engine/impl/cfg/ProcessEnginePlugin.html" text="ProcessEnginePlugin" >}} interface.
@@ -22,10 +22,10 @@ A plugin must provide an implementation of the
 
 Process engine plugins can be configured
 
-* in the [Fluxnova Deployment Descriptors]({{< ref "/reference/deployment-descriptors/_index.md" >}}) (bpm-platform.xml/processes.xml),
-* in the [Wildfly configuration file]({{< ref "/user-guide/runtime-container-integration/jboss.md" >}}) (standalone.xml/domain.xml),
-* using [Spring Beans XML]({{< ref "/user-guide/spring-framework-integration/_index.md#configure-a-process-engine-plugin-in-spring" >}}),
-* in the [Fluxnova Run YAML configuration files]({{< ref "/user-guide/fluxnova-bpm-run.md#process-engine-plugin-registration" >}})
+* in the [Fluxnova Deployment Descriptors]({{< relref "/reference/deployment-descriptors/_index.md" >}}) (bpm-platform.xml/processes.xml),
+* in the [Wildfly configuration file]({{< relref "/user-guide/runtime-container-integration/jboss.md" >}}) (standalone.xml/domain.xml),
+* using [Spring Beans XML]({{< relref "/user-guide/spring-framework-integration/_index.md#configure-a-process-engine-plugin-in-spring" >}}),
+* in the [Fluxnova Run YAML configuration files]({{< relref "/user-guide/fluxnova-bpm-run.md#process-engine-plugin-registration" >}})
 * programatically.
 
 The following is an example of how to configure a process engine plugin in a bpm-platform.xml file:
@@ -67,6 +67,6 @@ A process engine plugin class must be visible to the classloader which loads the
 
 The following is a list of built-in process engine plugins:
 
-* [LDAP Identity Service Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
-* [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
-* [Process Application Event Listener Plugin]({{< ref "/user-guide/process-applications/process-application-event-listeners.md" >}})
+* [LDAP Identity Service Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
+* [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
+* [Process Application Event Listener Plugin]({{< relref "/user-guide/process-applications/process-application-event-listeners.md" >}})

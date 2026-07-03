@@ -24,16 +24,16 @@
   <title>{{ .Title }} | docs.fluxnova.finos.org</title>
 
   <meta name="generator" content="Hugo {{hugo.Version}}" />
-  <link rel="icon" href="{{.Site.BaseURL}}img/Fluxnova_icon.svg" type="image/svg+xml">
-  <link rel="icon" href="{{.Site.BaseURL}}img/Fluxnova_icon.png" type="image/png" />
+  <link rel="icon" href="{{ "img/Fluxnova_Icon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="icon" href="{{ "img/Fluxnova_Icon.png" | relURL }}" type="image/png" />
 
   {{ $styles := resources.Get "css/docs.css" | fingerprint }}
 
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
   <!-- add canonical link to latest if current version is not latest -->
   {{- $permalink := .Permalink }}
-  {{- $replacementPattern := print "${1}" "latest" "/${4}" }}
-  {{- $permalink = $permalink | replaceRE `(\/(manual|optimize)\/)([^\/]*\/)(.*)` $replacementPattern }}
+  {{- $replacementPattern := print "${1}" "latest" "/${3}" }}
+  {{- $permalink = $permalink | replaceRE `(\/manual\/)([^\/]*\/)(.*)` $replacementPattern }}
   <link rel="canonical" href="{{ $.Site.Params.canonicalBasePath }}{{ $permalink }}" />
 </head>
 <body class="{{ .Params.bodyclass }}">
@@ -46,8 +46,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-container">
     <div class="navbar-header">
-      <a href="{{.Site.BaseURL}}">
-      <img src="{{.Site.BaseURL}}img/Fluxnova_icon.png" style="width:40;height:40px; padding:0 5px 7px 0;">
+      <a href="{{ .Site.BaseURL | relURL}}">
+      <img src="{{ "img/Fluxnova_Icon.png" | relURL }}" style="width:40;height:40px; padding:0 5px 7px 0;">
         <span class="brand-name">Fluxnova</span>
         <span class="site-name">Docs</span>
       </a>

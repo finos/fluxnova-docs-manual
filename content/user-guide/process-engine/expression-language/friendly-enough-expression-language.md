@@ -55,7 +55,7 @@ Within Fluxnova, FEEL can be used in many circumstances to evaluate small script
   </tr>
   <tr>
     <td>
-      <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#specifying-priorities-in-bpmn-xml" >}}">
+      <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#specifying-priorities-in-bpmn-xml" >}}">
         All Flow Nodes, Process Definition
       </a>
     </td>
@@ -63,7 +63,7 @@ Within Fluxnova, FEEL can be used in many circumstances to evaluate small script
   </tr>
 </table>
 
-In contrast to the [Unified Expression Language]({{< ref "/user-guide/process-engine/expression-language/unified-expression-language.md" >}}) FEEL does not support `Expression language as delegation code` and does not provide access to beans and internal context variables. This steams from FEEL's nature of being Side-effect free.
+In contrast to the [Unified Expression Language]({{< relref "/user-guide/process-engine/expression-language/unified-expression-language.md" >}}) FEEL does not support `Expression language as delegation code` and does not provide access to beans and internal context variables. This steams from FEEL's nature of being Side-effect free.
 
 # Usage of Expression Language
 
@@ -133,22 +133,22 @@ A conditional sequence flow can directly check a variable value:
     </conditionExpression>
   </sequenceFlow>
 ```
-The list of variable types that is supported by FEEL can be found in the <a href="{{< ref "/user-guide/dmn-engine/feel/type-handling.md" >}}">FEEL Engine Type Handling</a> page.
+The list of variable types that is supported by FEEL can be found in the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md" >}}">FEEL Engine Type Handling</a> page.
 
 ## Custom Functions
 Fluxnova provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
 called in expressions and unary tests. 
-To learn more visit the <a href="{{< ref "/user-guide/dmn-engine/feel/custom-functions" >}}">FEEL Engine Custom Functions</a> page.
+To learn more visit the <a href="{{< relref "/user-guide/dmn-engine/feel/custom-functions" >}}">FEEL Engine Custom Functions</a> page.
 
 ## Built-In Fluxnova Spin Functions
-To learn how Fluxnova Spin can be used together with the Scala FEEL Engine visit the <a href="{{< ref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
+To learn how Fluxnova Spin can be used together with the Scala FEEL Engine visit the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
 
 # Plugin Requirements
 
 ## Spin Plugin Requirement for Complex FEEL Mappings
 
 When using FEEL to define complex input parameters (such as nested objects or contexts in BPMN input/output mappings) the
-<a href="{{< ref "/user-guide/data-formats/configuring-spin-integration#fluxnova-engine-plugin-spin" >}}">fluxnova-engine-plugin-spin</a>
+<a href="{{< relref "/user-guide/data-formats/configuring-spin-integration#fluxnova-engine-plugin-spin" >}}">fluxnova-engine-plugin-spin</a>
  **must** be present on the classpath.
 
 Without the Spin plugin:
@@ -182,4 +182,4 @@ The following BPMN example defines a nested input parameter using a FEEL express
 
 To access this `context` as a `Map<String, Object>` in a Java delegate, the `fluxnova-engine-plugin-spin` plugin must be available so that the nested structure is correctly mapped.
 
-[BPMN]: {{< ref "/reference/bpmn20/_index.md" >}}
+[BPMN]: {{< relref "/reference/bpmn20/_index.md" >}}

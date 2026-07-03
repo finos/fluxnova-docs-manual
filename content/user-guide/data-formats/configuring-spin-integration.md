@@ -62,7 +62,7 @@ The Spin process engine plugin provides the following configuration options:
 
 ## Maven coordinates
 
-Import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
+Import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
 
 All Spin artifacts have the group id `org.finos.fluxnova.spin`, so in order to import `fluxnova-spin-core`, we can write:
 
@@ -81,7 +81,7 @@ Depending on the application and process engine setup, it is recommended to use 
 
 ## Embedded Process Engine
 
-If your application manages its own process engine, then using `fluxnova-engine-plugin-spin` with `fluxnova-spin-core` is the recommended approach. Declare the dependencies in the `compile` scope so that the Spin libraries and their dependencies are added to your application when you bundle it. Configure `org.finos.fluxnova.spin.plugin.impl.SpinProcessEnginePlugin` as a process engine plugin according to the [process engine plugin documentation]({{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}).
+If your application manages its own process engine, then using `fluxnova-engine-plugin-spin` with `fluxnova-spin-core` is the recommended approach. Declare the dependencies in the `compile` scope so that the Spin libraries and their dependencies are added to your application when you bundle it. Configure `org.finos.fluxnova.spin.plugin.impl.SpinProcessEnginePlugin` as a process engine plugin according to the [process engine plugin documentation]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}).
 
 ## Application with Fluxnova Spring Boot Starter
 
@@ -90,7 +90,7 @@ The Spin process engine plugin will be automatically registered with the process
 
 ## Shared Process Engine
 
-If you use a shared process engine, Spin is usually installed as a shared library in the application server. Check the [installation guide]({{< ref "/installation/full/_index.md" >}}) for your application server for how to set up Spin with a shared engine. When using a pre-built distribution of Fluxnova, Spin is already pre-configured.
+If you use a shared process engine, Spin is usually installed as a shared library in the application server. Check the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your application server for how to set up Spin with a shared engine. When using a pre-built distribution of Fluxnova, Spin is already pre-configured.
 
 Depending on the type of application server, `fluxnova-engine-plugin-spin` should be used with either `fluxnova-spin-core` or `fluxnova-spin-dataformat-all`. In the pre-packaged distributions, the following artifacts are used:
 

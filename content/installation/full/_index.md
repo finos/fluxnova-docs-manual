@@ -13,11 +13,11 @@ menu:
 ---
 
 {{< note title="What is a Shared Engine Distribution?" class="info" >}}
-If you need a Remote or Shared Engine Distribution depends on your use-case. Check out the [architecture overview]({{<ref "/introduction/architecture.md" >}}) for more information.
+If you need a Remote or Shared Engine Distribution depends on your use-case. Check out the [architecture overview]({{<relref "/introduction/architecture.md" >}}) for more information.
 {{< /note >}}
 
 The [Full Distribution][full-distribution] includes a Shared Process engine and (optionally) the Web Applications.
 
 The distribution is supported on a broad range of containers:
 
-[full-distribution]: {{< ref "/introduction/downloading-fluxnova.md" >}}
+[full-distribution]: {{< relref "/introduction/downloading-fluxnova.md" >}}

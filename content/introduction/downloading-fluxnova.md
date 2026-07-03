@@ -14,14 +14,14 @@ menu:
 # Prerequisites
 
 Before downloading Fluxnova, make sure you have a JRE (Java Runtime Environment), or better, a JDK
-(Java Development Kit) installed. Please check the supported [Java versions]({{< ref "/introduction/supported-environments.md#java" >}}).
+(Java Development Kit) installed. Please check the supported [Java versions]({{< relref "/introduction/supported-environments.md#java" >}}).
 
 [Download JDK][get-jdk]
 
 
 # Download the Runtime
 
-Fluxnova is a flexible framework which can be used in different contexts. See [Architecture Overview]({{< ref "/introduction/architecture.md" >}}) for more details. Based on how you want
+Fluxnova is a flexible framework which can be used in different contexts. See [Architecture Overview]({{< relref "/introduction/architecture.md" >}}) for more details. Based on how you want
 to use Fluxnova, you can choose a different distribution or runtime environment like [Spring Boot][run-with-spring-boot] or [Docker][run-with-docker].
 
 * [Download page][community-download-page]
@@ -64,7 +64,7 @@ from the [GitHub releases](https://github.com/finos/fluxnova-modeler/releases/la
 [get-jdk]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
 [community-download-page]: https://fluxnova.finos.org/download/
 [enterprise-download-page]: /enterprise/download
-[shared-engine]: {{< ref "/introduction/architecture.md#shared-container-managed-process-engine" >}}
-[installation-guide-full]: {{< ref "/installation/_index.md" >}}
-[run-with-spring-boot]: {{< ref "/user-guide/spring-boot-integration/_index.md" >}}
-[run-with-docker]: {{< ref "/installation/docker.md" >}}
+[shared-engine]: {{< relref "/introduction/architecture.md#shared-container-managed-process-engine" >}}
+[installation-guide-full]: {{< relref "/installation/_index.md" >}}
+[run-with-spring-boot]: {{< relref "/user-guide/spring-boot-integration/_index.md" >}}
+[run-with-docker]: {{< relref "/installation/docker.md" >}}

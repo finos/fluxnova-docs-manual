@@ -12,14 +12,14 @@ menu:
 
 ---
 
-This document will guide you through the installation and update of the Fluxnova [database schema]({{< ref "/user-guide/process-engine/database/database-schema.md" >}}) used by the process engine.
-Regardless of the [architecture of your application setup]({{< ref "/introduction/architecture.md" >}}), the process engine always requires this database schema.
+This document will guide you through the installation and update of the Fluxnova [database schema]({{< relref "/user-guide/process-engine/database/database-schema.md" >}}) used by the process engine.
+Regardless of the [architecture of your application setup]({{< relref "/introduction/architecture.md" >}}), the process engine always requires this database schema.
 In a production environment, we recommend setting up this schema yourself and reference the prepared database instance in your application configuration.
-Consult the installation guide related to your setup to configure the database for a [remote engine]({{< ref "/installation/fluxnova-bpm-run.md" >}}), [shared engine]({{< ref "/installation/full/_index.md" >}}), or [embedded engine]({{< ref "/installation/spring-boot.md" >}}) accordingly.
+Consult the installation guide related to your setup to configure the database for a [remote engine]({{< relref "/installation/fluxnova-bpm-run.md" >}}), [shared engine]({{< relref "/installation/full/_index.md" >}}), or [embedded engine]({{< relref "/installation/spring-boot.md" >}}) accordingly.
 
 This guide will not detail how to set up an instance of your target database or how to create a schema object on it.
 Consult the documentation of your target database on how to do that.
-Fluxnova supports a variety of databases that are documented in the [supported environments]({{< ref "/introduction/supported-environments.md#databases" >}}). 
+Fluxnova supports a variety of databases that are documented in the [supported environments]({{< relref "/introduction/supported-environments.md#databases" >}}). 
 
 Fluxnova supports the following ways of installing the database schema:
 
@@ -29,7 +29,7 @@ Fluxnova supports the following ways of installing the database schema:
 {{< note title="Isolation level" class="info" >}}
 READ COMMITED is the required isolation level for database systems to run Fluxnova with. 
 You may have to change the default setting on your database when installing Fluxnova. 
-For more information see the documentation on [isolation levels]({{< ref "/user-guide/process-engine/database/database-configuration.md#isolation-level-configuration" >}}).
+For more information see the documentation on [isolation levels]({{< relref "/user-guide/process-engine/database/database-configuration.md#isolation-level-configuration" >}}).
 {{< /note >}}
 
 # Installation
@@ -65,7 +65,7 @@ The `DATABASECHANGELOG` table keeps track of all applied changes. The `DATABASEC
 
 As you create the tables externally via Liquibase, you have to configure the engine to **not** create tables at startup as well.
 Set the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`).
-Consult the [manual installation guide]({{< ref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
+Consult the [manual installation guide]({{< relref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
 
 {{< note title="Heads Up!" class="info" >}}
 Liquibase provides additional commands to preview all changes that will be applied by commands that execute SQL statements on a database. For the `update` command, you can execute the [updateSql](https://docs.liquibase.com/commands/community/updatesql.html) command. This will let you inspect all statements that Liquibase will issue on your database without actually executing them.
@@ -91,7 +91,7 @@ Select the appropriate scripts for your database and run them with your database
 
 As you create the tables manually, you have to configure the engine to **not** create tables at startup as well.
 Set the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`).
-Consult the [manual installation guide]({{< ref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
+Consult the [manual installation guide]({{< relref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
 
 {{< note title="Heads Up!" class="info" >}}
 If you have defined a specific prefix for the entities of your database, you will have to manually adjust the `create` scripts accordingly so that the tables are created with the prefix.
@@ -180,7 +180,7 @@ If you need to apply multiple minor versions, you MUST execute the database alte
 
 ## Patch level update
 
-This section explains how to perform a [patch-level update]({{< ref "/update/patch-level.md" >}}) for your database schema. The *patch level* is the version number "after the second dot". For example, update from `7.14.2` to `7.14.3`.
+This section explains how to perform a [patch-level update]({{< relref "/update/patch-level.md" >}}) for your database schema. The *patch level* is the version number "after the second dot". For example, update from `7.14.2` to `7.14.3`.
 
 Between patch levels, the structure of the database schema does not change. The database structure of all patch releases is backward compatible with the corresponding minor version. For example, the database schema of all `7.14.x` versions are backward compatible with the `7.14.0` schema.
 
@@ -630,4 +630,4 @@ If you do choose to apply a database patch, then you must apply all patch script
 <strong>Note:</strong> Some patches are provided for multiple versions. It is not required to execute them more than once. See the description of the [patch version list](#patch-level-update) for information on duplicate fixes.
 
 [Artifact Repository]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/distro/camunda-sql-scripts/
-[pre-packaged distribution]: {{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}
+[pre-packaged distribution]: {{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}

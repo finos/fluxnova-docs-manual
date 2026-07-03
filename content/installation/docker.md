@@ -18,7 +18,7 @@ The Community Edition docker images can be found on [GitHub](https://github.com/
 
 ## Start Fluxnova Run using Docker
 
-To start [Fluxnova Run]({{< ref "/user-guide/fluxnova-bpm-run.md" >}}) execute the following commands:
+To start [Fluxnova Run]({{< relref "/user-guide/fluxnova-bpm-run.md" >}}) execute the following commands:
 
 ```shell
 docker pull fluxnova/fluxnova-bpm-platform:run-latest

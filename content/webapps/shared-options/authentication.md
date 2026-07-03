@@ -24,7 +24,7 @@ The authentication information consists of the following:
 * Tenant memberships 
 * Authorized applications (Tasklist, Cockpit, Admin) 
 
-The Fluxnova web apps correlate the authentication information against [authorizations]({{< ref "/user-guide/process-engine/authorization-service.md" >}}) to determine 
+The Fluxnova web apps correlate the authentication information against [authorizations]({{< relref "/user-guide/process-engine/authorization-service.md" >}}) to determine 
 what data the user can query for and which operations the user can perform.
 
 We implemented authentication with the help of a Java EE/Jakarta `ServletFilter`.
@@ -37,7 +37,7 @@ The authentication cache is a performance optimization to prevent performing for
 multiple database queries that potentially retrieve the same authentication information repeatedly
 given it didn't change.
 
-Read the security implications of the authentication cache in our [Security Instructions]({{< ref "/user-guide/security.md#authentication-cache" >}}).
+Read the security implications of the authentication cache in our [Security Instructions]({{< relref "/user-guide/security.md#authentication-cache" >}}).
 
 ### Time to live
 
@@ -56,7 +56,7 @@ This section describes how to configure the authentication cache time to live.
 
 ##### Spring Boot
 
-You can find the configuration properties for the Spring Boot Starter in the [User Guide]({{< ref "/user-guide/spring-boot-integration/configuration.md#auth-cache" >}}).
+You can find the configuration properties for the Spring Boot Starter in the [User Guide]({{< relref "/user-guide/spring-boot-integration/configuration.md#auth-cache" >}}).
 
 ##### Java EE/Jakarta Servlet Application Servers/Runtimes
 

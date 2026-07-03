@@ -403,7 +403,7 @@ The following table gives an overview for which resources they are available:
   </tbody>
 </table>
 
-To execute an operation [asynchronously]({{< ref "/user-guide/process-engine/batch.md">}}), only a **Create** permission on the Batch Resource is required. However, when executing the same operation synchronously, the specific permissions (e.g. **Delete** on **Process Instance Resource**) are checked. 
+To execute an operation [asynchronously]({{< relref "/user-guide/process-engine/batch.md">}}), only a **Create** permission on the Batch Resource is required. However, when executing the same operation synchronously, the specific permissions (e.g. **Delete** on **Process Instance Resource**) are checked. 
 
 For example, a user without the **Update** permission on the **Process Instance Resource** and granted **Create** permission on the **Batch Resource** can modify multiple process instances asynchronously by creating a batch. However, the user can't execute this operation synchronously.
 
@@ -879,7 +879,7 @@ Fluxnova has no explicit concept of "administrator" beyond it being a user who h
 
 When downloading the Fluxnova distribution, the invoice example application creates a group with id `fluxnova-admin` and grants all authorizations on all resources to this group.
 
-In absense of the demo application, this task is performed by the [Fluxnova Admin Web Application]({{< ref "/webapps/admin/user-management.md#initial-user-setup" >}}). If the Fluxnova webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `fluxnova-admin` group is created and granted all permissions on all resources. 
+In absense of the demo application, this task is performed by the [Fluxnova Admin Web Application]({{< relref "/webapps/admin/user-management.md#initial-user-setup" >}}). If the Fluxnova webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `fluxnova-admin` group is created and granted all permissions on all resources. 
 
 {{< note title="LDAP" class="info" >}}
 The group "fluxnova-admin" is not created when using LDAP (since LDAP is only accessed in a read-only way). Also see the below section on the administrator authorization plugin.
@@ -1015,7 +1015,7 @@ authorizationService.saveAuthorization(authProcessInstance);
 ```
 # Fluxnova Admin Webapp
 
-The Fluxnova Admin Webapplication provides an out of the box [UI for configuring Authorizations]({{< ref "/webapps/admin/authorization-management.md" >}}).
+The Fluxnova Admin Webapplication provides an out of the box [UI for configuring Authorizations]({{< relref "/webapps/admin/authorization-management.md" >}}).
 
 # Performance Considerations
 
@@ -1036,5 +1036,5 @@ On these databases, revoke authorizations are effectively unusable.
 
 Also see the [Configuration Options](#check-revoke-authorizations) section on this page.
 
-[hist-inst-perm-config-flag]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#enable-historic-instance-permissions" >}}
-[Removal-Time-based History Cleanup Strategy]: {{< ref "/user-guide/process-engine/history/history-cleanup.md#removal-time-based-strategy" >}}
+[hist-inst-perm-config-flag]: {{< relref "/reference/deployment-descriptors/tags/process-engine.md#enable-historic-instance-permissions" >}}
+[Removal-Time-based History Cleanup Strategy]: {{< relref "/user-guide/process-engine/history/history-cleanup.md#removal-time-based-strategy" >}}

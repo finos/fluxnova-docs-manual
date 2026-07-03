@@ -13,11 +13,11 @@ menu:
 # Adding JSF Forms to your Process Application
 
 {{< note title="Heads-up!" class="info" >}}
-The required CDI beans for this functionality are currently not available in <a href="{{< ref "/user-guide/quarkus-integration/cdi-integration.md#task-form-beans" >}}">Quarkus applications</a> out of the box.
+The required CDI beans for this functionality are currently not available in <a href="{{< relref "/user-guide/quarkus-integration/cdi-integration.md#task-form-beans" >}}">Quarkus applications</a> out of the box.
 {{< /note >}}
 
 If you add JSF forms as described below, you can easily use them as <br/>
-[external task forms]({{< ref "/user-guide/task-forms/_index.md#external-task-forms" >}}).
+[external task forms]({{< relref "/user-guide/task-forms/_index.md#external-task-forms" >}}).
 
 A working example can be found in the [examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/usertask/task-form-external-jsf).
 
@@ -91,7 +91,7 @@ If the user clicks on "Start to work on task" {{< img src="../img/start-task-but
 
  *   starts a conversation,
  *   remembers the callback URL
- *   starts the User Task in the process engine, meaning the bean sets the start date and assigns the task to the CDI business process scope (see [CDI Integration]({{< ref "/user-guide/cdi-java-ee-integration/_index.md" >}}) for details).
+ *   starts the User Task in the process engine, meaning the bean sets the start date and assigns the task to the CDI business process scope (see [CDI Integration]({{< relref "/user-guide/cdi-java-ee-integration/_index.md" >}}) for details).
 
 For that, you just need to add this code block to the beginning of your JSF view:
 

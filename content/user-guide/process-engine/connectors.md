@@ -29,7 +29,7 @@ connectors. Currently the following connector implementations exist:
   </tr>
 </table>
 
-It is also possible to implement your own custom connector in fluxnova. For more information about extending connectors please visit the [Connector reference]({{< ref "/reference/connect/extending-connect.md" >}}). 
+It is also possible to implement your own custom connector in fluxnova. For more information about extending connectors please visit the [Connector reference]({{< relref "/reference/connect/extending-connect.md" >}}). 
 
 
 # Configure Fluxnova Connect
@@ -46,7 +46,7 @@ The following `connect` artifacts exist:
 # Maven Coordinates
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 
@@ -97,7 +97,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 
 ## Configure the Process Engine Plugin
 
-`fluxnova-engine-plugin-connect` contains a class called `org.finos.fluxnova.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
+`fluxnova-engine-plugin-connect` contains a class called `org.finos.fluxnova.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -124,7 +124,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 
 # Use Connectors
 
-To use a connector, you have to add the Fluxnova extension element [connector]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connector" >}}). The connector is configured by a unique [connectorId]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< ref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
+To use a connector, you have to add the Fluxnova extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
 
 As an example, a shortened configuration of the Fluxnova SOAP connector implementation is shown. A complete [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples) on GitHub.
 

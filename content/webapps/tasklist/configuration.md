@@ -77,7 +77,7 @@ available, add it to the list of available locales in the configuration file.
 # Custom Scripts
 
 Tasklist allows you to include arbitrary JavaScript files. This allows you to extend Tasklist with custom code. The script file might contain a 
-custom frontend module. Tasklist shares the frontend module structure with [Cockpit Plugins]({{<ref "/webapps/cockpit/extend/plugins.md#structure-of-a-frontend-module" >}}).
+custom frontend module. Tasklist shares the frontend module structure with [Cockpit Plugins]({{<relref "/webapps/cockpit/extend/plugins.md#structure-of-a-frontend-module" >}}).
 
 Add your files to the `customScripts` property of the `app/tasklist/scripts/config.js` file:
 
@@ -150,7 +150,7 @@ export default {
 }
 ```
 
-**Note:** Please make sure to change the CSRF cookie name also on [server-side]({{<ref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
+**Note:** Please make sure to change the CSRF cookie name also on [server-side]({{<relref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
 
 # Disable Welcome Message for new Users
 
