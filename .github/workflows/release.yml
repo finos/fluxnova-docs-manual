@@ -1,16 +1,19 @@
 name: Release and Publish Documentation
 
+concurrency:
+  group: release
+  cancel-in-progress: true
+  
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish (e.g., 1.2.0)'
-        required: true
-        type: string
   push:
     branches:
       - 'release/*'
-
 jobs:
   build-and-publish:
     name: Build and Publish Documentation
@@ -23,54 +26,101 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get version
-        id: get_version
-        run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            FULL_VERSION="${{ github.event.inputs.version }}"
-          else
-            # Extracts version from branch name (e.g., release/v1.2.0 -> 1.2.0)
-            FULL_VERSION=${GITHUB_REF_NAME#release/}
-            FULL_VERSION=${FULL_VERSION#v}
-          fi
-          MINOR_VERSION=$(echo "$FULL_VERSION" | cut -d. -f1,2)
-          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
-          echo "minor_version=${MINOR_VERSION}" >> $GITHUB_OUTPUT
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.145.0'
+          hugo-version: '0.163.3'
           extended: true
 
+      - name: Extract version from config.yaml and compute next development version
+        id: set-vars
+        run: |
+          # Extract current version from config.yaml
+          releaseVersion=$(hugo config --format json | jq -r .params.version)
+
+          # Set as environment variable
+          echo "RELEASE_VERSION=${releaseVersion}" >> $GITHUB_ENV
+          
+          # Expose as job output
+          echo "release_version=${releaseVersion}" >> $GITHUB_OUTPUT
+          
+          # Set tag name
+          TAG="v${releaseVersion}"
+          echo "TAG=$TAG" >> $GITHUB_ENV
+         
       - name: Build website
         # We override baseURL so Hugo generates correct internal links for the subfolder
         run: |
-          hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/manual/${{ steps.get_version.outputs.minor_version }}/"
+          hugo --minify --baseURL "/${{ github.event.repository.name }}/manual/${{ env.RELEASE_VERSION }}/" --destination public/manual/${{ env.RELEASE_VERSION }}/
 
-      - name: Create Root Redirect
-        # This creates an index.html at the root that sends users to the latest version
+      - name: Fetch versions from gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-clone
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Generate versions.json and "latest" redirect
+        id: generate_manifest
         run: |
-          mkdir -p ./root_redirect
-          echo '<meta http-equiv="refresh" content="0; url=manual/${{ steps.get_version.outputs.minor_version }}/">' > ./root_redirect/index.html
+          PAGES_DIR=./gh-pages-clone
+          MANUAL_DIR="$PAGES_DIR/manual"
+          
+          # Ensure the target directories for our generated files exist in the build output
+          mkdir -p ./public/manual
+          mkdir -p ./public/manual/latest
+
+          # --- Part 1: Generate versions.json ---
+          # List existing version dirs, add the new version, sort unique descending, and format as JSON
+          VERSIONS=$( ( (test -d "$MANUAL_DIR" && ls -d "$MANUAL_DIR"/*/ | xargs -n 1 basename) || true; echo "${{ env.RELEASE_VERSION }}" ) \
+            | grep -v "latest" \
+            | sort -rV | uniq )
+            
+          echo "Detected versions:"
+          echo "$VERSIONS"
+
+          echo "$VERSIONS" | jq -R . | jq -s . > ./public/manual/versions.json
+          
+          echo "Generated versions.json:"
+          cat ./public/manual/versions.json
+
+          # --- Part 2: Create the 'latest' redirect ---
+          # The latest version is the first line of our sorted list
+          LATEST_VERSION=$(echo "$VERSIONS" | head -n 1)
+          
+          if [ -z "$LATEST_VERSION" ]; then
+            echo "Error: Could not determine the latest version."
+            exit 1
+          fi
+
+          echo "The latest version is: $LATEST_VERSION"
+          echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          
+          # Sync 404.html for automated redirection to latest version
+          cp ./404.html ./public
+
+      - name: Create Release Tag
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Versioned Documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          destination_dir: manual/${{ steps.get_version.outputs.minor_version }}
           keep_files: true # Essential: keeps /manual/1.0 when publishing 1.1
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'docs: publish version ${{ steps.get_version.outputs.version }}'
-
-      - name: Publish Root Redirect
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./root_redirect
-          keep_files: true # Essential: prevents deleting the /manual directory
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'docs: update root redirect to ${{ steps.get_version.outputs.minor_version }}'
+          commit_message: |
+            docs: publish website for ${{ env.RELEASE_VERSION }}
+            
+            - Update versions.json manifest
+            
+      - name: Workflow Summary
+        run: |
+          echo "## Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: ${{ env.RELEASE_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tag**: ${{ env.TAG }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Latest Version**: ${{ steps.generate_manifest.outputs.LATEST_VERSION }}" >> $GITHUB_STEP_SUMMARY
