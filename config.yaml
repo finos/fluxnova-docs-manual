@@ -1,6 +1,6 @@
 ---
 baseURL: "/"
-languageCode: "en-us"
+locale: "en-us"
 title: "Fluxnova documentation"
 theme: "fluxnova"
 
@@ -8,6 +8,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    renderHooks:
+      link:
+        useEmbedded: auto
   tableOfContents:
     startLevel: 1
     endLevel: 3
@@ -17,8 +20,7 @@ blackfriday:
   plainIDAnchors: true
 
 params:
-#  canonicalBasePath: "https://docs.fluxnova.finos.org"
-  version: "1.0"
+  version: "3.0"
 #  versionAlias: "develop"
   forum:
     url: "https://github.com/finos/fluxnova-modeler/discussions"

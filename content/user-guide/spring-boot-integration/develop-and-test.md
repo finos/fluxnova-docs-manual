@@ -93,8 +93,7 @@ Here, the `fluxnova.bpm.process-engine-name=foo` will set (a unique name) "foo" 
 
 ## Fluxnova Assertions
 
-The [Fluxnova Assertions]({{< ref 
-"/user-guide/testing/_index.md#fluxnova-assertions" >}}) library is 
+The [Fluxnova Assertions]({{< relref "/user-guide/testing/_index.md#fluxnova-assertions" >}}) library is 
 integrated with the Fluxnova Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 

@@ -2,7 +2,7 @@
 
 title: 'User Task Forms'
 weight: 100
-layout: 'section-list'
+layout: "single"
 
 menu:
   main:
@@ -39,7 +39,7 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
     <td>LOCATION</td>
     <td>Can be either <code>deployment</code> or <code>app</code>:
     <ul>
-      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< ref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< ref "/get-started/quick-start/deploy/#use-the-fluxnova-modeler-to-deploy-the-process">}}"by deploying from the Fluxnova Modeler</a>), which means that it is stored in the Fluxnova database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
+      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< relref "/get-started/quick-start/deploy/#use-the-fluxnova-modeler-to-deploy-the-process">}}"by deploying from the Fluxnova Modeler</a>), which means that it is stored in the Fluxnova database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
       <li><em>app</em>: Add the file to your development project in a folder <code>src/main/webapp/forms</code>. The form file will be packaged into your deployment artifact (typically a WAR archive). During runtime it will be loaded from there.</li>
     </ul>
   </td>
@@ -61,7 +61,7 @@ To configure the form in your process, open the process with the [Fluxnova Model
 
 # Embedded Task Forms
 
-Embedded task forms are HTML and JavaScript forms. We provide more information about the creation of embedded forms in our [Embedded Task Forms Reference]({{< ref "/reference/forms/embedded-forms/_index.md" >}}).
+Embedded task forms are HTML and JavaScript forms. We provide more information about the creation of embedded forms in our [Embedded Task Forms Reference]({{< relref "/reference/forms/embedded-forms/_index.md" >}}).
 
 To add an embedded form to your application, simply create an HTML file and refer to it from a [UserTask][user-tasks] or a [StartEvent][start-event] in your process model. For example, you can create a `FORM_NAME.html` file containing the relevant content for your form, e.g., a simple form with two input fields:
 
@@ -87,9 +87,9 @@ The form key for this file could be `embedded:deployment:FORM_NAME.html` or `emb
 
 # Fluxnova Forms
 
-Fluxnova Forms are created as separate files using the Fluxnova Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build Fluxnova Forms in the [Fluxnova Modeler documentation]({{< ref "/modeler/forms.md" >}}) or refer to the [Fluxnova Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
+Fluxnova Forms are created as separate files using the Fluxnova Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build Fluxnova Forms in the [Fluxnova Modeler documentation]({{< relref "/modeler/forms.md" >}}) or refer to the [Fluxnova Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
 
-[Process variables]({{< ref "/user-guide/process-engine/variables.md" >}}) are mapped to form fields where the field's key matches the variable name.
+[Process variables]({{< relref "/user-guide/process-engine/variables.md" >}}) are mapped to form fields where the field's key matches the variable name.
 
 {{< note title="Process variables access" class="warning" >}}
 Defining forms does not introduce any permissions on process variables.
@@ -132,7 +132,7 @@ The attributes `camunda:formRef` and `camunda:formRefVersion` can be specified a
 
 ## Form Key
 
-Aa an alternative to `formRef` you can reference a Fluxnova Form file with a `deployment` or `app` [form key]({{< ref "/user-guide/task-forms/_index.md#form-key-details" >}}):
+Aa an alternative to `formRef` you can reference a Fluxnova Form file with a `deployment` or `app` [form key]({{< relref "/user-guide/task-forms/_index.md#form-key-details" >}}):
 
 * `fluxnova-forms:deployment:FORM_NAME.form`
 * `fluxnova-forms:app:forms/FORM_NAME.form`
@@ -193,9 +193,9 @@ If you are about to prototype your application, you can also use the shortcut fo
 If you want to include your Fluxnova Form as part of the `deployment`, then you need to deploy the `.form` file in the same deployment as the respective `.bpmn` diagram - for example using the Fluxnova Modeler (since Modeler Version 5.0.0).
 
 {{< note title="Automatic deployment" class="warning" >}}
-Fluxnova Forms are not automatically deployed as part of a [process archive]({{< ref "/reference/deployment-descriptors/tags/process-archive.md" >}}) by default. 
+Fluxnova Forms are not automatically deployed as part of a [process archive]({{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}) by default. 
 You need to configure it accordingly by adding it as a resource directly or by adding `form` to the list of `additionalResourceSuffixes`.
-Using [Fluxnova Run]({{< ref "/user-guide/fluxnova-bpm-run.md#starting-with-fluxnova-platform-run" >}}), all additional resources - including Fluxnova Forms - 
+Using [Fluxnova Run]({{< relref "/user-guide/fluxnova-bpm-run.md#starting-with-fluxnova-platform-run" >}}), all additional resources - including Fluxnova Forms - 
 placed inside the `configuration/resources/` directory are automatically deployed.
 {{< /note >}}
 
@@ -225,7 +225,7 @@ Tasklist creates the URL by the pattern:
 When you have completed the task, the call back URL will be called.
 
 {{< note title="How To" class="info" >}}
-  [How to add JSF Forms to your process application]({{< ref "/user-guide/task-forms/jsf-task-forms.md" >}})
+  [How to add JSF Forms to your process application]({{< relref "/user-guide/task-forms/jsf-task-forms.md" >}})
 {{< /note >}}
 
 
@@ -245,9 +245,9 @@ After hitting the *Complete* button, the process instance contains the entered v
 You can also retrieve already existing variables of the process instance by clicking the *Load Variables* button.
 
 
-[user-tasks]: {{< ref "/reference/bpmn20/tasks/user-task.md" >}}
-[start-event]: {{< ref "/reference/bpmn20/events/start-events.md" >}}
-[jsf-task-forms]: {{< ref "/user-guide/task-forms/jsf-task-forms.md" >}}
+[user-tasks]: {{< relref "/reference/bpmn20/tasks/user-task.md" >}}
+[start-event]: {{< relref "/reference/bpmn20/events/start-events.md" >}}
+[jsf-task-forms]: {{< relref "/user-guide/task-forms/jsf-task-forms.md" >}}
 
 ## Generated Task Forms
 

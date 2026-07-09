@@ -16,8 +16,8 @@ certain events occur during process execution.
 
 There are different types of Delegation Code:
 
-* **Java Delegates** can be attached to a [BPMN Service Task]({{< ref "/reference/bpmn20/tasks/service-task.md" >}}).
-* **Delegate Variable Mapping** can be attached to a [Call Activity]({{< ref "/reference/bpmn20/subprocesses/call-activity.md" >}}).
+* **Java Delegates** can be attached to a [BPMN Service Task]({{< relref "/reference/bpmn20/tasks/service-task.md" >}}).
+* **Delegate Variable Mapping** can be attached to a [Call Activity]({{< relref "/reference/bpmn20/subprocesses/call-activity.md" >}}).
 * **Execution Listeners** can be attached to any event within the normal token flow, e.g., starting a process instance or entering an activity.
 * **Task Listeners** can be attached to events within the user task lifecycle, e.g., creation or completion of a user task.
 
@@ -214,7 +214,7 @@ The `mapInputVariables` method is called before the call activity is executed, t
 The input variables should be put into the given variables map.
 The `mapOutputVariables` method is called after the call activity was executed, to map the output variables.
 The output variables can be directly set into the caller execution.
-The behavior of the class loading is similar to the class loading on [Java Delegates]({{< ref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}).
+The behavior of the class loading is similar to the class loading on [Java Delegates]({{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}).
 
 
 # Execution Listener
@@ -587,7 +587,7 @@ The `BpmnError` will not be caught for the following listeners:
 
 {{< note title="Note!" class="info" >}}
 
-Throwing a `BpmnError` in the delegation code behaves like modelling an error end event. See the [reference guide]({{< ref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}) about the details on the behavior, especially the error boundary event. If no error boundary event is found on the scope, the execution is ended.
+Throwing a `BpmnError` in the delegation code behaves like modelling an error end event. See the [reference guide]({{< relref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}) about the details on the behavior, especially the error boundary event. If no error boundary event is found on the scope, the execution is ended.
 
 {{< /note >}}
 
@@ -641,11 +641,11 @@ public class MyJavaDelegate implements JavaDelegate {
 
 Setting a custom error code via Delegation Code allows your business logic to react to it by getting 
 the code via `ProcessEngineException#getCode` when calling Fluxnova Java API or by evaluating the 
-`code` property in the response of an [erroneous REST API call]({{< ref "/reference/rest/overview/_index.md#exception-codes" >}}).
+`code` property in the response of an [erroneous REST API call]({{< relref "/reference/rest/overview/_index.md#exception-codes" >}}).
 
 If you don't set any code, the engine assigns `0`, which a custom or built-in error code provider can override.
 
-Also, you can [register your custom exception code provider]({{< ref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}) 
+Also, you can [register your custom exception code provider]({{< relref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}) 
 to assign error codes to exceptions you cannot control via your Delegation Code.
 
 {{< note title="Heads-up!" class="info" >}}
@@ -656,7 +656,7 @@ overridden with `0` unless you disable the built-in code provider.
 {{< /note >}}
 
 
-[script-sources]: {{< ref "/user-guide/process-engine/scripting.md#script-source" >}}
-[camunda-script]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#camunda-script" >}}
-[timerEventDefinition]: {{< ref "/reference/bpmn20/events/timer-events.md#defining-a-timer" >}}
-[job-executor]: {{< ref "/user-guide/process-engine/the-job-executor.md" >}}
+[script-sources]: {{< relref "/user-guide/process-engine/scripting.md#script-source" >}}
+[camunda-script]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#camunda-script" >}}
+[timerEventDefinition]: {{< relref "/reference/bpmn20/events/timer-events.md#defining-a-timer" >}}
+[job-executor]: {{< relref "/user-guide/process-engine/the-job-executor.md" >}}

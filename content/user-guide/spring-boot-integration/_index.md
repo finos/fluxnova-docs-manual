@@ -33,7 +33,7 @@ Other starters that can be used are:
 
 * [`fluxnova-bpm-spring-boot-starter-rest`](rest-api)
 * [`fluxnova-bpm-spring-boot-starter-webapp`](webapps)
-* [`fluxnova-bpm-spring-boot-starter-external-task-client`]({{< ref "/user-guide/ext-client/spring-boot-starter.md" >}})
+* [`fluxnova-bpm-spring-boot-starter-external-task-client`]({{< relref "/user-guide/ext-client/spring-boot-starter.md" >}})
 
 # Requirements
 

@@ -13,7 +13,7 @@ menu:
 
 Migrating an existing application from Activiti <= 5.11 or Camunda 7.x to Fluxnova 1.0 is straightforward.
 This page describes the necessary steps.
-Once done with the migration, the [minor version update guides]({{< ref "/update/minor/_index.md" >}}) show how to update from 1.0 to the latest Fluxnova version.
+Once done with the migration, the [minor version update guides]({{< relref "/update/minor/_index.md" >}}) show how to update from 1.0 to the latest Fluxnova version.
 
 The changes in short are:
 
@@ -25,7 +25,7 @@ The changes in short are:
 There are some things which have not changed yet:
 
 *   Database schema and table names. Note that we based our fork on Activiti 5.11 and the tables existent in that version.
-*   The `activiti:` [Custom Extensions]({{< ref "/reference/bpmn20/custom-extensions/_index.md" >}}) are kept.
+*   The `activiti:` [Custom Extensions]({{< relref "/reference/bpmn20/custom-extensions/_index.md" >}}) are kept.
     A Fluxnova namespace will be introduced soon but backwards compatibility will be ensured.
 
 We based our fork on Camunda 7.24, which is based on the database schema of Activiti 5.11. So please [update](http://www.activiti.org/userguide/index.html#databaseUpgrade) your project to this database using the update scripts provided by Activiti. If you are using a newer version, best ask for assistance in the {{< forumref >}}.

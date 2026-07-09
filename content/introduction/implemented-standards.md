@@ -49,14 +49,15 @@ Fluxnova supports the 1.1 version of DMN.
 
 
 [OMG]: http://www.omg.org/
-[modelers]: {{< ref "/modeler/_index.md" >}}
+[modelers]: {{< relref "/modeler/_index.md" >}}
 [BPMN Modeling Tutorial]: https://fluxnova.finos.org/bpmn/tutorial/
 [BPMN Modeling Reference]: https://fluxnova.finos.org/bpmn/reference/
-[Quick Start (Java / JS)]: /get-started/quick-start/
-[BPMN Implementation Reference]: {{< ref "/reference/bpmn20/_index.md" >}}
-[CMMN Implementation Reference]: {{< ref "/reference/cmmn11/_index.md" >}}
-[DMN Getting Started]: /get-started/dmn11/
-[DMN Implementation Reference]: {{< ref "/reference/dmn/_index.md" >}}
+[Quick Start (Java / JS)]: {{< relref "/get-started/quick-start/" >}}
+[BPMN Implementation Reference]: {{< relref "/reference/bpmn20/_index.md" >}}
+[CMMN Implementation Reference]: {{< relref "/reference/cmmn11/_index.md" >}}
+[DMN Getting Started]: {{< relref "/get-started/dmn/" >}}
+[DMN Editor]: {{< relref "/modeler/dmn.md" >}}
+[DMN Implementation Reference]: {{< relref "/reference/dmn/_index.md" >}}
 [DMN Modeling Tutorial]: https://fluxnova.finos.org/dmn/tutorial/
-[Process Engine]: {{< ref "/user-guide/process-engine/_index.md" >}}
-[DMN Engine]: {{< ref "/user-guide/dmn-engine/_index.md" >}}
+[Process Engine]: {{< relref "/user-guide/process-engine/_index.md" >}}
+[DMN Engine]: {{< relref "/user-guide/dmn-engine/_index.md" >}}

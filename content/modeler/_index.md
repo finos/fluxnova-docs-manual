@@ -16,4 +16,4 @@ Fluxnova Modeler is a desktop application for modeling BPMN and DMN. It allows y
 
 {{< img src="img/fluxnova-modeler.png" title="Fluxnova Modeler" >}}
 
-This is a guide to get you started with modeling BPMN diagrams and DMN decision tables. Make sure to [Install the Fluxnova Modeler]({{< ref "/installation/fluxnova-modeler.md" >}}) first.
+This is a guide to get you started with modeling BPMN diagrams and DMN decision tables. Make sure to [Install the Fluxnova Modeler]({{< relref "/installation/fluxnova-modeler.md" >}}) first.

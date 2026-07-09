@@ -58,7 +58,7 @@ The following gives an overview of the Java API for batches.
 ## Creating a Batch
 
 A batch is created by executing a process engine command asynchronously.
-You can find a list of currently supported batch types in the [Batch operations]({{< ref "/user-guide/process-engine/batch-operations.md">}}).
+You can find a list of currently supported batch types in the [Batch operations]({{< relref "/user-guide/process-engine/batch-operations.md">}}).
 The Java API can be used to create Batch command. Refer to specific commands for exact usage examples.
 
 ## Query a Batch
@@ -317,19 +317,19 @@ You can configure the property in three ways:
         my-custom-operation:          7  # in case of custom batch operations
     ```
 
-[migration]: {{< ref "/user-guide/process-engine/process-instance-migration.md" >}}
-[batch-migration]: {{< ref "/user-guide/process-engine/process-instance-migration.md#asynchronous-batch-migration-execution" >}}
-[job executor]: {{< ref "/user-guide/process-engine/the-job-executor.md" >}}
-[process engine configuration]: {{< ref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}
+[migration]: {{< relref "/user-guide/process-engine/process-instance-migration.md" >}}
+[batch-migration]: {{< relref "/user-guide/process-engine/process-instance-migration.md#asynchronous-batch-migration-execution" >}}
+[job executor]: {{< relref "/user-guide/process-engine/the-job-executor.md" >}}
+[process engine configuration]: {{< relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}
 [seed job]: #seed-job
-[retry]: {{< ref "/user-guide/process-engine/the-job-executor.md#failed-jobs" >}}
-[incidents]: {{< ref "/user-guide/process-engine/incidents.md" >}}
-[history level]: {{< ref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level" >}}
-[history cleanup]: {{< ref "/user-guide/process-engine/history/history-cleanup.md#history-time-to-live-for-batch-operations" >}}
-[job prioritization]: {{< ref "/user-guide/process-engine/the-job-executor.md#job-prioritization" >}}
-[job-definition-priority]: {{< ref "/user-guide/process-engine/the-job-executor.md#override-priority-by-job-definition" >}}
-[job-priority]: {{< ref "/user-guide/process-engine/the-job-executor.md#set-job-priorities-via-managementservice-api" >}}
-[invoc-per-batch-job-batch-type]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#invocations-per-batch-job-by-batch-type" >}}
-[Process Engine Plugin]: {{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}
-[spring-xml-config]: {{< ref "/user-guide/spring-framework-integration/configuration.md" >}}
-[spring-boot-config]: {{< ref "/user-guide/spring-boot-integration/configuration.md#fluxnova-engine-properties" >}}
+[retry]: {{< relref "/user-guide/process-engine/the-job-executor.md#failed-jobs" >}}
+[incidents]: {{< relref "/user-guide/process-engine/incidents.md" >}}
+[history level]: {{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level" >}}
+[history cleanup]: {{< relref "/user-guide/process-engine/history/history-cleanup.md#history-time-to-live-for-batch-operations" >}}
+[job prioritization]: {{< relref "/user-guide/process-engine/the-job-executor.md#job-prioritization" >}}
+[job-definition-priority]: {{< relref "/user-guide/process-engine/the-job-executor.md#override-priority-by-job-definition" >}}
+[job-priority]: {{< relref "/user-guide/process-engine/the-job-executor.md#set-job-priorities-via-managementservice-api" >}}
+[invoc-per-batch-job-batch-type]: {{< relref "/reference/deployment-descriptors/tags/process-engine.md#invocations-per-batch-job-by-batch-type" >}}
+[Process Engine Plugin]: {{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}
+[spring-xml-config]: {{< relref "/user-guide/spring-framework-integration/configuration.md" >}}
+[spring-boot-config]: {{< relref "/user-guide/spring-boot-integration/configuration.md#fluxnova-engine-properties" >}}

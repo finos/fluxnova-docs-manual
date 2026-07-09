@@ -138,12 +138,12 @@ To include such functionality in your Quarkus application, provide custom beans 
 You can learn about the available beans and programming model in the [CDI and Java EE Integration][cdi-and-java-ee-integration].
 
 [java-cdi-40-standard]: https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html
-[cdi-and-java-ee-integration]: {{< ref "/user-guide/cdi-java-ee-integration/_index.md">}}
+[cdi-and-java-ee-integration]: {{< relref "/user-guide/cdi-java-ee-integration/_index.md">}}
 [cdi-conversational-scope]: https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#conversation_context_ee
 [cdi-request-scope]: https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#request_context_ee
 [arc-config-reference]: https://quarkus.io/guides/cdi-reference#quarkus-arc_quarkus.arc.auto-inject-fields
-[business-process-scoped]: {{< ref "/user-guide/cdi-java-ee-integration/contextual-programming-model.md#work-with-businessprocessscoped-beans">}}
+[business-process-scoped]: {{< relref "/user-guide/cdi-java-ee-integration/contextual-programming-model.md#work-with-businessprocessscoped-beans">}}
 [cdi-passivation]: https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#passivating_scope
 [destroy-jira-issue]: https://jira.camunda.com/browse/CAM-13755
-[jsf-task-forms]: {{< ref "/user-guide/task-forms/jsf-task-forms.md">}}
+[jsf-task-forms]: {{< relref "/user-guide/task-forms/jsf-task-forms.md">}}
 [quarkus-bean-scopes]: https://quarkus.io/guides/cdi#bean-scope-available

@@ -31,7 +31,7 @@ Note: If you use the pre-packaged distribution, the ldap plugin is already prese
 
 ### Adjust the Process Engine Configuration
 
-Edit the file `bpm-platform.xml` located inside the folder `$TOMCAT_HOME/conf` and add the [LDAP Identity Provider Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
+Edit the file `bpm-platform.xml` located inside the folder `$TOMCAT_HOME/conf` and add the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -83,12 +83,12 @@ Edit the file `bpm-platform.xml` located inside the folder `$TOMCAT_HOME/conf` a
 
 The `administratorUserName` property should contain the user id of the LDAP user you want to grant administrator authorizations to. You can then use this user to log in to the web application and grant authorizations to additional users.
 
-See our user guide for complete documentation on the [LDAP Identity Provider Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
+See our user guide for complete documentation on the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
 
 
 ## HAL Resource Caching
 
-If you use LDAP as Indentity Provider, you should consider [activating caching]({{< ref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
+If you use LDAP as Indentity Provider, you should consider [activating caching]({{< relref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
 Users and Groups in the Fluxnova webapplication. In order to activate this, add the following
 configuration to the `web.xml` file of Fluxnova webapplication
 (`fluxnova-webapp-tomcat-$PLATFORM_VERSION.war/WEB-INF/web.xml`):
@@ -194,8 +194,8 @@ The following list describes all possible parameters you can use for the filter 
   <tr>
     <td>enableSecureCookie</td>
     <td>
-      If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the 
-      <a href="{{< ref "/webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
+      If set to <code>true</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the 
+      <a href="{{< relref "/webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
       <strong>Note:</strong> If the <code>Secure</code> flag is set in the cookie by any other means already, this property will not remove it by setting it to <code>false</code>.
     </td>
     <td><code>false</code></td>
@@ -203,7 +203,7 @@ The following list describes all possible parameters you can use for the filter 
   <tr>
     <td>enableSameSiteCookie</td>
     <td>
-      If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
+      If set to <code>false</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
       <strong>Note:</strong> If the <code>SameSite</code> flag is set in the cookie by any other means already, this property will not adjust or remove it.
     </td>
     <td><code>true</code></td>
@@ -243,7 +243,7 @@ The following list describes all possible parameters you can use for the filter 
   </tr>
 </table>
 
-Please also see the detailed overview about the [Cookie Security]({{< ref "/webapps/shared-options/cookie-security.md" >}}).
+Please also see the detailed overview about the [Cookie Security]({{< relref "/webapps/shared-options/cookie-security.md" >}}).
 
 ## Security-related HTTP headers in Webapps
 
@@ -290,4 +290,4 @@ You can change the default behavior by adding configuration parameters to the se
 ```
 
 Please also see the detailed overview about the 
-[HTTP Header Security configuration settings]({{< ref "/webapps/shared-options/header-security.md#how-to-configure" >}}).
+[HTTP Header Security configuration settings]({{< relref "/webapps/shared-options/header-security.md#how-to-configure" >}}).

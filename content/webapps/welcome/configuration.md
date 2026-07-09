@@ -114,7 +114,7 @@ export default {
 };
 ```
 
-**Note:** Please make sure to change the CSRF cookie name also on [server-side]({{<ref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
+**Note:** Please make sure to change the CSRF cookie name also on [server-side]({{<relref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
 
 # Disable Welcome Message for new Users
 

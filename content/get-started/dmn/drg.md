@@ -27,7 +27,7 @@ Open the *Dish* decision table from the previous step. Click on the button "View
 
 # Set the Name and the Id of the DRD
 
-Click somewhere on the canvas and open the Property Panel on the right. Change the [id]({{< ref "/reference/dmn/drg/#decision-requirements-graph-id" >}}) of the DRD to "dinnerDecisions". Next, change the [name]({{< ref "/reference/dmn/drg/#decision-requirements-graph-name" >}}) of the DRD to "Dinner Decisions".
+Click somewhere on the canvas and open the Property Panel on the right. Change the [id]({{< relref "/reference/dmn/drg/#decision-requirements-graph-id" >}}) of the DRD to "dinnerDecisions". Next, change the [name]({{< relref "/reference/dmn/drg/#decision-requirements-graph-name" >}}) of the DRD to "Dinner Decisions".
 
 
 {{< img src="../img/modeler-drd-step2.png" >}}
@@ -38,7 +38,7 @@ Click on the decision icon of the palette to create a new decision. Then, double
 
 {{< img src="../img/modeler-drd-step3.png" >}}
 
-Next, connect the *Dish* decision to the *Beverages* decision to indicate that the *Dish* decision is a [required decision]({{< ref "/reference/dmn/drg/#required-decisions" >}}) of the *Beverages* decision. That means that it is used as an input for the decision and the output value "desiredDish" can be accessed there.
+Next, connect the *Dish* decision to the *Beverages* decision to indicate that the *Dish* decision is a [required decision]({{< relref "/reference/dmn/drg/#required-decisions" >}}) of the *Beverages* decision. That means that it is used as an input for the decision and the output value "desiredDish" can be accessed there.
 
 {{< img src="../img/modeler-drd-step4.png" >}}
 
@@ -146,5 +146,5 @@ Note that the *Dish* decision is evaluated as part of the evaluation of the *Bev
 
 Next,
 
-* learn more about DRG by reading the [DMN Reference]({{< ref "/reference/dmn/drg" >}}),
+* learn more about DRG by reading the [DMN Reference]({{< relref "/reference/dmn/drg" >}}),
 * learn more about [DMN in Cockpit](https://docs.fluxnova.finos.org/manual/webapps/cockpit/dmn/) and specialized views for DRGs (Enterprise Feature)

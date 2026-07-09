@@ -30,7 +30,7 @@ This section applies to the following database types:
 
 Microsoft SQL Server and Azure SQL implement the `READ_COMMITTED` isolation level different
 than most databases and do not interact well with the process engine's
-[optimistic locking]({{< ref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking" >}}) scheme. 
+[optimistic locking]({{< relref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking" >}}) scheme. 
 As a result you may suffer deadlocks when putting the process engine under high load.
 
 If you experience deadlocks in your MSSQL installation, you must execute the
@@ -67,7 +67,7 @@ of the SQL Server versions, and their associated compatibility level values
 [at the Microsoft *Alter Compatibility Level* page](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#arguments).
 
 Fluxnova supports the *Database Compatibility Level* values of the currently supported Microsoft 
-SQL Server versions documented in our [Supported Database Products section]({{< ref "/introduction/supported-environments.md#supported-database-products" >}}).
+SQL Server versions documented in our [Supported Database Products section]({{< relref "/introduction/supported-environments.md#supported-database-products" >}}).
 
 ## Configuring a database on Azure SQL
 

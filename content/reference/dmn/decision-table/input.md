@@ -175,8 +175,8 @@ The variable can be used in an expression of an [input entry]. For example, the
 FEEL expression `currentSeason != "Fall"` checks if the season input is not
 `"Fall"`.
 
-[supported EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
-[default EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
-[supported DT]: {{< ref "/user-guide/dmn-engine/data-types.md#supported-data-types" >}}
-[inputVariable]: {{< ref "/reference/dmn/custom-extensions/fluxnova-attributes.md#inputvariable" >}}
-[input entry]: {{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
+[supported EL]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
+[default EL]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
+[supported DT]: {{< relref "/user-guide/dmn-engine/data-types.md#supported-data-types" >}}
+[inputVariable]: {{< relref "/reference/dmn/custom-extensions/fluxnova-attributes.md#inputvariable" >}}
+[input entry]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}

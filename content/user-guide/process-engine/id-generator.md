@@ -70,4 +70,4 @@ Additionally, you need the following maven dependency:
 ```
 
 [1]: https://mvnrepository.com/artifact/com.fasterxml.uuid/java-uuid-generator
-[2]: {{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}
+[2]: {{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}

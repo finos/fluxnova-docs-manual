@@ -42,7 +42,7 @@ Select the User Task on the canvas. This will update the selection in the proper
 
 Click on the Tab `Forms` in the properties panel.
 
-This guide uses [Fluxnova Forms]({{< ref "/user-guide/task-forms/#fluxnova-forms" >}}) to add a form to the process. 
+This guide uses [Fluxnova Forms]({{< relref "/user-guide/task-forms/#fluxnova-forms" >}}) to add a form to the process. 
 We will create a form file called `payment.form`. 
 Set the following fields to link this process to the form you are about to create:
 
@@ -120,7 +120,7 @@ To work on the task, select the *Form* tab. Because we defined the variables in 
 {{< img src="../img/task-form-generated.png" >}}
 
 {{< note title="Next Step" class="info" >}}
-Next, we'll make the process more dynamic and only show a User Task in certain situations. Let's have a look how you can [add Gateways to your Process]({{< ref "/get-started/quick-start/gateway/" >}}).
+Next, we'll make the process more dynamic and only show a User Task in certain situations. Let's have a look how you can [add Gateways to your Process]({{< relref "/get-started/quick-start/gateway/" >}}).
 {{< /note >}}
 
 {{< get-tag repo="fluxnova-get-started-quickstart" tag="Step-3" >}}

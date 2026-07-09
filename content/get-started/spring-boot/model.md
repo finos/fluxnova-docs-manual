@@ -32,7 +32,7 @@ Start by modeling an executable process using the Fluxnova Modeler. The process 
 
 {{< note title="Hint" class="info" >}}
 If you are unfamiliar with modeling an executable process, you can read the
-[Model a Process]({{< ref "/get-started/quick-start/service-task.md" >}}) section of the *Quick Start* tutorial.
+[Model a Process]({{< relref "/get-started/quick-start/service-task.md" >}}) section of the *Quick Start* tutorial.
 {{< /note >}}
 
 When you are done, save the process model in the `src/main/resources` folder of your Eclipse project. Make sure to refresh the Eclipse project afterwards.

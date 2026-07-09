@@ -23,11 +23,11 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 
 * All Java application servers
 * Fluxnova Spring Boot Starter: Embedded Tomcat
-  * [Supported versions]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
-  * [Deployment scenarios]({{< ref "/user-guide/spring-boot-integration/_index.md#supported-deployment-scenarios" >}})
+  * [Supported versions]({{< relref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
+  * [Deployment scenarios]({{< relref "/user-guide/spring-boot-integration/_index.md#supported-deployment-scenarios" >}})
 * Fluxnova Engine Quarkus Extension
-  * [Supported versions]({{< ref "/user-guide/quarkus-integration/version-compatibility.md" >}})
-  * [Deployment scenarios]({{< ref "/user-guide/quarkus-integration/_index.md#supported-deployment-scenarios" >}})
+  * [Supported versions]({{< relref "/user-guide/quarkus-integration/version-compatibility.md" >}})
+  * [Deployment scenarios]({{< relref "/user-guide/quarkus-integration/_index.md#supported-deployment-scenarios" >}})
 
 ## Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin
 
@@ -45,13 +45,13 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 * IBM DB2 11.5 (excluding IBM z/OS for all versions)
 * PostgreSQL 15 / 16 / 17 / 18
 * Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16 / 17
-* Microsoft SQL Server 2017 / 2019 / 2022 (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
+* Microsoft SQL Server 2017 / 2019 / 2022 (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
 * Microsoft Azure SQL with Fluxnova-supported SQL Server compatibility levels 
-  (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-fluxnova" >}})): 
+  (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-fluxnova" >}})): 
   * SQL Server on Azure Virtual Machines
   * Azure SQL Managed Instance
   * Azure SQL Database
-* H2 2.3 (not recommended for [Cluster Mode]({{< ref "/introduction/architecture.md#clustering-model" >}}) - see [Deployment Note]({{< ref "/user-guide/process-engine/deployments.md" >}}))
+* H2 2.3 (not recommended for [Cluster Mode]({{< relref "/introduction/architecture.md#clustering-model" >}}) - see [Deployment Note]({{< relref "/user-guide/process-engine/deployments.md" >}}))
 
 ## Database Clustering & Replication
 

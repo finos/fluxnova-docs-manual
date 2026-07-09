@@ -63,7 +63,7 @@ Start a Process engine with enabled cross-origin requests, and you will be able 
 Some API Tools also support import of endpoints via upload of a OpenAPI document.
 For example, [Postman][postman-site] users can [import the OpenAPI documentation][postman-import] and work with the REST endpoints from a single place.
 
-[cam-platform-run]: {{< ref "/user-guide/fluxnova-bpm-run.md" >}}
+[cam-platform-run]: {{< relref "/user-guide/fluxnova-bpm-run.md" >}}
 [swagger-ui]: https://github.com/swagger-api/swagger-ui
 [swagger-editor]: https://editor.swagger.io/
 [postman-site]: https://www.postman.com/

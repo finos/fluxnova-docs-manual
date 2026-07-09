@@ -13,7 +13,7 @@ menu:
 ---
 
 You can use the open tasks dashboard to see how the open tasks are distributed by individual factors.
-Refer to the [Cockpit Plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) section for information about 
+Refer to the [Cockpit Plugins]({{< relref "/webapps/cockpit/extend/plugins.md" >}}) section for information about 
 adding a custom open task dashboard plugin.
 
 {{< img outdated="true" src="../img/task-dashboard.png" title="Open Task Dashboard" >}}

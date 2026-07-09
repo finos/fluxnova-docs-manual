@@ -107,7 +107,7 @@ Congratulations, you have now successfully set up a project with your first DMN 
 Next,
 
 * see how you can evaluate the decision using the [REST API](https://docs.fluxnova.finos.org/rest/fluxnova-bpm-platform/7.23/#tag/Decision-Definition/operation/evaluateDecisionByKey),
-* learn more about DMN by reading the [DMN Reference]({{< ref "/reference/dmn/">}}),
-* learn more about the [Decision API exposed by Fluxnova Process Engine]({{< ref "/user-guide/process-engine/decisions/" >}}),
-* check how you can invoke the decision from a [BPMN Business Rule Task]({{< ref "/reference/bpmn20/tasks/business-rule-task/" >}}),
+* learn more about DMN by reading the [DMN Reference]({{< relref "/reference/dmn/">}}),
+* learn more about the [Decision API exposed by Fluxnova Process Engine]({{< relref "/user-guide/process-engine/decisions/" >}}),
+* check how you can invoke the decision from a [BPMN Business Rule Task]({{< relref "/reference/bpmn20/tasks/business-rule-task/" >}}),
 * Bonus Step: [Decision Requirements Graph](../drg) 

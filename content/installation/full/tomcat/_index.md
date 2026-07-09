@@ -12,6 +12,6 @@ menu:
 
 ---
 
-This document describes the installation of the [Full Distribution]({{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for [Apache Tomcat Application Server](http://tomcat.apache.org/).
+This document describes the installation of the [Full Distribution]({{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for [Apache Tomcat Application Server](http://tomcat.apache.org/).
 
 There are different options for installing the Full Distribution:

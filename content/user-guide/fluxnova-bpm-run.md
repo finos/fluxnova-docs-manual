@@ -14,9 +14,9 @@ This guide gives an introduction to Fluxnova Run, a pre-packaged, lightweight di
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Fluxnova is and what it does. Check out the [Get Started guides]({{< ref "/get-started/quick-start/" >}}) if you have never used Fluxnova before. The [Installation guide]({{< ref "/installation/fluxnova-bpm-run.md" >}}) is also worth looking at if you are completely new to Fluxnova.
+To use this guide, you should at least know what Fluxnova is and what it does. Check out the [Get Started guides]({{< relref "/get-started/quick-start/" >}}) if you have never used Fluxnova before. The [Installation guide]({{< relref "/installation/fluxnova-bpm-run.md" >}}) is also worth looking at if you are completely new to Fluxnova.
 
-This guide will teach you about Fluxnova Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Fluxnova Run. Head over to the [Installation guide]({{< ref "/installation/fluxnova-bpm-run.md" >}}) for details on how to install and start Fluxnova Run.
+This guide will teach you about Fluxnova Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Fluxnova Run. Head over to the [Installation guide]({{< relref "/installation/fluxnova-bpm-run.md" >}}) for details on how to install and start Fluxnova Run.
 
 # What is Fluxnova Run?
 
@@ -26,7 +26,7 @@ Fluxnova Run is a full distribution of Fluxnova. It includes:
   * Cockpit
   * Tasklist
   * Admin
-* [REST API]({{< ref "/reference/rest/overview/_index.md" >}})
+* [REST API]({{< relref "/reference/rest/overview/_index.md" >}})
 * [An example application](#example-application)
 
 # Starting with Fluxnova Run
@@ -107,7 +107,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
       <td><code>--oauth2</code></td>
       <td>
         Enables Spring Security OAuth2 integration.
-        See dedicated <a href="{{< ref "/user-guide/spring-boot-integration/spring-security.md" >}}">Spring Security OAuth2 Integration</a> documentation for details.
+        See dedicated <a href="{{< relref "/user-guide/spring-boot-integration/spring-security.md" >}}">Spring Security OAuth2 Integration</a> documentation for details.
       </td>
       <td><code>false</code></td>
   </tr>
@@ -120,7 +120,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
 
 ## Starting Fluxnova Run using Docker
 
-Fluxnova Run is also available as a Docker image. Please see the Fluxnova Run section of the Fluxnova Docker documentation [here]({{< ref "/installation/docker.md#start-fluxnova-bpm-run-using-docker" >}}) for more details.
+Fluxnova Run is also available as a Docker image. Please see the Fluxnova Run section of the Fluxnova Docker documentation [here]({{< relref "/installation/docker.md#start-fluxnova-bpm-run-using-docker" >}}) for more details.
 
 ## Optional components
 
@@ -141,7 +141,7 @@ That way, the example application and its resources will be present on the class
 However, the example application will not be started.
 
 Disabling the example application with any of those mechanisms will **NOT** delete any deployments or process instances from Fluxnova Run once they are created.
-You have to delete this data manually through the [web apps]({{< ref "/webapps/cockpit/deployment-view.md#delete" >}}), the 
+You have to delete this data manually through the [web apps]({{< relref "/webapps/cockpit/deployment-view.md#delete" >}}), the 
 {{< restref page="deleteDeployment" text="REST API" tag="Deployment" >}}, or by cleaning the database 
 [configured in the application properties](#database).
 
@@ -150,7 +150,7 @@ You have to delete this data manually through the [web apps]({{< ref "/webapps/c
 Fluxnova Run ships with two different configuration files which are both located in the `configuration` folder. 
 
 * The `default.yml` configuration only contains necessary configuration like the H2 database, a demo user and [CORS](#cross-origin-resource-sharing) for REST calls from a client application.
-* The `production.yml` configuration is intended to provide the recommended properties according to the [Security Instructions]({{< ref "/user-guide/security.md" >}}). 
+* The `production.yml` configuration is intended to provide the recommended properties according to the [Security Instructions]({{< relref "/user-guide/security.md" >}}). 
   When using Fluxnova Run in a production environment, make sure to base your custom configuration on this one and carefully read through the security instructions.
 
 By default, Run launches with the `default.yml` configuration. To enable the `production.yml` configuration, execute the start script with the `--production` property.
@@ -161,9 +161,9 @@ However, we do not recommended to use the example application in production.
 
 Fluxnova Run is pre-configured to use a file-based H2 database for testing. The database schema and all required tables are automatically created when the engine starts up for the first time. If you want to use a custom standalone database, follow these steps:
 
-1. Make sure your database is among the [supported database systems]({{< ref "/introduction/supported-environments.md#supported-database-products" >}}).
+1. Make sure your database is among the [supported database systems]({{< relref "/introduction/supported-environments.md#supported-database-products" >}}).
 2. Create a database schema for Fluxnova yourself.
-3. Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+3. Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 4. Drop a JDBC driver jar for your database system in the `configuration/userlib` folder.
 5. Add the JDBC URL and login credentials to the configuration file like described [below](#database).
 6. Restart Fluxnova Run
@@ -182,7 +182,7 @@ Just like all the other distros, you can tailor Fluxnova Run to your needs. To d
 
 {{< note title="Note:" class="info" >}}
 Fluxnova Run is based on the [Fluxnova Spring Boot Starter](https://github.com/finos/fluxnova-bpm-platform/tree/master/spring-boot-starter). 
-All [configuration properties]({{< ref "/user-guide/spring-boot-integration/configuration.md#fluxnova-engine-properties" >}}) from the fluxnova-spring-boot-starter are available to customize Fluxnova Run.
+All [configuration properties]({{< relref "/user-guide/spring-boot-integration/configuration.md#fluxnova-engine-properties" >}}) from the fluxnova-spring-boot-starter are available to customize Fluxnova Run.
 {{< /note >}}
 
 ## Database
@@ -221,7 +221,7 @@ The distro comes with a file-based h2 database for testing. It is recommended to
 
 ## Authentication
 
-To add authentication to requests against the [REST API]({{< ref "/reference/rest/overview/_index.md" >}}), you can enable basic authentication.
+To add authentication to requests against the [REST API]({{< relref "/reference/rest/overview/_index.md" >}}), you can enable basic authentication.
 
 <table class="table desc-table">
   <tr>
@@ -245,7 +245,7 @@ To add authentication to requests against the [REST API]({{< ref "/reference/res
 
 ## Cross-Origin Resource Sharing
 
-If you want to allow cross-origin requests to the [REST API]({{< ref "/reference/rest/overview/_index.md" >}}), you need to enable CORS.
+If you want to allow cross-origin requests to the [REST API]({{< relref "/reference/rest/overview/_index.md" >}}), you need to enable CORS.
 <table class="table desc-table">
   <tr>
       <th>Prefix</th>
@@ -327,7 +327,7 @@ Fluxnova Run also supports configuration options for customizing the deployment.
             <li>When set to <code>false</code>, all deployments will be deployed without filtering their resources.</li>
           </ul>
           The property can be useful for controlling the deployment behaviour of the engine in case of restarts, similar to the
-          <a href="{{< ref "user-guide/spring-framework-integration/deployment" >}}">Spring Framework Integration</a>
+          <a href="{{< relref "user-guide/spring-framework-integration/deployment" >}}">Spring Framework Integration</a>
       </td>
       <td><code>true</code></td>
   </tr>
@@ -335,10 +335,10 @@ Fluxnova Run also supports configuration options for customizing the deployment.
 
 ## LDAP Identity Service
 
-Fluxnova can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
+Fluxnova can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
 which provides read-only access to the LDAP repository.
 
-Find all available configuration properties in the [LDAP Plugin Guide]({{< ref "/user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin" >}})
+Find all available configuration properties in the [LDAP Plugin Guide]({{< relref "/user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin" >}})
 
 <table class="table desc-table">
   <tr>
@@ -357,9 +357,9 @@ Find all available configuration properties in the [LDAP Plugin Guide]({{< ref "
 
 ### LDAP Administrator Authorization
 
-You can also use the [Administrator Authorization plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) 
+You can also use the [Administrator Authorization plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) 
 to ensure the appropriate LDAP user or group gains administrative access. Review all the available 
-configuration options in the [Administrator Authorization plugin section]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
+configuration options in the [Administrator Authorization plugin section]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
 of our documentation.
 
 In the table below, observe the Fluxnova Run-specific properties for the Administrator Authorization plugin.
@@ -489,7 +489,7 @@ process engine.
 
 Fluxnova provides a mechanism to extend the Fluxnova Webapps with your own functionality. You can add plugins at various plugin points. For example, the processes dashboard in Cockpit.
 
-A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< ref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
+A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< relref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
 
 To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Fluxnova Run section](#starting-with-fluxnova-platform-run) of this guide to find out how to navigate the directories of Fluxnova Run.
 
@@ -568,7 +568,7 @@ After starting Fluxnova Run, you can access the webapps via https://localhost:84
 
 ## Logging
 
-Fluxnova provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< ref "/user-guide/logging.md#process-engine" >}}).
+Fluxnova provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< relref "/user-guide/logging.md#process-engine" >}}).
 To configure the logging behavior in Fluxnova Run, customize your configuration file with the following properties.
 
 For more information on logging configuration visit the [Spring Boot Logging Guide](https://docs.spring.io/spring-boot/docs/2.4.0/reference/html/spring-boot-features.html#boot-features-logging).
@@ -588,7 +588,7 @@ For more information on logging configuration visit the [Spring Boot Logging Gui
   </tr>
   <tr>
       <td><code>.level.{logger-name}</code></td>
-      <td>Set a logging level for a specific logging category. Find an overview over the available categories in the <a href="{{<ref "/user-guide/logging.md#process-engine" >}}">Logging User Guide</a>.
+      <td>Set a logging level for a specific logging category. Find an overview over the available categories in the <a href="{{<relref "/user-guide/logging.md#process-engine" >}}">Logging User Guide</a>.
       Value can be one of the following: <code>OFF</code>. <code>ERROR</code>. <code>WARN</code>. <code>INFO</code>. <code>DEBUG</code>. <code>FATAL</code>. <code>TRACE</code></td>
       <td><code>-</code></td>
   </tr>
@@ -600,5 +600,5 @@ For more information on logging configuration visit the [Spring Boot Logging Gui
 </table>
 
 
-[engine-plugins]: {{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}
-[cockpit-plugins]: {{< ref "/webapps/cockpit/extend/plugins.md" >}}
+[engine-plugins]: {{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}
+[cockpit-plugins]: {{< relref "/webapps/cockpit/extend/plugins.md" >}}

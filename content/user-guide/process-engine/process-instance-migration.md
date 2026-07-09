@@ -35,7 +35,7 @@ is mostly transparent, so that a task that was started before migration can be c
 The same principle is applied to the other BPMN element types.
 
 For cases in which activities are not semantically equivalent,
-we recommend combining migration with the [process instance modification API]({{< ref "/user-guide/process-engine/process-instance-modification.md" >}}), e.g.,
+we recommend combining migration with the [process instance modification API]({{< relref "/user-guide/process-engine/process-instance-modification.md" >}}), e.g.,
 canceling an activity instance before migration and starting a new instance after migration.
 
 In the remainder of this section, the following process models are used to illustrate the API and effects of migration unless otherwise noted:
@@ -212,7 +212,7 @@ MigrationPlan migrationPlan = processEngine.getRuntimeService()
 Currently, it is not possible to set transient variables asynchronously. However,
 you can [set transient variables] synchronously.
 
-[set transient variables]: {{< ref "/user-guide/process-engine/variables.md#transient-variables" >}}
+[set transient variables]: {{< relref "/user-guide/process-engine/variables.md#transient-variables" >}}
 
 ## Generating a migration plan
 
@@ -746,7 +746,7 @@ the following requirements:
 * The migration plan adheres to [BPMN-element-specific considerations]({{< relref "#bpmn-specific-api-and-effects" >}})
 * A set variable must not be of type `Object` **AND** its `serializationFormat` must not be `application/x-java-serialized-object`
   * Validation is skipped when the engine configuration flag `javaSerializationFormatEnabled` is set to `true`
-  * Please see [Process Engine Configuration Reference]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) for more details
+  * Please see [Process Engine Configuration Reference]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) for more details
 
 If validation reports errors, migration fails with a `MigrationPlanValidationException`
 providing a `MigrationPlanValidationReport` object with details on the
@@ -758,8 +758,7 @@ validation errors.
 An activity must stay a descendant of its closest ancestor scope that migrates (i.e., that is not cancelled during migration).
 
 Consider the following migration plan for the example processes shown at the
-[beginning of this chapter]({{<
-ref "/user-guide/process-engine/process-instance-migration.md" >}}):
+[beginning of this chapter]({{< relref "/user-guide/process-engine/process-instance-migration.md" >}}):
 
 ```java
 MigrationPlan migrationPlan = processEngine.getRuntimeService()
@@ -857,9 +856,9 @@ migrated if they are instances of the following element types:
 
 Transition instances can be migrated for any activity type.
 
-[batch]: {{< ref "/user-guide/process-engine/batch.md" >}}
-[job executor]: {{< ref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
-[execution jobs]: {{< ref "/user-guide/process-engine/batch.md#execution-jobs" >}}
+[batch]: {{< relref "/user-guide/process-engine/batch.md" >}}
+[job executor]: {{< relref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
+[execution jobs]: {{< relref "/user-guide/process-engine/batch.md#execution-jobs" >}}
 
 
 ### Aspects Not Covered by Validation
@@ -871,7 +870,7 @@ Validation cannot ensure that such data is useful in the context of the target p
 
 #### Deserialization of Object Variables
 
-[Object type variables]({{< ref "/user-guide/process-engine/variables.md#supported-variable-values" >}}) represent Java objects. That means they have a serialized value along with a Java type name that is used to deserialize the value into a Java object. When migrating between processes of different process
+[Object type variables]({{< relref "/user-guide/process-engine/variables.md#supported-variable-values" >}}) represent Java objects. That means they have a serialized value along with a Java type name that is used to deserialize the value into a Java object. When migrating between processes of different process
 applications, it may occur that an Object variable refers to a Java class that does not exist in the process
 application of the target process.
 

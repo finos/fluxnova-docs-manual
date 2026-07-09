@@ -26,7 +26,7 @@ For batches that are currently in progress, the ID, type, user, started time, nu
 Please note that if a batch has failed jobs, the batch cannot be completed.
 You have to go to the details view of the batch and resolve the failed jobs (i.e., retrying or deleting them).
 Also, it can take some time after the progress is at 100% for the batch to actually finish.
-See the [process engine section]({{< ref "/user-guide/process-engine/batch.md" >}}) for details.
+See the [process engine section]({{< relref "/user-guide/process-engine/batch.md" >}}) for details.
 
 ### Search
 
@@ -40,7 +40,7 @@ You can combine multiple search pills to narrow down the search results.
 
 ## Completed
 
-Below the currently running batches, completed batches along with their start- and end-time are displayed. Completed batches are only visible when the process engine [history level]({{< ref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}) is set to FULL.
+Below the currently running batches, completed batches along with their start- and end-time are displayed. Completed batches are only visible when the process engine [history level]({{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}) is set to FULL.
 
 # Batch Details
 

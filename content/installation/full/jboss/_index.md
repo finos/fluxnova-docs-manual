@@ -12,6 +12,6 @@ menu:
 
 ---
 
-This document describes the installation of the [Full Distribution]({{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for [WildFly Application Server / JBoss EAP](http://www.wildfly.org).
+This document describes the installation of the [Full Distribution]({{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}) for [WildFly Application Server / JBoss EAP](http://www.wildfly.org).
 
 There are different options for installing the Full Distribution:
