@@ -17,9 +17,15 @@ An ad hoc subprocess has one ordering mode:
 
 *   **Parallel** (default and only supported mode): Multiple activities within the subprocess may be active simultaneously. This allows any activity to be started at any time, regardless of whether other activities have already been started or completed.
 
+The `ordering` attribute is optional and defaults to `"Parallel"`. The value `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine — runtime activation is always parallel.
+
 To enforce sequential execution between activities, use optional sequence flows to connect them within the ad hoc subprocess.
 
-An ad hoc subprocess completes when its `completionCondition` expression evaluates to `true`. If no `completionCondition` is specified, the subprocess completes when all activities have been completed at least once. The optional attribute `cancelRemainingInstances` (default: `true`) controls whether still-active activities are cancelled when the completion condition is met.
+Completion of an ad hoc subprocess is controlled by three settings:
+
+*   `completionCondition` (optional child element) — an expression that is re-evaluated whenever a child activity ends or takes a sequence flow inside the subprocess. When it evaluates to `true`, the subprocess completes.
+*   `fluxnova:autoComplete` (optional extension attribute, default: `true`) — applies when no `completionCondition` is defined. If `true`, the subprocess completes automatically once at least one contained activity has been started and no activities are active anymore. If `false`, the subprocess stays open even after all activities have finished and must be completed explicitly via the `completeAdHocSubProcess()` API.
+*   `cancelRemainingInstances` (optional attribute, default: `true`) — controls what happens to still-active activities when the completion condition is met. If `true`, they are cancelled and the subprocess completes immediately. If `false`, completion is deferred until all active activities have finished on their own.
 
 Constraints for an ad hoc subprocess:
 
@@ -35,12 +41,13 @@ When expanded, the internal activities are shown without connecting sequence flo
 
 <div data-bpmn-diagram="../bpmn/ad-hoc-subprocess-expanded"></div>
 
-An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. The `ordering` attribute must be set to `"Parallel"` (Fluxnova does not support sequential ordering). The optional `completionCondition` child element defines the expression that, when evaluated as `true`, causes the subprocess to complete:
+An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. The optional `ordering` attribute defaults to `"Parallel"`; Fluxnova does not enforce sequential ordering at runtime. The optional `completionCondition` child element defines the expression that, when evaluated as `true`, causes the subprocess to complete:
 
 ```xml
 <bpmn:adHocSubProcess id="Activity_11nc5qc" 
                       ordering="Parallel"
                       cancelRemainingInstances="false"
+                      fluxnova:autoComplete="false"
                       camunda:asyncBefore="true">
   <bpmn:extensionElements>
     <fluxnova:properties>
@@ -74,7 +81,8 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>
+      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>,
+      <code>fluxnova:autoComplete</code> — Boolean (default: <code>true</code>). When no <code>completionCondition</code> is defined, controls whether the subprocess completes automatically once at least one activity has started and no activities are active anymore. Must be specified as an attribute on the <code>adHocSubProcess</code> element; the <code>camunda:autoComplete</code> alias is also accepted.
     </td>
   </tr>
   <tr>
@@ -88,7 +96,7 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
   <tr>
     <th>Extension Properties</th>
     <td>
-      <code>fluxnova:property name="activeTasksCollection"</code> — Comma-separated list of activity IDs to auto-start when the ad hoc subprocess enters. If not specified, the subprocess enters idle state awaiting manual activity triggering via the <code>triggerAdHocActivities()</code> API.
+      <code>fluxnova:property name="activeTasksCollection"</code> — Specifies the activities to auto-start when the ad hoc subprocess enters: a comma-separated list of activity IDs (e.g., <code>Task_A,Task_B</code>), or an expression or variable reference resolving to a <code>String</code> or <code>Collection</code> of activity IDs (e.g., <code>${taskList}</code>). Only starter activities may be listed — activities of a startable type with no incoming sequence flow inside the subprocess. If not specified or empty, the subprocess enters idle state awaiting manual activity triggering via the <code>triggerAdHocActivities()</code> API.
     </td>
   </tr>
   <tr>
@@ -97,7 +105,11 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
       The <code>camunda:exclusive</code> attribute is only evaluated if the attribute
       <code>camunda:asyncBefore</code> or <code>camunda:asyncAfter</code> is set to <code>true</code>.
       <br/><br/>
-      The <code>cancelRemainingInstances</code> attribute (default: <code>true</code>) controls whether active activities are cancelled when the <code>completionCondition</code> evaluates to true.
+      The <code>cancelRemainingInstances</code> attribute (default: <code>true</code>) controls whether active activities are cancelled when the <code>completionCondition</code> evaluates to true. If set to <code>false</code>, completion is deferred until all active activities have finished.
+      <br/><br/>
+      The <code>fluxnova:autoComplete</code> value must be a valid boolean; any other value fails deployment. Supplying <code>autoComplete</code> as an extension <em>property</em> inside <code>fluxnova:properties</code> is not supported and also fails deployment — it must be an attribute on the <code>adHocSubProcess</code> element.
+      <br/><br/>
+      Only startable activity types can be activated inside an ad hoc subprocess: tasks of any type, call activities, embedded subprocesses, and transactions. Events, gateways, and compensation handlers cannot be started directly.
     </td>
   </tr>
 </table>
@@ -109,9 +121,9 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
 
 - **AdHocSubProcessActivityBehavior** — Main behavior implementation
   - Evaluates `completionCondition` after each child activity completes
-  - Auto-completes when no completion condition is set AND no active children remain
-  - Re-evaluates condition periodically (on child completion, final completion)
-  - If condition is false, subprocess stays open indefinitely
+  - Auto-completes when no completion condition is set, `fluxnova:autoComplete` is `true` (default), at least one activity has started, and no active children remain
+  - Re-evaluates condition on child completion, on sequence flow transitions inside the subprocess, and on final completion
+  - If condition is false (or `autoComplete` is `false` with no condition), subprocess stays open indefinitely
 - **TriggerAdHocActivitiesCmd** & `RuntimeService.triggerAdHocActivities()` — Dynamic activity triggering
   - Allows activating starter activities after subprocess entry (not BPMN 2.0 standard)
   - Supports per-activity variable mapping
@@ -119,7 +131,7 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
 - **CompleteAdHocSubProcessCmd** & `RuntimeService.completeAdHocSubProcess()` — Manual completion API
   - Bypasses completionCondition entirely (forced/manual override)
   - Supports optional variable setting at completion
-  - Requires all inner activities to be idle
+  - Cancels still-active inner activities when `cancelRemainingInstances` is `true` (default); fails with an error if activities are active and `cancelRemainingInstances` is `false`
 
 ### REST Endpoints
 - `POST /engine-rest/execution/{id}/ad-hoc-activities/trigger` — trigger activities with per-activity variables
@@ -134,13 +146,16 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
 | Per-activity variables    | Not supported                     | Each triggered activity receives its own variable map         |
 | Manual completion         | No API                            | `completeAdHocSubProcess()` forcibly completes regardless     |
 | Completion variables      | Variables set via condition only   | Optional variables can be set at completion time              |
+| Automatic completion      | Driven by `completionCondition` only | `fluxnova:autoComplete` attribute controls auto-completion when no condition is defined; `false` keeps the subprocess open until explicitly completed |
 
 ## Key Behaviors
 
 - **Idle state possible** — If no `activeTasksCollection` defined or is empty, subprocess enters idle state awaiting `triggerAdHocActivities()`
 - **Condition holds open** — If `completionCondition` evaluates to false after any child finishes, subprocess remains open
+- **Automatic completion** — With no `completionCondition`, the subprocess completes automatically once at least one activity has started and none remain active, unless `fluxnova:autoComplete="false"` is set
+- **Deferred completion** — With `cancelRemainingInstances="false"`, a met completion condition does not cancel active activities; the subprocess completes once they have all finished
 - **Manual override** — The complete API is a forced exit mechanism independent of condition evaluation
-- **Active tasks collection** — The `activeTasksCollection` property specifies which activities auto-start when the ad hoc subprocess enters. Multiple activities can be specified as a comma-separated list (e.g., `Task_A,Task_B`)
+- **Active tasks collection** — The `activeTasksCollection` property specifies which activities auto-start when the ad hoc subprocess enters: a comma-separated list (e.g., `Task_A,Task_B`) or an expression resolving to a `String` or `Collection` of activity IDs (e.g., `${taskList}`). Only starter activities (startable type, no incoming sequence flow inside the subprocess) can be listed
 - **Multi-instance support** — Ad hoc subprocesses support `multiInstanceLoopCharacteristics` for creating multiple instances of the entire ad hoc subprocess
 
 
