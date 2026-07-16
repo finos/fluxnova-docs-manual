@@ -43,12 +43,12 @@ java -version
 If you need to install Java Runtime Environment, you can [find the download from Oracle here](https://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 
 {{< note class="info" title="Supported Java versions" >}}
-Make sure to use a Java version from [Fluxnova's list of supported environments]({{< ref "/introduction/supported-environments/#java-runtime" >}}).
+Make sure to use a Java version from [Fluxnova's list of supported environments]({{< relref "/introduction/supported-environments/#java-runtime" >}}).
 {{< /note >}}
 
 # Fluxnova Platform
 
-First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers]({{< ref "/installation/full/" >}}). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform).
+First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers]({{< relref "/installation/full/" >}}). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform).
 
 After downloading the distribution, unpack it inside a directory of your choice.
 
@@ -65,5 +65,5 @@ After downloading the Modeler, simply unzip the download in a folder of your cho
 After you have successfully unpacked the zip, run `fluxnova-modeler.exe` (for Windows users), `fluxnova-modeler.app` (for Mac users), or `fluxnova-modeler.sh` (for Linux users).
 
 {{< note title="Next Step" class="info" >}}
-Once you've installed the Fluxnova Platform and the Fluxnova Modeler, you can move to the next step to [model and execute your first process]({{< ref "/get-started/quick-start/service-task/" >}}).
+Once you've installed the Fluxnova Platform and the Fluxnova Modeler, you can move to the next step to [model and execute your first process]({{< relref "/get-started/quick-start/service-task/" >}}).
 {{< /note >}}

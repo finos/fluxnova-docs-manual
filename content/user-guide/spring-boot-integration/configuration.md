@@ -35,7 +35,7 @@ Sets the process engine name and automatically adds all `ProcessEnginePlugin` be
 
 ### `DefaultDatasourceConfiguration`
 
-Configures the Fluxnova data source and enables [transaction integration]({{< ref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
+Configures the Fluxnova data source and enables [transaction integration]({{< relref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
 
 If you want to [configure more than one datasource](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources)
 and don't want to use the `@Primary` one for the process engine, then you can create a separate
@@ -79,7 +79,7 @@ public PlatformTransactionManager fluxnovaTransactionManager(@Qualifier("fluxnov
 
 ### `DefaultHistoryConfiguration`
 
-Applies the history configuration to the process engine. If not configured, the history level [FULL]({{< ref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level" >}}) is used.
+Applies the history configuration to the process engine. If not configured, the history level [FULL]({{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level" >}}) is used.
 If you want to use a custom `HistoryEventHandler`, you just have to provide a bean implementing the interface.
 
 ```java
@@ -203,7 +203,7 @@ public class MyCustomConfiguration extends AbstractFluxnovaConfiguration {
 ## Fluxnova Engine Properties
 In addition to the bean-based way of overriding process engine configuration properties, it is also possible
 to set those properties via an <code>application.yaml</code> configuration file. Instructions on how to use it
-can be found in the <a href="{{< ref "/get-started/spring-boot/configuration/">}}>Spring Boot Starter Guide</a>.
+can be found in the <a href="{{< relref "/get-started/spring-boot/configuration/">}}>Spring Boot Starter Guide</a>.
 
 The available properties are as follows:
 
@@ -406,7 +406,7 @@ The available properties are as follows:
 <td><code>.jdbc-batch-processing</code></td>
 <td>Controls if the engine executes the jdbc statements as Batch or not.
 It has to be disabled for some databases.
-See the <a href="{{<ref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
+See the <a href="{{<relref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
 <td><i>Fluxnova default value: true</i></td>
 </tr>
 
@@ -415,28 +415,28 @@ See the <a href="{{<ref "/user-guide/process-engine/database/database-configurat
 <td rowspan="4"><code>fluxnova.bpm.eventing</code></td>
 <td><code>.execution</code></td>
 <td>Enables eventing of delegate execution events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.history</code></td>
 <td>Enables eventing of history events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.task</code></td>
 <td>Enables eventing of task events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.skippable</code></td>
 <td>Controls if listeners are registered as built-in (<code>false</code>) or are skippable (<code>true</code>).
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
@@ -495,35 +495,35 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 </tr>
 <tr>
 <td><code>.target-origin</code></td>
-<td>Sets the application expected deployment domain. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the application expected deployment domain. See the <a href="{{<relref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><i>Not set</i></td>
 </tr>
 <tr>
 <td><code>.deny-status</code></td>
-<td>Sets the HTTP response status code used for a denied request. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the HTTP response status code used for a denied request. See the <a href="{{<relref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><code>403</code></td>
 </tr>
 <tr>
 <td><code>.random-class</code></td>
-<td>Sets the name of the class used to generate tokens. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the name of the class used to generate tokens. See the <a href="{{<relref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><code>java.security.SecureRandom</code></td>
 </tr>
 <tr>
 <td><code>.entry-points</code></td>
-<td>Sets additional URLs that will not be tested for the presence of a valid token. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets additional URLs that will not be tested for the presence of a valid token. See the <a href="{{<relref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><i>Not set</i></td>
 </tr>
 <tr>
   <td><code>.enable-secure-cookie</code></td>
   <td>
-    If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.
+    If set to <code>true</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.
   </td>
   <td><code>false</code></td>
 </tr>
 <tr>
   <td><code>.enable-same-site-cookie</code></td>
   <td>
-    If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.
+    If set to <code>false</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.
   </td>
   <td><code>true</code></td>
 </tr>
@@ -556,7 +556,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
   <td>
       A custom value to change the cookie name.<br>
       <strong>Note:</strong> Please make sure to additionally change the cookie name for each webapp
-      (e. g. <a href="{{< ref "/webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
+      (e. g. <a href="{{< relref "/webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
       </a>) separately.
   </td>
   <td><code>XSRF-TOKEN</code></td>
@@ -568,8 +568,8 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 <tr>
   <td><code>.enable-secure-cookie</code></td>
   <td>
-    If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the
-      <a href="{{< ref "/webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
+    If set to <code>true</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the
+      <a href="{{< relref "/webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
     <strong>Note:</strong> If the <code>Secure</code> flag is set in the cookie by any other means already, this property will not remove it by setting it to <code>false</code>.
   </td>
   <td><code>false</code></td>
@@ -577,7 +577,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 <tr>
   <td><code>.enable-same-site-cookie</code></td>
   <td>
-    If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
+    If set to <code>false</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
     <strong>Note:</strong> If the <code>SameSite</code> flag is set in the cookie by any other means already, this property will not adjust or remove it.
   </td>
   <td><code>true</code></td>
@@ -741,7 +741,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 <tr>
   <td><code>.ttl-enabled</code></td>
   <td>
-    The <a href="{{< ref "/webapps/shared-options/authentication.md#time-to-live" >}}">authentication cache time to live</a> can be entirely disabled if set to <code>false</code>. I. e., authentication information is cached for the lifetime of the HTTP session.<br>
+    The <a href="{{< relref "/webapps/shared-options/authentication.md#time-to-live" >}}">authentication cache time to live</a> can be entirely disabled if set to <code>false</code>. I. e., authentication information is cached for the lifetime of the HTTP session.<br>
     Allowed set of values is <code>true</code> and <code>false</code>.
   </td>
   <td><code>true</code></td>
@@ -957,7 +957,7 @@ server:
 ```
 
 Further details of the session cookie like the `SameSite` flag can be configured via
-[fluxnova.bpm.webapp.session-cookie]({{< ref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
+[fluxnova.bpm.webapp.session-cookie]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
 
 # Configuring Spin DataFormats
 
@@ -978,7 +978,7 @@ The Spin Jackson Json DataFormat auto-configuration is disabled when using
 `fluxnova-spin-dataformat-all` as a dependency. The `fluxnova-spin-dataformat-all` artifact shades the
 Jackson libraries, which breaks compatibility with the regular Jackson modules. If usage of
 `fluxnova-spin-dataformat-all` is necessary, please use the standard method for
-[Spin Custom DataFormat configuration]({{< ref "/reference/spin/extending-spin.md#custom-dataformats" >}}).
+[Spin Custom DataFormat configuration]({{< relref "/reference/spin/extending-spin.md#custom-dataformats" >}}).
 {{< /note >}}
 
 For example, to provide support for Java 8 Date/time types in Spin, the following dependencies, with their

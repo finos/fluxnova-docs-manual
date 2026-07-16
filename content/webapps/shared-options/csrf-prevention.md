@@ -14,7 +14,7 @@ menu:
 A CSRF filter is enabled by default, validating each modifying request performed through the webapps. The filter implements a (per-session) _Synchronization Token_ method for CSRF validation with an optional _Same Origin with Standard Headers_ verification.
 
 In Spring Boot Starter, the configuration needs to be made in the `application.yaml`.
-Please read more about it [here]({{< ref "/user-guide/spring-boot-integration/configuration.md#csrf" >}}).
+Please read more about it [here]({{< relref "/user-guide/spring-boot-integration/configuration.md#csrf" >}}).
 
 If you would like to enable the additional _Same Origin with Standard Headers_ verification, the `targetOrigin` init-parameter should be set in the `web.xml` file of your application. That, and some additional optional initialization parameters are:
 
@@ -78,14 +78,14 @@ If you would like to enable the additional _Same Origin with Standard Headers_ v
   <tr>
     <td>enableSecureCookie</td>
     <td>
-      If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.<br>
+      If set to <code>true</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.<br>
       The default value is <code>false</code>.
     </td>
   </tr>
   <tr>
     <td>enableSameSiteCookie</td>
     <td>
-      If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled.<br>
+      If set to <code>false</code>, the cookie flag <a href="{{< relref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled.<br>
       The default value is <code>true</code>.
       The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>sameSiteCookieOption</code> configuration property.
     </td>
@@ -110,7 +110,7 @@ If you would like to enable the additional _Same Origin with Standard Headers_ v
       A custom value to change the cookie name.<br>
       The default value is <code>XSRF-TOKEN</code>.<br>
       <strong>Note:</strong> Please make sure to additionally change the cookie name for each webapp 
-      (e. g. <a href="{{< ref "/webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
+      (e. g. <a href="{{< relref "/webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
       </a>) separately.
     </td>
   </tr>

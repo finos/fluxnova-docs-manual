@@ -64,12 +64,12 @@ The database identity service implements both `ReadOnlyIdentityProvider` and `Wr
 
 # The LDAP Identity Service
 
-The LDAP identity service provides read-only access to an LDAP-based user/group repository. The identity service provider is implemented as a [Process Engine Plugin]({{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}) and can be added to the process engine configuration. In that case it replaces the default database identity service.
+The LDAP identity service provides read-only access to an LDAP-based user/group repository. The identity service provider is implemented as a [Process Engine Plugin]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}) and can be added to the process engine configuration. In that case it replaces the default database identity service.
 
 To use the LDAP identity service, the `fluxnova-identity-ldap.jar` library has to be added to the classloader of the process engine.
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 ```xml
@@ -91,7 +91,7 @@ The following is an example of how to configure the LDAP Identity Provider Plugi
     ...
     <property name="processEnginePlugins">
       <list>
-        <ref bean="ldapIdentityProviderPlugin" />
+        <relref bean="ldapIdentityProviderPlugin" />
       </list>
     </property>
   </bean>
@@ -167,11 +167,11 @@ The following is an example of how to configure the LDAP Identity Provider Plugi
 ```
 
 {{< note title="Administrator Authorization Plugin" class="info" >}}
-  The LDAP Identity Provider Plugin is usually used in combination with the [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) which allows you to grant administrator authorizations for a particular LDAP User/Group.
+  The LDAP Identity Provider Plugin is usually used in combination with the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) which allows you to grant administrator authorizations for a particular LDAP User/Group.
 {{< /note >}}
 
 {{< note title="Multi-Tenancy" class="info" >}}
-Currently, the LDPA Identity Service doesn't support [multi-tenancy]({{< ref "/user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers" >}}). That means it is not possible to get tenants from LDAP and the transparent multi-tenancy access restrictions don't work by default.
+Currently, the LDPA Identity Service doesn't support [multi-tenancy]({{< relref "/user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers" >}}). That means it is not possible to get tenants from LDAP and the transparent multi-tenancy access restrictions don't work by default.
 {{< /note >}}
 
 ## Configuration Properties of the LDAP Plugin
@@ -378,13 +378,13 @@ The LDAP Identity Provider provides the following configuration properties:
 
 # The OAuth2 Identity Service
 
-See the Spring Security OAuth2 Integration's [OAuth2 Identity Provider]({{< ref "/user-guide/spring-boot-integration/spring-security.md#oauth2-identity-provider" >}}) documentation.
+See the Spring Security OAuth2 Integration's [OAuth2 Identity Provider]({{< relref "/user-guide/spring-boot-integration/spring-security.md#oauth2-identity-provider" >}}) documentation.
 
 # Throttle login attempts
 
 A mechanism exists for preventing subsequent unsuccessful login attempts.The essence of it is that the user is not able to log in for a specific amount of time after unsuccessful login attempts.
 The amount of time is calculated after each attempt but it is limited by maximum delay time.
-After a predefined number of unsuccessful attempts, the user will be locked and only an administrator has permissions to [unlock]({{< ref "/webapps/admin/user-management.md" >}}) them.
+After a predefined number of unsuccessful attempts, the user will be locked and only an administrator has permissions to [unlock]({{< relref "/webapps/admin/user-management.md" >}}) them.
 
 The mechanism is configurable with the following properties and respective default values.
 
@@ -393,7 +393,7 @@ The mechanism is configurable with the following properties and respective defau
 * `loginDelayMaxTime=60`
 * `loginDelayBase=3`
 
-For more information, please check the process engine's [login properties]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#login-parameters" >}}) section.
+For more information, please check the process engine's [login properties]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#login-parameters" >}}) section.
 
 Calculation of the delay is done via the formula: <code>baseTime * factor^(attempt-1)</code>.
 The behaviour with the default configuration will be:

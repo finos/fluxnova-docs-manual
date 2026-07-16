@@ -16,7 +16,7 @@ This guide explains how to perform a patch level update. The *patch level* is th
 
 # Database Patches
 
-Between patch levels, the structure of the database schema is not changed. The database structure of all patch releases is backward compatible with the corresponding minor version. Our [database schema update guide]({{< ref "/installation/database-schema.md#patch-level-update" >}}) provides details on the update procedure as well as available database patches.
+Between patch levels, the structure of the database schema is not changed. The database structure of all patch releases is backward compatible with the corresponding minor version. Our [database schema update guide]({{< relref "/installation/database-schema.md#patch-level-update" >}}) provides details on the update procedure as well as available database patches.
 
 # Special Considerations
 
@@ -28,12 +28,12 @@ TBD
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-fluxnova.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
+This section is applicable if you installed the [Full Distribution]({{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
 
 Please note that the following procedure may differ for cluster scenarios. 
 
 * Shut down the server
-* Exchange Fluxnova libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< ref "/installation/full/_index.md" >}}) for your server.
+* Exchange Fluxnova libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your server.
 * Restart the server
 
 # Application With Embedded Process Engine

@@ -15,7 +15,7 @@ aliases: [reference/dmn11/feel/legacy/language-elements/]
 
 {{< note title="Heads Up!" class="info" >}}
 This page provides information on the legacy FEEL Engine, that was used before the 
-current <a href="{{< ref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
+current <a href="{{< relref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
 was integrated into Fluxnova.
 {{< /note >}}
 
@@ -190,6 +190,6 @@ Examples:
 [ranges]: #range
 [disjunction]: #disjunction
 [negation]: #negation
-[FEEL data types]: {{< ref "/reference/dmn/feel/legacy/data-types.md" >}}
-[date types]: {{< ref "/reference/dmn/feel/legacy/data-types.md#date" >}}
-[input entries]: {{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
+[FEEL data types]: {{< relref "/reference/dmn/feel/legacy/data-types.md" >}}
+[date types]: {{< relref "/reference/dmn/feel/legacy/data-types.md#date" >}}
+[input entries]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}

@@ -245,7 +245,7 @@ assertThat(processInstance).isWaitingAt("UserTask_InformCustomer");
 assertThat(task()).hasCandidateGroup("Sales").isNotAssigned();
 ```
 
-You can find a more extensive guide with examples under [Assert Examples]({{< ref "/user-guide/testing/assert-examples.md" >}}).
+You can find a more extensive guide with examples under [Assert Examples]({{< relref "/user-guide/testing/assert-examples.md" >}}).
 
 To use Fluxnova Assert, add the following dependency to your `pom.xml`:
 
@@ -375,13 +375,13 @@ one should make sure, that they are registered before the deployment happens. E.
 `@Deployment` annotation, beans should not be registered in `@Before` method, but rather the separate test rule can be created, that registers beans on startup, 
 and chained before `ProcessEngineRule`. 
 
-**The mocked beans feature should be used for testing purposes only.** Beans that are stored with `Mocks` are exclusively available within the respective storing thread as it is based on `ThreadLocal`. In most productive environments, it is not possible to access mocked beans during process execution due to the reason that jobs are executed by the multi-threaded Job Executor. Since the [Job Executor is disabled in unit test scenarios]({{< ref "/user-guide/process-engine/the-job-executor.md#job-executor-in-a-unit-test" >}}), the thread of process execution is the same that creates mocked bean instances.
+**The mocked beans feature should be used for testing purposes only.** Beans that are stored with `Mocks` are exclusively available within the respective storing thread as it is based on `ThreadLocal`. In most productive environments, it is not possible to access mocked beans during process execution due to the reason that jobs are executed by the multi-threaded Job Executor. Since the [Job Executor is disabled in unit test scenarios]({{< relref "/user-guide/process-engine/the-job-executor.md#job-executor-in-a-unit-test" >}}), the thread of process execution is the same that creates mocked bean instances.
 
 # Best Practice
 
 ## Write Focused Tests
 
-The feature to [start a process instance at a set of activities]({{< ref "/user-guide/process-engine/process-engine-concepts.md#start-a-process-instance-at-any-set-of-activities" >}}) can be used to to create a very specific scenario without much setup. Similarly, certain activities can be skipped by using [process instance modification]({{< ref "/user-guide/process-engine/process-instance-modification.md" >}}).
+The feature to [start a process instance at a set of activities]({{< relref "/user-guide/process-engine/process-engine-concepts.md#start-a-process-instance-at-any-set-of-activities" >}}) can be used to to create a very specific scenario without much setup. Similarly, certain activities can be skipped by using [process instance modification]({{< relref "/user-guide/process-engine/process-instance-modification.md" >}}).
 
 ## Scoping Tests
 

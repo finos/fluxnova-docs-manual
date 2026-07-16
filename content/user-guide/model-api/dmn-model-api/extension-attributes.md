@@ -11,8 +11,8 @@ menu:
 ---
 
 
-[Custom extensions]({{< ref "/reference/dmn/custom-extensions/_index.md" >}}) are a standardized way to extend the DMN model.
-The [Fluxnova extension attributes]({{< ref "/reference/dmn/custom-extensions/fluxnova-attributes.md" >}}) are fully implemented in the DMN model API.
+[Custom extensions]({{< relref "/reference/dmn/custom-extensions/_index.md" >}}) are a standardized way to extend the DMN model.
+The [Fluxnova extension attributes]({{< relref "/reference/dmn/custom-extensions/fluxnova-attributes.md" >}}) are fully implemented in the DMN model API.
 
 Every DMN `Decision` element can have the attributes `historyTimeToLive` and `versionTag`.
 To access the extension attributes, you have to call the `Decision#getFluxnovaHistoryTimeToLiveString()` and 

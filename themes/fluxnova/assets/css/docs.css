@@ -7277,7 +7277,7 @@ pre[class*="language-"] {
 }
 /* line 79, styles\_prism.less */
 .token.punctuation {
-  color: #555555;
+  color: #777777;
 }
 /* line 83, styles\_prism.less */
 .namespace {
@@ -7300,7 +7300,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #2b9276;
+  color: #3ca387;
 }
 /* line 106, styles\_prism.less */
 .token.operator,
@@ -7308,7 +7308,7 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #333333;
+  color: #777777;
 }
 /* line 114, styles\_prism.less */
 .token.atrule,

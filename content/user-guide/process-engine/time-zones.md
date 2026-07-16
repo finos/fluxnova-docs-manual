@@ -29,7 +29,7 @@ For this reason, it is not recommended to change the time zone on the database s
 Timezone information is not saved in the timestamp columns. In order to avoid ambiguous timestamps, it is recommended to use a timezone like `UTC` as the JVM's default timezone 
 that is not adjusted for `Daylight Saving Time (DST)` and therefore cannot produce ambiguous timestamps.
 
-If this is not an option in your setting, please consider disabling the [JobExecutor]({{< ref "/user-guide/process-engine/the-job-executor.md" >}}) during the DST switch in order
+If this is not an option in your setting, please consider disabling the [JobExecutor]({{< relref "/user-guide/process-engine/the-job-executor.md" >}}) during the DST switch in order
 to avoid unexpected job executions. 
 {{< /note >}}
 
@@ -39,6 +39,6 @@ It is possible to use the Fluxnova Web Applications in different timezones. All 
 
 ## Cluster Setup
 
-In case the process engine is running in a [cluster]({{< ref "/introduction/architecture.md#clustering-model" >}}), 
+In case the process engine is running in a [cluster]({{< relref "/introduction/architecture.md#clustering-model" >}}), 
 all cluster nodes must run in one and the same time zone. In case cluster nodes exist in different time zones, 
 correct behaviour when operating with DateTime values can not be guaranteed.

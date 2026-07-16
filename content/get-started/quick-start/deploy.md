@@ -86,5 +86,5 @@ If you are running on Fluxnova Enterprise Edition, you can also check out your c
 {{< /note >}}
 
 {{< note title="Next Step" class="info" >}}
-In some cases, we'll want to involve humans in our process. Move onto the next step to [learn how you can involve humans in your process]({{< ref "/get-started/quick-start/user-task/" >}}).
+In some cases, we'll want to involve humans in our process. Move onto the next step to [learn how you can involve humans in your process]({{< relref "/get-started/quick-start/user-task/" >}}).
 {{< /note >}}

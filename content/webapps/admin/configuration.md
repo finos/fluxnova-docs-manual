@@ -16,7 +16,7 @@ available:
 
 # LDAP
 
-If you connect Fluxnova with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service [here]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
+If you connect Fluxnova with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service [here]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
 
 # Logo and header color
 
@@ -86,7 +86,7 @@ available, add it to the list of available locales in the configuration file.
 # Custom scripts
 
 Admin allows you to include arbitrary JavaScript files. This allows you to extend admin with custom code. The script file might contain a 
-custom frontend module. Admin shares the frontend module structure with [Cockpit Plugins]({{<ref "/webapps/cockpit/extend/plugins.md#structure-of-a-frontend-module" >}}).
+custom frontend module. Admin shares the frontend module structure with [Cockpit Plugins]({{<relref "/webapps/cockpit/extend/plugins.md#structure-of-a-frontend-module" >}}).
 
 Add your files to the `customScripts` property of the `app/admin/scripts/config.js` file:
 
@@ -111,7 +111,7 @@ export default {
 }
 ```
 
-**Note:** Ensure you also change the CSRF cookie name on [server-side]({{<ref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
+**Note:** Ensure you also change the CSRF cookie name on [server-side]({{<relref "/webapps/shared-options/csrf-prevention.md#cookie-name" >}}).
 
 # Disable welcome message for new users
 
@@ -138,7 +138,7 @@ export default {
 }
 ```
 
-**Note:** This only affects the Admin Operation Log. For the Cockpit Operation Log, check out the [Cockpit configuration]({{<ref "/webapps/cockpit/extend/configuration.md#user-operation-log-annotation-length" >}}).
+**Note:** This only affects the Admin Operation Log. For the Cockpit Operation Log, check out the [Cockpit configuration]({{<relref "/webapps/cockpit/extend/configuration.md#user-operation-log-annotation-length" >}}).
 
 # Task worker metrics
 

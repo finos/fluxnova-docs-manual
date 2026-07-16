@@ -214,8 +214,8 @@ You can audit the evaluated decision definitions in the [Cockpit] webapp.
 
 
 
-[Cockpit]: {{< ref "/webapps/cockpit/dmn/_index.md" >}}
-[History and Audit Event Log]: {{< ref "/user-guide/process-engine/history/history-configuration.md" >}}
-[DMN 1.3 reference]: {{< ref "/reference/dmn/decision-table/hit-policy.md" >}}
-[BPMN business rule task]: {{< ref "/reference/bpmn20/tasks/business-rule-task.md#using-fluxnova-dmn-engine" >}}
-[CMMN decision task]: {{< ref "/reference/cmmn11/tasks/decision-task.md" >}}
+[Cockpit]: {{< relref "/webapps/cockpit/dmn/_index.md" >}}
+[History and Audit Event Log]: {{< relref "/user-guide/process-engine/history/history-configuration.md" >}}
+[DMN 1.3 reference]: {{< relref "/reference/dmn/decision-table/hit-policy.md" >}}
+[BPMN business rule task]: {{< relref "/reference/bpmn20/tasks/business-rule-task.md#using-fluxnova-dmn-engine" >}}
+[CMMN decision task]: {{< relref "/reference/cmmn11/tasks/decision-task.md" >}}

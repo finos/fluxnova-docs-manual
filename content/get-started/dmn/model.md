@@ -13,7 +13,7 @@ menu:
 aliases: [/dmn11/model/]
 ---
 
-In this section you learn how to create your first [DMN Decision Table]({{< ref "/reference/dmn/decision-table/" >}}) with the Fluxnova Modeler. The table will contain the decision logic about the desired dish for a given season and guest count.
+In this section you learn how to create your first [DMN Decision Table]({{< relref "/reference/dmn/decision-table/" >}}) with the Fluxnova Modeler. The table will contain the decision logic about the desired dish for a given season and guest count.
 
 Now start up the Fluxnova Modeler.
 
@@ -26,51 +26,51 @@ Create a new DMN diagram by clicking *File > New File > DMN Diagram*.
 
 # Start with the Table Header
 
-Start by setting the name and the id of the decision. Select the decision, open the Properties Panel on the right side and change the text to "dish" as the technical [id of the decision]({{< ref "/reference/dmn/decision-table/#decision-id" >}}) which is used to reference the decision inside the process application.
+Start by setting the name and the id of the decision. Select the decision, open the Properties Panel on the right side and change the text to "dish" as the technical [id of the decision]({{< relref "/reference/dmn/decision-table/#decision-id" >}}) which is used to reference the decision inside the process application.
 
 {{< img src="../img/modeler-step1.png" >}}
 
-Next, click on the field below and set the [name of the decision]({{< ref "/reference/dmn/decision-table/#decision-name" >}}) to "Dish".
+Next, click on the field below and set the [name of the decision]({{< relref "/reference/dmn/decision-table/#decision-name" >}}) to "Dish".
 
 Now drill down into the decision table of the newly created decision by clicking the table icon on top of the decision.
 
 {{< img src="../img/modeler-step2a.png" >}}
 
-To set the [label of the input]({{< ref "/reference/dmn/decision-table/input/#input-label" >}}) double-click on the field under "When" and type "Season" in the uppermost field. Same for the [output label]({{< ref "/reference/dmn/decision-table/output/#output-label" >}}), double-click on the field under "Then" and type "Dish" in the uppermost field.
+To set the [label of the input]({{< relref "/reference/dmn/decision-table/input/#input-label" >}}) double-click on the field under "When" and type "Season" in the uppermost field. Same for the [output label]({{< relref "/reference/dmn/decision-table/output/#output-label" >}}), double-click on the field under "Then" and type "Dish" in the uppermost field.
 
 {{< img src="../img/modeler-step2b.png" >}}
 
 # Configure the Input Expression and the Output Name
 
-Assuming that the input value for "Season" is provided by a variable with name "season", the [input expression]({{< ref "/reference/dmn/decision-table/input/#input-expression" >}}) should be "season".
+Assuming that the input value for "Season" is provided by a variable with name "season", the [input expression]({{< relref "/reference/dmn/decision-table/input/#input-expression" >}}) should be "season".
 
 Double-click on the "Season" field. In the modal menu that pops up, set "season" as expression and close it.
 
 {{< img src="../img/modeler-step3.png" >}}
 
-Next, double-click on the "Dish" field and set "desiredDish" as [output name]({{< ref "/reference/dmn/decision-table/output/#output-name" >}}).
+Next, double-click on the "Dish" field and set "desiredDish" as [output name]({{< relref "/reference/dmn/decision-table/output/#output-name" >}}).
 
 # Configure the Type of the Input and Output
 
-Assuming that the input value for "Season" is provided as String, the [type of the input value]({{< ref "/reference/dmn/decision-table/input/#input-type-definition" >}}) should be "string".
+Assuming that the input value for "Season" is provided as String, the [type of the input value]({{< relref "/reference/dmn/decision-table/input/#input-type-definition" >}}) should be "string".
 
 Double-click on the "Season" column header. Open the "Type" dropdown-menu in the modal menu and select "string".
 
 {{< img src="../img/modeler-step4.png" >}}
 
-Same for the [output type]({{< ref "/reference/dmn/decision-table/output/#output-type-definition" >}}), double-click on the "Dish" column header and choose "string" as type.
+Same for the [output type]({{< relref "/reference/dmn/decision-table/output/#output-type-definition" >}}), double-click on the "Dish" column header and choose "string" as type.
 
 # Add Rules
 
-Now, add the first [rule]({{< ref "/reference/dmn/decision-table/rule/" >}}) that specifies that the desired dish for season "Fall" is "Spareribs".
+Now, add the first [rule]({{< relref "/reference/dmn/decision-table/rule/" >}}) that specifies that the desired dish for season "Fall" is "Spareribs".
 
 Click on the "+" button at the bottom of the table or just click anywhere on the last row. In the row that was added, type "Fall" in the input column and "Spareribs" in the output column.
 
 {{< img src="../img/modeler-step5.png" >}}
 
-"Fall" is the condition (i.e., [input entry]({{< ref "/reference/dmn/decision-table/rule/#input-entry-condition" >}})) of the rule. It is an expression in [FEEL]({{< ref "/reference/dmn/feel/" >}}) which is applied and then checks if the input value (i.e., the variable "season") is equal to "Fall".
+"Fall" is the condition (i.e., [input entry]({{< relref "/reference/dmn/decision-table/rule/#input-entry-condition" >}})) of the rule. It is an expression in [FEEL]({{< relref "/reference/dmn/feel/" >}}) which is applied and then checks if the input value (i.e., the variable "season") is equal to "Fall".
 
-"Spareribs" is the conclusion (i.e., [output entry]({{< ref "/reference/dmn/decision-table/rule/#output-entry-conclusion" >}})) of the rule. It is a simple expression in JUEL and returns the String "Spareribs".
+"Spareribs" is the conclusion (i.e., [output entry]({{< relref "/reference/dmn/decision-table/rule/#output-entry-conclusion" >}})) of the rule. It is a simple expression in JUEL and returns the String "Spareribs".
 
 Next, add a second input "How many guests" with the input expression "guestCount" and type "integer". Fill the table with additional rules for the remaining seasons.
 
@@ -78,7 +78,7 @@ Next, add a second input "How many guests" with the input expression "guestCount
 
 # Configure the Hit Policy
 
-Set the [hit policy]({{< ref "/reference/dmn/decision-table/hit-policy/" >}}) to "UNIQUE", which specifies that only one rule can match. Verify that the decision table contains only one rule that can match the inputs.
+Set the [hit policy]({{< relref "/reference/dmn/decision-table/hit-policy/" >}}) to "UNIQUE", which specifies that only one rule can match. Verify that the decision table contains only one rule that can match the inputs.
 
 Click on the "Hit Policy" dropdown and choose the hit policy "UNIQUE".
 

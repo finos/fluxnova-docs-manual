@@ -22,9 +22,9 @@ The entire software is provided under various open source licenses (mainly Apach
 Fluxnova includes libraries developed by third parties. See the following resources:
 
 * [Third-Party Libraries][third-party-libraries]: An overview of the dependencies Fluxnova distributes. Additionally, this page points out particularly important third-party licenses to be aware of.
-* [HTML License Book Fluxnova]({{< ref "/introduction/third-party-libraries/fluxnova-bpm-platform-license-book.md" >}}): A list of all dependencies Fluxnova distributes with the Fluxnova artifacts, including their licenses and notices.
+* [HTML License Book Fluxnova]({{< relref "/introduction/third-party-libraries/fluxnova-bpm-platform-license-book.md" >}}): A list of all dependencies Fluxnova distributes with the Fluxnova artifacts, including their licenses and notices.
 
-[third-party-libraries]: {{< ref "/introduction/third-party-libraries/_index.md" >}}
+[third-party-libraries]: {{< relref "/introduction/third-party-libraries/_index.md" >}}
 
 
 # Fluxnova Modeler

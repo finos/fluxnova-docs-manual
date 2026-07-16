@@ -49,7 +49,7 @@ A `QuarkusProcessEngineConfiguration` instance provides the following defaults:
   <tr>
     <td><code>databaseSchemaUpdate</code></td>
     <td>
-      The <a href="{{< ref "/user-guide/process-engine/database/database-configuration.md#example-database-configuration" >}}">Database Configuration</a> 
+      The <a href="{{< relref "/user-guide/process-engine/database/database-configuration.md#example-database-configuration" >}}">Database Configuration</a> 
       section goes into more details on this propery and the resulting behavior.
     </td>
     <td><code>true</code></td>
@@ -83,7 +83,7 @@ A `QuarkusProcessEngineConfiguration` instance provides the following defaults:
     </td>
     <td>
       Fluxnova Cockpit works best with history level 
-      <a href="{{< ref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}">FULL</a>.
+      <a href="{{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}">FULL</a>.
     </td>
     <td><code>full</code></td>
   </tr>
@@ -238,8 +238,8 @@ quarkus.datasource.my-datasource.jdbc.url=jdbc:h2:mem:fluxnova;TRACE_LEVEL_FILE=
 quarkus.fluxnova.datasource=my-datasource
 ```
 
-[engine-properties]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}
-[executor-properties]: {{< ref "/reference/deployment-descriptors/tags/job-executor.md#job-acquisition-configuration-properties" >}}
+[engine-properties]: {{< relref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}
+[executor-properties]: {{< relref "/reference/deployment-descriptors/tags/job-executor.md#job-acquisition-configuration-properties" >}}
 
 [quarkus-datasource]: https://quarkus.io/guides/datasource
 [quarkus-transactions]: https://quarkus.io/guides/transaction#declarative-approach
@@ -247,4 +247,4 @@ quarkus.fluxnova.datasource=my-datasource
 [quarkus-config]: https://quarkus.io/guides/config-reference
 [mp-config]: https://www.eclipse.org/community/eclipse_newsletter/2017/september/article3.php
 
-[jta-transaction-integration]: {{< ref "/user-guide/cdi-java-ee-integration/jta-transaction-integration.md">}}
+[jta-transaction-integration]: {{< relref "/user-guide/cdi-java-ee-integration/jta-transaction-integration.md">}}

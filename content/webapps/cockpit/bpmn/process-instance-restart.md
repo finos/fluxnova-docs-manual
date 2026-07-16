@@ -10,7 +10,6 @@ menu:
     identifier: "user-guide-cockpit-pi-restart"
     parent: "user-guide-cockpit-bpmn"
     pre: "Restart process instances after termination."
-    
 ---
 {{< enterprise >}}
 Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
@@ -34,7 +33,7 @@ To add an instruction, hover over an activity in the process diagram. By using t
 
 In the top-left corner of the activity, a badge will appear, indicating the restart (3).
 
-At any point during the creation of the restart, you can show the payload by clicking the {{< glyphicon name="eye-open" >}} button. This will show the request payload that will be sent via the [REST API]({{< ref "/reference/rest/_index.md" >}}).
+At any point during the creation of the restart, you can show the payload by clicking the {{< glyphicon name="eye-open" >}} button. This will show the request payload that will be sent via the [REST API]({{< relref "/reference/rest/_index.md" >}}).
 
 
 ## Restart Instructions 

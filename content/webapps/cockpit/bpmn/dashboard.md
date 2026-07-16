@@ -12,7 +12,7 @@ menu:
 
 ---
 
-The processes dashboard of Cockpit is the entry point for process monitoring. It comes with a pre-installed plugin, which lets you see deployed process definitions. Additional [plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) can be added to the processes dashboard.
+The processes dashboard of Cockpit is the entry point for process monitoring. It comes with a pre-installed plugin, which lets you see deployed process definitions. Additional [plugins]({{< relref "/webapps/cockpit/extend/plugins.md" >}}) can be added to the processes dashboard.
 
 
 # Deployed Processes
@@ -39,8 +39,8 @@ button and selecting the chosen name in the drop-down menu.
 
 You can also switch to the preview tab which displays the rendered process model of each deployed process. Additionally, you get information about how many instances of the process are currently running and about the process state. Green and red dots signalize running and [failed jobs][failed-jobs]. Click on the model to go to the [process definition view][process-definition-view].
 
-[process-definition-view]: {{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}
-[failed-jobs]: {{< ref "/webapps/cockpit/bpmn/failed-jobs.md" >}}
+[process-definition-view]: {{< relref "/webapps/cockpit/bpmn/process-definition-view.md" >}}
+[failed-jobs]: {{< relref "/webapps/cockpit/bpmn/failed-jobs.md" >}}
 
 {{< comment >}}
 # Process Instances Search
@@ -90,7 +90,7 @@ Additionally, you can specify process variables by name to enrich the export res
 
 {{< note title="Heads-up!" class="info" >}}
 * Exporting all pages is more inefficient than exporting a selection or a single page of process instances and can cause extra load on the database and application server. Also, a more complex query that runs against an unbounded number of rows affects the execution time negatively.
-* For security reasons, you can limit the maximum number of process instances that can be exported via the [Query Maximum Results Limit]({{< ref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit" >}}).
+* For security reasons, you can limit the maximum number of process instances that can be exported via the [Query Maximum Results Limit]({{< relref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit" >}}).
 {{< /note >}}
 
 When clicking **Export CSV**, the backend crunches the requested data and creates a CSV file. This could take a while, depending on the amounts of process instances you want to export.

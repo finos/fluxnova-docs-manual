@@ -24,6 +24,6 @@ A complete example how to embed the decision engine and test
 decisions can be found on [GitHub].
 
 
-[platform]: {{< ref "/user-guide/process-engine/decisions/_index.md" >}}
-[DMN reference]: {{< ref "/reference/dmn/_index.md" >}}
+[platform]: {{< relref "/user-guide/process-engine/decisions/_index.md" >}}
+[DMN reference]: {{< relref "/reference/dmn/_index.md" >}}
 [GitHub]: https://github.com/finos/fluxnova-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method

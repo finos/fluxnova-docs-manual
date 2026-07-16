@@ -14,14 +14,14 @@ menu:
 
 Fluxnova Forms allow you to easily design and configure forms and then embed them in the Fluxnova Tasklist.
 
-* Fluxnova Forms are created in the Fluxnova Modeler. You can find out how in the [Fluxnova Modeler documentation]({{< ref "/modeler/forms.md" >}}).
-* Fluxnova Forms can easily be embedded in the Fluxnova Tasklist. You can find out how in the [User Task Forms guide]({{< ref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}).
+* Fluxnova Forms are created in the Fluxnova Modeler. You can find out how in the [Fluxnova Modeler documentation]({{< relref "/modeler/forms.md" >}}).
+* Fluxnova Forms can easily be embedded in the Fluxnova Tasklist. You can find out how in the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}).
 * Fluxnova Forms are powered by the open source [bpmn-io form-js library](https://github.com/bpmn-io/form-js). Visit the [open source repository](https://github.com/bpmn-io/form-js) to find out how to render a form using plain JavaScript in a custom application (note that this also requires you to to fetch the form from the respective BPMN 2.0 element and provide data as needed to the form).
 
 
 # Components
 
-Use the [Fluxnova Modeler]({{< ref "/modeler/forms.md" >}}) to configure your Fluxnova Form. The following form elements are currently supported.
+Use the [Fluxnova Modeler]({{< relref "/modeler/forms.md" >}}) to configure your Fluxnova Form. The following form elements are currently supported.
 
 ## Text Field
 
@@ -33,7 +33,7 @@ A text field can be configured using the following configuration properties:
 
 * **Field Label**: Label displayed on top of the text field.
 * **Field Description**: Description provided below the text field.
-* **Key**: Identifier used to map data to the text field (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+* **Key**: Identifier used to map data to the text field (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Validation**: Given that one of the following properties is set, the form will only submit when the respective condition is fulfilled. Otherwise a validation error will be displayed.
   * **Required**: Text field must contain a value.
   * **Minimum Length**: Text field must have at least x characters.
@@ -51,7 +51,7 @@ A number can be configured using the following configuration properties:
 
 * **Field Label**: Label displayed on top of the number field.
 * **Field Description**: Description provided below the number field.
-* **Key**: Identifier used to map data to the number field (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+* **Key**: Identifier used to map data to the number field (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Validation**: Given that one of the following properties is set, the form will only submit when the respective condition is fulfilled. Otherwise a validation error will be displayed.
   * **Required**: Number field must contain a value.
   * **Minimum Length**: Number field must have at least x characters.
@@ -68,7 +68,7 @@ A checkbox can be configured using the following configuration properties:
 
 * **Field Label**: Label displayed on top of the checkbox.
 * **Field Description**: Description provided below the checkbox.
-* **Key**: Identifier used to map data to the checkbox (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+* **Key**: Identifier used to map data to the checkbox (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 
 
 ## Radio
@@ -81,10 +81,10 @@ A radio button can be configured using the following configuration properties:
 
 * **Field Label**: Label displayed on top of the checkbox.
 * **Field Description**: Description provided below the checkbox.
-* **Key**: Identifier used to map data to the checkbox (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+* **Key**: Identifier used to map data to the checkbox (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Values**: A list of values, each representing one radio button which the user can click. Click the **Plus** icon to add a new value and the **Trash** icon to remove a value.
   * **Label**: Label of the radio button.
-  * **Value**: Value that the radio button maps to (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+  * **Value**: Value that the radio button maps to (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Validation**: Given that one of the following properties is set, the form will only submit when the respective condition is fulfilled. Otherwise a validation error will be displayed.
   * **Required**: One radio option must be selected.
 
@@ -99,10 +99,10 @@ A select can be configured using the following configuration properties:
 
 * **Field Label**: Label displayed on top of the select.
 * **Field Description**: Description provided below the select.
-* **Key**: Identifier used to map data to the select (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+* **Key**: Identifier used to map data to the select (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Values**: A list of values, each representing one select option which the user can select. Click the **Plus** icon to add a new value and the **Trash** icon to remove a value.
   * **Label**: Label of the select entry.
-  * **Value**: Value that the select entry maps to (see [Mapping components to Process Variables]({{< ref "#mapping-components-to-process-variables" >}})).
+  * **Value**: Value that the select entry maps to (see [Mapping components to Process Variables]({{< relref "#mapping-components-to-process-variables" >}})).
 * **Validation**: Given that one of the following properties is set, the form will only submit when the respective condition is fulfilled. Otherwise a validation error will be displayed.
   * **Required**: One select entry must be selected.
 
@@ -180,4 +180,4 @@ A button can be configured using the following configuration properties:
 
 Each Fluxnova Forms component which allows data manipulation has a **Key** attribute. This attribute is used as an identifier to map data of the respective field (1) during initial loading of the form, and (2) during submission of the form.
 
-When a form is [referenced by a User Task or Start Event]({{< ref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) and viewed in the [Fluxnova Tasklist]({{< ref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< ref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.
+When a form is [referenced by a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#fluxnova-forms" >}}) and viewed in the [Fluxnova Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< relref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.

@@ -24,7 +24,7 @@ The following provides examples on how Fluxnova Spin can be used in the process 
 </customer>
 ```
 
-Further documentation about the usage of Spin can be found in the [Fluxnova Spin Dataformat Reference]({{< ref "/reference/spin/_index.md" >}}).
+Further documentation about the usage of Spin can be found in the [Fluxnova Spin Dataformat Reference]({{< relref "/reference/spin/_index.md" >}}).
 
 
 # Expression Language Integration
@@ -192,7 +192,7 @@ customerXml matches:
 
 Retrieving the variable will deserialize the serialized value if it is not cached already. 
 Please bear in mind that this can pose a security risk if untrusted sources are allowed to store serialized values in process variables that can trigger malicious code execution upon deserialization.
-Consult the [Security Instructions]({{< ref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}) for further information on this.
+Consult the [Security Instructions]({{< relref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}) for further information on this.
 
 {{< note title="Default Serialization Format" class="info" >}}
   The engine can be configured to persist all objects for which no explicit data format is specified as XML. The process engine configuration offers a property `defaultSerializationFormat`. To configure default XML serialization, set this property to `application/xml`. Now, the invocation `runtimeService.setVariable(processInstance.getId(), "customer", new Customer())` directly serializes the customer object as XML without explicit declaration of the format.

@@ -51,4 +51,4 @@ Note that for this to work, you need to define a {{< javadocref page="org/finos/
 </bean>
 ```
 
-[Testing Scopes]: {{< ref "/user-guide/testing/_index.md#scoping-tests" >}}
+[Testing Scopes]: {{< relref "/user-guide/testing/_index.md#scoping-tests" >}}

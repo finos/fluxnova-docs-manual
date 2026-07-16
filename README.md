@@ -13,9 +13,9 @@ Have a look at our [contribution guide](https://github.com/finos/fluxnova-bpm-pl
 
 ## Installing Hugo
 
-In order to build this documentation, you first need to install [Hugo][Hugo] [v0.145][Hugo v0.145]. Newer versions _may_ work, but please note that there were significant changes in v0.146+.
+In order to build this documentation, you first need to install [Hugo][Hugo] [v0.163][Hugo v0.163]. 
 
-See the [Hugo installation guide][Hugo Installation] for more details on how to install Hugo. Issues have been reported when installing v0.145 via a package manager; install via tarball instead. The v0.145 tarball can be downloaded from [the corresponding Hugo release page][Hugo v0.145].
+See the [Hugo installation guide][Hugo Installation] for more details on how to install Hugo. 
 
 ## Building the Documentation
 
@@ -169,7 +169,7 @@ _Note: For screenshot of the enterprise webapps, you can use the automatic scree
 
 
 [Hugo]: http://gohugo.io/
-[Hugo v0.145]: https://github.com/gohugoio/hugo/releases/tag/v0.145.0
+[Hugo v0.163]: https://github.com/gohugoio/hugo/releases/tag/v0.163.3
 [Hugo Installation]: https://gohugo.io/getting-started/installing/#install-hugo-from-tarball
 [OpenOffice]: https://www.openoffice.org/download/index.html
 [OpenSans]: https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans

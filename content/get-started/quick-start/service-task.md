@@ -81,7 +81,7 @@ In this quick start, we'll show you how to use Fluxnova's ready-to-go task clien
 If you've never worked with Java before, we recommend using the JavaScript (NodeJS) task client in this tutorial.
 
 {{< note title="Hint" class="info" >}}
-If you prefer a different programming language, you can also use Fluxnova's [REST API]({{< ref "/user-guide/process-engine/external-tasks/#rest-api" >}}) to access API operations via HTTP.
+If you prefer a different programming language, you can also use Fluxnova's [REST API]({{< relref "/user-guide/process-engine/external-tasks/#rest-api" >}}) to access API operations via HTTP.
 {{< /note >}}
 
 ## a) Using Java
@@ -209,7 +209,7 @@ You can run the Java application by right clicking on the class `ChargeCardWorke
 Note that the worker should remain running throughout the entirety of this quick start guide.
 
 {{< note title="Next Step" class="info" >}}
-Once your worker is running, you can [continue to deploy your process and start some instances]({{< ref "/get-started/quick-start/deploy/" >}}).
+Once your worker is running, you can [continue to deploy your process and start some instances]({{< relref "/get-started/quick-start/deploy/" >}}).
 {{< /note >}}
 
 {{< get-tag repo="fluxnova-get-started-quickstart" tag="Step-2a" >}}
@@ -306,7 +306,7 @@ node ./worker.js
 Note that the worker should remain running throughout the entirety of this quick start guide.
 
 {{< note title="Next Step" class="info" >}}
-Once your worker is running, you can move onto the next step to [deploy your process and start some instances]({{< ref "/get-started/quick-start/deploy/" >}}).
+Once your worker is running, you can move onto the next step to [deploy your process and start some instances]({{< relref "/get-started/quick-start/deploy/" >}}).
 {{< /note >}}
 
 {{< get-tag repo="fluxnova-get-started-quickstart" tag="Step-2b" >}}

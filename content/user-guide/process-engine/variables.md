@@ -16,7 +16,7 @@ This section describes the concepts of variables in processes. Variables can be 
 
 # Variable Scopes and Variable Visibility
 
-All entities that can have variables are called *variable scopes*. These are executions (which include process instances) and tasks. As described in the  [Concepts section]({{< ref "/user-guide/process-engine/process-engine-concepts.md#executions" >}}), the runtime state of a process instance is represented by a tree of executions. Consider the following process model where the red dots mark active tasks:
+All entities that can have variables are called *variable scopes*. These are executions (which include process instances) and tasks. As described in the  [Concepts section]({{< relref "/user-guide/process-engine/process-engine-concepts.md#executions" >}}), the runtime state of a process instance is represented by a tree of executions. Consider the following process model where the red dots mark active tasks:
 
 {{< img src="../img/variables-3.png" title="Variables" >}}
 
@@ -44,10 +44,100 @@ In general, variables are accessible in the following cases:
 * Delivering messages
 * Task lifecycle transitions, such as completion or resolution
 * Setting/getting variables from outside
-* Setting/getting variables in a [Delegate]({{< ref "/user-guide/process-engine/delegation-code.md" >}})
+* Setting/getting variables in a [Delegate]({{< relref "/user-guide/process-engine/delegation-code.md" >}})
 * Expressions in the process model
 * Scripts in the process model
 * (Historic) Variable queries
+
+
+# Restricted Variables
+
+Restricted variables add an authorization layer on top of regular variable scope visibility. Scope visibility still defines where a variable can be resolved. Restricted-variable permissions define whether a caller may read or modify that resolved variable.
+
+Use this feature for variables that may contain sensitive or regulated data, such as personal data, financial values, or internal risk signals.
+
+## CRUD behavior
+
+When a variable is marked as restricted, access is evaluated against the dedicated Variable authorization resource and its restricted-variable permissions. The authorization resource id must be the wildcard `*`.
+
+| Operation | Permission required | Behavior if permission is missing |
+| --- | --- | --- |
+| Create restricted variable | Create Restricted permission on Variable resource | Operation is rejected with an authorization error |
+| Read restricted runtime variable | Read Restricted permission on Variable resource | Variable is filtered from the response when applicable |
+| Read restricted historic variable | Read History Restricted permission on Variable resource | Variable is filtered from the response when applicable |
+| Update restricted variable | Update Restricted permission on Variable resource | Operation is rejected with an authorization error |
+| Delete restricted runtime variable | Delete Restricted permission on Variable resource | Operation is rejected with an authorization error |
+| Delete restricted historic variable | Delete History Restricted permission on Variable resource | Operation is rejected with an authorization error |
+
+## Read filtering versus authorization errors
+
+For restricted-variable reads, the default behavior is filtering. This means callers only receive variables they are allowed to read. Variables without read permission are not included in list or payload results where filtering is supported.
+
+For write operations (create, update, delete), missing permission leads to an explicit authorization error.
+
+## Examples
+
+Assume a process instance contains two variables:
+
+* `customerId` (non-restricted)
+* `creditScore` (restricted)
+
+If a caller has permission to read `customerId` but not `creditScore`, a variable query returns only `customerId`. The restricted variable is omitted from the payload.
+
+If the same caller attempts to update `creditScore`, the engine rejects the operation with an authorization error.
+
+See [Authorization Service]({{< ref "/user-guide/process-engine/authorization-service.md" >}}) for permission modeling details and [Variables in the REST API]({{< ref "/reference/rest/overview/variables.md" >}}) for endpoint-specific behavior.
+
+## Setting restricted variables
+
+Restricted variables are set like regular variables, but with `VariableOptions` where `restricted=true`.
+
+### VariableOptions
+
+The `VariableOptions` class encapsulates configuration for variable creation. It supports four options:
+
+* `isTransient`: If `true`, the variable exists only in memory during the current transaction and is not persisted to the database.
+* `restricted`: If `true`, the variable is marked as restricted and subject to authorization checks.
+* `skipJavaSerializationFormatCheck`: If `true`, bypasses validation of the Java serialization format when storing object values.
+* `failIfNotExists`: If `true` (default), throws an exception if the variable does not exist when updating. If `false`, creates the variable if it does not exist.
+
+Use the static factory methods to construct options: `VariableOptions.options(isTransient, restricted)` or `VariableOptions.options(isTransient, restricted, skipJavaSerializationFormatCheck)` to include all parameters.
+
+### Example 1: Set a restricted `string` value
+
+```java
+VariableOptions options = VariableOptions.options(false, true);
+execution.setVariable("customerSegment", "gold", options);
+```
+
+### Example 2: Set a restricted `number` value
+
+```java
+VariableOptions options = VariableOptions.options(false, true);
+execution.setVariable("creditScore", 720, options);
+```
+
+### Example 3: Set a restricted variable via `RuntimeService`
+
+Use the Typed Value API with `RuntimeService`:
+
+```java
+TypedValue restrictedValue = Variables.stringValue("secret", VariableOptions.options(false, true));
+runtimeService.setVariable(processInstanceId, "restrictedVar", restrictedValue);
+```
+
+You can also set a restricted number value in the same way:
+
+```java
+TypedValue restrictedValue = Variables.numberValue(720, VariableOptions.options(false, true));
+runtimeService.setVariable(processInstanceId, "creditScore", restrictedValue);
+```
+
+Alternatively, you can set an untyped restricted variable directly with `VariableOptions`:
+
+```java
+runtimeService.setVariable(processInstanceId, "creditScore", 720, VariableOptions.options(false, true));
+```
 
 
 # Set and Retrieve Variables - Overview
@@ -136,7 +226,7 @@ configured charset, this length restriction can result in different quantities o
  it may be implemented separately and must happen before the Fluxnova API to set the variables is called.
 {{< /note >}}
 
-Process variables can be stored in formats like JSON and XML provided by the [Fluxnova Spin plugin]({{< ref "/user-guide/data-formats/_index.md" >}}). Spin provides serializers for the variables of type `object` such that Java variables can be persisted in these formats to the database. Furthermore, it is possible to store JSON and XML documents directly as a Spin object by the value types `xml` and `json`. Opposed to plain `string` variables, Spin objects provide a fluent API to perform common operations on such documents like reading and writing properties.
+Process variables can be stored in formats like JSON and XML provided by the [Fluxnova Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}). Spin provides serializers for the variables of type `object` such that Java variables can be persisted in these formats to the database. Furthermore, it is possible to store JSON and XML documents directly as a Spin object by the value types `xml` and `json`. Opposed to plain `string` variables, Spin objects provide a fluent API to perform common operations on such documents like reading and writing properties.
 
 
 ## Object Value Serialization
@@ -164,7 +254,7 @@ execution.setVariable("someVariable", customerDataValue);
 {{< /note >}}
 
 {{< note title="Serializing Objects to XML and JSON" class="info" >}}
-  The [Fluxnova Spin plugin]({{< ref "/user-guide/data-formats/_index.md" >}}) provides serializers that are capable of serializing object values to XML and JSON. They can be used when it is desired that the serialized objects values can be interpreted by humans or when the serialized value should be meaningful without having the corresponding Java class. When using a pre-built Fluxnova distribution, Fluxnova Spin is already preconfigured and you can try these formats without further configuration.
+  The [Fluxnova Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}) provides serializers that are capable of serializing object values to XML and JSON. They can be used when it is desired that the serialized objects values can be interpreted by humans or when the serialized value should be meaningful without having the corresponding Java class. When using a pre-built Fluxnova distribution, Fluxnova Spin is already preconfigured and you can try these formats without further configuration.
 {{< /note >}}
 
 
@@ -313,13 +403,13 @@ com.example.Order retrievedOrder = (com.example.Order) retrievedTypedObjectValue
 
 {{< note title="Java serialization format" class="warning" >}}
   Be aware that when using a serialized representation of variables, the Java serialization format is forbidden by default. You should either use another format (JSON or XML) or explicitly enable the Java serialization
-  with the help of the [`javaSerializationFormatEnabled`]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) configuration flag.
-  However, please make sure to read the [Security Implication]({{< ref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}) first before enabling this.
+  with the help of the [`javaSerializationFormatEnabled`]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) configuration flag.
+  However, please make sure to read the [Security Implication]({{< relref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}) first before enabling this.
 {{< /note >}}
 
 ## JSON and XML Values
 
-The Fluxnova Spin plugin provides an abstraction for JSON and XML documents that facilitate their processing and manipulation. This is often more convenient than storing such documents as plain `string` variables. See the documentation on Fluxnova SPIN for [storing JSON documents]({{< ref "/user-guide/data-formats/json.md#native-json-variable-value" >}}) and [storing XML documents]({{< ref "/user-guide/data-formats/xml.md#native-xml-variable-value" >}}) for details.
+The Fluxnova Spin plugin provides an abstraction for JSON and XML documents that facilitate their processing and manipulation. This is often more convenient than storing such documents as plain `string` variables. See the documentation on Fluxnova SPIN for [storing JSON documents]({{< relref "/user-guide/data-formats/json.md#native-json-variable-value" >}}) and [storing XML documents]({{< relref "/user-guide/data-formats/xml.md#native-xml-variable-value" >}}) for details.
 
 ## Transient variables
 
@@ -481,11 +571,11 @@ Input mappings can also be used with multi-instance constructs, in which the map
 
 If an Activity is canceled (e.g. due to throwing a BPMN error), IO mapping is still executed. This can lead to exceptions if the output mapping references variables that do not exist in the scope of the activity at that time.
 
-The default behavior is that the engine still tries to execute output mappings on canceled activities and fails with an exception if a variable is not found. By enabling the [skipOutputMappingOnCanceledActivities]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#skipOutputMappingOnCanceledActivities" >}}) engine configuration flag (i.e. setting it to `true`) the engine will not perform output mappings on any canceled activity.
+The default behavior is that the engine still tries to execute output mappings on canceled activities and fails with an exception if a variable is not found. By enabling the [skipOutputMappingOnCanceledActivities]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#skipOutputMappingOnCanceledActivities" >}}) engine configuration flag (i.e. setting it to `true`) the engine will not perform output mappings on any canceled activity.
 
-[inputOutput]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-inputoutput" >}}
-[inputParameter]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#inputparameter" >}}
-[outputParameter]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#outputparameter" >}}
-[list]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-list" >}}
-[map]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-map" >}}
-[script-io]: {{< ref "/user-guide/process-engine/scripting.md#use-scripts-as-inputoutput-parameters" >}}
+[inputOutput]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-inputoutput" >}}
+[inputParameter]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#inputparameter" >}}
+[outputParameter]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#outputparameter" >}}
+[list]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-list" >}}
+[map]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-map" >}}
+[script-io]: {{< relref "/user-guide/process-engine/scripting.md#use-scripts-as-inputoutput-parameters" >}}

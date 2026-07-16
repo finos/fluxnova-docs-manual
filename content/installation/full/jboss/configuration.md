@@ -23,7 +23,7 @@ In order to setup LDAP for the JBoss EAP/WildFly Application Server distribution
 
 ### Adjust the Process Engine Configuration
 
-Edit the file `standalone.xml` (or `domain.xml`) provided by the JBoss EAP/WildFly Application Server and add the [LDAP Identity Provider Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
+Edit the file `standalone.xml` (or `domain.xml`) provided by the JBoss EAP/WildFly Application Server and add the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
 
 ```xml
 <subsystem xmlns="urn:org.finos.fluxnova.bpm.jboss:1.1">
@@ -74,12 +74,12 @@ Edit the file `standalone.xml` (or `domain.xml`) provided by the JBoss EAP/WildF
 
 The `administratorUserName` property should contain the user id of the LDAP user you want to grant administrator authorizations to. You can then use this user to log in to the web application and grant authorizations to additional users.
 
-See our user guide for complete documentation on the [LDAP Identity Provider Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
+See our user guide for complete documentation on the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
 
 
 ## HAL Resource Caching
 
-If you use LDAP as Identity Provider, you should consider [activating caching]({{< ref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
+If you use LDAP as Identity Provider, you should consider [activating caching]({{< relref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
 Users and Groups in the Fluxnova web application. In order to activate this, add the following
 configuration to the `web.xml` file of the Fluxnova web application
 (`fluxnova-webapp-wildfly-$PLATFORM_VERSION.war/WEB-INF/lib` or `fluxnova-webapp-jboss-$PLATFORM_VERSION.war/WEB-INF/lib`):
@@ -135,7 +135,7 @@ configuration to the `web.xml` file of the Fluxnova web application
       ```
       
     The `module.xml` file is included in the Fluxnova distribution. If you install Fluxnova on a vanilla WildFly container, this file needs to be created manually.
-3. [Configure the process engine plugin]({{< ref "/user-guide/runtime-container-integration/jboss.md#extend-a-process-engine-using-process-engine-plugins" >}}) in the standalone.xml/domain.xml configuration file
+3. [Configure the process engine plugin]({{< relref "/user-guide/runtime-container-integration/jboss.md#extend-a-process-engine-using-process-engine-plugins" >}}) in the standalone.xml/domain.xml configuration file
 
 ## Session Cookie in Webapps
 
@@ -203,4 +203,4 @@ You can change the default behavior by adding configuration parameters to the se
 ```
 
 Please also see the detailed overview about the 
-[HTTP Header Security configuration settings]({{< ref "/webapps/shared-options/header-security.md#how-to-configure" >}}).
+[HTTP Header Security configuration settings]({{< relref "/webapps/shared-options/header-security.md#how-to-configure" >}}).

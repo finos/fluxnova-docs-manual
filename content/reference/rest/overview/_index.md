@@ -109,7 +109,7 @@ A JSON object with the following properties:
     <td>
         The code allows your client application to identify the error in an automated fashion. 
         You can look up the meaning of all built-in codes and learn how to add custom codes in the 
-        <a href="{{< ref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">User Guide</a>.
+        <a href="{{< relref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">User Guide</a>.
     </td>
   </tr>
   <tr>
@@ -197,7 +197,7 @@ A JSON object with the following properties:
     <td>
         The code allows your client application to identify the error in an automated fashion. 
         You can look up the meaning of all built-in codes and learn how to add custom codes in the 
-        <a href="{{< ref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">User Guide</a>.
+        <a href="{{< relref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">User Guide</a>.
     </td>
   </tr>
   <tr>
@@ -346,7 +346,7 @@ If the process bpmn resource cannot be parsed during deployment, the deployment 
 
 ## Query Maximum Results Limit Exceptions
 
-When the [maximum results limit of a query]({{< ref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}})
+When the [maximum results limit of a query]({{< relref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}})
 is exceeded, an exception is thrown which results in an HTTP status code 400.
 
 ## Exception codes
@@ -357,8 +357,8 @@ a reliable and automated fashion. The `type` property might be too coarse-graine
 property might change with newer versions. 
 
 You can look up the meaning of all built-in codes and learn how to add custom codes in the 
-[User Guide]({{< ref "/user-guide/process-engine/error-handling.md#exception-codes" >}}).
+[User Guide]({{< relref "/user-guide/process-engine/error-handling.md#exception-codes" >}}).
 
 # Authentication
 
-The REST API ships with an implementation of [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). By default it is switched off (in the rest-api web application and therefore also in the pre-built Fluxnova distributions). You can activate it by adding a servlet filter as described in the [Authentication]({{< ref "/reference/rest/overview/authentication.md" >}}) section.
+The REST API ships with an implementation of [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). By default it is switched off (in the rest-api web application and therefore also in the pre-built Fluxnova distributions). You can activate it by adding a servlet filter as described in the [Authentication]({{< relref "/reference/rest/overview/authentication.md" >}}) section.

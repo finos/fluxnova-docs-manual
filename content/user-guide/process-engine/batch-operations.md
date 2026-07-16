@@ -12,14 +12,14 @@ menu:
 
 The following operations can be executed asynchronously
 
-- [Process Instance Migration]({{< ref "/user-guide/process-engine/process-instance-migration.md#asynchronous-batch-migration-execution" >}})
+- [Process Instance Migration]({{< relref "/user-guide/process-engine/process-instance-migration.md#asynchronous-batch-migration-execution" >}})
 - [Cancellation of running Process Instances](#cancellation-of-running-process-instances)
 - [Deletion of Historic Process Instances](#deletion-of-historic-process-instances)
 - [Update suspend state of process instances](#update-suspend-state-of-process-instances)
 - [Setting retries and due dates of jobs using the builder pattern](#setting-retries-and-due-dates-of-jobs-using-the-builder-pattern)
 - [Setting retries of jobs associated with Process Instances](#setting-retries-of-jobs-associated-with-process-instances)
-- [Process Instance Modification]({{< ref "/user-guide/process-engine/process-instance-modification.md#modification-of-multiple-process-instances" >}})
-- [Process Instance Restart]({{< ref "/user-guide/process-engine/process-instance-restart.md#asynchronous-batch-execution" >}})
+- [Process Instance Modification]({{< relref "/user-guide/process-engine/process-instance-modification.md#modification-of-multiple-process-instances" >}})
+- [Process Instance Restart]({{< relref "/user-guide/process-engine/process-instance-restart.md#asynchronous-batch-execution" >}})
 - [Setting retries of external tasks](#setting-retries-of-external-tasks)
 - [Set Variables to Process Instances](#set-variables-to-process-instances)
 - [Correlate Messages to Process Instances](#correlate-messages-to-process-instances)
@@ -28,7 +28,7 @@ The following operations can be executed asynchronously
 - [Set a Removal Time to Historic Batches](#historic-batches)
 
 All batch operations rely on corresponding methods that provide the possibility to
-operate on a list of entities synchronously. Please refer to the general [Batch]({{< ref "/user-guide/process-engine/batch.md" >}}) documentation to
+operate on a list of entities synchronously. Please refer to the general [Batch]({{< relref "/user-guide/process-engine/batch.md" >}}) documentation to
 understand the creation process better.
 
 Asynchronous operations can be performed based on a list of specific instances as well as on the result of a query providing a
@@ -37,7 +37,7 @@ will consist of the union of those two subsets.
 
 All listed batch operations, except [Set a Removal Time to Historic Batches](#historic-batches), are deployment-aware.
 In particular, this means that the seed job and execution jobs will receive a `deploymentId` so 
-[deployment-aware job executors]({{< ref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}) 
+[deployment-aware job executors]({{< relref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}) 
 can pick up those jobs of a batch that need to be executed on their nodes. 
 The deployment id of the seed job is chosen from the list of involved deployments. 
 This list is derived from the resulting set of affected instances. 
@@ -143,12 +143,12 @@ runtimeService.setVariablesAsync(processInstanceIds, variables);
 
 {{< note title="Known limitations" class="info" >}}
 Currently, it is not possible to set transient variables via batch operation. However,
-you can [set transient variables]({{< ref "/user-guide/process-engine/variables.md#transient-variables" >}}) synchronously.
+you can [set transient variables]({{< relref "/user-guide/process-engine/variables.md#transient-variables" >}}) synchronously.
 
-The execution jobs of this batch can be scheduled by the job executor as [exclusive jobs]({{< ref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs" >}}).
+The execution jobs of this batch can be scheduled by the job executor as [exclusive jobs]({{< relref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs" >}}).
 As a result, the execution of some of this batch's jobs may be delayed by other exclusive jobs that are related to the same process instance that the variables should be set to.
 However, exclusive scheduling only happens when the jobs of this batch relate to exactly one process instance. 
-This can be controlled by configuring the [invocationsPerBatchJob]({{< ref "/user-guide/process-engine/batch.md#configuration" >}}) property.
+This can be controlled by configuring the [invocationsPerBatchJob]({{< relref "/user-guide/process-engine/batch.md#configuration" >}}) property.
 {{< /note >}}
 
 ## Correlate Messages to Process Instances
@@ -173,9 +173,9 @@ Batch batch = runtimeService.createMessageCorrelationAsync("myMessage")
 
 {{< note title="Known limitations" class="info" >}}
 It is not possible to correlate to process definition-level start message events via this batch operation. However,
-you can [correlate to start messages]({{< ref "/reference/bpmn20/events/message-events.md#explicitly-triggering-a-message" >}}) synchronously.
+you can [correlate to start messages]({{< relref "/reference/bpmn20/events/message-events.md#explicitly-triggering-a-message" >}}) synchronously.
 
-The execution jobs of this batch can be scheduled by the job executor as [exclusive jobs]({{< ref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs" >}}).
+The execution jobs of this batch can be scheduled by the job executor as [exclusive jobs]({{< relref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs" >}}).
 As a result, the execution of some of this batch's jobs may be delayed by other exclusive jobs that are related to the same process instance that the message should be correlated to.
 However, exclusive scheduling only happens when the jobs of this batch relate to exactly one process instance. 
 This can be controlled by configuring the [invocationsPerBatchJob][] property.
@@ -277,6 +277,6 @@ Using this chunked update mode on running process instances is possible but can 
 We recommend using this on completed or canceled process instances.
 {{< /note >}}
 
-[invocationsPerBatchJob]: {{< ref "/user-guide/process-engine/batch.md#configuration" >}}
-[job executor]: {{< ref "/user-guide/process-engine/the-job-executor.md" >}}
-[process engine configuration]: {{< ref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}
+[invocationsPerBatchJob]: {{< relref "/user-guide/process-engine/batch.md#configuration" >}}
+[job executor]: {{< relref "/user-guide/process-engine/the-job-executor.md" >}}
+[process engine configuration]: {{< relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}

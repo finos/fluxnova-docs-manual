@@ -101,14 +101,14 @@ For creating initial authorizations in your application, you have the following 
        lastName: Demo
    ```
 
-  - See [Fluxnova Engine Properties]({{< ref "/user-guide/spring-boot-integration/configuration#fluxnova-engine-properties" >}}) documentation for more details.
-2. The [Administrator Authorization Plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
+  - See [Fluxnova Engine Properties]({{< relref "/user-guide/spring-boot-integration/configuration#fluxnova-engine-properties" >}}) documentation for more details.
+2. The [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
 to grant administrator authorizations for a particular OAuth2 user or group.
 
 # OAuth2 Identity Provider
 
 Additionally to the OAuth2 login, Fluxnova also provides support to use groups from OAuth2.
-This is achieved with a custom [identity service]({{< ref "/user-guide/process-engine/identity-service.md" >}}), called {{< javadocref page="org/finos/fluxnova/bpm/spring/boot/starter/security/oauth2/impl/OAuth2IdentityProvider.html" text="OAuth2IdentityProvider" >}}.
+This is achieved with a custom [identity service]({{< relref "/user-guide/process-engine/identity-service.md" >}}), called {{< javadocref page="org/finos/fluxnova/bpm/spring/boot/starter/security/oauth2/impl/OAuth2IdentityProvider.html" text="OAuth2IdentityProvider" >}}.
 
 This is a read-only identity provider that configures user's groups from the [Spring Security's granted authorities][Authorities].
 This identity provider also supports the default Fluxnova Database Identity Service as a fallback for authentications for the REST API.

@@ -12,7 +12,7 @@ menu:
 ---
 
 {{< note title="What is a Remote Engine Distribution?" class="info" >}}
-If you need a Remote or Shared Engine Distribution depends on your use-case. Check out the [architecture overview]({{<ref "/introduction/architecture.md" >}}) for more information.
+If you need a Remote or Shared Engine Distribution depends on your use-case. Check out the [architecture overview]({{<relref "/introduction/architecture.md" >}}) for more information.
 {{< /note >}}
 
 This page describes the steps to execute Fluxnova Run.
@@ -30,7 +30,7 @@ If you need to install Java Runtime Environment, you can [find the download from
 # Installation Procedure
 1. Download the pre-packed distribution of the [community edition here] (https://downloads.camunda.cloud/release/camunda-bpm/run/) or the [enterprise edition here](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/run/).
 1. Unpack the distro to a directory.
-1. Configure the distro as described in the [User Guide]({{< ref "/user-guide/fluxnova-bpm-run.md" >}}).
+1. Configure the distro as described in the [User Guide]({{< relref "/user-guide/fluxnova-bpm-run.md" >}}).
 1. Start Fluxnova Run by executing the start script (start.bat for Windows, start.sh for Linux/Mac).
 1. Access the Fluxnova webapps (Cockpit, Tasklist, Admin) via http://localhost:8080/fluxnova/app/.
-1. Access the [REST API]({{< ref "/reference/rest/overview/_index.md" >}}) via http://localhost:8080/engine-rest (e.g. http://localhost:8080/engine-rest/engine).
+1. Access the [REST API]({{< relref "/reference/rest/overview/_index.md" >}}) via http://localhost:8080/engine-rest (e.g. http://localhost:8080/engine-rest/engine).

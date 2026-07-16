@@ -22,10 +22,10 @@ project. It then shows how to configure and build a new DMN engine instance.
 
 The Fluxnova DMN engine is released to Maven Central.
 
-Start by importing the [`fluxnova-engine-dmn` BOM]({{< ref "/get-started/apache-maven/#fluxnova-dmn-engine-bom" >}})
+Start by importing the [`fluxnova-engine-dmn` BOM]({{< relref "/get-started/apache-maven/#fluxnova-dmn-engine-bom" >}})
 to ensure correct dependency management.
 
-Next, include the [`fluxnova-engine-dmn`]({{< ref "/get-started/apache-maven/#fluxnova-dmn" >}})
+Next, include the [`fluxnova-engine-dmn`]({{< relref "/get-started/apache-maven/#fluxnova-dmn" >}})
 artifact in the `dependencies` section.
 
 # Building a DMN Engine
@@ -46,7 +46,7 @@ DmnEngine dmnEngine = configuration.buildEngine();
 ```
 
 # Configuration of the DMN Engine
-This section gives more insights of embedded DMN engine configuration. In case you want to use DMN engine as part of the BPMN engine, please refer to the [DMN Engine Configuration]({{< ref "/user-guide/process-engine/decisions/configuration" >}})  section of the [User Guide]({{< ref "/user-guide/_index.md" >}}) for the configuration in that scenario.
+This section gives more insights of embedded DMN engine configuration. In case you want to use DMN engine as part of the BPMN engine, please refer to the [DMN Engine Configuration]({{< relref "/user-guide/process-engine/decisions/configuration" >}})  section of the [User Guide]({{< relref "/user-guide/_index.md" >}}) for the configuration in that scenario.
 
 ## Decision Table Evaluation Listeners
 
@@ -120,7 +120,7 @@ configuration.getCustomPostDecisionEvaluationListeners()
 
 {{< note title="Use of Internal API" class="warning" >}}
 
-Please be aware that these APIs are **not** part of the [public API]({{< ref "/introduction/public-api.md" >}}) and may change in later releases.
+Please be aware that these APIs are **not** part of the [public API]({{< relref "/introduction/public-api.md" >}}) and may change in later releases.
 
 {{< /note >}}
 
@@ -354,11 +354,11 @@ For more information on how to configure and use SLF4J, please refer to the
 
 [evaluation listener]: {{< javadocref page="org/finos/fluxnova/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html" text="DmnDecisionTableEvaluationListener Interface" >}}
 [DMN model API]: https://github.com/finos/fluxnova-dmn-model
-[data types]: {{< ref "/user-guide/dmn-engine/data-types.md" >}}
-[hit policies]: {{< ref "/reference/dmn/decision-table/hit-policy.md" >}}
+[data types]: {{< relref "/user-guide/dmn-engine/data-types.md" >}}
+[hit policies]: {{< relref "/reference/dmn/decision-table/hit-policy.md" >}}
 [SLF4J]: http://www.slf4j.org/
 [LOGBack]: http://logback.qos.ch/
 [user manual]: http://www.slf4j.org/manual.html
-[DMN decision table]: {{< ref "/reference/dmn/decision-table/_index.md" >}}
-[DMN decision literal expression]: {{< ref "/reference/dmn/decision-literal-expression/_index.md" >}}
-[expressions]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md" >}}
+[DMN decision table]: {{< relref "/reference/dmn/decision-table/_index.md" >}}
+[DMN decision literal expression]: {{< relref "/reference/dmn/decision-literal-expression/_index.md" >}}
+[expressions]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md" >}}

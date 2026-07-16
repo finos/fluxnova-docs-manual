@@ -93,7 +93,7 @@ export default {
   }
 };
 ```
-This file can also be included standalone as a [custom script]({{< ref "/webapps/cockpit/extend/configuration.md#custom-scripts" >}}).
+This file can also be included standalone as a [custom script]({{< relref "/webapps/cockpit/extend/configuration.md#custom-scripts" >}}).
 
 {{< note title="Important notes about the structure" class="info" >}}
  1. The default export is either one plugin or an array of plugins. Only the default export will be considered in Cockpit.
@@ -112,7 +112,7 @@ This file can also be included standalone as a [custom script]({{< ref "/webapps
 The second argument contains API endpoints and CSRF cookie information, as well as constants like a `processDefinitionId`. The `api` key is always present and contains  
   * `engine`: the engine name
   * `CSRFToken`: the current CSRF token for your requests
-  * `baseApi`, `adminApi`, `cockpitApi`, `engineApi`: The paths to different API endpoints. The engineApi corresponds to the [Rest Api]({{< ref "/reference/rest" >}})
+  * `baseApi`, `adminApi`, `cockpitApi`, `engineApi`: The paths to different API endpoints. The engineApi corresponds to the [Rest Api]({{< relref "/reference/rest" >}})
 The details of which data is passed into the plugin can be found at the [plugin point reference](#plugin-points).
 
 * `result`: Function, only available in data plugins. Argument is a (`Promise`). 

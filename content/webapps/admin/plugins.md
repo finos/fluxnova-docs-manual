@@ -17,7 +17,7 @@ menu:
 
 Admin uses the concept of plugins to add own functionality without having to extend or hack the Admin web application.
 
-For further details about the concepts behind plugins, please read the [Cockpit plugins section]({{< ref "/webapps/cockpit/extend/plugins.md" >}}).
+For further details about the concepts behind plugins, please read the [Cockpit plugins section]({{< relref "/webapps/cockpit/extend/plugins.md" >}}).
 
 {{< note title="Difference between Cockpit and Admin plugins:" class="warning">}}
   * To publish the plugin with Admin, its class name must be put into a file called ```org.finos.fluxnova.bpm.admin.plugin.spi.AdminPlugin``` that resides in the directory ```META-INF/services```.
@@ -46,7 +46,7 @@ properties: {
 
 {{< img outdated="true" src="../img/admin-start-page-view.png" title="Dashboard" >}}
 
-With Fluxnova.5, the Admin webapp gets a dashboard based on plugins similar to the [Cockpit dashboard ones]({{< ref "/webapps/cockpit/extend/plugins.md" >}}#dashboard).
+With Fluxnova.5, the Admin webapp gets a dashboard based on plugins similar to the [Cockpit dashboard ones]({{< relref "/webapps/cockpit/extend/plugins.md" >}}#dashboard).
 
 This plugin points properties contain the attributes `label` and `pagePath`, which are the heading of the new Section as well as the linked sub-page of the heading. If `pagePath` is `undefined`, the label will not be rendered as a link.
 

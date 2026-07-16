@@ -13,12 +13,12 @@ menu:
 ---
 
 
-The process engine configuration can be placed in both [processes.xml]({{< ref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and the [bpm-platform.xml]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}) files. If the process engine is configured in either or both of those files, it will be bootstrapped by the Fluxnova infrastructure and be made available through `BpmPlatform.getProcessEngineService().getProcessEngine("name of process engine")`.
+The process engine configuration can be placed in both [processes.xml]({{< relref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and the [bpm-platform.xml]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}) files. If the process engine is configured in either or both of those files, it will be bootstrapped by the Fluxnova infrastructure and be made available through `BpmPlatform.getProcessEngineService().getProcessEngine("name of process engine")`.
 
 
 # Example
 
-The following example shows an XML snippet which can be placed in both [processes.xml]({{< ref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and/or [bpm-platform.xml]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}).
+The following example shows an XML snippet which can be placed in both [processes.xml]({{< relref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and/or [bpm-platform.xml]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}).
 
 ```xml
 <process-engine name="default">
@@ -75,7 +75,7 @@ The following example shows an XML snippet which can be placed in both [processe
       </p>
       <p>
         <strong>Text Content:</strong>
-        The name of the job acquisition to be used for this process engine. Job acquisitions are configured in the <a href="{{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}">bpm-platform.xml</a> file.
+        The name of the job acquisition to be used for this process engine. Job acquisitions are configured in the <a href="{{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}">bpm-platform.xml</a> file.
       </p>
       <p>
         <strong>Example:</strong>
@@ -176,7 +176,7 @@ The following example shows an XML snippet which can be placed in both [processe
     <td><code>&lt;process-engine&gt;</code></td>
     <td>false</td>
     <td>
-        Container element for providing a set of <a href="{{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a> configurations.
+        Container element for providing a set of <a href="{{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a> configurations.
       <p>
         <strong>Attributes:</strong>
         None.
@@ -192,7 +192,7 @@ The following example shows an XML snippet which can be placed in both [processe
     <td><code>&lt;plugins&gt;</code></td>
     <td>false</td>
     <td>
-        Container element for providing an individual <a href="{{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a> configuration.
+        Container element for providing an individual <a href="{{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a> configuration.
       <p>
         <strong>Attributes:</strong>
         None.
@@ -208,7 +208,7 @@ The following example shows an XML snippet which can be placed in both [processe
     <td><code>&lt;plugin&gt;</code></td>
     <td>false</td>
     <td>
-        Sets the classname of a <a href="{{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a>.
+        Sets the classname of a <a href="{{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}">process engine plugin</a>.
       <p>
         <strong>Attributes:</strong>
         None.
@@ -235,7 +235,7 @@ The following is a list with the most commonly used process engine configuration
   <tr>
     <td><code>authorizationEnabled</code></td>
     <td>Boolean</td>
-    <td>Activates <a href="{{< ref "/user-guide/process-engine/authorization-service.md#enable-authorization-checks ">}}">authorization checks</a>.</td>
+    <td>Activates <a href="{{< relref "/user-guide/process-engine/authorization-service.md#enable-authorization-checks ">}}">authorization checks</a>.</td>
   </tr>
 
   <tr>
@@ -258,7 +258,7 @@ The following is a list with the most commonly used process engine configuration
       <p>
         The validation applies to all authorization resource types supported by
         the process engine. For a complete list of resources, see
-        <a href="{{< ref "/user-guide/process-engine/authorization-service.md#resources" >}}">
+        <a href="{{< relref "/user-guide/process-engine/authorization-service.md#resources" >}}">
             Authorization Resources
         </a>
       </p>
@@ -299,7 +299,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>databaseSchemaUpdate</code></td>
     <td>String</td>
     <td>
-        Sets the value for process engine <a href="{{< ref "/user-guide/process-engine/database/database-configuration.md">}}">database schema creation</a>.
+        Sets the value for process engine <a href="{{< relref "/user-guide/process-engine/database/database-configuration.md">}}">database schema creation</a>.
       <p>
         <strong>Values:</strong> <code>false</code>, <code>create-drop</code>, <code>true</code>.
       </p>
@@ -326,7 +326,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>defaultUserPermissionNameForTask</code></td>
     <td>String</td>
     <td>
-        Set the default <a href="{{< ref "/user-guide/process-engine/authorization-service.md#default-task-permissions">}}">permisson to work on a task</a>. Allowed values are <code>UPDATE</code> or <code>TASK_WORK</code>. Default value: <code>UPDATE</code>.
+        Set the default <a href="{{< relref "/user-guide/process-engine/authorization-service.md#default-task-permissions">}}">permisson to work on a task</a>. Allowed values are <code>UPDATE</code> or <code>TASK_WORK</code>. Default value: <code>UPDATE</code>.
     </td>
   </tr>
 
@@ -359,7 +359,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>enableExceptionsAfterUnhandledBpmnError</code></td>
     <td>Boolean</td>
     <td>
-        If set to <code>true</code>, Process Engine Exception is thrown when <a href="{{< ref "/reference/bpmn20/events/error-events.md#unhandled-bpmn-error">}}">unhandled BPMN Error</a> occurs. Default value: <code>false</code>
+        If set to <code>true</code>, Process Engine Exception is thrown when <a href="{{< relref "/reference/bpmn20/events/error-events.md#unhandled-bpmn-error">}}">unhandled BPMN Error</a> occurs. Default value: <code>false</code>
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
       </p>
@@ -370,7 +370,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>enableExpressionsInAdhocQueries</code></td>
     <td>Boolean</td>
     <td>
-      If set to <code>true</code>, expressions can be used when creating and executing adhoc queries. For details, see the section on <a href="{{< ref "/user-guide/process-engine/securing-custom-code.md">}}">security considerations for custom code</a> in the user guide.
+      If set to <code>true</code>, expressions can be used when creating and executing adhoc queries. For details, see the section on <a href="{{< relref "/user-guide/process-engine/securing-custom-code.md">}}">security considerations for custom code</a> in the user guide.
       Default value is <code>false</code>.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -382,7 +382,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>enableExpressionsInStoredQueries</code></td>
     <td>Boolean</td>
     <td>
-      If set to <code>true</code>, expressions can be used when creating and executing stored queries. For details, see the section on <a href="{{< ref "/user-guide/process-engine/securing-custom-code.md">}}">security considerations for custom code</a> in the user guide.
+      If set to <code>true</code>, expressions can be used when creating and executing stored queries. For details, see the section on <a href="{{< relref "/user-guide/process-engine/securing-custom-code.md">}}">security considerations for custom code</a> in the user guide.
       Default value is <code>true</code>.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -451,7 +451,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>failedJobRetryTimeCycle</code></td>
     <td>String</td>
     <td>
-     Sets how often a job is retried after a fail and how long the engine should wait until it tries to execute a job again. See the <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#retry-time-cycle-configuration" >}}">user guide</a>
+     Sets how often a job is retried after a fail and how long the engine should wait until it tries to execute a job again. See the <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#retry-time-cycle-configuration" >}}">user guide</a>
         for more details on this setting.
     </td>
   </tr>
@@ -472,7 +472,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         If the value of this flag is set to <code>true</code>, 
-        <a href="{{< ref "/user-guide/process-engine/authorization-service.md#historic-instance-permissions" >}}">Historic Instance Permissions</a>
+        <a href="{{< relref "/user-guide/process-engine/authorization-service.md#historic-instance-permissions" >}}">Historic Instance Permissions</a>
         are enabled. Default value is <code>false</code>.
         <p>
             <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -484,11 +484,15 @@ The following is a list with the most commonly used process engine configuration
     <td><code>enforceSpecificVariablePermission</code></td>
     <td>Boolean</td>
     <td>
-        If the value of this flag is set to <code>true</code>, the <a href="{{< ref "/user-guide/process-engine/authorization-service.md#default-read-variable-permissions" >}}">default permissions</a> to see/read variables are:
+        If the value of this flag is set to <code>true</code>, the <a href="{{< relref "/user-guide/process-engine/authorization-service.md#default-read-variable-permissions" >}}">default permissions</a> to see/read variables are:
         <ul>
           <li>READ_INSTANCE_VARIABLE, READ_HISTORY_VARIABLE, and READ_TASK_VARIABLE on Process Definition resource, and READ_VARIABLE on Task resource</li>
           <li>READ_VARIABLE on Historic Task resource</li>
         </ul>
+        This setting is often used together with restricted-variable authorization to tighten read access to sensitive process data. See
+        <a href="{{< ref "/user-guide/process-engine/variables.md#restricted-variables" >}}">Restricted Variables</a> and
+        <a href="{{< ref "/user-guide/process-engine/authorization-service.md#restricted-variable-permissions" >}}">Restricted Variable Permissions</a>
+        for behavior and permission mapping details.
         Default value is <code>false</code>.
         <p>
             <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -500,7 +504,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>history</code></td>
     <td>String</td>
     <td>
-        Sets the <a href="{{< ref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}">level of the process engine history</a>.
+        Sets the <a href="{{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}">level of the process engine history</a>.
       <p>
         <strong>Values:</strong> <code>none</code>, <code>activity</code>, <code>audit</code>, <code>full</code>.
       </p>
@@ -526,9 +530,9 @@ The following is a list with the most commonly used process engine configuration
     <td><code>historyRemovalTimeStrategy</code></td>
     <td>String</td>
     <td>
-      Controls if and when the <a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md#instance-removal-time">}}">removal time</a> of an historic instance is set.
+      Controls if and when the <a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md#instance-removal-time">}}">removal time</a> of an historic instance is set.
       The default value is <code>end</code>.<br>
-      Please also see the <a href="{{< ref "/reference/deployment-descriptors/tags/process-engine.md#historyCleanupStrategy">}}"><code>historyCleanupStrategy</code></a>
+      Please also see the <a href="{{< relref "/reference/deployment-descriptors/tags/process-engine.md#historyCleanupStrategy">}}"><code>historyCleanupStrategy</code></a>
       configuration parameter.<br><br>
       <strong>Values:</strong> <code>start</code>, <code>end</code>, <code>none</code> (String).
     </td>
@@ -598,7 +602,7 @@ The following is a list with the most commonly used process engine configuration
         The default value is <code>false</code>.
         </p>
         <p>
-        <strong>Note</strong>: The <a href="{{<ref "/user-guide/process-engine/database/database-configuration.md#isolation-level-configuration" >}}">recommended transaction isolation level</a> that ensures the correct behaviour of the engine is <code>READ_COMMITTED</code>.
+        <strong>Note</strong>: The <a href="{{<relref "/user-guide/process-engine/database/database-configuration.md#isolation-level-configuration" >}}">recommended transaction isolation level</a> that ensures the correct behaviour of the engine is <code>READ_COMMITTED</code>.
         </p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
     </td>
@@ -609,7 +613,7 @@ The following is a list with the most commonly used process engine configuration
     <td>
         Controls if the engine executes the jdbc statements as Batch or not.
       <p>
-        Default is <code><strong>true</strong></code>, but this has to be disabled for some databases. See <a href="{{<ref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">the user guide</a> for further details.
+        Default is <code><strong>true</strong></code>, but this has to be disabled for some databases. See <a href="{{<relref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">the user guide</a> for further details.
       </p>
     </td>
   </tr>
@@ -618,7 +622,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls whether the job executor acquires the next jobs to execute ordered by due date. Default value is <code>false</code>. See the
-        <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
+        <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
         for more details on this setting.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -631,7 +635,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls whether the job executor acquires the next jobs to execute ordered by job priority. Default value is <code>false</code>. See the
-        <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
+        <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
         for more details on this setting.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -644,7 +648,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls whether the process engine starts with an active job executor or not. For a shared process engine configuration, the default value is <code>true</code>. For an embedded process engine configuration, the default value is <code>false</code>. See the
-        <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#job-executor-activation" >}}">user guide</a>
+        <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#job-executor-activation" >}}">user guide</a>
         for more details on this setting.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -668,7 +672,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls whether the job executor prefers due timer jobs over other job types. Default value is <code>false</code>. See the
-        <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
+        <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#the-job-order-of-job-acquisition" >}}">user guide</a>
         for more details on this setting.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -712,7 +716,7 @@ The following is a list with the most commonly used process engine configuration
             When set to true, the acquisition & execution of the aforementioned jobs will be performed exclusively.
         <p>
         <p>
-            See the <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs-of-process-hierarchies" >}}">user guide</a> for more details.
+            See the <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#exclusive-jobs-of-process-hierarchies" >}}">user guide</a> for more details.
         <p>
         <strong>Default value:</strong> <code>false</code> <br>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
@@ -724,7 +728,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>skipHistoryOptimisticLockingExceptions</code></td>
     <td>Boolean</td>
     <td>
-        Controls if the engine will throw <a href="{{< ref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-fluxnova" >}}">OptimisticLockingException</a>s on UPDATE or DELETE operations for historical data or not.
+        Controls if the engine will throw <a href="{{< relref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-fluxnova" >}}">OptimisticLockingException</a>s on UPDATE or DELETE operations for historical data or not.
         The default is <code><strong>true</strong></code>. To preserve the previous behavior (≤ 7.9), the flag must be set to <code><strong>false</strong></code>.<br><br>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
     </td>
@@ -751,7 +755,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls whether the process engine performs tenant checks to ensure that an authenticated user can only access data that belongs to one of his tenants. Default value is <code>true</code>.
-        See the <a href="{{< ref "/user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers" >}}">user guide</a> for more details.
+        See the <a href="{{< relref "/user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers" >}}">user guide</a> for more details.
       <p>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
       </p>
@@ -764,7 +768,7 @@ The following is a list with the most commonly used process engine configuration
     <td>
         Sets the number of batch execution jobs created per batch seed job
         invocation.
-        See the <a href="{{< ref "/user-guide/process-engine/batch.md#job-definitions" >}}">
+        See the <a href="{{< relref "/user-guide/process-engine/batch.md#job-definitions" >}}">
         user guide</a> for more information on batch execution.
         Default value: <code>100</code>
     </td>
@@ -775,7 +779,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Integer</td>
     <td>
         Sets the number of invocations a single batch execution job executes.
-        See the <a href="{{< ref "/user-guide/process-engine/batch.md#job-definitions" >}}">
+        See the <a href="{{< relref "/user-guide/process-engine/batch.md#job-definitions" >}}">
         user guide</a> for more information on batch execution.
         Default value: <code>1</code>
     </td>
@@ -789,7 +793,7 @@ The following is a list with the most commonly used process engine configuration
         batch type. Unless specified in this map, the value of 
         'invocationsPerBatchJob' is used for batch operations.<br><br>
         Read more in the 
-        <a href="{{< ref "/user-guide/process-engine/batch.md#configuration" >}}">User Guide</a>.
+        <a href="{{< relref "/user-guide/process-engine/batch.md#configuration" >}}">User Guide</a>.
     </td>
   </tr>
 
@@ -799,7 +803,7 @@ The following is a list with the most commonly used process engine configuration
     <td>
         Sets the poll interval of the batch monitor job to check for batch
         completion in seconds.
-        See the <a href="{{< ref "/user-guide/process-engine/batch.md#job-definitions" >}}">
+        See the <a href="{{< relref "/user-guide/process-engine/batch.md#job-definitions" >}}">
         user guide</a> for more information on batch execution.
         Default value: <code>30</code>
     </td>
@@ -810,7 +814,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Integer</td>
     <td>
         Sets the default batch job priority.
-        See the <a href="{{< ref "/user-guide/process-engine/the-job-executor.md#job-prioritization" >}}">
+        See the <a href="{{< relref "/user-guide/process-engine/the-job-executor.md#job-prioritization" >}}">
         user guide</a> for more information on job prioritization.
         Default value: <code>0</code>
     </td>
@@ -820,7 +824,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>deploymentLockUsed</code></td>
     <td>Boolean</td>
     <td>
-        Sets if the process engine must acquire an <a href="{{< ref "/user-guide/process-engine/deployments.md#deployments-in-a-clustered-scenario" >}}">exclusive lock when creating a deployment</a>.
+        Sets if the process engine must acquire an <a href="{{< relref "/user-guide/process-engine/deployments.md#deployments-in-a-clustered-scenario" >}}">exclusive lock when creating a deployment</a>.
         Default value: <code>true</code>
     </td>
   </tr>
@@ -829,7 +833,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>compositeIncidentHandlersEnabled</code></td>
     <td>Boolean</td>
     <td>
-      Sets if the incidents can be handled by <a href="{{< ref "/user-guide/process-engine/incidents.md#composite-incident-handlers" >}}"f>multiple</a> handlers for the same incident type.
+      Sets if the incidents can be handled by <a href="{{< relref "/user-guide/process-engine/incidents.md#composite-incident-handlers" >}}"f>multiple</a> handlers for the same incident type.
       <p>
         Default value is <code>false</code>.
       </p>
@@ -854,7 +858,7 @@ The following is a list with the most commonly used process engine configuration
     <td><a name="javaSerializationFormatEnabled"></a><code>javaSerializationFormatEnabled</code></td>
     <td>Boolean</td>
     <td>
-        Sets if Java serialization format can be used, when <a href="{{< ref "/user-guide/process-engine/variables.md#object-values">}}">setting variables by their serialized representation</a>. Default value: <code>false</code>
+        Sets if Java serialization format can be used, when <a href="{{< relref "/user-guide/process-engine/variables.md#object-values">}}">setting variables by their serialized representation</a>. Default value: <code>false</code>
     </td>
   </tr>
   
@@ -862,7 +866,7 @@ The following is a list with the most commonly used process engine configuration
     <td><a name="deserializationTypeValidationEnabled"></a><code>deserializationTypeValidationEnabled</code></td>
     <td>Boolean</td>
     <td>
-        Sets if validation of types should be performed before JSON and XML deserialization. See <a href="{{< ref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>false</code>
+        Sets if validation of types should be performed before JSON and XML deserialization. See <a href="{{< relref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>false</code>
     </td>
   </tr>
   
@@ -870,7 +874,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>deserializationAllowedPackages</code></td>
     <td>String</td>
     <td>
-        Sets the allowed package names of types that are analyzed before JSON and XML deserialization if <code>deserializationTypeValidationEnabled</code> is set to <code>true</code>. With the default validator, this can be a comma-separated list of allowed package names. Only the defined packages and their sub-packages will be allowed in conjunction with the <code>deserializationAllowedClasses</code>. Also, the default validator always allows types within the package "java.lang" and all sub-packages. See <a href="{{< ref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>null</code>
+        Sets the allowed package names of types that are analyzed before JSON and XML deserialization if <code>deserializationTypeValidationEnabled</code> is set to <code>true</code>. With the default validator, this can be a comma-separated list of allowed package names. Only the defined packages and their sub-packages will be allowed in conjunction with the <code>deserializationAllowedClasses</code>. Also, the default validator always allows types within the package "java.lang" and all sub-packages. See <a href="{{< relref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>null</code>
     </td>
   </tr>
   
@@ -878,14 +882,14 @@ The following is a list with the most commonly used process engine configuration
     <td><code>deserializationAllowedClasses</code></td>
     <td>String</td>
     <td>
-        Sets the allowed class names of types that are analyzed before JSON and XML deserialization if <code>deserializationTypeValidationEnabled</code> is set to <code>true</code>. With the default validator, this can be a comma-separated list of class names. Only the defined class names will be allowed in conjunction with the <code>deserializationAllowedPackages</code>. Also, the default validator always allows the following types: <code>java.util.ArrayList</code>, <code>java.util.Arrays$ArrayList</code>, <code>java.util.HashMap</code>, <code>java.util.HashSet</code>, <code>java.util.LinkedHashMap</code>, <code>java.util.LinkedHashSet</code>, <code>java.util.LinkedList</code>, <code>java.util.Properties</code>, <code>java.util.TreeMap</code>, <code>java.util.TreeSet</code>. See <a href="{{< ref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>null</code>
+        Sets the allowed class names of types that are analyzed before JSON and XML deserialization if <code>deserializationTypeValidationEnabled</code> is set to <code>true</code>. With the default validator, this can be a comma-separated list of class names. Only the defined class names will be allowed in conjunction with the <code>deserializationAllowedPackages</code>. Also, the default validator always allows the following types: <code>java.util.ArrayList</code>, <code>java.util.Arrays$ArrayList</code>, <code>java.util.HashMap</code>, <code>java.util.HashSet</code>, <code>java.util.LinkedHashMap</code>, <code>java.util.LinkedHashSet</code>, <code>java.util.LinkedList</code>, <code>java.util.Properties</code>, <code>java.util.TreeMap</code>, <code>java.util.TreeSet</code>. See <a href="{{< relref "/user-guide/security.md#variable-values-from-untrusted-sources" >}}">Security Instructions</a> for further information. Default value: <code>null</code>
     </td>
   </tr>
 
   <tr>
     <td><a name="enablePasswordPolicy"></a><code>enablePasswordPolicy</code></td>
     <td>Boolean</td>
-    <td>Set to <code>true</code>, to enable a <a href="{{< ref "/user-guide/process-engine/password-policy" >}}">password policy</a> for users that are managed by the engine. If a <a href="{{< ref "/user-guide/process-engine/password-policy/#customize-the-password-policy">}}">custom password policy</a> is configured, it will be enabled. Otherwise the <a href="{{< ref "/user-guide/process-engine/password-policy/#built-in-password-policy">}}">built-in password policy</a> is activated.
+    <td>Set to <code>true</code>, to enable a <a href="{{< relref "/user-guide/process-engine/password-policy" >}}">password policy</a> for users that are managed by the engine. If a <a href="{{< relref "/user-guide/process-engine/password-policy/#customize-the-password-policy">}}">custom password policy</a> is configured, it will be enabled. Otherwise the <a href="{{< relref "/user-guide/process-engine/password-policy/#built-in-password-policy">}}">built-in password policy</a> is activated.
     </td>
   </tr>
 
@@ -917,7 +921,7 @@ The following is a list with the most commonly used process engine configuration
         When defining a limit of maximum results, an authenticated user cannot perform a query 
         with an unbounded number of results or a paginated query that exceeds the limit. 
         Read more about it in the
-        <a href="{{< ref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}}">User Guide</a>.
+        <a href="{{< relref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}}">User Guide</a>.
         <br><br>
         <strong>Note:</strong> To gain the full feature set of the Webapps, and not suffer any UX degradation due to unavailable data, the <code>queryMaxResultsLimit</code> must be set to <code>2000</code>. If you use Optimize it is recommended to set the value to <code>10 000</code>, so the import of the data to Optimize works out of the box.<br><br>
         The default value is 2<sup>31</sup>-1.
@@ -942,7 +946,7 @@ The following is a list with the most commonly used process engine configuration
     <td>List</td>
     <td>
         Define a list of instances of <code>FeelCustomFunctionProvider</code>.<br><br>
-        Read more about it in the <a href="{{< ref "/user-guide/dmn-engine/feel/custom-functions.md" >}}">User Guide</a>.
+        Read more about it in the <a href="{{< relref "/user-guide/dmn-engine/feel/custom-functions.md" >}}">User Guide</a>.
     </td>
   </tr>
 
@@ -965,7 +969,7 @@ The following is a list with the most commonly used process engine configuration
         should still perform output mapping. When set to <code>true</code>, output mapping will not be done for any
         activity that was canceled. This might be helpful when it is not certain which variables will be available when
         the activity is canceled (e.g. when an external task does not return an expected variable).</p>
-        <p>This flag is often used together with <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">fluxnova:errorEventDefinition</a> extension elements on external service tasks.</p>
+        <p>This flag is often used together with <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">fluxnova:errorEventDefinition</a> extension elements on external service tasks.</p>
         <p>Default value: <code>false</code></p>
     </td>
   </tr>
@@ -1038,7 +1042,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>disableExceptionCode</code></td>
     <td>Boolean</td>
     <td>
-      Disables the entire <a href="{{< ref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">exception error code feature</a>. No exception error codes are assigned.
+      Disables the entire <a href="{{< relref "/user-guide/process-engine/error-handling.md#exception-codes" >}}">exception error code feature</a>. No exception error codes are assigned.
        <p>
         Default value is <code>false</code>.
       </p>
@@ -1051,7 +1055,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>disableBuiltinExceptionCodeProvider</code></td>
     <td>Boolean</td>
     <td>
-      Disables the default implementation of {{< javadocref page="org/finos/fluxnova/bpm/engine/impl/errorcode/ExceptionCodeProvider.html" text="ExceptionCodeProvider" >}} which allows overriding the <a href="{{< ref "/user-guide/process-engine/error-handling.md#reserved-code-range" >}}">reserved exception codes</a>.
+      Disables the default implementation of {{< javadocref page="org/finos/fluxnova/bpm/engine/impl/errorcode/ExceptionCodeProvider.html" text="ExceptionCodeProvider" >}} which allows overriding the <a href="{{< relref "/user-guide/process-engine/error-handling.md#reserved-code-range" >}}">reserved exception codes</a>.
        <p>
         Default value is <code>false</code>.
       </p>
@@ -1069,7 +1073,7 @@ The following is a list with the most commonly used process engine configuration
         Default value is <code>null</code>.
       </p>
       <p>
-        Read more in the <a href="{{< ref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}">User Guide</a>.
+        Read more in the <a href="{{< relref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}">User Guide</a>.
       </p>
     </td>
   </tr>
@@ -1101,7 +1105,7 @@ The following is a list with the most commonly used process engine configuration
       <p>
         Default value is <code>1L</code>.
         <br>
-        More information about security aspects of this configuration can be found in the <a href="{{< ref "/user-guide/security.md#user-operation-log-settings-for-synchronous-operations-affecting-multiple-entities" >}}">security guide</a>.
+        More information about security aspects of this configuration can be found in the <a href="{{< relref "/user-guide/security.md#user-operation-log-settings-for-synchronous-operations-affecting-multiple-entities" >}}">security guide</a>.
       </p>
       <p>
       Currently supported operations:
@@ -1124,9 +1128,9 @@ The following is a list with the most commonly used process engine configuration
     <td><code>historyCleanupStrategy</code></td>
     <td>String</td>
     <td>
-      Controls which <a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> strategy is used.
+      Controls which <a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> strategy is used.
       The default value is <code>removalTimeBased</code>.<br>
-      Please also see the <a href="{{< ref "/reference/deployment-descriptors/tags/process-engine.md#historyRemovalTimeStrategy">}}"><code>historyRemovalTimeStrategy</code></a> configuration parameter.<br><br>
+      Please also see the <a href="{{< relref "/reference/deployment-descriptors/tags/process-engine.md#historyRemovalTimeStrategy">}}"><code>historyRemovalTimeStrategy</code></a> configuration parameter.<br><br>
       <strong>Values:</strong> <code>removalTimeBased</code>, <code>endTimeBased</code>.
     </td>
   </tr>
@@ -1138,27 +1142,27 @@ The following is a list with the most commonly used process engine configuration
   <tr>
     <td><code>historyCleanupBatchWindowStartTime</code></td>
     <td>String</td>
-    <td><a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window start time in the format <code>HH:mmZ</code> (Z is for RFC 822 time zone) or <code>HH:mm</code>. E.g., <code>20:00+0100</code> or <code>20:00</code>. In case of <code>null</code>, no batch window is considered to be configured
+    <td><a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window start time in the format <code>HH:mmZ</code> (Z is for RFC 822 time zone) or <code>HH:mm</code>. E.g., <code>20:00+0100</code> or <code>20:00</code>. In case of <code>null</code>, no batch window is considered to be configured
     and history cleanup can only be called manually.</td>
   </tr>
   <tr>
     <td><code>historyCleanupBatchWindowEndTime</code></td>
     <td>String</td>
-    <td><a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window end time in the format <code>HH:mmZ</code> (Z is for RFC 822 time zone) or <code>HH:mm</code>. E.g., <code>23:00-0300</code> or <code>23:00</code>. In case <code>batchWindowEndTime</code> exceeds <code>batchWindowStartTime</code> it is considered
+    <td><a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window end time in the format <code>HH:mmZ</code> (Z is for RFC 822 time zone) or <code>HH:mm</code>. E.g., <code>23:00-0300</code> or <code>23:00</code>. In case <code>batchWindowEndTime</code> exceeds <code>batchWindowStartTime</code> it is considered
     to be on the same date (e.g., cleanup runs each day between 20:00 and 23:00). Otherwise it is considered to be on the next calendar day (e.g., cleanup starts each
     day at 20:00 and finishes the next day at 01:00). Default value is <code>00:00</code>.</td>
   </tr>
   <tr>
     <td><code>mondayHistoryCleanupBatchWindowStartTime</code></td>
     <td>String</td>
-    <td><a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window start time for Mondays. Requires the same format as <code>historyCleanupBatchWindowStartTime</code>.
+    <td><a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window start time for Mondays. Requires the same format as <code>historyCleanupBatchWindowStartTime</code>.
     In case it is not configured, batch window configured with <code>historyCleanupBatchWindowStartTime</code> and <code>historyCleanupBatchWindowEndTime</code> will be used for this day of week.
     </td>
   </tr>
   <tr>
     <td><code>mondayHistoryCleanupBatchWindowEndTime</code></td>
     <td>String</td>
-    <td><a href="{{< ref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window end time for Mondays. Requires the same format and follows the same logic
+    <td><a href="{{< relref "/user-guide/process-engine/history/history-cleanup.md">}}">History cleanup</a> batch window end time for Mondays. Requires the same format and follows the same logic
     as <code>historyCleanupBatchWindowEndTime</code>.
     </td>
   </tr>
@@ -1255,7 +1259,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Activates metrics for history cleanup. Default value is <code>true</code>.
       <br><br>
       <strong>Note</strong> that history cleanup metrics are collected only when 
-      <a href="{{<ref "/user-guide/process-engine/metrics.md#disable-reporting" >}}">general metrics collection is not disabled</a>.    
+      <a href="{{<relref "/user-guide/process-engine/metrics.md#disable-reporting" >}}">general metrics collection is not disabled</a>.    
     </td>
   </tr>
   <tr id="history-cleanup-enabled">
@@ -1263,7 +1267,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Configures whether the engine participates in history cleanup or not. The default value is <code>true</code>.
-        For more details, please see <a href="{{<ref "/user-guide/process-engine/history/history-cleanup.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>
+        For more details, please see <a href="{{<relref "/user-guide/process-engine/history/history-cleanup.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>
         in the User Guide.
     </td>
   </tr>
@@ -1367,7 +1371,7 @@ The history time to live defines the number of days using a time specified by th
 
 ## Logging context parameters
 
-These parameters define the keys at which the specified data can be retrieved from the Mapped Diagnostic Context (MDC). See [Logging]({{< ref "/user-guide/logging.md#process-data-context" >}}) for details.
+These parameters define the keys at which the specified data can be retrieved from the Mapped Diagnostic Context (MDC). See [Logging]({{< relref "/user-guide/logging.md#process-data-context" >}}) for details.
 The specified data will only be put into the MDC if a key is defined. All parameters can be set to <code>null</code> or the empty String in order to disable their logging in the MDC.
 
 <table class="table table-striped">

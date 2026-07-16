@@ -51,7 +51,7 @@ Before you can install the Fluxnova components, you need to perform a number of 
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
 * Create a database schema for Fluxnova yourself.
-* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In Tomcat, this is done in the `bpm-platform.xml`, located in the `$TOMCAT_DISTRIBUTION\server\apache-tomcat-$VERSION\conf\` folder.
 
@@ -126,7 +126,7 @@ Furthermore, you have to merge your corresponding JDBC driver into the folder `$
 
 ## Add bpm-platform.xml
 
-You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or, optionally, you can configure the location through some available mechanisms, see [Configure location of the bpm-platform.xml file]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}):
+You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or, optionally, you can configure the location through some available mechanisms, see [Configure location of the bpm-platform.xml file]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -193,7 +193,7 @@ The following steps are required to deploy the REST API:
 3. Startup Tomcat.
 4. Access the REST API on the context you configured.
     For example, http://localhost:8080/engine-rest/engine should return the names of all engines of the platform, provided that you deployed the application in the context `/engine-rest`.
-5. Enable authentication as described in the [REST API documentation]({{< ref "/reference/rest/overview/authentication.md" >}})
+5. Enable authentication as described in the [REST API documentation]({{< relref "/reference/rest/overview/authentication.md" >}})
 
 
 ## Fluxnova Connect Plugin

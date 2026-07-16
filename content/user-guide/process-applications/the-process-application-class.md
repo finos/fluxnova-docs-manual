@@ -109,7 +109,7 @@ Both options are explained in greater detail below.
 The most convenient option for deploying a process application to a Java EE EJB container is by adding the following maven dependency to your maven project:
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< ref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
 ```xml
@@ -167,7 +167,7 @@ public class MyEjbProcessApplication extends EjbProcessApplication {
 
 ## Expose Servlet Context Path Using a Custom EJB process application
 
-If your application is a `WAR` (or a `WAR` inside an `EAR`) and you want to use [embedded forms]({{< ref "/user-guide/task-forms/_index.md#embedded-task-forms" >}}) or [external task forms]({{< ref "/user-guide/task-forms/_index.md#external-task-forms" >}}) inside the [Tasklist]({{< ref "/webapps/tasklist/_index.md" >}}) application, then your custom EJB process application must expose the servlet context path of your application as a property. This enables the Tasklist to resolve the path to the embedded or external task forms.
+If your application is a `WAR` (or a `WAR` inside an `EAR`) and you want to use [embedded forms]({{< relref "/user-guide/task-forms/_index.md#embedded-task-forms" >}}) or [external task forms]({{< relref "/user-guide/task-forms/_index.md#external-task-forms" >}}) inside the [Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}) application, then your custom EJB process application must expose the servlet context path of your application as a property. This enables the Tasklist to resolve the path to the embedded or external task forms.
 
 Therefore, your custom EJB process application must be extended by a `Map` and a getter-method for that `Map` as follows:
 
