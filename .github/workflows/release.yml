@@ -100,7 +100,7 @@ jobs:
           cp ./404.html ./public
 
       - name: Create Release Tag
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
