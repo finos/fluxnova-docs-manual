@@ -15,8 +15,7 @@ menu:
 When integrating with Spring, business processes can be tested very easily (in scope 2, see [Testing Scopes]) using the standard Fluxnova testing facilities. The following example shows how a business process is tested in a typical Spring-based unit test:
 
 ```java
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:org/finos/fluxnova/bpm/engine/spring/test/junit4/springTypicalUsageTest-context.xml")
+@SpringBootTest
 public class MyBusinessProcessTest {
 
   @Autowired
@@ -26,7 +25,7 @@ public class MyBusinessProcessTest {
   private TaskService taskService;
 
   @Autowired
-  @Rule
+  @RegisterExtension
   public ProcessEngineRule processEngineRule;
 
   @Test

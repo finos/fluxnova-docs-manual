@@ -37,6 +37,11 @@ Other combinations must be thoroughly tested before being used in production.
     <td>2.0.x</td>
     <td>3.5.x</td>
   </tr>
+  <tr>
+    <td>3.0.x</td>
+    <td>3.0.x</td>
+    <td>4.0.x</td>
+  </tr>
 </table>
 
 \* For these versions, use the following Maven coordinates:
@@ -57,7 +62,25 @@ Other combinations must be thoroughly tested before being used in production.
 </dependency>
 ```
 
-\*\*\* For these versions, all listed Spring Boot versions are supported 
+\*\* For these versions, use the following Maven coordinates:
+```
+<dependency>
+  <groupId>org.finos.fluxnova.bpm.extension.springboot</groupId>
+  <artifactId>fluxnova-bpm-spring-boot-starter</artifactId>
+  <version>3.x</version> <!-- set correct version here -->
+</dependency>
+```
+
+\*\*\* For these versions, use the following Maven coordinates:
+```
+<dependency>
+  <groupId>org.finos.fluxnova.bpm.extension.springboot</groupId>
+  <artifactId>fluxnova-bpm-spring-boot-starter</artifactId>
+  <version>4.x</version> <!-- set correct version here -->
+</dependency>
+```
+
+\*\*\*\* For these versions, all listed Spring Boot versions are supported 
 while the oldest one is used by default. If you want to use a newer supported version,
 configure `dependencyManagement` in your application, e.g. add the following when using Maven:
 ```
@@ -67,7 +90,7 @@ configure `dependencyManagement` in your application, e.g. add the following whe
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-dependencies</artifactId>
-      <version>2.x.y.RELEASE</version> <!-- set correct version here -->
+      <version>4.x.y.RELEASE</version> <!-- set correct version here -->
       <type>pom</type>
       <scope>import</scope>
     </dependency>

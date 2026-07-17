@@ -51,7 +51,7 @@ The next step consists of setting up the Maven dependencies for your new process
   <packaging>war</packaging>
 
   <properties>
-    <fluxnova.version>7.23.0</fluxnova.version>
+    <fluxnova.version>3.0.0</fluxnova.version>
     <maven.compiler.release>11</maven.compiler.release>
   </properties>
 
