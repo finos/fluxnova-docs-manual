@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             id="adhoc-collapsed-diagram"
+             targetNamespace="http://www.fluxnova.org/bpmn20">
+  <collaboration id="collaboration1">
+    <participant id="participant1" name="Process" processRef="process1"/>
+  </collaboration>
+  <process id="process1" name="Process" isExecutable="false">
+    <startEvent id="start1" name="Start">
+      <outgoing>flow1</outgoing>
+    </startEvent>
+    <adHocSubProcess id="adHocSubProcess1" name="Ad Hoc Subprocess" ordering="Parallel">
+      <incoming>flow1</incoming>
+      <outgoing>flow2</outgoing>
+    </adHocSubProcess>
+    <endEvent id="end1" name="End">
+      <incoming>flow2</incoming>
+    </endEvent>
+    <sequenceFlow id="flow1" sourceRef="start1" targetRef="adHocSubProcess1"/>
+    <sequenceFlow id="flow2" sourceRef="adHocSubProcess1" targetRef="end1"/>
+  </process>
+  <bpmndi:BPMNDiagram id="diagram1">
+    <bpmndi:BPMNPlane id="plane1" bpmnElement="collaboration1">
+      <bpmndi:BPMNShape id="participant1_gui" bpmnElement="participant1" isHorizontal="true">
+        <omgdc:Bounds height="120.0" width="480.0" x="15.0" y="15.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="start1_gui" bpmnElement="start1">
+        <omgdc:Bounds height="30.0" width="30.0" x="60.0" y="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="adHocSubProcess1_gui" bpmnElement="adHocSubProcess1">
+        <omgdc:Bounds height="80.0" width="200.0" x="150.0" y="35.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="end1_gui" bpmnElement="end1">
+        <omgdc:Bounds height="28.0" width="28.0" x="420.0" y="61.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="flow1_gui" bpmnElement="flow1">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="90.0" y="75.0"/>
+        <omgdi:waypoint xsi:type="omgdc:Point" x="150.0" y="75.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow2_gui" bpmnElement="flow2">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="350.0" y="75.0"/>
+        <omgdi:waypoint xsi:type="omgdc:Point" x="420.0" y="75.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
