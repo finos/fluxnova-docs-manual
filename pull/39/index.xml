@@ -1719,6 +1719,20 @@ documentation about &lt;a href="https://renovate[bot].github.io/fluxnova-docs-ma
  &lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;code>camunda:restricted&lt;/code>&lt;/td>
+ &lt;td>
+ Optional. If set to &lt;code>true&lt;/code>, the mapped variable is marked as restricted.
+ &lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;code>camunda:isTransient&lt;/code>&lt;/td>
+ &lt;td>
+ Optional. If set to &lt;code>true&lt;/code>, the mapped variable is transient and is not persisted.
+ &lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;th>Constraints&lt;/th>
  &lt;td colspan="2">
  The &lt;code>name&lt;/code> attribute is required.
@@ -1966,6 +1980,20 @@ documentation about &lt;a href="https://renovate[bot].github.io/fluxnova-docs-ma
  &lt;td>&lt;code>name&lt;/code>&lt;/td>
  &lt;td>
  The name of the variable outside of the activity.
+ &lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;code>camunda:restricted&lt;/code>&lt;/td>
+ &lt;td>
+ Optional. If set to &lt;code>true&lt;/code>, the mapped variable is marked as restricted.
+ &lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;code>camunda:isTransient&lt;/code>&lt;/td>
+ &lt;td>
+ Optional. If set to &lt;code>true&lt;/code>, the mapped variable is transient and is not persisted.
  &lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -2554,7 +2582,7 @@ following methods:&lt;/p>
 &lt;/ul>
 &lt;p>To specify a class that is called during process execution, the fully qualified classname needs to be provided by the &lt;code>camunda:class&lt;/code> attribute.&lt;/p></description></item><item><title>Setup a Spring Boot Project</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/get-started/spring-boot/project-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/get-started/spring-boot/project-setup/</guid><description>&lt;p>First, let&amp;rsquo;s set up your first process application project in the IDE of your choice, the following description uses Eclipse.&lt;/p>
 &lt;h1 id="requirements">Requirements&lt;/h1>
-&lt;p>The project requires Java 17/21.&lt;/p>
+&lt;p>The project requires Java 21.&lt;/p>
 &lt;h1 id="set-up-a-java-project">Set Up a Java Project&lt;/h1>
 &lt;p>We will start by setting up a Spring Boot application as an Apache Maven Project inside Eclipse. This consists of three steps:&lt;/p>
 &lt;ol>
@@ -5691,7 +5719,7 @@ module:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">angular&lt;/span>.&lt;span style="color:#a6e22e">bootstrap&lt;/span>(window.document, [&lt;span style="color:#e6db74">&amp;#39;cam.embedded.forms&amp;#39;&lt;/span>, ...]);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="angular-directives--compilation">Angular Directives &amp;amp; Compilation&lt;/h1>
 &lt;p>If the form is loaded from a URL, the SDK makes sure that it is properly compiled and linked to the current Angular scope. This allows using Angular directives in forms loaded dynamically at runtime.&lt;/p></description></item><item><title>Apache Tomcat Integration</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/runtime-container-integration/tomcat/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/runtime-container-integration/tomcat/</guid><description>&lt;h1 id="jndi-bindings">JNDI Bindings&lt;/h1>
-&lt;p>To use the JNDI Bindings for Fluxnova Services on Apache Tomcat you have to add the file &lt;code>META-INF/context.xml&lt;/code> to your process application and add the following ResourceLinks (&lt;a href="http://tomcat.apache.org/tomcat-9.0-doc/config/context.html#Resource_Links">Tomcat 9&lt;/a>, &lt;a href="https://tomcat.apache.org/tomcat-10.1-doc/config/context.html#Resource_Links">Tomcat 10.1&lt;/a>):&lt;/p>
+&lt;p>To use the JNDI Bindings for Fluxnova Services on Apache Tomcat you have to add the file &lt;code>META-INF/context.xml&lt;/code> to your process application and add the following ResourceLinks (&lt;a href="https://tomcat.apache.org/tomcat-11.0-doc/config/context.html#Resource_Links">Tomcat 11.0&lt;/a>):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;Context&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ResourceLink&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ProcessEngineService&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">global=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;global/fluxnova-bpm-platform/process-engine/ProcessEngineService!org.finos.fluxnova.bpm.ProcessEngineService&amp;#34;&lt;/span>
@@ -5702,7 +5730,23 @@ module:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;org.finos.fluxnova.bpm.ProcessApplicationService&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/Context&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These elements are used to create a link to the global JNDI Resources defined in &lt;code>$TOMCAT_HOME/conf/server.xml&lt;/code>.&lt;/p>
-&lt;p>Furthermore, declare the dependency on the JNDI binding inside the &lt;code>WEB-INF/web.xml&lt;/code> deployment descriptor.&lt;/p></description></item><item><title>Architecture Overview</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/introduction/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/introduction/architecture/</guid><description>&lt;p>Fluxnova is a Java-based framework. The main components are written in Java and we have a general focus on providing Java developers with the tools they need for designing, implementing and running business processes and workflows on the JVM. Nevertheless, we also want to make the process engine technology available to non-Java developers. This is why Fluxnova also provides a REST API which allows you to build applications connecting to a remote process engine.&lt;/p></description></item><item><title>Authorization Management</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/webapps/admin/authorization-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/webapps/admin/authorization-management/</guid><description>&lt;figure class="image">
+&lt;p>Furthermore, declare the dependency on the JNDI binding inside the &lt;code>WEB-INF/web.xml&lt;/code> deployment descriptor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;web-app&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;resource-ref&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;description&amp;gt;&lt;/span>Process Engine Service&lt;span style="color:#f92672">&amp;lt;/description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-ref-name&amp;gt;&lt;/span>ProcessEngineService&lt;span style="color:#f92672">&amp;lt;/res-ref-name&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-type&amp;gt;&lt;/span>org.finos.fluxnova.bpm.ProcessEngineService&lt;span style="color:#f92672">&amp;lt;/res-type&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-auth&amp;gt;&lt;/span>Container&lt;span style="color:#f92672">&amp;lt;/res-auth&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/resource-ref&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;resource-ref&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;description&amp;gt;&lt;/span>Process Application Service&lt;span style="color:#f92672">&amp;lt;/description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-ref-name&amp;gt;&lt;/span>ProcessApplicationService&lt;span style="color:#f92672">&amp;lt;/res-ref-name&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-type&amp;gt;&lt;/span>org.finos.fluxnova.bpm.ProcessApplicationService&lt;span style="color:#f92672">&amp;lt;/res-type&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;res-auth&amp;gt;&lt;/span>Container&lt;span style="color:#f92672">&amp;lt;/res-auth&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/resource-ref&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/web-app&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Note&lt;/strong>: You can choose different resource link names for the Process Engine Service and Process Application Service. The resource link name has to match the value inside the &lt;code>&amp;lt;res-ref-name&amp;gt;&lt;/code>-element inside the corresponding &lt;code>&amp;lt;resource-ref&amp;gt;&lt;/code>-element in &lt;code>WEB-INF/web.xml&lt;/code>. We propose the name &lt;code>ProcessEngineService&lt;/code> for the Process Engine Service and &lt;code>ProcessApplicationService&lt;/code> for the Process Application Service.&lt;/p></description></item><item><title>Architecture Overview</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/introduction/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/introduction/architecture/</guid><description>&lt;p>Fluxnova is a Java-based framework. The main components are written in Java and we have a general focus on providing Java developers with the tools they need for designing, implementing and running business processes and workflows on the JVM. Nevertheless, we also want to make the process engine technology available to non-Java developers. This is why Fluxnova also provides a REST API which allows you to build applications connecting to a remote process engine.&lt;/p></description></item><item><title>Authorization Management</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/webapps/admin/authorization-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/webapps/admin/authorization-management/</guid><description>&lt;figure class="image">
  &lt;span>&lt;img
  src="../img/admin-authorization.png"
  
@@ -6584,7 +6628,7 @@ rule task, please refer to the &lt;a href="https://renovate[bot].github.io/fluxn
 &lt;/ul>
 &lt;h2 id="container-managed-process-engine-and-fluxnova-cockpit-tasklist-admin">Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin&lt;/h2>
 &lt;ul>
-&lt;li>Apache Tomcat 10.1&lt;/li>
+&lt;li>Apache Tomcat 11.0&lt;/li>
 &lt;li>JBoss EAP 8.0&lt;/li>
 &lt;li>WildFly Application Server 33.0 / 35.0 / 37.0&lt;/li>
 &lt;li>Oracle WebLogic Server 14.1.2&lt;/li>
@@ -6907,8 +6951,7 @@ add the corresponding jar to the classpath and use the appropriate name.&lt;/p><
 &lt;p>The select box supports the same value types as &lt;code>&amp;lt;input type=&amp;quot;text&amp;quot;&amp;gt;&lt;/code>.&lt;/p>
 &lt;h1 id="populating-the-options-from-a-variable">Populating the Options from a Variable&lt;/h1>
 &lt;p>The &lt;code>&amp;lt;option&amp;gt;&lt;/code> entries can be populated using a variable. The name of the variable can be provided using the &lt;code>cam-choices&lt;/code> directive:&lt;/p></description></item><item><title>Spring-Based Testing</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/spring-framework-integration/testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/spring-framework-integration/testing/</guid><description>&lt;p>When integrating with Spring, business processes can be tested very easily (in scope 2, see &lt;a href="https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/testing/#scoping-tests">Testing Scopes&lt;/a>) using the standard Fluxnova testing facilities. The following example shows how a business process is tested in a typical Spring-based unit test:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RunWith&lt;/span>(SpringJUnit4ClassRunner.&lt;span style="color:#a6e22e">class&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@ContextConfiguration&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;classpath:org/finos/fluxnova/bpm/engine/spring/test/junit4/springTypicalUsageTest-context.xml&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@SpringBootTest&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyBusinessProcessTest&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
@@ -6918,7 +6961,7 @@ add the corresponding jar to the classpath and use the appropriate name.&lt;/p><
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> TaskService taskService;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Rule&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@RegisterExtension&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> ProcessEngineRule processEngineRule;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Test&lt;/span>
@@ -6993,14 +7036,23 @@ form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The REST API supports the &lt;a href="https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/process-engine/variables/#supported-variable-values">Value Types&lt;/a> supported by the process engine.&lt;/p>
-&lt;h1 id="capitalization-of-type-names">Capitalization of Type Names&lt;/h1>
-&lt;p>In the REST API, the type names start with a capital letter, i.e., &lt;code>String&lt;/code> instead of &lt;code>string&lt;/code>.&lt;/p>
-&lt;h1 id="serialized-and-deserialized-object-values">Serialized and Deserialized Object Values&lt;/h1>
-&lt;p>Object Values are instances of (non primitive) Java types. When working with the REST API, it is
-generally advisable to work with the serialized value of a variable. In that case the value is
-retrieved from the database and directly returned in the http response. If the client you are
-building is not a Java Applications by itself, make sure you use a text-based
-&lt;a href="https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/user-guide/process-engine/variables/#object-value-serialization">serialization dataformat&lt;/a> (such as XML or JSON).&lt;/p></description></item><item><title>Working with Java Objects</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/reference/forms/embedded-forms/java-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/reference/forms/embedded-forms/java-objects/</guid><description>&lt;p>This section explains how to work with serialized Java Objects in embedded task forms.&lt;/p>
+&lt;h1 id="valueinfo-flags">valueInfo Flags&lt;/h1>
+&lt;p>In addition to type-specific metadata, &lt;code>valueInfo&lt;/code> supports the following common flags:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>transient&lt;/code>: Marks a variable as transient (not persisted).&lt;/li>
+&lt;li>&lt;code>restricted&lt;/code>: Marks a variable as restricted and subject to restricted-variable authorization checks.&lt;/li>
+&lt;/ul>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;String&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;value&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;sensitive value&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;valueInfo&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;restricted&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;transient&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="capitalization-of-type-names">Capitalization of Type Names&lt;/h1>
+&lt;p>In the REST API, the type names start with a capital letter, i.e., &lt;code>String&lt;/code> instead of &lt;code>string&lt;/code>.&lt;/p></description></item><item><title>Working with Java Objects</title><link>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/reference/forms/embedded-forms/java-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://renovate[bot].github.io/fluxnova-docs-manual/pull/39/reference/forms/embedded-forms/java-objects/</guid><description>&lt;p>This section explains how to work with serialized Java Objects in embedded task forms.&lt;/p>
 
 &lt;div class="note ">
  &lt;h3>&lt;/h3>

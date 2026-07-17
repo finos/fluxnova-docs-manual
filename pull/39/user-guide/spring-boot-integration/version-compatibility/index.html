@@ -17,7 +17,7 @@ Options</h4><div class=content><label for=version-select>Version:</label>
 Only these default combinations are recommended (and supported) by Fluxnova.
 Other combinations must be thoroughly tested before being used in production.</p><div class="note bg-info docs-info"><h3>Heads Up</h3><p>Fluxnova and its compatible Spring Boot Starter always share the same version.
 Also, the Fluxnova version used in the Spring Boot Starter doesn&rsquo;t have to be overridden anymore. Simply pick
-the version of the Starter that resembles the version of Fluxnova you want to use.</p></div><table class="table table-striped"><tr><th>Spring Boot Starter version</th><th>Fluxnova version</th><th>Spring Boot version</th></tr><tr><td>1.0.x</td><td>1.0.x</td><td>3.4.x</td></tr><tr><td>2.0.x</td><td>2.0.x</td><td>3.5.x</td></tr></table><p>* For these versions, use the following Maven coordinates:</p><pre tabindex=0><code>&lt;dependency&gt;
+the version of the Starter that resembles the version of Fluxnova you want to use.</p></div><table class="table table-striped"><tr><th>Spring Boot Starter version</th><th>Fluxnova version</th><th>Spring Boot version</th></tr><tr><td>1.0.x</td><td>1.0.x</td><td>3.4.x</td></tr><tr><td>2.0.x</td><td>2.0.x</td><td>3.5.x</td></tr><tr><td>3.0.x</td><td>3.0.x</td><td>4.0.x</td></tr></table><p>* For these versions, use the following Maven coordinates:</p><pre tabindex=0><code>&lt;dependency&gt;
   &lt;groupId&gt;org.finos.fluxnova.bpm.extension&lt;/groupId&gt;
   &lt;artifactId&gt;fluxnova-bpm-spring-boot-starter&lt;/artifactId&gt;
   &lt;version&gt;1.x&lt;/version&gt; &lt;!-- set correct version here --&gt;
@@ -27,7 +27,17 @@ the version of the Starter that resembles the version of Fluxnova you want to us
   &lt;artifactId&gt;fluxnova-bpm-spring-boot-starter&lt;/artifactId&gt;
   &lt;version&gt;2.x&lt;/version&gt; &lt;!-- set correct version here --&gt;
 &lt;/dependency&gt;
-</code></pre><p>*** For these versions, all listed Spring Boot versions are supported
+</code></pre><p>** For these versions, use the following Maven coordinates:</p><pre tabindex=0><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.finos.fluxnova.bpm.extension.springboot&lt;/groupId&gt;
+  &lt;artifactId&gt;fluxnova-bpm-spring-boot-starter&lt;/artifactId&gt;
+  &lt;version&gt;3.x&lt;/version&gt; &lt;!-- set correct version here --&gt;
+&lt;/dependency&gt;
+</code></pre><p>*** For these versions, use the following Maven coordinates:</p><pre tabindex=0><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.finos.fluxnova.bpm.extension.springboot&lt;/groupId&gt;
+  &lt;artifactId&gt;fluxnova-bpm-spring-boot-starter&lt;/artifactId&gt;
+  &lt;version&gt;4.x&lt;/version&gt; &lt;!-- set correct version here --&gt;
+&lt;/dependency&gt;
+</code></pre><p>**** For these versions, all listed Spring Boot versions are supported
 while the oldest one is used by default. If you want to use a newer supported version,
 configure <code>dependencyManagement</code> in your application, e.g. add the following when using Maven:</p><pre tabindex=0><code>&lt;dependencyManagement&gt;
   &lt;dependencies&gt;
@@ -35,7 +45,7 @@ configure <code>dependencyManagement</code> in your application, e.g. add the fo
     &lt;dependency&gt;
       &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
       &lt;artifactId&gt;spring-boot-dependencies&lt;/artifactId&gt;
-      &lt;version&gt;2.x.y.RELEASE&lt;/version&gt; &lt;!-- set correct version here --&gt;
+      &lt;version&gt;4.x.y.RELEASE&lt;/version&gt; &lt;!-- set correct version here --&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt;

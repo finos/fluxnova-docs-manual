@@ -135,17 +135,12 @@ can only be overridden with their exposed identifier.</p></div><h3 id=examples>E
 </span></span><span style=display:flex><span>    <span style=color:#f92672>generic-properties</span>:
 </span></span><span style=display:flex><span>      <span style=color:#f92672>properties</span>:
 </span></span><span style=display:flex><span>        <span style=color:#f92672>enable-password-policy</span>: <span style=color:#66d9ef>true</span>
-</span></span></code></pre></div><h2 id=session-cookie>Session Cookie</h2><p>You can configure the <strong>Session Cookie</strong> for the Spring Boot application via the <code>application.yaml</code> configuration file.</p><p>Fluxnova Spring Boot Starter versions &lt;= 2.3 (Spring Boot version 1.x)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>server</span>:
-</span></span><span style=display:flex><span>  <span style=color:#f92672>session</span>:
-</span></span><span style=display:flex><span>    <span style=color:#f92672>cookie</span>:
-</span></span><span style=display:flex><span>      <span style=color:#f92672>secure</span>: <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>http-only</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># Not possible for versions before 1.5.14</span>
-</span></span></code></pre></div><p>Fluxnova Spring Boot Starter versions >= 3.0 (Spring Boot version 2.x)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>server</span>:
+</span></span></code></pre></div><h2 id=session-cookie>Session Cookie</h2><p>You can configure the <strong>Session Cookie</strong> for the Spring Boot application via the <code>application.yaml</code> configuration file.</p><p>Fluxnova Spring Boot Starter versions based on Spring Boot 4.x:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>server</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>servlet</span>:
 </span></span><span style=display:flex><span>    <span style=color:#f92672>session</span>:
 </span></span><span style=display:flex><span>      <span style=color:#f92672>cookie</span>:
 </span></span><span style=display:flex><span>        <span style=color:#f92672>secure</span>: <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>http-only</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># Not possible for versions before 2.0.3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>http-only</span>: <span style=color:#66d9ef>true</span>
 </span></span></code></pre></div><p>Further details of the session cookie like the <code>SameSite</code> flag can be configured via
 <a href=/fluxnova-docs-manual/pull/39/user-guide/spring-boot-integration/configuration/#session-cookie>fluxnova.bpm.webapp.session-cookie</a> in the <code>application.yaml</code>.</p><h1 id=configuring-spin-dataformats>Configuring Spin DataFormats</h1><p>The Fluxnova Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
 <code>fluxnova-spin-dataformat-json-jackson</code> dependency is detected on the classpath. To include a
