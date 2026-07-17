@@ -108,6 +108,11 @@ i.e. the [JobExecutor]({{< relref "/user-guide/process-engine/the-job-executor.m
 The keys at which the properties are accessible in the MDC can be defined in the
 [process engine configuration]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#logging-context-parameters" >}}).
 
+### Custom MDC Properties
+
+You can register custom MDC entries programmatically by adding providers via `ProcessEngineConfigurationImpl#addCustomMdcProperty(String, MdcPropertyProvider)`.
+Custom properties are computed per execution context and included together with the built-in process data context values.
+
 In order to access the MDC data, you need to adjust the logging pattern of your logging configuration.
 An example using Logback could look as follows
 
@@ -277,7 +282,7 @@ The output of loggers can change with newer Fluxnova versions.
 {{< /note >}}
 
 {{< note title="Heads Up!" class="warning" >}}
-In Tomcat, logging is handled by `java.util.logging` via [Tomcat's JULI](https://tomcat.apache.org/tomcat-9.0-doc/logging.html) implementation. Note that the log levels `DEBUG` and `TRACE` are called `FINE` and `FINEST` in this environment.
+In Tomcat, logging is handled by `java.util.logging` via [Tomcat's JULI](https://tomcat.apache.org/tomcat-11.0-doc/logging.html) implementation. Note that the log levels `DEBUG` and `TRACE` are called `FINE` and `FINEST` in this environment.
 {{< /note >}}
 
 ### When to use engine loggers?

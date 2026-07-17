@@ -31,7 +31,7 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 
 ## Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin
 
-* Apache Tomcat 10.1
+* Apache Tomcat 11.0
 * JBoss EAP 8.0
 * WildFly Application Server 33.0 / 35.0 / 37.0
 * Oracle WebLogic Server 14.1.2

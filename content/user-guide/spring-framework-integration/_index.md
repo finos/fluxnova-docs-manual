@@ -16,7 +16,7 @@ The fluxnova-engine Spring Framework integration is located inside a maven modul
   Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
 {{< /note >}}
 
-* `fluxnova-engine-spring` maven module for Spring Framework 5
+* `fluxnova-engine-spring` maven module for Spring Framework 7
 
 ```xml
 <dependency>
@@ -25,21 +25,12 @@ The fluxnova-engine Spring Framework integration is located inside a maven modul
 </dependency>
 ```
 
-* `fluxnova-engine-spring-6` maven module for Spring Framework 6.
-
-```xml
-<dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-spring-6</artifactId>
-</dependency>
-```
-
 The process engine Spring artifact should be added as a library to the process application.
 The following minimal set of Spring dependencies must be added in the desired version:
 
 ```xml
 <properties>
-  <spring.version>X.Y.Z.RELEASE</spring.version>
+  <spring.version>7.x.y</spring.version>
 </properties>
 
 <dependencyManagement>
@@ -73,4 +64,3 @@ The following minimal set of Spring dependencies must be added in the desired ve
   </dependency>
 </dependencies>
 ```
-

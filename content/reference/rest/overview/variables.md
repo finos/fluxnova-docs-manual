@@ -24,6 +24,26 @@ form:
 
 The REST API supports the [Value Types]({{< relref "/user-guide/process-engine/variables.md#supported-variable-values" >}}) supported by the process engine.
 
+# valueInfo Flags
+
+In addition to type-specific metadata, `valueInfo` supports the following common flags:
+
+* `transient`: Marks a variable as transient (not persisted).
+* `restricted`: Marks a variable as restricted and subject to restricted-variable authorization checks.
+
+Example:
+
+```json
+{
+  "type": "String",
+  "value": "sensitive value",
+  "valueInfo": {
+    "restricted": true,
+    "transient": false
+  }
+}
+```
+
 
 # Capitalization of Type Names
 

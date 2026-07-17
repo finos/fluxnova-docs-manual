@@ -25,7 +25,7 @@ Throughout this guide we will use a number of variables to denote common path na
 
 {{< /note >}}
 
-{{< note title="Known Limitations in Tomcat 10" class="info" >}}
+{{< note title="Known Limitations in Tomcat 11" class="info" >}}
 
 **<h4>Weld Class Loading Issues</h4>**
 
@@ -34,7 +34,7 @@ To resolve this, move the weld library away from the war and place it into the `
 
 The above workaround is not guaranteed to work for cases with bean references between WAR deployments (WAR A referencing a bean from WAR B).
 
-The following test scenarios fail on Tomcat 10:
+The following test scenarios fail on Tomcat 11:
 
 * [CallActivityContextSwitchTest](https://github.com/finos/fluxnova-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/finos/fluxnova/bpm/integrationtest/functional/context/CallActivityContextSwitchTest.java)
 * [CdiBeanCallActivityResolutionTest](https://github.com/finos/fluxnova-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/finos/fluxnova/bpm/integrationtest/functional/cdi/CdiBeanCallActivityResolutionTest.java)
@@ -96,7 +96,7 @@ To configure a JDBC Resource you have to edit the file `$TOMCAT_HOME/conf/server
 ```
 
 For more information on the creation of JDBC datasources have a look at the documentation of your Tomcat version:
-[10.1](https://tomcat.apache.org/tomcat-10.1-doc/jndi-datasource-examples-howto.html).
+[11.0](https://tomcat.apache.org/tomcat-11.0-doc/jndi-datasource-examples-howto.html).
 
 
 ## Add Fluxnova Services
@@ -159,7 +159,7 @@ You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or
 ## Secure Tomcat
 
 Follow the Tomcat Security Howto of your Tomcat version:
-[10.1](https://tomcat.apache.org/tomcat-10.1-doc/security-howto.html).
+[11.0](https://tomcat.apache.org/tomcat-11.0-doc/security-howto.html).
 
 In particular, go to `${TOMCAT_HOME}/webapps/` and remove the directories
 `ROOT`, `docs`, `examples`, `manager` and `host-manager`.
@@ -175,7 +175,7 @@ This section describes how to install optional Fluxnova dependencies onto a Tomc
 The following steps are required to deploy the applications:
 
 1. Download the Fluxnova web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.webapp/fluxnova-webapp-tomcat).
-    * For [Tomcat 10](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.webapp/fluxnova-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/fluxnova-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.webapp/fluxnova-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/fluxnova-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
 2. Copy the war file to `$TOMCAT_HOME/webapps/fluxnova.war`.
    Optionally you may name it differently or extract it to a folder to deploy it to a different context path.
 3. Startup Tomcat.
@@ -187,7 +187,7 @@ The following steps are required to deploy the applications:
 The following steps are required to deploy the REST API:
 
 1. Download the REST API web application archive from our [Artifact Repository](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest).
-    * For [Tomcat 10](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/fluxnova-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/fluxnova-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
 2. Copy the war file to `$TOMCAT_HOME/webapps`.
    Optionally you may rename it or extract it to a folder to deploy it to a specific context like `/engine-rest`.
 3. Startup Tomcat.
