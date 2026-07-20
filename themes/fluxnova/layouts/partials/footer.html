@@ -22,6 +22,16 @@
   </div><!-- / .page-wrapper -->
 
 
+  {{ with .Site.Params.algolia }}
+  <script>
+    window.DOCSEARCH_CONFIG = {
+      appId: "{{ .appId }}",
+      apiKey: "{{ .apiKey }}",
+      indexName: "{{ .indexName }}"
+    };
+  </script>
+  {{ end }}
+
   {{ $scripts := resources.Get "js/docs.js" | fingerprint }}
 
   <script type="text/javascript" src="{{ $scripts.Permalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>

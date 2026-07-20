@@ -20,7 +20,7 @@
   <meta name="description" content="documentation of FINOS Fluxnova" />
   <meta name="keywords" content="fluxnova, finos, open source, free, Apache License, Apache 2.0, workflow, BPMN, BPMN 2.0, camunda, bpm, BPMS, engine, platform, process, automation, community, documentation" />
   <meta name="author" content="Fluxnova community" />
-   <meta name="algolia-site-verification"  content="7D377B04DA329B56" />
+  <meta name="algolia-site-verification"  content="7D377B04DA329B56" />
 
   <title>{{ .Title }} | docs.fluxnova.finos.org</title>
 
@@ -68,8 +68,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <div class="search-field">
-      <input type="search" class="search-input" placeholder="Search…" />
-    </div><!-- / .search-field -->
+      <div id="docsearch"></div>
+    </div>
 
     <ul class="external-menu">
       <li class="external"><a href="https://finos.org">FINOS</a></li>
@@ -77,25 +77,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </nav>
 
-<div class="search-results">
-  <ul class="results-list">
-  </ul>
-  <footer>
-    <button class="btn btn-default page previous">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </button>
-
-    <button class="search-close btn btn-default">
-      <span class="glyphicon glyphicon-remove"></span>
-    </button>
-
-    <button class="btn btn-default page next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </button>
-  </footer>
-</div>
-
-<div class="search-underlay"></div>
 
 <nav class="site-menu">
   {{ partial "menu.html" . }}
