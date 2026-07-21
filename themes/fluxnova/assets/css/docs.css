@@ -1645,7 +1645,7 @@ small,
 /* line 85, node_modules\bootstrap\less\type.less */
 mark,
 .mark {
-  padding: 0.2em;
+  padding: .2em;
   background-color: #fcf8e3;
 }
 /* line 92, node_modules\bootstrap\less\type.less */
@@ -2023,72 +2023,14 @@ pre code {
   padding-left: 0;
 }
 /* line 17, node_modules\bootstrap\less\mixins\grid-framework.less */
-.col-xs-1,
-.col-sm-1,
-.col-md-1,
-.col-lg-1,
-.col-xs-2,
-.col-sm-2,
-.col-md-2,
-.col-lg-2,
-.col-xs-3,
-.col-sm-3,
-.col-md-3,
-.col-lg-3,
-.col-xs-4,
-.col-sm-4,
-.col-md-4,
-.col-lg-4,
-.col-xs-5,
-.col-sm-5,
-.col-md-5,
-.col-lg-5,
-.col-xs-6,
-.col-sm-6,
-.col-md-6,
-.col-lg-6,
-.col-xs-7,
-.col-sm-7,
-.col-md-7,
-.col-lg-7,
-.col-xs-8,
-.col-sm-8,
-.col-md-8,
-.col-lg-8,
-.col-xs-9,
-.col-sm-9,
-.col-md-9,
-.col-lg-9,
-.col-xs-10,
-.col-sm-10,
-.col-md-10,
-.col-lg-10,
-.col-xs-11,
-.col-sm-11,
-.col-md-11,
-.col-lg-11,
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
 /* line 39, node_modules\bootstrap\less\mixins\grid-framework.less */
-.col-xs-1,
-.col-xs-2,
-.col-xs-3,
-.col-xs-4,
-.col-xs-5,
-.col-xs-6,
-.col-xs-7,
-.col-xs-8,
-.col-xs-9,
-.col-xs-10,
-.col-xs-11,
-.col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
 /* line 47, node_modules\bootstrap\less\mixins\grid-framework.less */
@@ -2297,18 +2239,7 @@ pre code {
 }
 @media (min-width: 768px) {
   /* line 39, node_modules\bootstrap\less\mixins\grid-framework.less */
-  .col-sm-1,
-  .col-sm-2,
-  .col-sm-3,
-  .col-sm-4,
-  .col-sm-5,
-  .col-sm-6,
-  .col-sm-7,
-  .col-sm-8,
-  .col-sm-9,
-  .col-sm-10,
-  .col-sm-11,
-  .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
   /* line 47, node_modules\bootstrap\less\mixins\grid-framework.less */
@@ -2518,18 +2449,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 39, node_modules\bootstrap\less\mixins\grid-framework.less */
-  .col-md-1,
-  .col-md-2,
-  .col-md-3,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-7,
-  .col-md-8,
-  .col-md-9,
-  .col-md-10,
-  .col-md-11,
-  .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
   /* line 47, node_modules\bootstrap\less\mixins\grid-framework.less */
@@ -2739,18 +2659,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   /* line 39, node_modules\bootstrap\less\mixins\grid-framework.less */
-  .col-lg-1,
-  .col-lg-2,
-  .col-lg-3,
-  .col-lg-4,
-  .col-lg-5,
-  .col-lg-6,
-  .col-lg-7,
-  .col-lg-8,
-  .col-lg-9,
-  .col-lg-10,
-  .col-lg-11,
-  .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
   /* line 47, node_modules\bootstrap\less\mixins\grid-framework.less */
@@ -3178,7 +3087,7 @@ th {
 }
 /* line 173, node_modules\bootstrap\less\tables.less */
 .table-responsive {
-  min-height: 0.01%;
+  min-height: .01%;
   overflow-x: auto;
 }
 @media screen and (max-width: 767px) {
@@ -5166,7 +5075,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 /* line 5, node_modules\bootstrap\less\labels.less */
 .label {
   display: inline;
-  padding: 0.2em 0.6em 0.3em;
+  padding: .2em .6em .3em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
@@ -5174,7 +5083,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 0.25em;
+  border-radius: .25em;
 }
 /* line 19, node_modules\bootstrap\less\labels.less */
 a.label:hover,
@@ -6198,6 +6107,8 @@ a.thumbnail.active {
     display: none !important;
   }
 }
+/*! @docsearch/css 3.9.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+:root{--docsearch-primary-color:#5468ff;--docsearch-text-color:#1c1e21;--docsearch-spacing:12px;--docsearch-icon-stroke-width:1.4;--docsearch-highlight-color:var(--docsearch-primary-color);--docsearch-muted-color:#969faf;--docsearch-container-background:rgba(101,108,133,.8);--docsearch-logo-color:#5468ff;--docsearch-modal-width:560px;--docsearch-modal-height:600px;--docsearch-modal-background:#f5f6f7;--docsearch-modal-shadow:inset 1px 1px 0 0 hsla(0,0%,100%,.5),0 3px 8px 0 #555a64;--docsearch-searchbox-height:56px;--docsearch-searchbox-background:#ebedf0;--docsearch-searchbox-focus-background:#fff;--docsearch-searchbox-shadow:inset 0 0 0 2px var(--docsearch-primary-color);--docsearch-hit-height:56px;--docsearch-hit-color:#444950;--docsearch-hit-active-color:#fff;--docsearch-hit-background:#fff;--docsearch-hit-shadow:0 1px 3px 0 #d4d9e1;--docsearch-key-gradient:linear-gradient(-225deg,#d5dbe4,#f8f8f8);--docsearch-key-shadow:inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,.4);--docsearch-key-pressed-shadow:inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 1px 0 rgba(30,35,90,.4);--docsearch-footer-height:44px;--docsearch-footer-background:#fff;--docsearch-footer-shadow:0 -1px 0 0 #e0e3e8,0 -3px 6px 0 rgba(69,98,155,.12)}html[data-theme=dark]{--docsearch-text-color:#f5f6f7;--docsearch-container-background:rgba(9,10,17,.8);--docsearch-modal-background:#15172a;--docsearch-modal-shadow:inset 1px 1px 0 0 #2c2e40,0 3px 8px 0 #000309;--docsearch-searchbox-background:#090a11;--docsearch-searchbox-focus-background:#000;--docsearch-hit-color:#bec3c9;--docsearch-hit-shadow:none;--docsearch-hit-background:#090a11;--docsearch-key-gradient:linear-gradient(-26.5deg,#565872,#31355b);--docsearch-key-shadow:inset 0 -2px 0 0 #282d55,inset 0 0 1px 1px #51577d,0 2px 2px 0 rgba(3,4,9,.3);--docsearch-key-pressed-shadow:inset 0 -2px 0 0 #282d55,inset 0 0 1px 1px #51577d,0 1px 1px 0 #0304094d;--docsearch-footer-background:#1e2136;--docsearch-footer-shadow:inset 0 1px 0 0 rgba(73,76,106,.5),0 -4px 8px 0 rgba(0,0,0,.2);--docsearch-logo-color:#fff;--docsearch-muted-color:#7f8497}.DocSearch-Button{align-items:center;background:var(--docsearch-searchbox-background);border:0;border-radius:40px;color:var(--docsearch-muted-color);cursor:pointer;display:flex;font-weight:500;height:36px;justify-content:space-between;margin:0 0 0 16px;padding:0 8px;user-select:none}.DocSearch-Button:active,.DocSearch-Button:focus,.DocSearch-Button:hover{background:var(--docsearch-searchbox-focus-background);box-shadow:var(--docsearch-searchbox-shadow);color:var(--docsearch-text-color);outline:none}.DocSearch-Button-Container{align-items:center;display:flex}.DocSearch-Search-Icon{stroke-width:1.6}.DocSearch-Button .DocSearch-Search-Icon{color:var(--docsearch-text-color)}.DocSearch-Button-Placeholder{font-size:1rem;padding:0 12px 0 6px}.DocSearch-Button-Keys{display:flex;min-width:calc(40px + .8em)}.DocSearch-Button-Key{align-items:center;background:var(--docsearch-key-gradient);border:0;border-radius:3px;box-shadow:var(--docsearch-key-shadow);color:var(--docsearch-muted-color);display:flex;height:18px;justify-content:center;margin-right:.4em;padding:0 0 2px;position:relative;top:-1px;transition-duration:.1s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);width:20px}@media (prefers-reduced-motion){.DocSearch-Button-Key{transition:none}}.DocSearch-Button-Key--pressed{box-shadow:var(--docsearch-key-pressed-shadow);transform:translate3d(0,1px,0)}@media (max-width:768px){.DocSearch-Button-Keys,.DocSearch-Button-Placeholder{display:none}}.DocSearch--active{overflow:hidden!important}.DocSearch-Container,.DocSearch-Container *{box-sizing:border-box}.DocSearch-Container{background-color:var(--docsearch-container-background);height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:200}.DocSearch-Container a{text-decoration:none}.DocSearch-Link{appearance:none;background:none;border:0;color:var(--docsearch-highlight-color);cursor:pointer;font:inherit;margin:0;padding:0}.DocSearch-Modal{background:var(--docsearch-modal-background);border-radius:6px;box-shadow:var(--docsearch-modal-shadow);flex-direction:column;margin:60px auto auto;max-width:var(--docsearch-modal-width);position:relative}.DocSearch-SearchBar{display:flex;padding:var(--docsearch-spacing) var(--docsearch-spacing) 0}.DocSearch-Form{align-items:center;background:var(--docsearch-searchbox-focus-background);border-radius:4px;box-shadow:var(--docsearch-searchbox-shadow);display:flex;height:var(--docsearch-searchbox-height);margin:0;padding:0 var(--docsearch-spacing);position:relative;width:100%}.DocSearch-Input{appearance:none;background:transparent;border:0;color:var(--docsearch-text-color);flex:1;font:inherit;font-size:1.2em;height:100%;outline:none;padding:0 0 0 8px;width:80%}.DocSearch-Input::placeholder{color:var(--docsearch-muted-color);opacity:1}.DocSearch-Input::-webkit-search-cancel-button,.DocSearch-Input::-webkit-search-decoration,.DocSearch-Input::-webkit-search-results-button,.DocSearch-Input::-webkit-search-results-decoration{display:none}.DocSearch-LoadingIndicator,.DocSearch-MagnifierLabel,.DocSearch-Reset{margin:0;padding:0}.DocSearch-MagnifierLabel,.DocSearch-Reset{align-items:center;color:var(--docsearch-highlight-color);display:flex;justify-content:center}.DocSearch-Container--Stalled .DocSearch-MagnifierLabel,.DocSearch-LoadingIndicator{display:none}.DocSearch-Container--Stalled .DocSearch-LoadingIndicator{align-items:center;color:var(--docsearch-highlight-color);display:flex;justify-content:center}@media screen and (prefers-reduced-motion:reduce){.DocSearch-Reset{animation:none;appearance:none;background:none;border:0;border-radius:50%;color:var(--docsearch-icon-color);cursor:pointer;right:0;stroke-width:var(--docsearch-icon-stroke-width)}}.DocSearch-Reset{animation:fade-in .1s ease-in forwards;appearance:none;background:none;border:0;border-radius:50%;color:var(--docsearch-icon-color);cursor:pointer;padding:2px;right:0;stroke-width:var(--docsearch-icon-stroke-width)}.DocSearch-Reset[hidden]{display:none}.DocSearch-Reset:hover{color:var(--docsearch-highlight-color)}.DocSearch-LoadingIndicator svg,.DocSearch-MagnifierLabel svg{height:24px;width:24px}.DocSearch-Cancel{display:none}.DocSearch-Dropdown{max-height:calc(var(--docsearch-modal-height) - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));min-height:var(--docsearch-spacing);overflow-y:auto;overflow-y:overlay;padding:0 var(--docsearch-spacing);scrollbar-color:var(--docsearch-muted-color) var(--docsearch-modal-background);scrollbar-width:thin}.DocSearch-Dropdown::-webkit-scrollbar{width:12px}.DocSearch-Dropdown::-webkit-scrollbar-track{background:transparent}.DocSearch-Dropdown::-webkit-scrollbar-thumb{background-color:var(--docsearch-muted-color);border:3px solid var(--docsearch-modal-background);border-radius:20px}.DocSearch-Dropdown ul{list-style:none;margin:0;padding:0}.DocSearch-Label{font-size:.75em;line-height:1.6em}.DocSearch-Help,.DocSearch-Label{color:var(--docsearch-muted-color)}.DocSearch-Help{font-size:.9em;margin:0;user-select:none}.DocSearch-Title{font-size:1.2em}.DocSearch-Logo a{display:flex}.DocSearch-Logo svg{color:var(--docsearch-logo-color);margin-left:8px}.DocSearch-Hits:last-of-type{margin-bottom:24px}.DocSearch-Hits mark{background:none;color:var(--docsearch-highlight-color)}.DocSearch-HitsFooter{color:var(--docsearch-muted-color);display:flex;font-size:.85em;justify-content:center;margin-bottom:var(--docsearch-spacing);padding:var(--docsearch-spacing)}.DocSearch-HitsFooter a{border-bottom:1px solid;color:inherit}.DocSearch-Hit{border-radius:4px;display:flex;padding-bottom:4px;position:relative;scroll-margin-top:40px}@media screen and (prefers-reduced-motion:reduce){.DocSearch-Hit--deleting{transition:none}}.DocSearch-Hit--deleting{opacity:0;transition:all .25s linear}@media screen and (prefers-reduced-motion:reduce){.DocSearch-Hit--favoriting{transition:none}}.DocSearch-Hit--favoriting{transform:scale(0);transform-origin:top center;transition:all .25s linear;transition-delay:.25s}.DocSearch-Hit a{background:var(--docsearch-hit-background);border-radius:4px;box-shadow:var(--docsearch-hit-shadow);display:block;padding-left:var(--docsearch-spacing);width:100%}.DocSearch-Hit-source{background:var(--docsearch-modal-background);color:var(--docsearch-highlight-color);font-size:.85em;font-weight:600;line-height:32px;margin:0 -4px;padding:8px 4px 0;position:sticky;top:0;z-index:10}.DocSearch-Hit-Tree{color:var(--docsearch-muted-color);height:var(--docsearch-hit-height);opacity:.5;stroke-width:var(--docsearch-icon-stroke-width);width:24px}.DocSearch-Hit[aria-selected=true] a{background-color:var(--docsearch-highlight-color)}.DocSearch-Hit[aria-selected=true] mark{text-decoration:underline}.DocSearch-Hit-Container{align-items:center;color:var(--docsearch-hit-color);display:flex;flex-direction:row;height:var(--docsearch-hit-height);padding:0 var(--docsearch-spacing) 0 0}.DocSearch-Hit-icon{height:20px;width:20px}.DocSearch-Hit-action,.DocSearch-Hit-icon{color:var(--docsearch-muted-color);stroke-width:var(--docsearch-icon-stroke-width)}.DocSearch-Hit-action{align-items:center;display:flex;height:22px;width:22px}.DocSearch-Hit-action svg{display:block;height:18px;width:18px}.DocSearch-Hit-action+.DocSearch-Hit-action{margin-left:6px}.DocSearch-Hit-action-button{appearance:none;background:none;border:0;border-radius:50%;color:inherit;cursor:pointer;padding:2px}svg.DocSearch-Hit-Select-Icon{display:none}.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Select-Icon{display:block}.DocSearch-Hit-action-button:focus,.DocSearch-Hit-action-button:hover{background:rgba(0,0,0,.2);transition:background-color .1s ease-in}@media screen and (prefers-reduced-motion:reduce){.DocSearch-Hit-action-button:focus,.DocSearch-Hit-action-button:hover{transition:none}}.DocSearch-Hit-action-button:focus path,.DocSearch-Hit-action-button:hover path{fill:#fff}.DocSearch-Hit-content-wrapper{display:flex;flex:1 1 auto;flex-direction:column;font-weight:500;justify-content:center;line-height:1.2em;margin:0 8px;overflow-x:hidden;position:relative;text-overflow:ellipsis;white-space:nowrap;width:80%}.DocSearch-Hit-title{font-size:.9em}.DocSearch-Hit-path{color:var(--docsearch-muted-color);font-size:.75em}.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Tree,.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action,.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-icon,.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-path,.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-text,.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title,.DocSearch-Hit[aria-selected=true] mark{color:var(--docsearch-hit-active-color)!important}@media screen and (prefers-reduced-motion:reduce){.DocSearch-Hit-action-button:focus,.DocSearch-Hit-action-button:hover{background:rgba(0,0,0,.2);transition:none}}.DocSearch-ErrorScreen,.DocSearch-NoResults,.DocSearch-StartScreen{font-size:.9em;margin:0 auto;padding:36px 0;text-align:center;width:80%}.DocSearch-Screen-Icon{color:var(--docsearch-muted-color);padding-bottom:12px}.DocSearch-NoResults-Prefill-List{display:inline-block;padding-bottom:24px;text-align:left}.DocSearch-NoResults-Prefill-List ul{display:inline-block;padding:8px 0 0}.DocSearch-NoResults-Prefill-List li{list-style-position:inside;list-style-type:"» "}.DocSearch-Prefill{appearance:none;background:none;border:0;border-radius:1em;color:var(--docsearch-highlight-color);cursor:pointer;display:inline-block;font-size:1em;font-weight:700;padding:0}.DocSearch-Prefill:focus,.DocSearch-Prefill:hover{outline:none;text-decoration:underline}.DocSearch-Footer{align-items:center;background:var(--docsearch-footer-background);border-radius:0 0 8px 8px;box-shadow:var(--docsearch-footer-shadow);display:flex;flex-direction:row-reverse;flex-shrink:0;height:var(--docsearch-footer-height);justify-content:space-between;padding:0 var(--docsearch-spacing);position:relative;user-select:none;width:100%;z-index:300}.DocSearch-Commands{color:var(--docsearch-muted-color);display:flex;list-style:none;margin:0;padding:0}.DocSearch-Commands li{align-items:center;display:flex}.DocSearch-Commands li:not(:last-of-type){margin-right:.8em}.DocSearch-Commands-Key{align-items:center;background:var(--docsearch-key-gradient);border:0;border-radius:2px;box-shadow:var(--docsearch-key-shadow);color:var(--docsearch-muted-color);display:flex;height:18px;justify-content:center;margin-right:.4em;padding:0 0 1px;width:20px}.DocSearch-VisuallyHiddenForAccessibility{clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}@media (max-width:768px){:root{--docsearch-spacing:10px;--docsearch-footer-height:40px}.DocSearch-Dropdown{height:100%}.DocSearch-Container{height:100vh;height:-webkit-fill-available;height:calc(var(--docsearch-vh, 1vh)*100);position:absolute}.DocSearch-Footer{border-radius:0;bottom:0;position:absolute}.DocSearch-Hit-content-wrapper{display:flex;position:relative;width:80%}.DocSearch-Modal{border-radius:0;box-shadow:none;height:100vh;height:-webkit-fill-available;height:calc(var(--docsearch-vh, 1vh)*100);margin:0;max-width:100%;width:100%}.DocSearch-Dropdown{max-height:calc(var(--docsearch-vh, 1vh)*100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height))}.DocSearch-Cancel{appearance:none;background:none;border:0;color:var(--docsearch-highlight-color);cursor:pointer;display:inline-block;flex:none;font:inherit;font-size:1em;font-weight:500;margin-left:var(--docsearch-spacing);outline:none;overflow:hidden;padding:0;user-select:none;white-space:nowrap}.DocSearch-Commands,.DocSearch-Hit-Tree{display:none}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}
 @font-face {
   font-family: 'cam-docs';
   src: url('../fonts/cam-docs.eot');
@@ -6215,7 +6126,7 @@ a.thumbnail.active {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: 0.2em;
+  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
   /* For safety - reset parent styles, that can break glyph codes*/
@@ -6225,7 +6136,7 @@ a.thumbnail.active {
   line-height: 1em;
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
-  margin-left: 0.2em;
+  margin-left: .2em;
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
   /* Font smoothing. That was taken from TWBS */
@@ -6772,13 +6683,13 @@ body {
   float: left;
   margin-right: 12px;
   margin: 0;
-  font-size: 37px / 2;
+  font-size: 18.5px;
   line-height: 37px;
   height: 37px;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: 37px / 4;
-  padding-right: 30px / 2;
+  padding-left: 9.25px;
+  padding-right: 15px;
 }
 /* line 51, styles\_navbar.less */
 .navbar-container .navbar-header .brand-logo:before {
@@ -7043,149 +6954,70 @@ body.site-menu-open .site-menu-toggle > span:last-of-type {
     padding-right: 0;
   }
 }
-/* line 1, styles\_search.less */
-.search-field {
+/********************************************************************\
+ * Consolidated Algolia DocSearch Infrastructure Styles             *
+\********************************************************************/
+/* Remove legacy Bootstrap glyphicon magnifying glass icon wrapper */
+/* line 6, styles\_search.less */
+.search-field::after {
+  display: none;
+}
+/* Structural navigation layout slot for the search element */
+/* line 11, styles\_search.less */
+.navbar-container .search-field {
   position: relative;
+  height: 37px;
+  padding: 0;
+  /* Target Algolia's root DOM insertion node */
+  /* Micro-adjust button elements to stretch correctly and maintain perfect tracking */
 }
-/* line 4, styles\_search.less */
-.search-field:after {
-  color: #777777;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* line 17, styles\_search.less */
+.navbar-container .search-field #docsearch,
+.navbar-container .search-field .DocSearch {
   position: absolute;
-  content: '\e003';
-  top: 15px;
-  right: 21px;
-}
-/* line 19, styles\_search.less */
-.search-field input {
-  width: 100%;
-  outline: none;
-  color: #222222;
-  border: 1px solid #eeeeee;
-  border-radius: 24px;
-  padding: 0 24px 0 12px;
-  height: 24px;
-  line-height: 16px;
-}
-/* line 39, styles\_search.less */
-.search-results {
-  opacity: 0;
-  position: fixed;
-  /* Prevents the search results from being hidden at any screen size, because our top nav height varies a lot. */
-  top: 123px;
-  left: 5%;
-  right: 5%;
-  overflow: hidden;
-  z-index: 0;
-  transform: translateY(-60px);
-  transition: transform 0.218s ease, opacity 0.218s ease;
-  background-color: #fff;
-  border: 1px solid #777777;
-  border-top: none;
-  box-shadow: 0 0 3px 0 #555555;
-}
-/* line 57, styles\_search.less */
-.search-results:before {
-  content: '';
-  height: 5px;
-  top: -5px;
-  display: block;
-  position: absolute;
-  left: -10px;
-  width: calc(100% + 20px);
-  box-shadow: 0 0 3px 0 #555555;
-}
-/* line 68, styles\_search.less */
-.search-results ul {
-  padding: 0 15px 15px 15px;
-  margin: 0 auto;
-  max-height: 0;
-  overflow: auto;
-  transition: max-height 0.218s ease;
-  list-style: none;
-}
-/* line 77, styles\_search.less */
-.search-results li {
-  overflow: hidden;
-  margin: 0 auto;
-  max-width: 650px;
-}
-/* line 83, styles\_search.less */
-.search-results h2 {
-  font-size: 20px;
-}
-/* line 85, styles\_search.less */
-.search-results h2 > a {
-  text-decoration: none;
-}
-/* line 90, styles\_search.less */
-.search-results .thumbnail {
-  float: left;
-  margin-right: 15px;
-  max-width: 25%;
-}
-/* line 101, styles\_search.less */
-.search-results .no-results {
-  margin-top: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-/* line 107, styles\_search.less */
-.search-results > footer {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-/* line 112, styles\_search.less */
-.search-results > footer button {
-  float: left;
-  display: block;
-  border-width: 1px 0 0 0;
-  width: 33%;
-}
-/* line 117, styles\_search.less */
-.search-results > footer button.search-close {
-  width: 34%;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-/* line 126, styles\_search.less */
-.search-underlay {
-  position: fixed;
-  top: 0;
   left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
-  height: 0;
-  z-index: 6;
-  background-color: rgba(119, 119, 119, 0.95);
+  /* Algolia v3 Native Engine Variables Overrides.
+       Configures component tokens directly without deep nested selector hacking.
+    */
+  --docsearch-button-height: 26px !important;
+  --docsearch-searchbox-height: 26px !important;
+  --docsearch-key-height: 18px !important;
+  --docsearch-spacing: 8px !important;
 }
-/* line 138, styles\_search.less */
-body.search-open .search-results {
-  opacity: 1;
-  transform: translateY(0);
-  z-index: 7;
+/* line 35, styles\_search.less */
+.navbar-container .search-field .DocSearch-Button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  height: var(--docsearch-button-height) !important;
+  margin: 0 !important;
 }
-/* line 142, styles\_search.less */
-body.search-open .search-results ul {
-  max-height: 500px;
+/* line 44, styles\_search.less */
+.navbar-container .search-field .DocSearch-Button > svg,
+.navbar-container .search-field .DocSearch-Button img {
+  height: 14px !important;
+  width: 14px !important;
 }
-/* line 147, styles\_search.less */
-body.search-open .search-underlay {
-  height: 100%;
+/* line 45, styles\_search.less */
+.navbar-container .search-field .DocSearch-Button .DocSearch-Button-Placeholder {
+  font-size: 13px !important;
 }
-@media (max-width: 769px) {
-  /* line 153, styles\_search.less */
-  .search-results {
-    left: 5px;
-    right: 5px;
-  }
+/* line 48, styles\_search.less */
+.navbar-container .search-field .DocSearch-Button .DocSearch-Button-Keys {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+/* line 52, styles\_search.less */
+.navbar-container .search-field .DocSearch-Button .DocSearch-Button-Keys .DocSearch-Button-Key,
+.navbar-container .search-field .DocSearch-Button .DocSearch-Button-Keys kbd {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 /* line 1, styles\_sticky-footer.less */
 .page-footer {
@@ -7254,7 +7086,7 @@ pre[class*="language-"] {
 /* line 55, styles\_prism.less */
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: .5em 0;
   overflow: auto;
 }
 /* line 61, styles\_prism.less */
@@ -7265,8 +7097,8 @@ pre[class*="language-"] {
 /* Inline code */
 /* line 67, styles\_prism.less */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
+  padding: .1em;
+  border-radius: .3em;
 }
 /* line 72, styles\_prism.less */
 .token.comment,
@@ -7281,7 +7113,7 @@ pre[class*="language-"] {
 }
 /* line 83, styles\_prism.less */
 .namespace {
-  opacity: 0.7;
+  opacity: .7;
 }
 /* line 87, styles\_prism.less */
 .token.property,
@@ -7355,29 +7187,29 @@ pre[data-line] {
   padding: inherit 0;
   margin-top: 1em;
   /* Same as .prism’s padding-top */
-  background: hsla(24, 20%, 50%, 0.08);
+  background: rgba(153, 122, 102, 0.08);
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
 }
 /* line 165, styles\_prism.less */
 .line-highlight:hover {
-  background: hsla(24, 20%, 50%, 0.2);
+  background: rgba(153, 122, 102, 0.2);
 }
 /* line 170, styles\_prism.less */
 .line-highlight:before,
 .line-highlight[data-end]:after {
   content: attr(data-start);
   position: absolute;
-  top: 0.4em;
-  left: 0.6em;
+  top: .4em;
+  left: .6em;
   min-width: 1em;
-  padding: 0 0.5em;
-  background-color: hsla(24, 20%, 50%, 0.4);
-  color: hsl(24, 20%, 95%);
+  padding: 0 .5em;
+  background-color: rgba(153, 122, 102, 0.4);
+  color: #f5f2f0;
   font: bold 65%/1.5 sans-serif;
   text-align: center;
-  vertical-align: 0.3em;
+  vertical-align: .3em;
   border-radius: 999px;
   text-shadow: none;
   box-shadow: 0 1px white;
@@ -7386,7 +7218,7 @@ pre[data-line] {
 .line-highlight[data-end]:after {
   content: attr(data-end);
   top: auto;
-  bottom: 0.4em;
+  bottom: .4em;
 }
 /*
   Line numbers plugin
@@ -7515,7 +7347,7 @@ a:focus {
   transition: color 0.218s ease;
   position: absolute;
   right: 100%;
-  top: 0.3em;
+  top: .3em;
   padding-right: 5px;
 }
 @media (max-width: 769px) {

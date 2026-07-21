@@ -34,6 +34,11 @@ params:
     repositoryName: "finos/fluxnova-docs-manual"
     branch: "main"    
 
+  algolia:
+    appId: "PV6E60X9LQ"
+    apiKey: "c8ee829e838a908d2aa9b1a6c1f786e3"
+    indexName: "fluxnova-finos-docs"
+
 outputs:
   home:
     - "HTML"
