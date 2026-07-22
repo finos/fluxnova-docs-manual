@@ -1,5 +1,10 @@
 name: Publish site for PR
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on:
   pull_request:
 

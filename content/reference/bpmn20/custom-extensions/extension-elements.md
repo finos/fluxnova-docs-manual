@@ -799,6 +799,20 @@ The following attributes are extension attributes for the `fluxnova` namespace `
     </td>
   </tr>
   <tr>
+    <td></td>
+    <td><code>camunda:restricted</code></td>
+    <td>
+      Optional. If set to <code>true</code>, the mapped variable is marked as restricted.
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><code>camunda:isTransient</code></td>
+    <td>
+      Optional. If set to <code>true</code>, the mapped variable is transient and is not persisted.
+    </td>
+  </tr>
+  <tr>
     <th>Constraints</th>
     <td colspan="2">
       The <code>name</code> attribute is required.
@@ -1062,6 +1076,20 @@ The following attributes are extension attributes for the `fluxnova` namespace `
     <td><code>name</code></td>
     <td>
       The name of the variable outside of the activity.
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><code>camunda:restricted</code></td>
+    <td>
+      Optional. If set to <code>true</code>, the mapped variable is marked as restricted.
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><code>camunda:isTransient</code></td>
+    <td>
+      Optional. If set to <code>true</code>, the mapped variable is transient and is not persisted.
     </td>
   </tr>
   <tr>

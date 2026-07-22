@@ -40,6 +40,19 @@ Alternatively, you can obtain this artifact with the following Maven coordinates
 </dependency>
 ```
 
+# Notable additions covered by OpenAPI
+
+Recent updates reflected in the OpenAPI description include:
+
+* Execution ad-hoc subprocess endpoints:
+  * `POST /execution/{id}/ad-hoc-activities/trigger`
+  * `POST /execution/{id}/ad-hoc-activities/complete`
+* Task retrieval form key control with `evaluateFormKey` query parameter.
+* New response fields:
+  * `createdBy` on task attachments
+  * `rootCauseIncidentMessage` on historic incidents
+  * `displayName`, `group`, and `groupDisplayName` in process engine list responses
+
 # Client Generation
 
 To generate REST API client in the language of your preference based on the OpenAPI documentation, 

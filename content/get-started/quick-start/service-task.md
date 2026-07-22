@@ -124,7 +124,7 @@ Your pom.xml file of your project should look like this:
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<fluxnova.external-task-client.version>7.23.0</fluxnova.external-task-client.version>
+		<fluxnova.external-task-client.version>3.0.0</fluxnova.external-task-client.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
@@ -143,7 +143,7 @@ Your pom.xml file of your project should look like this:
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>4.0.2</version>
+			<version>4.0.5</version>
 		</dependency>
 	</dependencies>
 </project>

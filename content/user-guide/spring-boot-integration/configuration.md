@@ -935,17 +935,7 @@ fluxnova:
 
 You can configure the **Session Cookie** for the Spring Boot application via the `application.yaml` configuration file.
 
-Fluxnova Spring Boot Starter versions <= 2.3 (Spring Boot version 1.x)
-
-```yaml
-server:
-  session:
-    cookie:
-      secure: true
-      http-only: true # Not possible for versions before 1.5.14
-```
-
-Fluxnova Spring Boot Starter versions >= 3.0 (Spring Boot version 2.x)
+Fluxnova Spring Boot Starter versions based on Spring Boot 4.x:
 
 ```yaml
 server:
@@ -953,7 +943,7 @@ server:
     session:
       cookie:
         secure: true
-        http-only: true # Not possible for versions before 2.0.3
+        http-only: true
 ```
 
 Further details of the session cookie like the `SameSite` flag can be configured via

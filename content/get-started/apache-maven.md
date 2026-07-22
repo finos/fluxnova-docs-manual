@@ -50,21 +50,12 @@ Most Fluxnova artifacts are pushed to [maven central](https://central.sonatype.c
 
 # Fluxnova Engine Spring Integration
 
-The `fluxnova-engine` Spring integration for Spring Framework 5:
+The `fluxnova-engine` Spring integration for Spring Framework 7:
 
 ```xml
 <dependency>
   <groupId>org.finos.fluxnova.bpm</groupId>
   <artifactId>fluxnova-engine-spring</artifactId>
-</dependency>
-```
-
-The `fluxnova-engine` Spring integration for Spring Framework 6:
-
-```xml
-<dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-spring-6</artifactId>
 </dependency>
 ```
 
