@@ -29,7 +29,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.163.3'
+          hugo-version: '0.145.0'
           extended: true
 
       - name: Extract version from config.yaml and compute next development version
