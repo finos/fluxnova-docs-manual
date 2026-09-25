@@ -74,9 +74,9 @@ export default {
 # Localization
 
 Welcome can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/fluxnova-community-hub/fluxnova-7-webapp-translations).
+You can find and download community maintained translation files at the [Fluxnova webapp translations](https://github.com/finos/fluxnova-bpm-platform/tree/main/webapps/frontend/public/app).
 
-The localization of the Welcome application is contained in the `app/welcome/locales/` directory. This
+The localization of the Welcome application is contained in the `app/*/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
 consists of the language code and the suffix `.json` (e.g., `en.json`).
 

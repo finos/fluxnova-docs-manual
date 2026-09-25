@@ -399,8 +399,3 @@ An expression also allows using the tenant id of the calling process instance in
     </td>
   </tr>
 </table>
-
-# Additional Resources
-
-*   [Call Activity](http://fluxnova.finos.org/bpmn/reference.html#activities-call-activity) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
-

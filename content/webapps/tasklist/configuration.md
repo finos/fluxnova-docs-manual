@@ -44,8 +44,7 @@ export default {
 
 # Localization
 
-Tasklist can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/finos/fluxnova-webapp-translations).
+Tasklist can be localized. Fluxnova maintains English and German translation files.
 
 The localization of Tasklist is contained in the `app/tasklist/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -89,10 +88,6 @@ export default {
 }
 ```
 This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the Fluxnova webapp .war file.
-
-You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/tasklist/cats-plugin).
-
-
 
 # Shortcuts
 

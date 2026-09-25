@@ -15,10 +15,6 @@ A BPMN process diagram is a formidable place to visualize information around you
 
 In our web applications [Cockpit]({{< relref "/webapps/cockpit/_index.md" >}}) and [Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), we use [bpmn.io](http://bpmn.io/), a toolkit for rendering BPMN 2.0 process models directly in the browser. It allows adding additional information to the diagram and includes ways for user interaction. Although bpmn.io is still under development, its API is rather stable.
 
-The previous JavaScript BPMN renderer can still be found at [fluxnova-bpmn.js](https://github.com/finos/fluxnova-bpmn.js), but it is not actively developed anymore.
-
-{{< img src="../img/process-diagram-bpmn-js.png" title="Process Diagram Rendering" >}}
-
 
 # bpmn.io Diagram Renderer
 
@@ -39,5 +35,3 @@ viewer.importXML(xml, function(err) {
   }
 });
 ```
-
-Alternatively, you can use the  [bpmn-viewer widget](https://github.com/finos/fluxnova-bpm-platform/blob/master/webapps/frontend/fluxnova-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Fluxnova commons UI.

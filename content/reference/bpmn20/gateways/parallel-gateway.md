@@ -114,8 +114,3 @@ Note that a parallel gateway does not need to be 'balanced' (i.e., a matching nu
     </td>
   </tr>
 </table>
-
-
-# Additional Resources
-
-*   [Parallel Gateways](http://fluxnova.finos.org/bpmn/reference.html#gateways-parallel-gateways) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

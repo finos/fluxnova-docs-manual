@@ -31,7 +31,6 @@ The `Job Definitions` tab displays the job definitions that are linked to this p
 [process-instance-view]: {{< relref "/webapps/cockpit/bpmn/process-instance-view.md" >}}
 [job-definition-suspension]: {{< relref "/webapps/cockpit/bpmn/suspension.md#job-definition-suspension" >}}
 
-
 # Filter
 
 The filter function on the bottom of the Process Definition View in the `Process Instances` tab allows you to find certain instances by filtering for variables, business keys, activity IDs or date and time. In addition, you can filter for the process definition version by selecting the version of a process on the left side of the Process Definition View. Beyond that you can combine different filters as logical *AND* relation. Filter expressions on variables must be specified as `variableName OPERATOR value` where the *operator* may be one of the following terms: `=`, `!=`, `>`, `>=`, `<`, `<=`, `like`. Apart from the `like` operator, the operator expressions do not have to be separated by spaces.
@@ -111,9 +110,6 @@ Add a filter for process instances by filtering for already completed or still r
 
 Add a filter for process instances by end date. Please note that the date must be set in accordance to the [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) standard and that this option is only available in the [process definition history view][process-definition-history-view]. Again choose between `before` and `after` to filter for instances that were ended before or after the given date. For example, click on `before` to obtain the selection..
 
-
-[process-definition-history-view]: < relref "/webapps/cockpit/bpmn/process-history-views.md#process-definition-history-view" >
-
 # Delete Multiple Running Process Instances
 
 {{< enterprise >}}
@@ -176,8 +172,4 @@ However, the called process definition can only be resolved at runtime and is on
 
 {{< img outdated="true" src="../../img/cockpit-call-activity-definition-navigation.png" title="Navigate to called processes definition" >}}
 
-For more drill down options on call activities you can check out the [process instance view][process-instance-view] 
-and the [process history views][process-history-views].
-
-
-[process-history-views]: < relref "/webapps/cockpit/bpmn/process-history-views.md" >
+For more drill down options on call activities you can check out the [process instance view][process-instance-view]

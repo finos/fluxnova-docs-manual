@@ -322,6 +322,3 @@ The following extensions are supported for the Signal Intermediate and End Throw
   </tr>
 </table>
 
-# Additional Resources
-
-*   [Signal Events](http://fluxnova.finos.org/bpmn/reference.html#events-signal) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

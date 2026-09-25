@@ -16,12 +16,12 @@ This section explains some core process engine concepts that are used in both th
 
 # Process Definitions
 
-A process definition defines the structure of a process. You could say that the process definition *is* the process. Fluxnova uses [BPMN 2.0](http://fluxnova.finos.org/bpmn/tutorial.html) as its primary modeling language for modeling process definitions.
+A process definition defines the structure of a process. You could say that the process definition *is* the process. Fluxnova uses [BPMN 2.0]({{< relref "/reference/bpmn20/" >}}) as its primary modeling language for modeling process definitions.
 
 {{< note title="BPMN 2.0 Reference" class="info" >}}
   Fluxnova comes with two BPMN 2.0 References:
 
-* The [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html#!/reference) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial](http://fluxnova.finos.org/bpmn/tutorial.html) as well.)
+* The [BPMN 2.0 Modeling Reference]({{< relref "/modeler/bpmn.md" >}}) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial]({{< relref "/get-started/quick-start/" >}}) as well.)
 * The [BPMN 2.0 Implementation Reference]({{< relref "/reference/bpmn20/_index.md" >}}) covers the implementation of the individual BPMN 2.0 constructs Fluxnova. You should consult this reference if you want to implement and execute BPMN processes.
 {{< /note >}}
 

@@ -44,7 +44,7 @@ public class MyPasswordEncryptor implements PasswordEncryptor {
 }
 ```
 
-Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `passwordEncryptor` property to your custom implementation, e.g., `MyPasswordEncryptor`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Fluxnova environment. 
+Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `passwordEncryptor` property to your custom implementation, e.g., `MyPasswordEncryptor`. See [Process Engine Bootstrapping]({{ relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}) on where you have to set the property for your Fluxnova environment. 
 
 Note that, even if you have already users created with passwords hashed by other algorithms, e.g., old custom algorithms or the Fluxnova default hash algorithm `SHA-512`, they can still automatically be resolved by the engine although you have added your custom algorithm afterwards. The property `customPasswordChecker` is a list of hashing algorithms to be used to check (older) passwords. The Fluxnova default hashing algorithms are automatically added, so please only add your previous custom `passwordEncryptor` implementation to that list.
 
@@ -69,7 +69,7 @@ public class MyCustomSaltGenerator implements SaltGenerator {
 }
 ```
 
-Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `saltGenerator` property to your custom implementation, e.g., `MyCustomSaltGenerator`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Fluxnova environment.
+Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `saltGenerator` property to your custom implementation, e.g., `MyCustomSaltGenerator`. See [Process Engine Bootstrapping]({{ relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}) on where you have to set the property for your Fluxnova environment.
 
 
 

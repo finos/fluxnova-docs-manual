@@ -15,7 +15,7 @@ The REST API is an artifact of its own, which means that it can be embedded in a
 
 # Prerequisites
 
-The REST API classes are tested with [RESTEasy](http://www.jboss.org/resteasy/) and [Jersey](http://jersey.java.net/) as the JAX-RS implementation.
+The REST API classes are tested with [RESTEasy](https://resteasy.dev/) and [Jersey](https://eclipse-ee4j.github.io/jersey/) as the JAX-RS implementation.
 Furthermore, the engine classes and Jackson's `com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider` artifact (as well as transitive Jackson dependencies) have to be on the classpath.
 
 

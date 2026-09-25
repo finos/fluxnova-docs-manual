@@ -131,5 +131,5 @@ FEEL context:
 ```
 
  
-[type doc]: https://camunda.github.io/feel-scala/1.11/feel-data-types
+[type doc]: https://docs.camunda.io/docs/components/modeler/feel/language-guide/feel-data-types/
 [spin plugin]: {{< relref "/user-guide/data-formats/configuring-spin-integration.md#fluxnova-engine-plugin-spin" >}}

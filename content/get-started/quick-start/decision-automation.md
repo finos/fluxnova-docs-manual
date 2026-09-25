@@ -81,7 +81,7 @@ A single DMN table that was executed could look like this in Fluxnova Cockpit:
 {{< img src="../img/cockpit-dmn-table.png" >}}
 
 {{< note title="Success!" class="info" >}}
-Congratulations! You've successfully completed the Fluxnova Platform Quick Start. Ready to continue? We recommend the [Fluxnova Platform documentation](https://docs.fluxnova.finos.org/manual/latest/).
+Congratulations! You've successfully completed the Fluxnova Platform Quick Start. Ready to continue? We recommend the [Fluxnova Platform documentation]({{< relref "/introduction/" >}}).
 {{< /note >}}
 
 

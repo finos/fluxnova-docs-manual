@@ -59,7 +59,3 @@ You can use JSON objects in your embedded forms. In order to persist this data i
 </script>
 ```
 
-
-# Full Example
-
-A full example of this feature can be found in the [Fluxnova Platform Examples Repository](https://github.com/fluxnova/fluxnova-bpm-examples/tree/master/usertask/task-form-embedded-json-variables).

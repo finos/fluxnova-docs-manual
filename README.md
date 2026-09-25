@@ -5,7 +5,7 @@
 This repository contains the sources of the Fluxnova documentation.
 
 **Important:** _do NOT change the content of `themes/fluxnova` directory directly!_
-Instead, change the [theme](//github.com/finos/fluxnova-docs-theme).
+Instead, change the [theme](https://github.com/finos/fluxnova-docs-theme).
 
 ## Contributing
 
@@ -172,4 +172,4 @@ _Note: For screenshot of the enterprise webapps, you can use the automatic scree
 [Hugo v0.163]: https://github.com/gohugoio/hugo/releases/tag/v0.163.3
 [Hugo Installation]: https://gohugo.io/getting-started/installing/#install-hugo-from-tarball
 [OpenOffice]: https://www.openoffice.org/download/index.html
-[OpenSans]: https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans
+[OpenSans]: https://fonts.google.com/specimen/Open+Sans

@@ -91,8 +91,3 @@ The corresponding xml looks like this:
     </td>
   </tr>
 </table>
-
-
-# Additional Resources
-
-*   [Event-based Gateways](http://fluxnova.finos.org/bpmn/reference.html#gateways-event-based-gateways) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

@@ -20,7 +20,7 @@ Element Templates can be used with Fluxnova Modeler version 1.0 and higher. They
 
 # Overview
 
-Element templates are a way to extend the [Fluxnova Modeler](https://fluxnova.org/bpmn/tool/) with domain specific diagram elements such as service and user tasks.
+Element templates are a way to extend the [Fluxnova Modeler]({{< relref "/modeler/" >}}) with domain specific diagram elements such as service and user tasks.
 
 {{< img src="img/overview.png" title="Custom fields in the Fluxnova Modeler" >}}
 

@@ -117,7 +117,6 @@ This section describes how to configure the **Session Cookie** as well as the **
 Here you can find how to configure the session cookie for the following containers:
 
 * [Tomcat]({{< relref "/installation/full/tomcat/configuration.md#session-cookie-in-webapps" >}})
-* [JBoss EAP & Wildfly]({{< relref "/installation/full/jboss/configuration.md#session-cookie-in-webapps" >}})
 * [Spring Boot]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}})
 
 ### CSRF Cookie

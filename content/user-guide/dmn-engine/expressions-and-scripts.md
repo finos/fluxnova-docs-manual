@@ -205,9 +205,9 @@ the script engine before using it.
 [decision literal expression]: {{< relref "/reference/dmn/decision-literal-expression/_index.md" >}}
 [juel]: http://juel.sourceforge.net/
 [EL]: https://jakarta.ee/specifications/expression-language/4.0/
-[DMN 1.2]: http://www.omg.org/spec/DMN/
-[Rhino]: https://developer.mozilla.org/de/docs/Rhino
-[Nashhorn]: https://blogs.oracle.com/nashorn/
+[DMN 1.2]: https://www.omg.org/spec/DMN/
+[Rhino]: https://github.com/mozilla/rhino
+[Nashhorn]: https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html
 [JSR-223]: https://www.jcp.org/en/jsr/detail?id=223
 [default EL]: {{< relref "/user-guide/dmn-engine/embed.md#change-default-expression-languages" >}}
 [configure EL]: {{< relref "/user-guide/dmn-engine/embed.md#customize-expression-and-script-resolving" >}}

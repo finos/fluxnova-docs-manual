@@ -28,7 +28,7 @@ java -version
 If you need to install Java Runtime Environment, you can [find the download from Oracle here](https://www.oracle.com/java/technologies/javase-downloads.html).
 
 # Installation Procedure
-1. Download the pre-packed distribution of the [community edition here] (https://downloads.camunda.cloud/release/camunda-bpm/run/) or the [enterprise edition here](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/run/).
+1. Download the pre-packed distribution from [Fluxnova BPM release] (https://github.com/finos/fluxnova-bpm-platform/releases)
 1. Unpack the distro to a directory.
 1. Configure the distro as described in the [User Guide]({{< relref "/user-guide/fluxnova-bpm-run.md" >}}).
 1. Start Fluxnova Run by executing the start script (start.bat for Windows, start.sh for Linux/Mac).

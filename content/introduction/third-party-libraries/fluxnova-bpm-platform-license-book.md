@@ -496,7 +496,7 @@ libraries</pre></details></div>
 See this link for third-party software notices and/or additional
 terms for licensed third-party software components included within the LLVM Project. The LLVM Project is under the Apache License v2.0 with LLVM Exceptions:https://github.com/oracle/graal/blob/master/sdk/3rd_party_license_llvm-toolchain.txt </pre></details></div>
 <div><details><summary>truffle-api@21.1.0(<a href="https://opensource.org/licenses/UPL">UPL</a>)</summary><pre>Copyright (c) Oracle and/or its affiliates.</pre></details></div>
-<div><details><summary>hibernate-validator@8.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright various authors https://github.com/hibernate/hibernate-validator/blob/main/copyright.txt</pre></details></div>
+<div><details><summary>hibernate-validator@8.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright various authors https://github.com/hibernate/hibernate-validator/blob/main/license.txt</pre></details></div>
 <div><details><summary>javassist@3.25.0-GA(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright: (C) 1999-2020 by Shigeru Chiba, All rights reserved.</pre></details></div>
 <div><details><summary>javassist@3.30.2-GA(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (C) 1999-2023 by Shigeru Chiba, All rights reserved.</pre></details></div>
 <div><details><summary>jboss-logging@3.4.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright JBoss, Home of Professional Open Source
@@ -528,7 +528,7 @@ at http://www.eclipse.org/legal/epl-2.0. This Source Code may also be made
 available under the following Secondary Licenses when the conditions for 
 such availability set forth in the Eclipse Public License v. 2.0 are 
 satisfied: GNU General Public License, version 2 with the GNU Classpath 
-Exception which is available at https://www.gnu.org/software/classpath/license.html.
+Exception which is available at https://www.gnu.org/software/classpath/license.html
 
 SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
 
@@ -560,7 +560,7 @@ and re-export of encryption software, to see if this is permitted.
 https://github.com/jboss/jboss-jakarta-jaxrs-api_spec
 -----------------------------------------------------------------------------------
 Copyright: Jakarta RESTful Web Services Project, Eclipse Foundation  
-List of contributors: https://projects.eclipse.org/projects/ee4j.jaxrs/who</pre></details></div>
+List of contributors: https://projects.eclipse.org/projects/ee4j.rest/developer</pre></details></div>
 <div><details><summary>jboss-jaxb-api_2.3_spec@2.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Red Hat</pre></details></div>
 <div><details><summary>jandex@2.4.3.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright 2013 Red Hat, Inc., and individual contributors</pre></details></div>
 <div><details><summary>mybatis@3.5.15(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright various authors: https://mybatis.org/mybatis-3/team.html
@@ -641,7 +641,7 @@ Refactored SqlBuilder class (SQL, AbstractSQL)
 Copyright (c) 2011-2024 Lightbend, Inc.
 
 Scala includes software developed at
-LAMP/EPFL (https://lamp.epfl.ch/) and
+LAMP/EPFL (https://www.epfl.ch/labs/lamp/) and
 Lightbend, Inc. (https://www.lightbend.com/).
 
 Licensed under the Apache License, Version 2.0 (the "License").
@@ -857,7 +857,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/feel-linter">@bpmn-io/feel-lint@1.2.0</a> (MIT)</summary><pre>The MIT License (MIT)
+<div><details><summary><a href="https://github.com/camunda/feel-scala">@bpmn-io/feel-lint@1.2.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
 Copyright (c) 2022 fluxnova Services GmbH
 
@@ -1433,7 +1433,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular">@xlts.dev/angular@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular">@xlts.dev/angular@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -1480,7 +1480,7 @@ Use of this source code is governed by a commercial license that must be
 obtained from XLTS.dev.
 Find more details at https://xlts.dev/angularjs.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular-animate">@xlts.dev/angular-animate@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular-animate">@xlts.dev/angular-animate@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -1527,7 +1527,7 @@ Use of this source code is governed by a commercial license that must be
 obtained from XLTS.dev.
 Find more details at https://xlts.dev/angularjs.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular-cookies">@xlts.dev/angular-cookies@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular-cookies">@xlts.dev/angular-cookies@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -1574,7 +1574,7 @@ Use of this source code is governed by a commercial license that must be
 obtained from XLTS.dev.
 Find more details at https://xlts.dev/angularjs.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular-resource">@xlts.dev/angular-resource@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular-resource">@xlts.dev/angular-resource@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -1621,7 +1621,7 @@ Use of this source code is governed by a commercial license that must be
 obtained from XLTS.dev.
 Find more details at https://xlts.dev/angularjs.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular-route">@xlts.dev/angular-route@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular-route">@xlts.dev/angular-route@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -1668,7 +1668,7 @@ Use of this source code is governed by a commercial license that must be
 obtained from XLTS.dev.
 Find more details at https://xlts.dev/angularjs.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/xlts-dev/bower-angular-sanitize">@xlts.dev/angular-sanitize@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
+<div><details><summary><a href="https://github.com/angular/bower-angular-sanitize">@xlts.dev/angular-sanitize@1.9.3</a> (SEE LICENSE IN LICENSE.md)</summary><pre># The code in this repository is governed by two licenses
 
 Portions of the code found here was obtained from Google and is provided under
 and subject to the
@@ -2059,7 +2059,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/finos/fluxnova-dmn-js">fluxnova-dmn-js@1.8.0</a> (MIT)</summary><pre>The MIT License (MIT)
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">fluxnova-dmn-js@1.8.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
 Copyright (c) 2022-present Fluxnova Services GmbH
 
@@ -2080,7 +2080,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/finos/fluxnova-dmn-moddle">fluxnova-dmn-moddle@1.3.0</a> (MIT)</summary><pre>The MIT License (MIT)
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-moddle">fluxnova-dmn-moddle@1.3.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
 Copyright (c) 2014-2018 fluxnova Services GmbH
 

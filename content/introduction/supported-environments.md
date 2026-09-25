@@ -13,7 +13,7 @@ menu:
 
 Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our QA infrastructure in the following environments.
 {{< note title="Supported Environments" class="info" >}}
-  Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation to see the environment that fits to your version of Fluxnova. e.g., [supported environments for version 1.0](http://docs.fluxnova.finos.org/1.0/guides/user-guide/#introduction-supported-environments)
+  Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation on the docs site to see the environment that fits to your version of Fluxnova.
 {{< /note >}}
 
 
@@ -72,8 +72,7 @@ Clustered or replicated databases are supported given the following conditions. 
 
 # Fluxnova Modeler
 
-[Supported environments for Fluxnova Modeler -Windows ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742061267)  
-[Supported environments for Fluxnova Modeler -Mac ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742038638)  
+You can build and run the Modeler for you platform from the [latest release](https://github.com/finos/fluxnova-modeler/releases/latest).
 
 # Maintenance Policy
 

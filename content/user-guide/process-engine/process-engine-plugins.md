@@ -23,7 +23,6 @@ A plugin must provide an implementation of the
 Process engine plugins can be configured
 
 * in the [Fluxnova Deployment Descriptors]({{< relref "/reference/deployment-descriptors/_index.md" >}}) (bpm-platform.xml/processes.xml),
-* in the [Wildfly configuration file]({{< relref "/user-guide/runtime-container-integration/jboss.md" >}}) (standalone.xml/domain.xml),
 * using [Spring Beans XML]({{< relref "/user-guide/spring-framework-integration/_index.md#configure-a-process-engine-plugin-in-spring" >}}),
 * in the [Fluxnova Run YAML configuration files]({{< relref "/user-guide/fluxnova-bpm-run.md#process-engine-plugin-registration" >}})
 * programatically.

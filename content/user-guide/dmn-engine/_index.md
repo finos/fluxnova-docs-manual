@@ -11,7 +11,7 @@ menu:
 ---
 
 The Fluxnova DMN engine is a Java library which can evaluate DMN decision tables.
-It implements version 1.3 of the OMG [DMN](http://www.omg.org/spec/DMN/1.3) standard to the extent documented in the [DMN reference].
+It implements version 1.3 of the OMG [DMN](https://www.omg.org/spec/DMN/1.3) standard to the extent documented in the [DMN reference].
 
 The DMN engine can be used as library embedded in an
 application or in combination with Fluxnova. This section
@@ -26,4 +26,3 @@ decisions can be found on [GitHub].
 
 [platform]: {{< relref "/user-guide/process-engine/decisions/_index.md" >}}
 [DMN reference]: {{< relref "/reference/dmn/_index.md" >}}
-[GitHub]: https://github.com/finos/fluxnova-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method

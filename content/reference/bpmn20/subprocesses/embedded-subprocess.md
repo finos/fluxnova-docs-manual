@@ -76,8 +76,3 @@ A subprocess is defined by the subprocess element. All activities, gateways, eve
   </tr>
 </table>
 
-
-# Additional Resources
-
-*   [Subprocesses](http://fluxnova.finos.org/bpmn/reference.html#activities-subprocess) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
-

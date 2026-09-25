@@ -11,8 +11,7 @@ menu:
 ---
 
 To create simple BPMN processes we provide a fluent builder API. With this API you can easily create basic
-processes in a few lines of code. In the [generate process fluent api](https://github.com/finos/fluxnova-bpm-examples/tree/master/bpmn-model-api/generate-process-fluent-api) quickstart we
-demonstrate how to create a rather complex process with 5 tasks and 2 gateways within less than 50 lines of code.
+processes in a few lines of code.
 
 The fluent builder API is not nearly complete but provides you with the following basic elements:
 
@@ -336,4 +335,4 @@ overlapping elements in the diagram.
 
 Branches of gateways are placed one below the other. Auto layout is not provided, therefore the elements of different branches may overlap.
 
-[multi-instance]: ../../../../reference/bpmn20/tasks/task-markers/#multiple-instance
+[multi-instance]: {{< relref "/reference/bpmn20/tasks/task-markers.md#multiple-instance" >}}

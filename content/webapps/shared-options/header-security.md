@@ -158,7 +158,6 @@ the config property <code>hstsValue</code>.
 Choose a container from the list and learn where to configure the HTTP Security Headers:
 
 * [Tomcat]({{< relref "/installation/full/tomcat/configuration.md#security-related-http-headers-in-webapps" >}})
-* [JBoss EAP & Wildfly]({{< relref "/installation/full/jboss/configuration.md#security-related-http-headers-in-webapps" >}})
 * [Spring Boot]({{< relref "/user-guide/spring-boot-integration/configuration.md#header-security" >}})
 
 ## How to Configure?

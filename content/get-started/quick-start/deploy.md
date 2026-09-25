@@ -27,7 +27,7 @@ In order to deploy the Process, click on the deploy button in the Fluxnova Model
 You should see a success message in the Fluxnova Modeler:
 {{< img src="../img/modeler-deploy3.png" >}}
 
-More details regarding the deployment from Fluxnova Modeler you can find [here](https://blog.camunda.com/post/2019/01/camunda-modeler-3.0.0-0-released/#completely-reworked-deployment-tool). For Fluxnova Modeler 2.2.4 and earlier, read [this blog post](https://blog.camunda.com/post/2018/03/camunda-modeler-1120-alpha-3-released/).
+More details regarding the deployment from Fluxnova Modeler can be found in the [Fluxnova Modeler documentation]({{< relref "/modeler/" >}}).For Fluxnova Modeler 2.2.4 and earlier, read [this blog post](https://blog.camunda.com/post/2018/03/camunda-modeler-1120-alpha-3-released/).
 
 # Verify the Deployment with Cockpit
 

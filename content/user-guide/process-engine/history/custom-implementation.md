@@ -78,7 +78,7 @@ boolean isHistoryEventProduced(HistoryEventType eventType, Object entity)
 ```
 
 is called for every history event to determine if the event should be saved to the history. The event types used in the
-engine can be found in `org.finos.fluxnova.bpm.engine.impl.history.event.HistoryEventTypes` (see [Javadocs][1]).
+engine can be found in `org.finos.fluxnova.bpm.engine.impl.history.event.HistoryEventTypes`
 
 The second argument is the entity for which the event is triggered, e.g., a process instance, activity
 instance or variable instance. If the `entity` is null the engine tests if the history level in general
@@ -111,9 +111,3 @@ public boolean isHistoryEventProduced(HistoryEventType eventType, Object entity)
   ...
 }
 ```
-
-
-
-
-[1]: http://docs.fluxnova.finos.org/latest/api-references/javadoc/org/finos/fluxnova/bpm/engine/impl/history/event/HistoryEventTypes.html
-[2]: https://github.com/finos/fluxnova-bpm-examples/tree/master/process-engine-plugin/custom-history-level

@@ -19,8 +19,6 @@ The required CDI beans for this functionality are currently not available in <a 
 If you add JSF forms as described below, you can easily use them as <br/>
 [external task forms]({{< relref "/user-guide/task-forms/_index.md#external-task-forms" >}}).
 
-A working example can be found in the [examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/usertask/task-form-external-jsf).
-
 The BPMN process used for this example is shown in the image below:
 
 {{< img src="../img/task-form-process.png" title="Task Form Process" >}}

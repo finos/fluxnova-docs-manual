@@ -31,8 +31,8 @@ This will add the Fluxnova engine v.{{< minor-version >}}.0 to your dependencies
 
 Other starters that can be used are: 
 
-* [`fluxnova-bpm-spring-boot-starter-rest`](rest-api)
-* [`fluxnova-bpm-spring-boot-starter-webapp`](webapps)
+* [`fluxnova-bpm-spring-boot-starter-rest`]({{< relref "/user-guide/spring-boot-integration/rest-api.md" >}})
+* [`fluxnova-bpm-spring-boot-starter-webapp`]({{< relref "/user-guide/spring-boot-integration/webapps.md" >}})
 * [`fluxnova-bpm-spring-boot-starter-external-task-client`]({{< relref "/user-guide/ext-client/spring-boot-starter.md" >}})
 
 # Requirements

@@ -263,7 +263,3 @@ If a variable is set in the context of the `SubProcess` instance, then only the 
     <td>&ndash;</td>
   </tr>
 </table>
-
-# Additional Resources
-
-* [Conditional Events](http://fluxnova.finos.org/bpmn/reference.html#events-conditional) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

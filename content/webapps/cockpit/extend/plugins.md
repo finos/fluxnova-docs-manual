@@ -61,7 +61,7 @@ As runtime relevant resource it defines
 
 1. a plugin main class
 2. a `META-INF/services` entry that publishes the plugin to Cockpit
-3. a plugin root [JAX-RS](https://jax-rs-spec.java.net/) resource that wires the server-side API.
+3. a plugin root [JAX-RS](https://jakarta.ee/specifications/restful-ws/) resource that wires the server-side API.
    When you want to include a frontend module in your plugin, you can use `AbstractCockpitPluginRootResource` as the plug-in resources base class.
    This allows you to serve static client-side resources under the `/static` path.
    Per convention, these resources must reside in a `/plugin-webapp/$plugin_id` directory absolute to the classpath root.
@@ -76,9 +76,6 @@ As runtime relevant resource it defines
 8. a js file that exports a frontend module. This file must be named `plugin.js` and be located in the `app` directory of the plugin asset directory
 9. a css file that contains the style definitions for the client-side plugin. This file must be named `plugin.css` and be located in the `app` directory of the plugin asset directory
 
-{{< note title="Related Example" class="info">}}
-  [How to develop a Cockpit plugin](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes)
-{{< /note >}}
 
 ## Structure of a Frontend Module
 A frontend module always follows the same structure. This is how a sample `plugin.js` could look like:
@@ -152,8 +149,6 @@ Plugins created for Fluxnova.13 or earlier can be included for compatibility. To
 
 Please note that all Plugins with this prefix will be included using the 7.13 plugin mechanism. You cannot create new Plugins with IDs starting with `legacy`.
 
-For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.fluxnova.finos.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Fluxnova **7.13** .
-
 # Plugin points
 
 In this section you will find all Cockpit plugin points.
@@ -161,7 +156,6 @@ To configure where you place your plugin, enter the ID into the `pluginPoint` at
 
 Plugin Points describe where a Plugin will be rendered and define which additional data is passed into the second argument of the render function.
 
-For more information on creating and configuring your own plugin, please see [How to develop a Cockpit plugin](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes).
 
 ## Data
 

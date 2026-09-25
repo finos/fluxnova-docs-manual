@@ -108,7 +108,7 @@ The Fluxnova web applications are based on a RESTful architecture.
 
 Frameworks used:
 
-* [JAX-RS](https://jax-rs-spec.java.net) based Rest API
+* [JAX-RS](https://jakarta.ee/specifications/restful-ws/) based Rest API
 * [AngularJS](http://angularjs.org)
 * [RequireJS](http://requirejs.org)
 * [jQuery](http://jquery.com)
@@ -116,6 +116,5 @@ Frameworks used:
 
 Additional custom frameworks developed by Fluxnova hackers:
 
-* [fluxnova-bpmn.js](https://github.com/finos/fluxnova-bpmn.js): Fluxnova BPMN 2.0 JavaScript libraries
 * [ngDefine](https://github.com/Nikku/requirejs-angular-define): integration of AngularJS into RequireJS powered applications
 * [angular-data-depend](https://github.com/Nikku/angular-data-depend): toolkit for implementing complex, data heavy AngularJS applications

@@ -28,7 +28,7 @@ The documentation is shipped as a single `openapi.json` file archived in a jar a
 Download the Fluxnova REST API artifact containing the OpenAPI documentation [here][artifact-link]. Choose the correct version and then download the `jar` file.
 
 [spec-3.0.2]: https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md
-[artifact-link]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/camunda-engine-rest-openapi/
+[artifact-link]: https://central.sonatype.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest-openapi
 
 Alternatively, you can obtain this artifact with the following Maven coordinates:
 

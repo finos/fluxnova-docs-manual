@@ -24,7 +24,7 @@ There are different ways of using Fluxnova and different components are provided
 * Web applications (Cockpit, Tasklist, ...): similar considerations to the REST API apply.
 
 
-Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.fluxnova.finos.org/manual/latest/installation/full/tomcat/manual/)).
+Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation]({{< relref "/installation/full/tomcat/manual.md" >}})).
 
 {{< note title="Security Consideration" class="warning" >}}
   The pre-packaged distribution is intended for users who want a getting started experience. In case
@@ -332,7 +332,7 @@ In case you want to rely on allowed package and class names from the engine conf
 An implementation of this interface registered as validator will be provided with the defined packages and classes from the engine configuration upon initialization of the engine via `#setAllowedClasses` and `#setAllowedPackages`.
 
 {{< note title="Jackson Type Whitelisting" class="info" >}}
-  Spin's JSON implementation is based on Jackson. If you configure Fluxnova Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://medium.com/@cowtowncoder/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Fluxnova's whitelisting feature does not cover this case.
+  Spin's JSON implementation is based on Jackson. If you configure Fluxnova Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://cowtowncoder.medium.com/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Fluxnova's whitelisting feature does not cover this case.
 {{< /note >}}
 
 ## User operation log settings for synchronous operations affecting multiple entities

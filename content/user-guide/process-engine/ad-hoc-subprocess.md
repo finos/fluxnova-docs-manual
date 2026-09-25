@@ -29,9 +29,9 @@ ProcessInstance pi = runtimeService.startProcessInstanceByKey("myProcess");
 
 // Find the ad hoc subprocess scope execution by its BPMN activity ID
 Execution adHocExecution = runtimeService.createExecutionQuery()
-  .processInstanceId(pi.getId())
-  .activityId("adHocSubProcess")  // BPMN id of the adHocSubProcess element
-  .singleResult();
+        .processInstanceId(pi.getId())
+        .activityId("adHocSubProcess")  // BPMN id of the adHocSubProcess element
+        .singleResult();
 
 // Now you have the execution ID for triggering activities or completing
 String adHocExecutionId = adHocExecution.getId();

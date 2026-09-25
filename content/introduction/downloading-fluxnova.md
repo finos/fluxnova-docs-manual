@@ -47,10 +47,6 @@ The full distribution bundles
   and IBM WebSphere downloads; these downloads do not include the application servers themselves.
 {{< /note >}}
 
-{{< note title="Wildfly Application Server" class="info" >}}
-  Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.fluxnova.finos.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright © JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
-{{< /note >}}
-
 See the [Installation Guide][installation-guide-full] for additional details.
 
 
@@ -62,7 +58,7 @@ from the [GitHub releases](https://github.com/finos/fluxnova-modeler/releases/la
 
 
 [get-jdk]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
-[community-download-page]: https://fluxnova.finos.org/download/
+[community-download-page]: https://github.com/finos/fluxnova-bpm-platform/releases
 [enterprise-download-page]: /enterprise/download
 [shared-engine]: {{< relref "/introduction/architecture.md#shared-container-managed-process-engine" >}}
 [installation-guide-full]: {{< relref "/installation/_index.md" >}}

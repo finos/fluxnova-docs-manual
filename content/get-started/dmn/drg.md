@@ -147,4 +147,4 @@ Note that the *Dish* decision is evaluated as part of the evaluation of the *Bev
 Next,
 
 * learn more about DRG by reading the [DMN Reference]({{< relref "/reference/dmn/drg" >}}),
-* learn more about [DMN in Cockpit](https://docs.fluxnova.finos.org/manual/webapps/cockpit/dmn/) and specialized views for DRGs (Enterprise Feature)
+* learn more about [DMN in Cockpit]({{< relref "/webapps/cockpit/dmn/_index.md" >}}) and specialized views for DRGs (Enterprise Feature)

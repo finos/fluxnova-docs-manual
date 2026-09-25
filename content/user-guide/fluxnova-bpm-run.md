@@ -120,7 +120,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
 
 ## Starting Fluxnova Run using Docker
 
-Fluxnova Run is also available as a Docker image. Please see the Fluxnova Run section of the Fluxnova Docker documentation [here]({{< relref "/installation/docker.md#start-fluxnova-bpm-run-using-docker" >}}) for more details.
+Fluxnova Run is also available as a prebuilt Docker image. Please see the Fluxnova Docker documentation [here]({{< relref "/installation/docker.md#start-fluxnova-using-docker" >}}) for instructions on how to pull and start it.
 
 ## Optional components
 
@@ -491,7 +491,7 @@ Fluxnova provides a mechanism to extend the Fluxnova Webapps with your own funct
 
 A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< relref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
 
-To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Fluxnova Run section](#starting-with-fluxnova-platform-run) of this guide to find out how to navigate the directories of Fluxnova Run.
+To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Fluxnova Run section](#starting-with-fluxnova-run) of this guide to find out how to navigate the directories of Fluxnova Run.
 
 ## Example application launch
 

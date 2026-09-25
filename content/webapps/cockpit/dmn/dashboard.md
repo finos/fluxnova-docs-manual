@@ -50,8 +50,7 @@ Furthermore, you can copy a link to the current search query to your clipboard b
   The decision instance search operates on the history endpoint of the engine. In case the requested historic data is not persisted to the database, then the search does not deliver the desired results.
 {{< /note >}}
 
-[decision-definition-view]: < relref "/webapps/cockpit/dmn/decision-definition-view.md" >
-[decision-instance-view]: < relref "/webapps/cockpit/dmn/decision-instance-view.md" >
-[decision-requirements-definition-view]: < relref "/webapps/cockpit/dmn/decision-requirements-definition-view.md" >
-[decision-requirements-definition-instance-view]: < relref "/webapps/cockpit/dmn/decision-requirements-instance-view.md" >
+[decision-definition-view]: {{< relref "/webapps/cockpit/dmn/decision-definition-view.md" >}}
+[decision-instance-view]: {{< relref "/webapps/cockpit/dmn/decision-instance-view.md" >}}
+
 {{< /comment >}}

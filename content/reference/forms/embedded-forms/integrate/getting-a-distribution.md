@@ -13,7 +13,7 @@ menu:
 # Manual Download
 
 The Forms SDK library can be downloaded from
-[Github](https://github.com/fluxnova/bower-fluxnova-bpm-sdk-js/releases).
+[Github](https://github.com/finos/fluxnova-bpm-platform/releases).
 
 
 # Bower

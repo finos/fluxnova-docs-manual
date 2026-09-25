@@ -197,4 +197,3 @@ The XML representation of a compensation start event is the normal start event d
 ## Additional Resources
 
 * [Transaction subprocess]({{< relref "/reference/bpmn20/subprocesses/transaction-subprocess.md" >}})
-* [Compensation Events](http://fluxnova.finos.org/bpmn/reference.html#events-compensation) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

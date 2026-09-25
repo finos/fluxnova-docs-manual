@@ -650,8 +650,8 @@ to assign error codes to exceptions you cannot control via your Delegation Code.
 
 {{< note title="Heads-up!" class="info" >}}
 * A custom error code you define via delegation code has precedence over a custom error code provided 
-by a [Custom Code Provider](#custom-code-provider).
-* If your custom error code violates the [reserved code range](#reserved-code-range), it will be 
+by a [Custom Code Provider]({{< relref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}).
+* If your custom error code violates the [reserved code range]({{< relref "/user-guide/process-engine/error-handling.md#reserved-code-range" >}})), it will be 
 overridden with `0` unless you disable the built-in code provider.
 {{< /note >}}
 

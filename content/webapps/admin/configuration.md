@@ -55,8 +55,7 @@ export default {
 
 # Localization
 
-Admin can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/finos/fluxnova-webapp-translations).
+Admin can be localized. Fluxnova maintains English and German translation files.
 
 The localization of Admin is contained in the `app/admin/locales/` directory. This
 directory contains a separate localization file for every available language. The file name

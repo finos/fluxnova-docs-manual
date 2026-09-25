@@ -14,11 +14,6 @@ menu:
 
 This page gives you an overview of the BPMN 2.0 elements and the current coverage of the process engine. 
 
-{{< note title="BPMN - Business Process Model and Notation" >}}
-If you are unfamiliar with BPMN 2.0, you might want to check out the
-<a href="http://fluxnova.finos.org/bpmn/tutorial.html">BPMN Tutorial</a> first.
-{{< /note >}}
-
 # Coverage
 
 The elements marked in <span class="label label-warning label-implemented">orange</span> are supported.
@@ -357,8 +352,8 @@ In BPMN there are start events, intermediate events and end events. These three 
 
 {{< note title="Understanding BPMN Events" >}}
 To help understand the principle behavior of events in BPMN, we recommend to check the
-[Events: Basic Concepts](http://fluxnova.finos.org/bpmn/reference.html#events-basic-concepts)
-chapter of the [BPMN Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html).
+[Events: Basic Concepts]({{< relref "/reference/bpmn20/events/_index.md" >}})
+chapter of the [BPMN Modeling Reference]({{< relref "/reference/bpmn20/_index.md" >}}).
 {{< /note >}}
 
 <table class="table table-responsive table-bordered bpmn-events">

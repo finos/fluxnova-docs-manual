@@ -205,5 +205,4 @@ In addition to the above, a Business Rule Task can be implemented via the [Exter
 
 * [Decisions]({{< relref "/user-guide/process-engine/decisions/_index.md" >}})
 * [Service Tasks]({{< relref "/reference/bpmn20/tasks/service-task.md" >}})
-* [Tasks](http://fluxnova.finos.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
-* [Demo using Drools on the Business Rule Task](https://github.com/finos/fluxnova-consulting/tree/master/one-time-examples/order-confirmation-rules)
+* [Tasks]({{< relref "/reference/bpmn20/tasks/_index.md" >}}) in the [BPMN 2.0 Modeling Reference]({{< relref "/reference/bpmn20/_index.md" >}})

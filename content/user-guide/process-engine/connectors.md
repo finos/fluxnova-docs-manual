@@ -11,7 +11,7 @@ menu:
 ---
 
 
-With the dependency [fluxnova-connect](https://github.com/finos/fluxnova-bpm-platform/tree/master/connect), the process engine supports simple
+With the dependency [fluxnova-connect](https://github.com/finos/fluxnova-bpm-platform/tree/main/connect), the process engine supports simple
 connectors. Currently the following connector implementations exist:
 
 <table class="table">
@@ -126,7 +126,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 
 To use a connector, you have to add the Fluxnova extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
 
-As an example, a shortened configuration of the Fluxnova SOAP connector implementation is shown. A complete [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples) on GitHub.
+As an example, a shortened configuration of the Fluxnova SOAP connector implementation is shown.
 
 ```xml
 <serviceTask id="soapRequest" name="Simple SOAP Request">
@@ -154,5 +154,3 @@ As an example, a shortened configuration of the Fluxnova SOAP connector implemen
   </extensionElements>
 </serviceTask>
 ```
-
-A full [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/servicetask/rest-service) of the REST connector can also be found in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples) on GitHub.

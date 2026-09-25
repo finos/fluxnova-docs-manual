@@ -353,12 +353,12 @@ For more information on how to configure and use SLF4J, please refer to the
 
 
 [evaluation listener]: {{< javadocref page="org/finos/fluxnova/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html" text="DmnDecisionTableEvaluationListener Interface" >}}
-[DMN model API]: https://github.com/finos/fluxnova-dmn-model
+[DMN model API]: https://github.com/finos/fluxnova-bpm-platform/tree/main/model-api/dmn-model
 [data types]: {{< relref "/user-guide/dmn-engine/data-types.md" >}}
 [hit policies]: {{< relref "/reference/dmn/decision-table/hit-policy.md" >}}
-[SLF4J]: http://www.slf4j.org/
-[LOGBack]: http://logback.qos.ch/
-[user manual]: http://www.slf4j.org/manual.html
+[SLF4J]: https://www.slf4j.org/
+[LOGBack]: https://logback.qos.ch/
+[user manual]: https://www.slf4j.org/manual.html
 [DMN decision table]: {{< relref "/reference/dmn/decision-table/_index.md" >}}
 [DMN decision literal expression]: {{< relref "/reference/dmn/decision-literal-expression/_index.md" >}}
 [expressions]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md" >}}

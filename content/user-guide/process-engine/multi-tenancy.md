@@ -27,13 +27,6 @@ Note that transparent tenant separation is not implemented for all APIs. For exa
 
 It is also possible for all tenants to share the same process and decision definitions without deploying them for each tenant. Shared definitions can simplify management of the deployments in case of a larger amount of tenants.
 
-{{< note title="Examples" class="info" >}}
-Find [examples on GitHub](https://github.com/finos/fluxnova-bpm-examples) that show how to use tenant-identifiers with
-
-* [Embedded Process Engine](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/tenant-identifier-embedded)
-* [Shared Process Engine](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/tenant-identifier-shared)
-{{< /note >}}
-
 
 ## Deploy Definitions for a Tenant
 
@@ -341,9 +334,6 @@ Then, when a new instance is created by a particular tenant, it should  be only 
 This can be achieved by a usage pattern we call "Shared Definitions".
 By the term *usage pattern* we mean that it is not a feature of Fluxnova per se but rather a specific way to use it to achieve the desired behavior.
 
-{{< note title="Example" class="info" >}}
-You can find an [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/tenant-identifier-shared-definitions) on [GitHub](https://github.com/finos/fluxnova-bpm-examples) that shows how to use shared definitions.
-{{< /note >}}
 
 ### Deploy a Shared Definition
 
@@ -451,11 +441,10 @@ So far, we have seen that shared resources are a useful pattern if tenants have 
 
 A common pattern of how to deal with this is to extract the tenant-specific behavior in a separate process which is then invoked using a call activity. Tenant specific decision logic (i.e., decision tables) using a business rules task are also common.
 
-To realize this, the call activity or business rule task needs to select the correct definition to invoke based on the tenant id of the current process instance. The [Shared Resources Example](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/tenant-identifier-shared-definitions) shows how to achieve this.
+To realize this, the call activity or business rule task needs to select the correct definition to invoke based on the tenant id of the current process instance. 
 
 See also:
 
-* [Shared Resources Example](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/tenant-identifier-shared-definitions)
 * [Called Element Tenant Id]({{< relref "/reference/bpmn20/subprocesses/call-activity.md#calledelement-tenant-id" >}})
 * [Case Tenant Id]({{< relref "/reference/bpmn20/subprocesses/call-activity.md#case-tenant-id" >}}) for call activities.
 * [Decision Ref Tenant Id]({{< relref "/reference/bpmn20/tasks/business-rule-task.md#decisionref-tenant-id" >}}) for business rule tasks.
@@ -468,9 +457,6 @@ Multi-Tenancy can be achieved by providing one process engine per tenant. Each p
 
 The process engines can run on the same server so that all share the same computational resources such as a data source (when isolating via schemas or tables) or a thread pool for asynchronous job execution. 
 
-{{< note title="Tutorial" class="info" >}}
-  You can see the [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/multi-tenancy/schema-isolation) how to implement multi-tenancy with data isolation by schemas.
-{{< /note >}}
 
 ## Configure the Process Engines
 
@@ -593,7 +579,6 @@ To access a specific tenant's process engine at runtime, it has to be identified
 
 * **Plain Java API**: Via the [ProcessEngineService]({{< relref "/user-guide/runtime-container-integration/bpm-platform-services.md#processengineservice" >}}) any named engine can be accessed.
 * **CDI Integration**: Named engine beans can be injected out of the box. The [built-in CDI bean producer]({{< relref "/user-guide/cdi-java-ee-integration/built-in-beans.md" >}}) can be specialized to access the engine of the current tenant dynamically.
-* **Via JNDI on Wildfly**: On Wildfly, every container-managed process engine can be [looked up via JNDI]({{< relref "/user-guide/runtime-container-integration/jboss.md#look-up-a-process-engine-in-jndi" >}}).
 
 The Fluxnova web applications Cockpit, Tasklist and Admin offer tenant-specific views out of the box by [switching between different process engines]({{< relref "/webapps/cockpit/dashboard.md#multi-engine" >}}).
 

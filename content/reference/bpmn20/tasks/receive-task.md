@@ -97,6 +97,6 @@ runtimeService.signal(execution.getId());
 
 # Additional Resources
 
-* [Tasks](http://fluxnova.finos.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+* [Tasks]({{< relref "/reference/bpmn20/tasks/" >}}) in the [BPMN 2.0 Modeling Reference]({{< relref "/reference/bpmn20/" >}})
 * [Message Receive Events]({{< relref "/reference/bpmn20/events/message-events.md" >}})
 * {{< restref page="signalExecution" tag="Execution" text="Trigger a subscription via REST" >}}

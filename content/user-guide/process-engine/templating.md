@@ -200,7 +200,5 @@ examples' repository.
 
 [freemarker]: http://freemarker.org/
 [velocity]: http://velocity.apache.org/
-[fluxnova-7-template-engines-jsr223]: https://github.com/fluxnova-community-hub/fluxnova-7-template-engines-jsr223
 [use-scripts]: {{< relref "/user-guide/process-engine/scripting.md" >}}
 [script-source]: {{< relref "/user-guide/process-engine/scripting.md#script-source" >}}
-[xslt-example]: https://github.com/finos/fluxnova-bpm-examples/tree/master/scripttask/xslt-scripttask

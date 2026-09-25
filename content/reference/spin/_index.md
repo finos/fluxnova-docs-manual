@@ -56,4 +56,4 @@ dependency to your `pom.xml` file:
 </dependencies>
 ```
 
-Fluxnova Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Cfluxnova-spin).
+Fluxnova Spin is published to [maven central](https://central.sonatype.com/search?q=fluxnova-spin&smo=true).

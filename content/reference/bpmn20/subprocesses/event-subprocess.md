@@ -98,7 +98,3 @@ These two differences can help you decide whether a boundary event or an embedde
   </tr>
 </table>
 
-
-# Additional Resources
-
-*   [Event subprocess](http://fluxnova.finos.org/bpmn/reference.html#activities-event-subprocess) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

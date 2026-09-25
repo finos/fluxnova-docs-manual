@@ -25,7 +25,7 @@ You can use the Expression Language in the following DMN Notation Elements:
 This documentation covers everything integration-specific about the 
 [FEEL Scala Engine][] (opens external link) in the Fluxnova DMN Engine.
 
-[FEEL Scala Engine]: https://github.com/finos/feel-scala
+[FEEL Scala Engine]: https://github.com/finos/fluxnova-feel-scala
 [input entries]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
 [Input Expressions]: {{< relref "/reference/dmn/decision-table/input.md#input-expression" >}}
 [Output Entries]: {{< relref "/reference/dmn/decision-table/rule.md#output-entry-conclusion" >}}

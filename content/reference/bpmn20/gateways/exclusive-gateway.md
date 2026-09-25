@@ -75,4 +75,3 @@ The XML representation of an exclusive gateway is straightforward: one line defi
 # Additional Resources
 
 *   [Conditional and Default Sequence Flows]({{< relref "/reference/bpmn20/gateways/sequence-flow.md" >}})
-*   [Exclusive Gateways](http://fluxnova.finos.org/bpmn/reference.html#gateways-data-based-exclusive-gateways) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

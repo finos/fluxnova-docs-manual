@@ -270,7 +270,7 @@ Also, you will have to add the AssertJ library to your dependencies. Make sure t
 ```
 
 If Fluxnova Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
-[Fluxnova Spring Boot Starter](https://docs.fluxnova.finos.org/manual/latest/user-guide/spring-boot-integration/), 
+[Fluxnova Spring Boot Starter]({{< relref "/user-guide/spring-boot-integration" >}}), 
 the AssertJ dependency will be present in your project already.
 
 ## Assertions Version Compatibility
@@ -335,7 +335,7 @@ There are a couple of well documented and heavily used community extensions that
 
 ## Fluxnova Scenario Tests
 
-[Fluxnova-bpm-assert-scenario](https://github.com/finos/fluxnova-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
+Fluxnova scenario tests enable you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
 
 ```java
 @Test
@@ -353,7 +353,7 @@ public void testHappyPath() {
 
 ## Fluxnova Test Coverage
 
-[Fluxnova-bpm-process-test-coverage](https://github.com/finos/fluxnova-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
+Fluxnova process test coverage utilities visualise test process paths and check your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
 
 
 # Resolving Beans Without Spring/CDI

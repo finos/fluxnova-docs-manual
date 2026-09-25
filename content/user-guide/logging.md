@@ -408,7 +408,7 @@ List of modules still using Java Util Logging:
 * fluxnova-engine-rest
 * Wildfly Subsystems
 
-[slf4j]: http://www.slf4j.org/
-[log4j]: http://logging.apache.org/log4j/
-[logback]: http://logback.qos.ch/
-[slf4j-backends]: http://www.slf4j.org/manual.html#projectDep
+[slf4j]: https://www.slf4j.org/
+[log4j]: https://logging.apache.org/log4j/2.x/index.html
+[logback]: https://logback.qos.ch/
+[slf4j-backends]: https://www.slf4j.org/manual.html#projectDep

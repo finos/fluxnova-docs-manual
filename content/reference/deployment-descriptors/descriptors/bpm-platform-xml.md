@@ -16,10 +16,6 @@ It is used to configure Fluxnova in the following distributions:
 
 *   [Apache Tomcat]({{< relref "/installation/full/tomcat/_index.md" >}})
 
-{{< note title="Wildfly" class="warning">}}
-The <code>bpm-platform.xml</code> file is not used in the Fluxnova distribution for Wildfly. There, the configuration is added to the central application server configuration file (<code>standalone.xml</code> or <code>domain.xml</code>). The XML schema is the same (i.e., the same elements and properties can be used). See the <a href="{{< relref "/user-guide/runtime-container-integration/jboss.md" >}}">The Fluxnova Wildfly Subsystem</a> section of the <a href="{{< relref "/user-guide/_index.md" >}}">User Guide</a> for more details.
-{{< /note >}}
-
 
 # Xml Schema Namespace
 

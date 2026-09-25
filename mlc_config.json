@@ -1,0 +1,57 @@
+{
+  "ignorePatterns": [
+    {
+      "_comment": "Ignores raw Hugo shortcodes starting at line start",
+      "pattern": "^\\{\\{<"
+    },
+    {
+      "_comment": "Ignores unrendered Hugo template shortcodes ({{...}})",
+      "pattern": ".*\\{\\{.*"
+    },
+    {
+      "_comment": "Ignores URL-encoded shortcodes (%7B%7B...)",
+      "pattern": ".*%7B%7B.*"
+    },
+    {
+      "_comment": "Ignores all local dev environment links (http/https localhost)",
+      "pattern": "^https?://localhost"
+    },
+    {
+      "_comment": "Ignores all mailto: email addresses",
+      "pattern": "^mailto:"
+    },
+    {
+      "_comment": "Ignores local file system paths (file://)",
+      "pattern": "^file://"
+    },
+    {
+      "_comment": "Ignores authenticated Camunda enterprise releases",
+      "pattern": "^https://downloads\\.camunda\\.cloud/enterprise-release"
+    },
+    {
+      "_comment": "Ignores GNU Classpath license page prone to network timeouts",
+      "pattern": "^https://www\\.gnu\\.org/software/classpath/license\\.html$"
+    },
+    {
+      "_comment": "Ignores Oracle/MySQL docs that block bots with 403 Forbidden",
+      "pattern": "^https://dev\\.mysql\\.com/"
+    },
+    {
+      "_comment": "Ignores StackOverflow links (bot protection/rate limits)",
+      "pattern": "^https?://(www\\.)?stackoverflow\\.com/"
+    },
+    {
+      "_comment": "Ignores private Camunda enterprise Maven/npm artifacts",
+      "pattern": "^https://artifacts\\.camunda\\.com"
+    },
+    {
+      "_comment": "Ignores Maven Central repository lookup links (anti-bot rules)",
+      "pattern": "^https://mvnrepository\\.com/"
+    },
+    {
+      "_comment": "Ignores the archived path-based OWASP Tomcat security wiki page to prevent false positive failures",
+      "pattern": "^https://wiki\\.owasp\\.org/index\\.php/Securing_tomcat$"
+    }
+  ],
+  "retryOn429": true
+}

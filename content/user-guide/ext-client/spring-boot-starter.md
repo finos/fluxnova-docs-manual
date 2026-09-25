@@ -22,7 +22,7 @@ your `pom.xml` file:
 </dependency>
 ```
 
-Please check out our [External Task Client Spring Boot Starter Examples](https://github.com/finos/fluxnova-bpm-examples/tree/{{<minor-version>}}#external-task-client-spring-boot).
+Please check out the example code in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
 
 The Client can subscribe to one or more topic names that are defined in your BPMN process model.
 When the execution waits in an External Task, the Client executes your custom business logic. 

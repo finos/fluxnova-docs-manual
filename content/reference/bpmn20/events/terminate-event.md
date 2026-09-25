@@ -59,7 +59,3 @@ A terminate event is modeled as an end event with an additional definition eleme
     <td>&ndash;</td>
   </tr>
 </table>
-
-## Additional Resources
-
-* [Terminate Events](http://fluxnova.finos.org/bpmn/reference.html#events-termination) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)

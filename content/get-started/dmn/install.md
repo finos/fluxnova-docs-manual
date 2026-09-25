@@ -29,7 +29,7 @@ Make sure you have the following set of tools installed:
 
 # Fluxnova Platform
 
-First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from [the download page](https://fluxnova.finos.org/download/platform).
+First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from the [Fluxnova Platform releases](https://github.com/finos/fluxnova-bpm-platform/releases).
 
 After having downloaded the distribution, unpack it inside a directory of your choice. We will call that directory `$CAMUNDA_HOME`.
 
