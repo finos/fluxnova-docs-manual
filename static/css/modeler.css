@@ -168,6 +168,35 @@ display: flex;
   text-decoration: underline;
 }
 
+.run-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #cfe2f3;
+  border-top-color: #1565c0;
+  border-radius: 50%;
+  animation: run-spinner 0.8s linear infinite;
+}
+
+@keyframes run-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}
+
 #Tab2 {
     height: 300px;      /* simple + reliable */
     overflow-y: auto;
@@ -277,10 +306,10 @@ display: flex;
   background-color: #fff;
   margin: 15% auto; /* Centered layout from top */
   padding: 20px;
-  width: 50%; /* Customizable width */
-  max-width: 500px;
+  width: min(90%, 560px);
   border-radius: 8px;
   position: relative;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
 .close {
@@ -291,8 +320,85 @@ display: flex;
   cursor: pointer;
 } 
 #inputBox {
-    height: 70px;
-    width: 80%;
+ display: block;
+ box-sizing: border-box;
+ width: 100%;
+ min-height: 84px;
+ padding: 12px;
+ border: 1px solid #aab4c0;
+ border-radius: 6px;
+ resize: vertical;
+ font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+}
+
+.input-label {
+ display: block;
+ margin: 0 0 8px;
+ color: #333;
+ font-weight: 600;
+}
+
+.input-error {
+ min-height: 1.25em;
+ margin: 6px 0 0;
+ color: #b00020;
+ font-size: 14px;
+}
+
+#inputBox[aria-invalid="true"] {
+ border-color: #b00020;
+ outline-color: #b00020;
+}
+
+.input-dialog-actions {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 16px;
+ margin-top: 8px;
+}
+
+.input-help {
+ color: #4b5563;
+ font-size: 14px;
+}
+
+.input-submit-button {
+ flex: 0 0 auto;
+ min-width: 96px;
+ padding: 10px 20px;
+ border: 0;
+ border-radius: 6px;
+ background: #0878d1;
+ color: #fff;
+ font: 600 15px "Segoe UI", system-ui, sans-serif;
+ cursor: pointer;
+ transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-submit-button:hover {
+ background: #0565b3;
+}
+
+.input-submit-button:focus-visible {
+ outline: 3px solid #83c5f4;
+ outline-offset: 2px;
+}
+
+.input-submit-button:active {
+ background: #044f8c;
+}
+
+@media (max-width: 480px) {
+ .input-dialog-actions {
+   align-items: stretch;
+   flex-direction: column;
+   gap: 8px;
+ }
+
+ .input-submit-button {
+   align-self: flex-end;
+ }
 }
 
 #sampleDropdown {
@@ -559,5 +665,3 @@ gap: 8px;             /* ✅ move gap here */
   width: 300px;
   text-align: center;
 }
-
-

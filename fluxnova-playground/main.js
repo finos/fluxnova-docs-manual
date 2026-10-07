@@ -331,11 +331,26 @@ window.downloadXml = function () {
 
 let hasRunExecuted = false;
 
+function showRunProgress(message) {
+  const outputEl = document.getElementById("Tab1");
+  if (!outputEl) return;
+
+  outputEl.innerHTML = `
+    <div class="run-progress" role="status" aria-live="polite">
+      <span class="loading-spinner" aria-hidden="true"></span>
+      <span>${message}</span>
+    </div>`;
+}
+
 window.runProcess = async function (fromuser={}) {
   
   if (!modeler) {
     return;
   }
+
+hasRunExecuted = false;
+document.getElementById("defaultOpen")?.click();
+showRunProgress("Checking the process before deployment...");
 
 const linting = modeler.get("linting");
 linting.update();
@@ -385,7 +400,8 @@ if (outputEl) {
     const formData = new FormData();
     formData.append("data", blob, "diagram.bpmn");
 
-    
+    showRunProgress("Deploying process...");
+
     // 3. Deploy process
     const deployResponse = await fetch(
       "https://demo.fluxnova.finos.org/engine-rest/deployment/create",
@@ -395,7 +411,7 @@ if (outputEl) {
       }
     );
   
-    deployJson = await deployResponse.json();
+    const deployJson = await deployResponse.json();
     temp = deployJson;
 
     const definitions = deployJson.deployedProcessDefinitions;
@@ -407,11 +423,15 @@ if (outputEl) {
     // If deployment failed or no process
     if (!processKey) {
 
-      document.getElementById("Tab1").textContent =
-        JSON.stringify(deployJson, null, 2);
+      const outputEl = document.getElementById("Tab1");
+      if (outputEl) {
+        outputEl.textContent = JSON.stringify(deployJson, null, 2);
+      }
 
       return;
     }
+
+    showRunProgress("Process deployed. Starting it now...");
 
     //Start process instance
     const startResponse = await fetch(
@@ -462,6 +482,7 @@ if (outputEl) {
       outputEl.textContent = "Error: " + error.message;
     }
     scrollToTab("Tab1");
+    return;
   }
   
   hasRunExecuted = true;
@@ -469,8 +490,7 @@ if (outputEl) {
 };
 
 const sampleFiles = [
-  { name: "Condition Task", path: "/samples/process1.bpmn" },
-  { name: "Service Task", path: "/samples/service_task_example.bpmn" },
+  { name: "Condition Task", path: "/samples/condition_task.bpmn" },
   { name: "User Task", path: "/samples/user_task.bpmn" },
   { name: "Script Task", path: "/samples/script_task.bpmn" }
 ];
@@ -577,20 +597,13 @@ if (hasLintingErrors) {
   
   // Define the function on the window object so the HTML link can call it
   window.showTextbox = function() {
+    const inputBox = document.getElementById("inputBox");
+    const inputError = document.getElementById("inputError");
+    inputBox.value = "";
+    inputBox.removeAttribute("aria-invalid");
+    inputError.textContent = "";
     window.dialog.showModal();
-  };
-
-  // Keep your existing close button listener
-  window.document.getElementById("closeBtn").addEventListener("click", () => {
-    window.dialog.close();
-  });
-
-//popup
- window.dialog = window.document.getElementById("myDialog");
-  
-  // Define the function on the window object so the HTML link can call it
-  window.showTextbox = function() {
-    window.dialog.showModal();
+    inputBox.focus();
   };
 
   // Keep your existing close button listener
@@ -606,23 +619,8 @@ if (hasLintingErrors) {
     description: "This example shows how the process chooses one path or another based on data.",
     data: '{ "input": { "value": 15 } }',
     result: "Goes to the Yes task because the value is greater than 10.",
-    path: "/samples/process1.bpmn"
+    path: "/samples/condition_task.bpmn"
   },
-  service: {
-    title: "Service Task Example",
-   
-description: `
-    This example shows how a service task takes input data and creates a process variable.
-    <br><br>
-    <a href="#" onclick="window.showDelegateCode(event)">
-      View Service Task Delegate Code
-    </a>
-  `,
-  data: '{ "customerId": { "value": "abc" } }',
-  result: "After the run, value of the process variable 'status' becomes 'processed'.",
-  path: "/samples/service_task_example.bpmn"
-},
-
   user: {
     title: "User Task Example",
     description: "This example shows how the process waits for a person to complete a task.",
@@ -767,6 +765,3 @@ function nextStep() {
 window.onload = function () {
   startGuide();   // ✅ ADD THIS LINE
 };
-
-
-

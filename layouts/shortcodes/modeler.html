@@ -19,7 +19,6 @@
       <!-- LEFT NAV -->
       <div class="sample-nav">
         <button class="sample-item active" data-sample="condition">Condition Task</button>
-        <button class="sample-item" data-sample="service">Service Task</button>
         <button class="sample-item" data-sample="user">User Task</button>
         <button class="sample-item" data-sample="script">Script Task</button>
       </div>
@@ -69,45 +68,15 @@
     <dialog id="myDialog" class="modal">
         <div class="box">
             <span id="closeBtn" class="close">&times;</span>
-            <input id="inputBox" placeholder="{&quot;input&quot;: {&quot;value&quot;: 10}}">
-            <button id="submitBtn" onclick="submitPopup();scrollToTab('Tab1')">Submit</button>
-            Enter {} to run without input
+            <label class="input-label" for="inputBox">Process variables (JSON)</label>
+            <textarea id="inputBox" rows="3" aria-describedby="inputError" placeholder="{&quot;input&quot;: {&quot;value&quot;: 10}}"></textarea>
+            <p id="inputError" class="input-error" role="alert"></p>
+            <div class="input-dialog-actions">
+                <span class="input-help">Enter {} to run without input.</span>
+                <button id="submitBtn" class="input-submit-button" type="button" onclick="submitPopup()">Submit</button>
+            </div>
         </div>
     </dialog>
-    <dialog id="delegateCodeDialog">
-  
-    
-    <span id="closeDelegateCodeBtn" class="close">&times;</span>
-
-    <h3>Example Java Delegate</h3>
-
-    <pre
-      id="delegateCodeContent"
-      style="
-        background:#f5f5f5;
-        padding:15px;
-        overflow:auto;
-        max-height:350px;
-        text-align:left;
-      "
-    ></pre>
-
-    <h3>What this code does</h3>
-
-    <div id="delegateCodeExplanation">
-      <ul>
-        <li>Implements the <strong>JavaDelegate</strong> interface.</li>
-        <li>Runs when the Service Task executes.</li>
-        <li>Reads the process variable <strong>customerId</strong>.</li>
-        <li>Logs the customer ID for troubleshooting and monitoring.</li>
-        <li>Sets a new process variable named <strong>status</strong>.</li>
-        <li>Assigns the value <strong>"processed"</strong> to that variable.</li>
-        <li>The BPMN process can use this variable in later tasks or gateways.</li>
-      </ul>
-    </div>
-
-  
-</dialog>
 <div class="app">
  <div id="overlay" style="display:none;"></div>
 
@@ -262,57 +231,6 @@ window.startGuide = function () {
   stepIndex = 0; // reset in case user restarts
   showStep();
 };
-window.showDelegateCode = function(event) {
-  if (event) {
-    event.preventDefault();
-  }
-
-  const code = `package org.finos.fluxnova.delegates;
-
-import org.finos.fluxnova.bpm.engine.delegate.JavaDelegate;
-import org.finos.fluxnova.bpm.engine.delegate.DelegateExecution;
-import org.springframework.stereotype.Component;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-@Component
-public class ExampleDelegate implements JavaDelegate {
-
-    private static final Logger logger =
-        LoggerFactory.getLogger(ExampleDelegate.class);
-
-    @Override
-    public void execute(DelegateExecution execution) throws Exception {
-
-        logger.info("ExampleDelegate execution started.");
-
-        String customerId =
-            (String) execution.getVariable("customerId");
-
-        logger.info(
-            "Processing customer with ID: {}",
-            customerId
-        );
-
-        execution.setVariable(
-            "status",
-            "processed"
-        );
-
-        logger.info("Processing completed successfully.");
-    }
-}`;
-
-  document.getElementById("delegateCodeContent").textContent = code;
-
-  document.getElementById("delegateCodeDialog").showModal();
-};
-document
-  .getElementById("closeDelegateCodeBtn")
-  .addEventListener("click", () => {
-    document.getElementById("delegateCodeDialog").close();
-  });
-
 window.nextStep = function () {
   console.log("Next clicked ✅");
 
@@ -451,14 +369,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Submit from popup
         function submitPopup() {
-    const value = document.getElementById("inputBox").value;
+    const inputBox = document.getElementById("inputBox");
+    const inputError = document.getElementById("inputError");
+    const value = inputBox.value.trim();
 
-    let variables = {};
-    variables = JSON.parse(value);
-    runProcess(variables);
-    
+    if (!value) {
+        inputError.textContent = "Enter {} if no input variables are needed.";
+        inputBox.setAttribute("aria-invalid", "true");
+        inputBox.focus();
+        return;
+    }
+
+    let variables;
+    try {
+        variables = JSON.parse(value);
+    } catch {
+        inputError.textContent = "Enter valid JSON, or {} if no input variables are needed.";
+        inputBox.setAttribute("aria-invalid", "true");
+        inputBox.focus();
+        return;
+    }
+
+    if (!variables || typeof variables !== "object" || Array.isArray(variables)) {
+        inputError.textContent = "Input must be a JSON object, such as {}.";
+        inputBox.setAttribute("aria-invalid", "true");
+        inputBox.focus();
+        return;
+    }
+
+    inputError.textContent = "";
+    inputBox.removeAttribute("aria-invalid");
     document.getElementById("myDialog").close();
+    runProcess(variables);
+    scrollToTab("Tab1");
 }
+
+document.getElementById("inputBox").addEventListener("input", () => {
+    const inputBox = document.getElementById("inputBox");
+    inputBox.removeAttribute("aria-invalid");
+    document.getElementById("inputError").textContent = "";
+});
 </script>
 
             <!--Run button ends-->
