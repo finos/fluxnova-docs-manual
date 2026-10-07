@@ -5,7 +5,7 @@ export default defineConfig({
         minify: true,
         lib: {entry:'./main.js',
             formats: ['es'],
-            fileName: 'my-bundle1'
+            fileName: 'playground-bundle'
         },
         emptyOutDir: true,
         outDir: '../static/js/playground'
