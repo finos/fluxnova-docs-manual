@@ -2,6 +2,8 @@
 
 This folder contains the Vite project for the BPMN Playground used on the **Fluxnova Playground** page in the **Get Started** section.
 
+This project requires Node.js 24 and npm.
+
 Before running the playground, complete the following steps:
 
 1. Navigate to this folder:

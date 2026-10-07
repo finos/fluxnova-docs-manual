@@ -29,7 +29,7 @@ Instead of manually creating project structures, configuring dependencies, setti
 
 Before building the application, ensure the following are installed:
 
-- Node.js 
+- Node.js 24
 - npm
 - Hugo
 
