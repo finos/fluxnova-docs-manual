@@ -7,3 +7,7 @@ public/
 hugo
 thumbnails/
 _gen/
+.env
+bpmn_playground/.env
+/static/js/my-bundle1.js
+/static/js/init-bundle.js

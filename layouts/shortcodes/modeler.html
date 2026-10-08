@@ -1,0 +1,586 @@
+<!-- <div id="root" style="width: 100%; min-height: 100vh; display: block;"></div>
+<div id="" -->
+<!-- <p id="counter">0</p>
+<button onclick="incrementCounter()">Run Script</button>
+<script src="/js/modeler.js"></script> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/modeler.css">
+        <link rel="stylesheet" href="/css/my-bundle.css">
+    </head>
+
+<body>
+
+
+  <div class="shell">
+    <div class="section-rule"></div>
+    <div class="sample-area">
+      <!-- LEFT NAV -->
+      <div class="sample-nav">
+        <button class="sample-item active" data-sample="condition">Condition Task</button>
+        <button class="sample-item" data-sample="service">Service Task</button>
+        <button class="sample-item" data-sample="user">User Task</button>
+        <button class="sample-item" data-sample="script">Script Task</button>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="sample-detail">
+        <h3 id="sampleTitle">Condition Task</h3>
+
+        <p id="sampleDescription">
+          This example shows how the process chooses one path or another based on data.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Example input JSON</h4>
+            <div class="value" id="sampleData">
+              { "input": { "value": 15 } }
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Expected result</h4>
+            <div class="value" id="sampleResult">
+              Goes to the Yes task because the value is greater than 10.
+            </div>
+          </div>
+        </div>
+
+        <div class="sample-actions">
+          <button class="btn primary" id="loadExampleBtn">
+            Load Example
+          </button>
+        </div>
+
+      </div>
+    </div>
+  
+
+</div>
+<div class="how-to-section">
+  <h3>Take a guided tour of Fluxnova by clicking
+  <button class="inline-btn" onclick="startGuide(); scrollToTab('guideBox')">GUIDE ME</button> 
+  to explore its components.</h3>
+</div>
+<div class="breakout">
+    <!--input box for variables-->
+    <dialog id="myDialog" class="modal">
+        <div class="box">
+            <span id="closeBtn" class="close">&times;</span>
+            <input id="inputBox" placeholder="{&quot;input&quot;: {&quot;value&quot;: 10}}">
+            <button id="submitBtn" onclick="submitPopup();scrollToTab('Tab1')">Submit</button>
+            Enter {} to run without input
+        </div>
+    </dialog>
+    <dialog id="delegateCodeDialog">
+  
+    
+    <span id="closeDelegateCodeBtn" class="close">&times;</span>
+
+    <h3>Example Java Delegate</h3>
+
+    <pre
+      id="delegateCodeContent"
+      style="
+        background:#f5f5f5;
+        padding:15px;
+        overflow:auto;
+        max-height:350px;
+        text-align:left;
+      "
+    ></pre>
+
+    <h3>What this code does</h3>
+
+    <div id="delegateCodeExplanation">
+      <ul>
+        <li>Implements the <strong>JavaDelegate</strong> interface.</li>
+        <li>Runs when the Service Task executes.</li>
+        <li>Reads the process variable <strong>customerId</strong>.</li>
+        <li>Logs the customer ID for troubleshooting and monitoring.</li>
+        <li>Sets a new process variable named <strong>status</strong>.</li>
+        <li>Assigns the value <strong>"processed"</strong> to that variable.</li>
+        <li>The BPMN process can use this variable in later tasks or gateways.</li>
+      </ul>
+    </div>
+
+  
+</dialog>
+<div class="app">
+ <div id="overlay" style="display:none;"></div>
+
+<div id="guideBox" style="display:none;">
+  <div id="guideText"></div>
+  <button class="next-btn" onclick="nextStep()">Next</button>
+<button class="skip-btn" onclick="skipGuide()">Skip</button>
+
+  <script>
+
+document.getElementById('loadExampleBtn').addEventListener('click', function() {
+  const canvas = document.getElementById('canvas');
+  
+  // Makes sure the canvas is visible first
+  canvas.style.display = 'block'; 
+  
+  // Scrolls smoothly to the canvas element
+  canvas.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+let stepIndex = 0;
+
+const guideSteps = [
+
+  
+  {
+    element: "#sampleDropdown",
+    text: "Select a sample BPMN workflow to load it onto the canvas"
+  },
+  {
+    element: ".dropbtn",
+    text: "Click here to execute the workflow"
+  },
+  {
+    element: "#cockpitBtn",
+    text: "Open the monitoring dashboard to track workflow execution in real time."
+  },
+{
+    element: ".clear",
+    text: "Clear the canvas to reset the workflow"
+  },
+  {
+    element: "#moreActionsBtn",
+    text: "Click here to open more options, where you can upload a BPMN file or view the workflow XML"
+  },
+  
+  {
+    element: "#canvas",
+    text: "This is the canvas where your BPMN workflow is displayed and designed"
+  },
+  {
+    element: ".djs-palette-entries",
+    text: "Use this palette to drag and drop BPMN elements onto the canvas"
+  },
+  
+
+  
+  {
+    element: ".djs-element",
+    text: "Click on any element in the diagram to select and modify it"
+  },
+{
+    element: ".djs-minimap",
+    text: "Use the minimap to quickly navigate across large diagrams"
+  },
+  
+  {
+    element: "#properties",
+    text: "This panel lets you view and edit properties of the selected element"
+  },
+  
+  {
+    element: "#defaultOpen",
+    text: "This is the Output tab where execution results are displayed"
+  },
+  {
+    element: "button[onclick*='Tab2']",
+    text: "Switch to the Problems tab to view errors or issues in the workflow"
+  },
+
+  
+
+  
+  
+];
+
+  
+
+
+function startGuide() {
+
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("guideBox").style.display = "block";
+
+  showStep();
+}
+
+function showStep() {
+  const step = guideSteps[stepIndex];
+  const el = document.querySelector(step.element);
+
+  if (!el) {
+    console.error("Element not found:", step.element);
+    return;
+  }
+if (el.matches(".djs-element")) {
+  const palette = document.querySelector(".djs-palette-entries");
+
+  if (palette) {
+    palette.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+} else {
+  el.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+  document.querySelectorAll(".highlight")
+    .forEach(e => e.classList.remove("highlight"));
+
+  el.classList.add("highlight");
+
+  const rect = el.getBoundingClientRect();
+  const appRect = document.querySelector(".app").getBoundingClientRect();
+
+  const box = document.getElementById("guideBox");
+
+  
+if (el.matches(".djs-element")) {
+  box.style.top = "215px";
+  box.style.left = "179px";
+} else {
+  box.style.top = (rect.bottom - appRect.top + 10) + "px";
+  box.style.left = (rect.left - appRect.left) + "px";
+}
+
+
+
+  document.getElementById("guideText").innerText = step.text;
+  
+}
+
+window.startGuide = function () {
+
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("guideBox").style.display = "block";
+
+  stepIndex = 0; // reset in case user restarts
+  showStep();
+};
+window.showDelegateCode = function(event) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  const code = `package org.finos.fluxnova.delegates;
+
+import org.finos.fluxnova.bpm.engine.delegate.JavaDelegate;
+import org.finos.fluxnova.bpm.engine.delegate.DelegateExecution;
+import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Component
+public class ExampleDelegate implements JavaDelegate {
+
+    private static final Logger logger =
+        LoggerFactory.getLogger(ExampleDelegate.class);
+
+    @Override
+    public void execute(DelegateExecution execution) throws Exception {
+
+        logger.info("ExampleDelegate execution started.");
+
+        String customerId =
+            (String) execution.getVariable("customerId");
+
+        logger.info(
+            "Processing customer with ID: {}",
+            customerId
+        );
+
+        execution.setVariable(
+            "status",
+            "processed"
+        );
+
+        logger.info("Processing completed successfully.");
+    }
+}`;
+
+  document.getElementById("delegateCodeContent").textContent = code;
+
+  document.getElementById("delegateCodeDialog").showModal();
+};
+document
+  .getElementById("closeDelegateCodeBtn")
+  .addEventListener("click", () => {
+    document.getElementById("delegateCodeDialog").close();
+  });
+
+window.nextStep = function () {
+  console.log("Next clicked ✅");
+
+  stepIndex++;
+
+  if (stepIndex >= guideSteps.length) {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("guideBox").style.display = "none";
+
+    document.querySelectorAll(".highlight")
+      .forEach(e => e.classList.remove("highlight"));
+
+    return;
+  }
+
+  showStep();
+};
+window.skipGuide = function () {
+
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("guideBox").style.display = "none";
+
+  document.querySelectorAll(".highlight")
+    .forEach(e => e.classList.remove("highlight"));
+
+  stepIndex = 0;
+};
+window.addEventListener("load", () => {
+  setTimeout(startGuide, 500);
+});
+</script>
+</div>
+    
+    
+     
+        <div class="toolbar">
+            <select id="sampleDropdown"></select>
+            <!--Run button starts-->
+            <!-- <div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn">Run<img class="upload-img" src="/img/run.svg"></button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#" onclick="runProcess()">Without variables</a>
+        <a href="#" onclick="showTextbox()">With variables</a>
+         
+    </div>
+</div> -->
+
+<button onclick="showTextbox()" class="dropbtn">Run Process<img class="upload-img" src="/img/run.svg"></button>
+<!--Run button ends -->
+<button id="cockpitBtn" onclick="window.open('https://demo.fluxnova.finos.org/default', '_blank');">Fluxnova Monitoring<img class="upload-img" src="/img/external-link.svg"></button>
+
+<button class="clear" onclick="clearDiagram()">Clear Canvas <img class="upload-img" src="/img/clear.svg"></button>
+<!--More actions dropdown starts-->
+<div class="more-actions">
+  <button class="more-btn" id="moreActionsBtn">More actions ▾</button>
+
+  <div class="actionsDropdown" id="actionsMenu">
+    
+
+    <button class="uploadbpmn" onclick="uploadBpmn()">
+      Upload BPMN<img class="upload-img" src="/img/upload.svg">
+    </button>
+
+    <button class="viewxml" onclick="viewXml()">
+      View XML<img class="upload-img" src="/img/xml.svg">
+    </button>
+  </div>
+</div>
+<!--More actions dropdown ends-->
+
+<script>
+    
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const moreActionsBtn = document.getElementById("moreActionsBtn");
+  const actionsMenu = document.getElementById("actionsMenu");
+
+  function toggleActionsMenu() {
+    actionsMenu.classList.toggle("show");
+  }
+
+  moreActionsBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // prevent close conflict
+    toggleActionsMenu();
+  });
+
+  // Close when clicking outside
+  window.addEventListener("click", function (event) {
+    if (!event.target.closest(".more-actions")) {
+      actionsMenu.classList.remove("show");
+    }
+  });
+
+});
+
+    // moreActionsBtn.addEventListener("click", toggleActionsMenu);
+    // Toggle dropdown visibility
+    function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    
+
+
+        // Called when the user clicks Submit
+        function sendToFunction() {
+            const value = document.getElementById("inputBox").value;
+            runProcess(value);
+        }
+
+    // Show popup
+        function openPopup() {
+            document.getElementById("popupOverlay").style.display = "flex";
+            document.getElementById("popupInput").value = ""; // Clear previous input
+            document.getElementById("popupInput").focus();
+        }
+
+        // Close popup
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+
+        // Submit from popup
+        function submitPopup() {
+    const value = document.getElementById("inputBox").value;
+
+    let variables = {};
+    variables = JSON.parse(value);
+    runProcess(variables);
+    
+    document.getElementById("myDialog").close();
+}
+</script>
+
+            <!--Run button ends-->
+
+            
+            
+        </div>
+        
+    
+    <div class="workspace">
+        <div id="canvas"></div>
+        <div id="properties"></div>
+    </div>
+
+    <input
+  type="file" 
+  id="fileInput"
+  accept=".bpmn,.xml"
+  style="display:none"
+  onchange="handleFileUpload(event)"
+/>
+</div>
+
+    
+<!--div below app for output and problems-->
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">Output</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab2')">Problems</button>
+</div>
+
+<!-- Tab content -->
+<div id="Tab1" class="tabcontent green-message">
+  <p class="green-message">Load a sample or design your own process.
+    Then click the Run button.
+  </p> 
+</div>
+
+<div id="Tab2" class="tabcontent">
+  <div class="no-issues">No problems detected!</div>
+</div>
+
+
+<script>
+function openTab(evt, tabName) {
+    // Hide all tab contents
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove 'active' class from all buttons
+    const tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the selected tab and mark the button as active
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Open the default tab on page load
+document.getElementById("defaultOpen").click();
+</script>
+<!--the problems and output tab ends here-->
+</div>
+<div id="xmlModal" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding-left: 300px;
+">
+  <div style="
+    width:80%;
+    height:80%;
+    background:white;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+  ">
+
+    <!-- Header -->
+    <div style="padding:12px; border-bottom:1px solid #ddd; font-weight:bold;">
+      BPMN XML
+    </div>
+
+    <!-- Content -->
+    <textarea id="xmlContent" style="
+      flex:1;
+      border:none;
+      padding:12px;
+      font-family:monospace;
+      font-size:12px;
+      resize:none;
+      outline:none;
+    "></textarea>
+
+    <!-- Footer -->
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      padding:12px;
+      border-top:1px solid #ddd;
+    ">
+      <div>
+        <button onclick="copyXml()">Copy</button>
+        <button onclick="downloadXml()">Download</button>
+      </div>
+      <button onclick="closeXmlModal()">Close</button>
+    </div>
+
+  </div>
+</div>
+
+<script src = "/js/my-bundle1.js"></script>
+
+</body>

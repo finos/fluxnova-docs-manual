@@ -1,0 +1,22 @@
+{
+    "name": "playground",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@bpmn-io/properties-panel": "^3.25.0",
+        "bpmn-js": "^17.11.1",
+        "bpmn-js-bpmnlint": "^0.24.0",
+        "bpmn-js-properties-panel": "^5.22.0",
+        "bpmnlint": "^11.12.1",
+        "bpmnlint-plugin-camunda-compat": "^2.52.0",
+        "camunda-bpmn-js": "^5.28.0"
+    },
+    "devDependencies": {
+        "bpmnlint-pack-config": "^0.9.0",
+        "bpmnlint-plugin-camunda": "^0.6.1",
+        "vite": "latest"
+    }
+}

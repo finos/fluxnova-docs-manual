@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: {{projectName}}
+  datasource:
+    {{#isH2}}
+    url: jdbc:h2:mem:fluxnova;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+    {{/isH2}}
+    {{#isMysql}}
+    url: jdbc:mysql://localhost:3306/{{artifactId}}?useTimezone=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    {{/isMysql}}
+    {{#isPostgresql}}
+    url: jdbc:postgresql://localhost:5432/{{artifactId}}
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: password
+    {{/isPostgresql}}
+  {{#isH2}}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  {{/isH2}}
+  
+
+server:
+  port: 8080
+
+fluxnova:
+  bpm:
+    admin-user:
+      id: {{adminUser}}
+      password: {{adminPassword}}
+      firstName: Admin
+    {{#features.cockpit}}
+    webapp:
+      index-redirect-enabled: true
+     {{/features.cockpit}}
+    auto-deployment-enabled: true
+
+logging:
+  level:
+    org.finos.fluxnova.bpm: INFO

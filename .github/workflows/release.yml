@@ -3,12 +3,12 @@ name: Release and Publish Documentation
 concurrency:
   group: release
   cancel-in-progress: true
-  
+
 permissions:
   contents: write
   pages: write
   id-token: write
-  
+
 on:
   workflow_dispatch:
   push:
@@ -32,6 +32,25 @@ jobs:
           hugo-version: '0.163.3'
           extended: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Fluxnova Playground Assets
+        run: |
+          cd fluxnova-playground
+          npm install
+          npm run build
+          cd ..
+
+      - name: Build Fluxnova Initializer Assets
+        run: |
+          cd fluxnova-initializer
+          npm install
+          npm run build
+          cd .. 
+
       - name: Extract version from config.yaml and compute next development version
         id: set-vars
         run: |
@@ -47,7 +66,7 @@ jobs:
           # Set tag name
           TAG="v${releaseVersion}"
           echo "TAG=$TAG" >> $GITHUB_ENV
-         
+
       - name: Build website
         # We override baseURL so Hugo generates correct internal links for the subfolder
         run: |
@@ -59,7 +78,7 @@ jobs:
           ref: gh-pages
           path: gh-pages-clone
           token: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Generate versions.json and "latest" redirect
         id: generate_manifest
         run: |
@@ -117,7 +136,7 @@ jobs:
             docs: publish website for ${{ env.RELEASE_VERSION }}
             
             - Update versions.json manifest
-            
+
       - name: Workflow Summary
         run: |
           echo "## Release Summary" >> $GITHUB_STEP_SUMMARY

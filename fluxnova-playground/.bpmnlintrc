@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "bpmnlint:recommended",
+    "plugin:camunda-compat/camunda-platform-7-24",
+    "plugin:camunda/recommended"
+
+  ],
+  "rules": {
+    "label-required": "warn",
+    "camunda/implementation": "error",
+    "camunda/avoid-lanes":"error",
+    "camunda/forking-conditions":"error",
+    "no-implicit-end": "off",
+    "camunda-compat/inclusive-gateway": "error",
+    "camunda-compat/message-reference": "error",
+    "camunda-compat/collapsed-subprocess": "error",
+    "camunda-compat/error-reference": "error",
+    "camunda-compat/escalation-boundary-event-attached-to-ref": "error",
+    "camunda-compat/escalation-reference": "error",
+    "camunda-compat/executable-process": "error",
+    "camunda-compat/link-event": "error",
+    "camunda-compat/no-expression": "error",
+    "camunda-compat/no-interrupting-event-subprocess": "error",
+    "camunda-compat/no-multiple-none-start-events": "error",
+    "camunda-compat/no-signal-event-sub-process": "error",
+    "camunda-compat/sequence-flow-condition": "error",
+    "camunda-compat/signal-reference": "error",
+    "camunda-compat/wait-for-completion": "error",
+    "camunda-compat/history-time-to-live": [
+      "error",
+      { "version": "7.24" }
+    ],
+    "camunda-compat/timer": [
+      "error",
+      { "version": "7.24" }
+    ]
+  }
+}

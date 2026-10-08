@@ -1,0 +1,14 @@
+package {{packageName}};
+
+import org.finos.fluxnova.bpm.spring.boot.starter.annotation.EnableProcessApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnableProcessApplication
+public class {{mainClassName}} {
+
+    public static void main(String[] args) {
+        SpringApplication.run({{mainClassName}}.class, args);
+    }
+}

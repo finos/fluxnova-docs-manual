@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluxnova Initializer</title>
+</head>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.pg-frame-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NEW: This handles the horizontal layout for the buttons */
+.header-row {
+  display: flex;
+  flex-direction: row;
+   justify-content: flexs; 
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Your original button CSS remains intact */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #dbeafe;
+  background: #00ce97ad;
+  border-radius: 8px;
+  transition: all .2s ease;
+}
+
+/* Simple hover effect to make sure CSS is working */
+.back-link:hover {
+  background: #dbeafe;
+}
+
+.pg-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+</style>
+
+<body>
+<div class="pg-frame-wrapper">
+  
+  <div class="header-row">
+    <a class="back-link" href="{{ .Site.BaseURL }}get-started/spring-boot/">← Go to Spring Boot Docs</a>
+    <a class="back-link" href="{{ .Site.BaseURL }}get-started/interactive-playground/">← Go to Fluxnova Playground</a>
+  </div>
+
+  <iframe
+    id="playground-iframe"
+    src="{{ .Site.BaseURL }}initializer/index.html"
+    title="Fluxnova Initializer"
+    allow="clipboard-write; clipboard-read"
+    loading="eager"
+    width="100%"
+    height="800"
+    style="border:none;">
+  </iframe>
+
+</div>
+</body>

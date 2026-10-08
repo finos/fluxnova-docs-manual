@@ -285,8 +285,6 @@ client.subscribe('charge-card', async function({ task, taskService }) {
   const amount = task.variables.get('amount');
   const item = task.variables.get('item');
 
-  console.log(`Charging credit card with an amount of ${amount}€ for the item '${item}'...`);
-
   open('https://docs.fluxnova.finos.org/get-started/quick-start/success');
 
   // Complete the task

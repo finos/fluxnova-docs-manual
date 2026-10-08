@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0" xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn" id="Definitions_18e5s96" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Fluxnova Modeler" exporterVersion="1.2.0" modeler:executionPlatform="Fluxnova Platform" modeler:executionPlatformVersion="2.0.0">
+  <bpmn:process id="Process_0f3erok" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0dfnzjh</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_187svb8" name="Approval Task" camunda:assignee="john" camunda:candidateUsers="finance" camunda:candidateGroups="${manager}" camunda:dueDate="P2D" camunda:priority="50">
+      <bpmn:documentation>This task is used for approving the request.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="approved" label="Approve Request" type="enum">
+            <camunda:value id="true" name="Approved" />
+            <camunda:value id="false" name="Rejected" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dfnzjh</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fkpsbv</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0dfnzjh" sourceRef="StartEvent_1" targetRef="Activity_187svb8" />
+    <bpmn:exclusiveGateway id="Gateway_19kvtou">
+      <bpmn:incoming>Flow_1fkpsbv</bpmn:incoming>
+      <bpmn:outgoing>Flow_05jis0d</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0m6fb60</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1fkpsbv" sourceRef="Activity_187svb8" targetRef="Gateway_19kvtou" />
+    <bpmn:task id="Activity_0jmuyqr" name="Approved">
+      <bpmn:incoming>Flow_05jis0d</bpmn:incoming>
+      <bpmn:outgoing>Flow_10t01tg</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_05jis0d" name="Approved" sourceRef="Gateway_19kvtou" targetRef="Activity_0jmuyqr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approved == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:task id="Activity_02b4zrx" name="Rejected">
+      <bpmn:incoming>Flow_0m6fb60</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kgd5v9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0m6fb60" name="Rejected" sourceRef="Gateway_19kvtou" targetRef="Activity_02b4zrx">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approved == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="Event_1ocomw1">
+      <bpmn:incoming>Flow_10t01tg</bpmn:incoming>
+      <bpmn:incoming>Flow_0kgd5v9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_10t01tg" sourceRef="Activity_0jmuyqr" targetRef="Event_1ocomw1" />
+    <bpmn:sequenceFlow id="Flow_0kgd5v9" sourceRef="Activity_02b4zrx" targetRef="Event_1ocomw1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0f3erok">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="132" y="212" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_187svb8_di" bpmnElement="Activity_187svb8">
+        <dc:Bounds x="250" y="190" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_19kvtou_di" bpmnElement="Gateway_19kvtou" isMarkerVisible="true">
+        <dc:Bounds x="405" y="205" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jmuyqr_di" bpmnElement="Activity_0jmuyqr">
+        <dc:Bounds x="510" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02b4zrx_di" bpmnElement="Activity_02b4zrx">
+        <dc:Bounds x="520" y="260" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ocomw1_di" bpmnElement="Event_1ocomw1">
+        <dc:Bounds x="712" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0dfnzjh_di" bpmnElement="Flow_0dfnzjh">
+        <di:waypoint x="168" y="230" />
+        <di:waypoint x="250" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fkpsbv_di" bpmnElement="Flow_1fkpsbv">
+        <di:waypoint x="350" y="230" />
+        <di:waypoint x="405" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_05jis0d_di" bpmnElement="Flow_05jis0d">
+        <di:waypoint x="430" y="205" />
+        <di:waypoint x="430" y="120" />
+        <di:waypoint x="510" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="446" y="103" width="47" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0m6fb60_di" bpmnElement="Flow_0m6fb60">
+        <di:waypoint x="430" y="255" />
+        <di:waypoint x="430" y="300" />
+        <di:waypoint x="520" y="300" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="453" y="283" width="44" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10t01tg_di" bpmnElement="Flow_10t01tg">
+        <di:waypoint x="610" y="120" />
+        <di:waypoint x="730" y="120" />
+        <di:waypoint x="730" y="182" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kgd5v9_di" bpmnElement="Flow_0kgd5v9">
+        <di:waypoint x="620" y="300" />
+        <di:waypoint x="730" y="300" />
+        <di:waypoint x="730" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

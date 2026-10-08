@@ -1,0 +1,176 @@
+
+
+/* 2. Your Body Styles (Merged) */
+body {
+  /* Your existing layout rules */
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+}
+
+#heading {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    color: #0075FF;
+}
+
+#heading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.error {
+    display: none; /* Keeps errors completely hidden until JavaScript runs */
+    color: #dc3545; /* Makes the error text a clean, standard alert red */
+    font-size: 13px;
+    margin-top: 4px;
+}
+fieldset {
+    border: 1px solid #000000;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px; /* Creates spacing below the whole box */
+}
+.container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    gap: 24px;
+}
+
+#submitBtn {
+    background: linear-gradient(135deg, #00ce97, #00e0a5);
+    color: #000;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 28px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 206, 151, 0.25);
+}
+
+#submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 206, 151, 0.35);
+}
+
+#submitBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation: shine 3.5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    30% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+form {
+    flex: 6.3;
+    
+}
+legend {
+    background-color: #0075FF;
+    color: white;
+    padding: 6px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 4px rgba(0, 117, 255, 0.3);
+    }
+    to {
+        box-shadow: 0 0 12px rgba(0, 117, 255, 0.6);
+    }
+}
+
+
+
+.preview-section {
+    flex: 3.7;
+    background: #010000;
+    color:#00ce97;
+    border-radius: 8px;
+    padding: 20px;
+    
+    /* Glow effect */
+    text-shadow:
+       
+        0 0 15px #00ce97,
+        0 0 20px #00ce97;
+
+}
+.folder-tree {
+    font-family: Consolas, Monaco, monospace;
+    font-size: small;
+    line-height: 1.5;
+}
+

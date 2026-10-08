@@ -32,6 +32,7 @@ While editing the docs, you probably want to start the Hugo server (defaults to 
 ```bash
 hugo server --baseURL="http://localhost"
 ```
+To use the **Fluxnova Playground** page in the **Get Started** section, follow the few additional steps on [BPMN Playground README](fluxnova-playground/README.md)
 
 You can then browse the docs under [http://localhost:1313/](http://localhost:1313/).
 Hugo will automatically detect when you change a file and refresh the page in the browser.
