@@ -12,14 +12,12 @@
       {{ .Content }}
     </div>
   </div>
-</diclassv>
+</div>
 
 <div class="page-toc">
   <h3>On this Page:</h3>
   {{ .TableOfContents }}
-  {{ if not (and (eq .Section "get-started") (eq .File.ContentBaseName "interactive-playground")) }}
-    {{ partial "banner.html" }}
-  {{ end }}
+  {{partial "banner.html"}}
 </div>
 
 

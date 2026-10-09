@@ -449,7 +449,7 @@ overflow: hidden;
     display: inline-block;
     width: 28px;
     height: 28px;
-    background: url("/img/map.svg") no-repeat center;
+    background: url("../img/map.svg") no-repeat center;
     background-size: contain;
 }
  
@@ -459,7 +459,7 @@ overflow: hidden;
     display: inline-block;
     width: 22px;
     height: 22px;
-    background: url("/img/close.svg") no-repeat center;
+    background: url("../img/close.svg") no-repeat center;
     background-size: contain;
 }
 
@@ -676,4 +676,16 @@ gap: 8px;             /* ✅ move gap here */
   border-radius: 8px;
   width: 300px;
   text-align: center;
+}
+
+.breakout {
+  position: relative;
+  width: min(100%, 1320px);
+  max-width: 1320px;
+  margin: 30px auto 0;
+  z-index: 10;
+}
+
+.page-toc .docs-banner {
+  display: none !important;
 }

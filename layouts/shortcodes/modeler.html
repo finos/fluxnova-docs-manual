@@ -1,19 +1,7 @@
-<!-- <div id="root" style="width: 100%; min-height: 100vh; display: block;"></div>
-<div id="" -->
-<!-- <p id="counter">0</p>
-<button onclick="incrementCounter()">Run Script</button>
-<script src="/js/modeler.js"></script> -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="/css/modeler.css">
-        <link rel="stylesheet" href="/css/my-bundle.css">
-    </head>
+<link rel="stylesheet" href="{{ "playground/css/modeler.css" | relURL }}">
+<link rel="stylesheet" href="{{ "playground/js/playground-bundle.css" | relURL }}">
 
-<body>
-
-
-  <div class="shell">
+<div class="shell">
     <div class="section-rule"></div>
     <div class="sample-area">
       <!-- LEFT NAV -->
@@ -63,7 +51,7 @@
   <button class="inline-btn" onclick="startGuide(); scrollToTab('guideBox')">GUIDE ME</button> 
   to explore its components.</h3>
 </div>
-<div class="breakout">
+<div class="breakout" id="playground" data-asset-base="{{ "playground/" | relURL }}">
     <!--input box for variables-->
     <dialog id="myDialog" class="modal">
         <div class="box">
@@ -85,204 +73,17 @@
   <button class="next-btn" onclick="nextStep()">Next</button>
 <button class="skip-btn" onclick="skipGuide()">Skip</button>
 
-  <script>
-
-document.getElementById('loadExampleBtn').addEventListener('click', function() {
-  const canvas = document.getElementById('canvas');
-  
-  // Makes sure the canvas is visible first
-  canvas.style.display = 'block'; 
-  
-  // Scrolls smoothly to the canvas element
-  canvas.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-let stepIndex = 0;
-
-const guideSteps = [
-
-  
-  {
-    element: "#sampleDropdown",
-    text: "Select a sample BPMN workflow to load it onto the canvas"
-  },
-  {
-    element: ".dropbtn",
-    text: "Click here to execute the workflow"
-  },
-  {
-    element: "#cockpitBtn",
-    text: "Open the monitoring dashboard to track workflow execution in real time."
-  },
-{
-    element: ".clear",
-    text: "Clear the canvas to reset the workflow"
-  },
-  {
-    element: "#moreActionsBtn",
-    text: "Click here to open more options, where you can upload a BPMN file or view the workflow XML"
-  },
-  
-  {
-    element: "#canvas",
-    text: "This is the canvas where your BPMN workflow is displayed and designed"
-  },
-  {
-    element: ".djs-palette-entries",
-    text: "Use this palette to drag and drop BPMN elements onto the canvas"
-  },
-  
-
-  
-  {
-    element: ".djs-element",
-    text: "Click on any element in the diagram to select and modify it"
-  },
-{
-    element: ".djs-minimap",
-    text: "Use the minimap to quickly navigate across large diagrams"
-  },
-  
-  {
-    element: "#properties",
-    text: "This panel lets you view and edit properties of the selected element"
-  },
-  
-  {
-    element: "#defaultOpen",
-    text: "This is the Output tab where execution results are displayed"
-  },
-  {
-    element: "button[onclick*='Tab2']",
-    text: "Switch to the Problems tab to view errors or issues in the workflow"
-  },
-
-  
-
-  
-  
-];
-
-  
-
-
-function startGuide() {
-
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("guideBox").style.display = "block";
-
-  showStep();
-}
-
-function showStep() {
-  const step = guideSteps[stepIndex];
-  const el = document.querySelector(step.element);
-
-  if (!el) {
-    console.error("Element not found:", step.element);
-    return;
-  }
-if (el.matches(".djs-element")) {
-  const palette = document.querySelector(".djs-palette-entries");
-
-  if (palette) {
-    palette.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
-} else {
-  el.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-}
-  document.querySelectorAll(".highlight")
-    .forEach(e => e.classList.remove("highlight"));
-
-  el.classList.add("highlight");
-
-  const rect = el.getBoundingClientRect();
-  const appRect = document.querySelector(".app").getBoundingClientRect();
-
-  const box = document.getElementById("guideBox");
-
-  
-if (el.matches(".djs-element")) {
-  box.style.top = "215px";
-  box.style.left = "179px";
-} else {
-  box.style.top = (rect.bottom - appRect.top + 10) + "px";
-  box.style.left = (rect.left - appRect.left) + "px";
-}
-
-
-
-  document.getElementById("guideText").innerText = step.text;
-  
-}
-
-window.startGuide = function () {
-
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("guideBox").style.display = "block";
-
-  stepIndex = 0; // reset in case user restarts
-  showStep();
-};
-window.nextStep = function () {
-  console.log("Next clicked ✅");
-
-  stepIndex++;
-
-  if (stepIndex >= guideSteps.length) {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("guideBox").style.display = "none";
-
-    document.querySelectorAll(".highlight")
-      .forEach(e => e.classList.remove("highlight"));
-
-    return;
-  }
-
-  showStep();
-};
-window.skipGuide = function () {
-
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("guideBox").style.display = "none";
-
-  document.querySelectorAll(".highlight")
-    .forEach(e => e.classList.remove("highlight"));
-
-  stepIndex = 0;
-};
-window.addEventListener("load", () => {
-  setTimeout(startGuide, 500);
-});
-</script>
 </div>
     
     
      
         <div class="toolbar">
             <select id="sampleDropdown"></select>
-            <!--Run button starts-->
-            <!-- <div class="dropdown">
-    <button onclick="toggleDropdown()" class="dropbtn">Run<img class="upload-img" src="/img/run.svg"></button>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="#" onclick="runProcess()">Without variables</a>
-        <a href="#" onclick="showTextbox()">With variables</a>
-         
-    </div>
-</div> -->
-
-<button onclick="showTextbox()" class="dropbtn">Run Process<img class="upload-img" src="/img/run.svg"></button>
+<button onclick="showTextbox()" class="dropbtn">Run Process<img class="upload-img" src="{{ "playground/img/run.svg" | relURL }}"></button>
 <!--Run button ends -->
-<button id="cockpitBtn" onclick="window.open('https://demo.fluxnova.finos.org/default', '_blank');">Fluxnova Monitoring<img class="upload-img" src="/img/external-link.svg"></button>
+<button id="cockpitBtn" onclick="window.open('https://demo.fluxnova.finos.org/default', '_blank');">Fluxnova Monitoring<img class="upload-img" src="{{ "playground/img/external-link.svg" | relURL }}"></button>
 
-<button class="clear" onclick="clearDiagram()">Clear Canvas <img class="upload-img" src="/img/clear.svg"></button>
+<button class="clear" onclick="clearDiagram()">Clear Canvas <img class="upload-img" src="{{ "playground/img/clear.svg" | relURL }}"></button>
 <!--More actions dropdown starts-->
 <div class="more-actions">
   <button class="more-btn" id="moreActionsBtn">More actions ▾</button>
@@ -291,130 +92,16 @@ window.addEventListener("load", () => {
     
 
     <button class="uploadbpmn" onclick="uploadBpmn()">
-      Upload BPMN<img class="upload-img" src="/img/upload.svg">
+      Upload BPMN<img class="upload-img" src="{{ "playground/img/upload.svg" | relURL }}">
     </button>
 
     <button class="viewxml" onclick="viewXml()">
-      View XML<img class="upload-img" src="/img/xml.svg">
+      View XML<img class="upload-img" src="{{ "playground/img/xml.svg" | relURL }}">
     </button>
   </div>
 </div>
 <!--More actions dropdown ends-->
 
-<script>
-    
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const moreActionsBtn = document.getElementById("moreActionsBtn");
-  const actionsMenu = document.getElementById("actionsMenu");
-
-  function toggleActionsMenu() {
-    actionsMenu.classList.toggle("show");
-  }
-
-  moreActionsBtn.addEventListener("click", function (event) {
-    event.stopPropagation(); // prevent close conflict
-    toggleActionsMenu();
-  });
-
-  // Close when clicking outside
-  window.addEventListener("click", function (event) {
-    if (!event.target.closest(".more-actions")) {
-      actionsMenu.classList.remove("show");
-    }
-  });
-
-});
-
-    // moreActionsBtn.addEventListener("click", toggleActionsMenu);
-    // Toggle dropdown visibility
-    function toggleDropdown() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close dropdown if clicked outside
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            let dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-
-    
-
-
-        // Called when the user clicks Submit
-        function sendToFunction() {
-            const value = document.getElementById("inputBox").value;
-            runProcess(value);
-        }
-
-    // Show popup
-        function openPopup() {
-            document.getElementById("popupOverlay").style.display = "flex";
-            document.getElementById("popupInput").value = ""; // Clear previous input
-            document.getElementById("popupInput").focus();
-        }
-
-        // Close popup
-        function closePopup() {
-            document.getElementById("popupOverlay").style.display = "none";
-        }
-
-        // Submit from popup
-        function submitPopup() {
-    const inputBox = document.getElementById("inputBox");
-    const inputError = document.getElementById("inputError");
-    const value = inputBox.value.trim();
-
-    if (!value) {
-        inputError.textContent = "Enter {} if no input variables are needed.";
-        inputBox.setAttribute("aria-invalid", "true");
-        inputBox.focus();
-        return;
-    }
-
-    let variables;
-    try {
-        variables = JSON.parse(value);
-    } catch {
-        inputError.textContent = "Enter valid JSON, or {} if no input variables are needed.";
-        inputBox.setAttribute("aria-invalid", "true");
-        inputBox.focus();
-        return;
-    }
-
-    if (!variables || typeof variables !== "object" || Array.isArray(variables)) {
-        inputError.textContent = "Input must be a JSON object, such as {}.";
-        inputBox.setAttribute("aria-invalid", "true");
-        inputBox.focus();
-        return;
-    }
-
-    inputError.textContent = "";
-    inputBox.removeAttribute("aria-invalid");
-    document.getElementById("myDialog").close();
-    runProcess(variables);
-    scrollToTab("Tab1");
-}
-
-document.getElementById("inputBox").addEventListener("input", () => {
-    const inputBox = document.getElementById("inputBox");
-    inputBox.removeAttribute("aria-invalid");
-    document.getElementById("inputError").textContent = "";
-});
-</script>
-
-            <!--Run button ends-->
-
-            
-            
         </div>
         
     
@@ -452,28 +139,6 @@ document.getElementById("inputBox").addEventListener("input", () => {
 </div>
 
 
-<script>
-function openTab(evt, tabName) {
-    // Hide all tab contents
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Remove 'active' class from all buttons
-    const tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the selected tab and mark the button as active
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-// Open the default tab on page load
-document.getElementById("defaultOpen").click();
-</script>
 <!--the problems and output tab ends here-->
 </div>
 <div id="xmlModal" style="
@@ -531,6 +196,4 @@ document.getElementById("defaultOpen").click();
   </div>
 </div>
 
-<script type="module" src="/js/playground/playground-bundle.js"></script>
-
-</body>
+<script type="module" src="{{ "playground/js/playground-bundle.js" | relURL }}"></script>

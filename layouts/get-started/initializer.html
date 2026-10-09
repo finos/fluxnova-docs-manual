@@ -31,7 +31,7 @@ body {
 .header-row {
   display: flex;
   flex-direction: row;
-   justify-content: flexs; 
+   justify-content: flex-start;
   padding: 10px;
   gap: 10px;
 }
@@ -68,13 +68,13 @@ body {
 <div class="pg-frame-wrapper">
   
   <div class="header-row">
-    <a class="back-link" href="{{ .Site.BaseURL }}get-started/spring-boot/">← Go to Spring Boot Docs</a>
-    <a class="back-link" href="{{ .Site.BaseURL }}get-started/interactive-playground/">← Go to Fluxnova Playground</a>
+    <a class="back-link" href="{{ "get-started/spring-boot/" | relURL }}">← Go to Spring Boot Docs</a>
+    <a class="back-link" href="{{ "get-started/interactive-playground/" | relURL }}">← Go to Fluxnova Playground</a>
   </div>
 
   <iframe
     id="playground-iframe"
-    src="{{ .Site.BaseURL }}initializer/index.html"
+    src="{{ "initializer/index.html" | relURL }}"
     title="Fluxnova Initializer"
     allow="clipboard-write; clipboard-read"
     loading="eager"

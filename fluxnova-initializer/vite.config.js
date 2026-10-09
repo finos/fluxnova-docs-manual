@@ -8,7 +8,7 @@ export default defineConfig({
             fileName: 'init-bundle'
         },
         emptyOutDir: true,
-        outDir: '../static/js/initializer'
+        outDir: '../static/initializer/js'
         
     }
 });

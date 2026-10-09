@@ -9,7 +9,7 @@ Before running the playground, complete the following steps:
 1. Navigate to this folder:
 
    ```bash
-   cd bpmn-playground
+   cd fluxnova-playground
    ```
 
 2. Install the project dependencies:

@@ -8,6 +8,8 @@ hugo
 thumbnails/
 _gen/
 .env
-bpmn_playground/.env
+fluxnova-playground/.env
+/static/playground/js/
+/static/initializer/js/
 /static/js/playground/
 /static/js/initializer/

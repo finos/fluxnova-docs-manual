@@ -16,8 +16,6 @@ import leaveBpmn from './templates/bpmn/leave-approval.bpmn.mustache?raw';
 import invoiceBpmn from './templates/bpmn/invoice-approval.bpmn.mustache?raw';
 import onboardingBpmn from './templates/bpmn/employee-onboarding.bpmn.mustache?raw';
 
-console.log('[INIT] Project Initializer Script Loaded');
-
 const BPMN_TEMPLATES = {
     'generic': genericBpmn,
     'leave-approval': leaveBpmn,
@@ -25,8 +23,6 @@ const BPMN_TEMPLATES = {
     'employee-onboarding': onboardingBpmn
 };
 const previewSection = document.getElementById('previewSection');
-
-console.log('[INIT] BPMN Templates Registered:', Object.keys(BPMN_TEMPLATES));
 
 // DOM Node Selectors
 const form = document.getElementById('initializerForm');
@@ -37,14 +33,10 @@ const javaPackageInput = document.getElementById('javaPackage');
 const submitBtn = document.getElementById('submitBtn');
 const globalError = document.getElementById('globalError');
 
-console.log('[INIT] DOM Elements Resolved');
-
 /**
  * Recalculates and displays the derived Java package name
  */
 function updateDerivedFields() {
-    console.log('[PACKAGE] Recalculating derived fields...');
-
     const groupId = groupIdInput.value;
     const artifactId = artifactIdInput.value;
 
@@ -53,45 +45,11 @@ function updateDerivedFields() {
 
     javaPackageInput.value = packageName;
 
-    console.log('[PACKAGE] Updated:', {
-        groupId,
-        artifactId,
-        cleanArtifactPart,
-        packageName
-    });
 }
 
 // Event Listeners
 
-projectNameInput.addEventListener('input', (e) => {
-    console.log('[INPUT] Project Name Changed:', e.target.value);
-
-    const artifactSlug = e.target.value
-        .toLowerCase()
-        .replace(/\s+/g, '-');
-
-    artifactIdInput.value = artifactSlug;
-
-    console.log('[INPUT] Auto-generated ArtifactId:', artifactSlug);
-
-    updateDerivedFields();
-renderPreview();
-});
-
-groupIdInput.addEventListener('input', () => {
-    console.log('[INPUT] GroupId Changed:', groupIdInput.value);
-    updateDerivedFields();
-    renderPreview();
-});
-
-artifactIdInput.addEventListener('input', () => {
-    console.log('[INPUT] ArtifactId Changed:', artifactIdInput.value);
-    updateDerivedFields();
-    renderPreview();
-});
-
 // Initial calculation
-console.log('[INIT] Executing Initial Package Calculation');
 updateDerivedFields();
 renderPreview();
 
@@ -116,15 +74,9 @@ springBootVersionInput.value =
     versionMap[fluxnovaVersionSelect.value];
 form.addEventListener('submit', async (e) => {
 
-    console.log('====================================');
-    console.log('[SUBMIT] FORM SUBMIT DETECTED');
-    console.log('====================================');
-
     e.preventDefault();
 
     globalError.textContent = '';
-
-    console.log('[SUBMIT] Clearing previous errors');
 
     document.querySelectorAll('.error')
         .forEach(el => el.style.display = 'none');
@@ -177,20 +129,12 @@ const fluxnovaVersion = document.getElementById('fluxnovaVersion').value;
         return;
     }
 
-    console.log('[VALIDATION] Validation Passed');
-
     submitBtn.disabled = true;
     submitBtn.textContent = 'Generating...';
 
-    console.log('[UI] Generate Button Disabled');
-
     try {
 
-        console.log('[GENERATION] Starting Project Build');
-
         await generateProjectInBrowser(config);
-
-        console.log('[GENERATION] Project Build Finished Successfully');
 
     } catch (err) {
 
@@ -205,7 +149,6 @@ const fluxnovaVersion = document.getElementById('fluxnovaVersion').value;
         submitBtn.disabled = false;
         submitBtn.textContent = 'Generate Project';
 
-        console.log('[UI] Generate Button Restored');
     }
 });
 
@@ -213,10 +156,6 @@ const fluxnovaVersion = document.getElementById('fluxnovaVersion').value;
  * Browser Compilation Logic
  */
 async function generateProjectInBrowser(config) {
-
-    console.log('====================================');
-    console.log('[GENERATOR] PROJECT GENERATION START');
-    console.log('====================================');
 
     const { artifactId, features, database, bpmnTemplate } = config;
 
@@ -247,14 +186,6 @@ async function generateProjectInBrowser(config) {
             .toLowerCase()
             .replace(/\s+/g, '-');
 
-    console.log('[GENERATOR] Derived Values:', {
-        packageName,
-        packagePath,
-        mainClassName,
-        delegateClassName,
-        processId
-    });
-
     const enrichedConfig = {
         ...config,
         packageName,
@@ -268,23 +199,14 @@ async function generateProjectInBrowser(config) {
         isSpring2: false
     };
 
-    console.log('[GENERATOR] Enriched Config Created');
-
     const zip = new JSZip();
 
-    console.log('[ZIP] JSZip instance created');
-
     const root = `${artifactId}/`;
-
-    console.log('[ZIP] Root Folder:', root);
-
-    console.log('[ZIP] Adding pom.xml');
     zip.file(
         `${root}pom.xml`,
         mustache.render(pomTemplate, enrichedConfig)
     );
 
-    console.log('[ZIP] Adding application.yml');
     zip.file(
         `${root}src/main/resources/application.yml`,
         mustache.render(appYmlTemplate, enrichedConfig)
@@ -293,35 +215,23 @@ async function generateProjectInBrowser(config) {
     const selectedBpmnContent =
         BPMN_TEMPLATES[bpmnTemplate] || genericBpmn;
 
-    console.log('[ZIP] Selected BPMN Template:', bpmnTemplate);
-
     zip.file(
         `${root}src/main/resources/processes/${processId}.bpmn`,
         mustache.render(selectedBpmnContent, enrichedConfig)
     );
 
-    console.log('[ZIP] BPMN File Added:', `${processId}.bpmn`);
-
     const javaSrcDir =
         `${root}src/main/java/${packagePath}`;
-
-    console.log('[ZIP] Java Source Directory:', javaSrcDir);
 
     zip.file(
         `${javaSrcDir}/${mainClassName}.java`,
         mustache.render(javaTemplate, enrichedConfig)
     );
 
-    console.log('[ZIP] Added Main Application Class');
-
     zip.file(
         `${javaSrcDir}/delegate/${delegateClassName}.java`,
         mustache.render(sampleDelegateTemplate, enrichedConfig)
     );
-
-    console.log('[ZIP] Added Sample Delegate');
-
-    
 
     const javaTestDir =
         `${root}src/test/java/${packagePath}`;
@@ -331,11 +241,7 @@ async function generateProjectInBrowser(config) {
         mustache.render(testTemplate, enrichedConfig)
     );
 
-    console.log('[ZIP] Added Test Class');
-
     if (features.docker) {
-
-        console.log('[ZIP] Docker Enabled');
 
         zip.file(
             `${root}Dockerfile`,
@@ -343,63 +249,31 @@ async function generateProjectInBrowser(config) {
         );
     }
 
-    
-
     zip.file(
         `${root}README.md`,
         mustache.render(readmeTemplate, enrichedConfig)
     );
-
-    console.log('[ZIP] README.md Added');
 
     zip.file(
         `${root}.gitignore`,
         mustache.render(gitignoreTemplate, enrichedConfig)
     );
 
-    console.log('[ZIP] .gitignore Added');
-
-    console.log('[ZIP] Starting ZIP Blob Generation');
-
     const content = await zip.generateAsync({
         type: 'blob'
     });
 
-    console.log('[ZIP] ZIP Blob Generated Successfully');
-    console.log('[ZIP] Blob Size:', content.size, 'bytes');
-
     const link = document.createElement('a');
-
-    console.log('[DOWNLOAD] Anchor Element Created');
 
     link.href = URL.createObjectURL(content);
 
-    console.log('[DOWNLOAD] Object URL Created');
-    console.log('[DOWNLOAD] URL:', link.href);
-
     link.download = `${artifactId}.zip`;
-
-    console.log('[DOWNLOAD] Download Filename:', link.download);
 
     document.body.appendChild(link);
 
-    console.log('[DOWNLOAD] Anchor Attached To DOM');
-
-    console.log('====================================');
-    console.log('[DOWNLOAD] TRIGGERING DOWNLOAD NOW');
-    console.log('====================================');
-
     link.click();
 
-    console.log('[DOWNLOAD] link.click() Executed');
-
     document.body.removeChild(link);
-
-    console.log('[DOWNLOAD] Anchor Removed From DOM');
-
-    console.log('====================================');
-    console.log('[GENERATOR] PROJECT GENERATION COMPLETE');
-    console.log('====================================');
 }
 
 
@@ -538,16 +412,6 @@ function buildFolderTree(config) {
     ]
 };
 
-    if (config.features.docker) {
-        tree.children.splice(
-            tree.children.length - 2,
-            0,
-            {
-                name: 'Dockerfile'
-            }
-        );
-    }
-
     return tree;
 }
 
@@ -594,25 +458,15 @@ function handleFormChange() {
     renderPreview();
 }
 
-projectNameInput.addEventListener('input', (e) => {
-
-    artifactIdInput.value =
-        e.target.value
-            .toLowerCase()
-            .replace(/\s+/g, '-');
-
+projectNameInput.addEventListener('input', (event) => {
+    artifactIdInput.value = event.target.value
+        .toLowerCase()
+        .replace(/\s+/g, '-');
     handleFormChange();
 });
 
-groupIdInput.addEventListener(
-    'input',
-    handleFormChange
-);
-
-artifactIdInput.addEventListener(
-    'input',
-    handleFormChange
-);
+groupIdInput.addEventListener('input', handleFormChange);
+artifactIdInput.addEventListener('input', handleFormChange);
 
 document
     .getElementById('bpmnTemplate')

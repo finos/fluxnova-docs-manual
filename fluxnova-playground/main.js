@@ -1,6 +1,10 @@
 
 import CamundaBpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
 import lintModule from 'bpmn-js-bpmnlint';
+import 'bpmn-js/dist/assets/diagram-js.css';
+import 'bpmn-js/dist/assets/bpmn-js.css';
+import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
+import '@bpmn-io/properties-panel/dist/assets/properties-panel.css';
 
 import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda.json';
 
@@ -191,36 +195,73 @@ function focusProblemElement(elementId) {
  
 
 
-window.initTabs = function () {
-  document.addEventListener('click', function (event) {
-    const button = event.target.closest('.tab-btn');
-    if (!button) return;
-
-    const container = button.closest('.tab-container');
-    if (!container) return;
-
-    container.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-
-    container.querySelectorAll('.tab-content').forEach(content => {
-      content.classList.remove('active');
-    });
-
-   
-    button.classList.add('active');
-
-  
-    const targetId = button.getAttribute('data-tab');
-    const targetContent = container.querySelector(`#${targetId}`);
-    if (targetContent) {
-      targetContent.classList.add('active');
-    }
+window.openTab = function (event, tabName) {
+  document.querySelectorAll(".tabcontent").forEach(content => {
+    content.style.display = "none";
   });
+  document.querySelectorAll(".tablinks").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.classList.add("active");
 };
 
+const moreActionsBtn = document.getElementById("moreActionsBtn");
+const actionsMenu = document.getElementById("actionsMenu");
 
-window.initTabs();
+moreActionsBtn.addEventListener("click", event => {
+  event.stopPropagation();
+  actionsMenu.classList.toggle("show");
+});
+
+window.addEventListener("click", event => {
+  if (!event.target.closest(".more-actions")) {
+    actionsMenu.classList.remove("show");
+  }
+});
+
+window.submitPopup = function () {
+  const inputBox = document.getElementById("inputBox");
+  const inputError = document.getElementById("inputError");
+  const value = inputBox.value.trim();
+
+  if (!value) {
+    inputError.textContent = "Enter {} if no input variables are needed.";
+    inputBox.setAttribute("aria-invalid", "true");
+    inputBox.focus();
+    return;
+  }
+
+  let variables;
+  try {
+    variables = JSON.parse(value);
+  } catch {
+    inputError.textContent = "Enter valid JSON, or {} if no input variables are needed.";
+    inputBox.setAttribute("aria-invalid", "true");
+    inputBox.focus();
+    return;
+  }
+
+  if (!variables || typeof variables !== "object" || Array.isArray(variables)) {
+    inputError.textContent = "Input must be a JSON object, such as {}.";
+    inputBox.setAttribute("aria-invalid", "true");
+    inputBox.focus();
+    return;
+  }
+
+  inputError.textContent = "";
+  inputBox.removeAttribute("aria-invalid");
+  document.getElementById("myDialog").close();
+  window.runProcess(variables);
+  window.scrollToTab("Tab1");
+};
+
+document.getElementById("inputBox").addEventListener("input", () => {
+  const inputBox = document.getElementById("inputBox");
+  inputBox.removeAttribute("aria-invalid");
+  document.getElementById("inputError").textContent = "";
+});
 
 
 window.clearDiagram = function () {
@@ -448,17 +489,7 @@ if (outputEl) {
     );
 
     const startJson = await startResponse.json();
-    //Combine result
-    let finalOutput = `Deployment successful and process started`;
-
-if (startJson.ended === true) {
-  finalOutput += ", process ended successfully";
-} else {
-  finalOutput += ", view process on Fluxnova monitoring.";
-}
-
-
-    //Show output in UI
+  //Show output in UI
     const outputEl = document.getElementById("Tab1");
     
 if (outputEl) {
@@ -489,10 +520,12 @@ if (outputEl) {
 
 };
 
+const assetBase = document.getElementById("playground").dataset.assetBase;
+
 const sampleFiles = [
-  { name: "Condition Task", path: "/samples/condition_task.bpmn" },
-  { name: "User Task", path: "/samples/user_task.bpmn" },
-  { name: "Script Task", path: "/samples/script_task.bpmn" }
+  { name: "Condition Task", path: `${assetBase}samples/condition_task.bpmn` },
+  { name: "User Task", path: `${assetBase}samples/user_task.bpmn` },
+  { name: "Script Task", path: `${assetBase}samples/script_task.bpmn` }
 ];
 
 window.initSampleDropdown = function () {
@@ -619,21 +652,21 @@ if (hasLintingErrors) {
     description: "This example shows how the process chooses one path or another based on data.",
     data: '{ "input": { "value": 15 } }',
     result: "Goes to the Yes task because the value is greater than 10.",
-    path: "/samples/condition_task.bpmn"
+    path: `${assetBase}samples/condition_task.bpmn`
   },
   user: {
     title: "User Task Example",
     description: "This example shows how the process waits for a person to complete a task.",
     data: '{ "requestId": { "value": "REQ-1001" } }',
     result: "The process pauses until the user task is claimed and completed.",
-    path: "/samples/user_task.bpmn"
+    path: `${assetBase}samples/user_task.bpmn`
   },
   script: {
     title: "Script Task Example",
     description: "This example shows how the process executes a Groovy script.",
     data: '{ "name": { "value": "your_name" } }',
     result: "The process prints a message for the user.",
-    path: "/samples/script_task.bpmn"
+    path: `${assetBase}samples/script_task.bpmn`
   }
 };
 
@@ -706,62 +739,92 @@ window.addEventListener("DOMContentLoaded", () => {
 let stepIndex = 0;
 
 const guideSteps = [
-  {
-    element: ".uploadbpmn",
-    text: "Click here to upload your BPMN file."
-  },
-  {
-    element: "#canvas",
-    text: "Your diagram will appear here."
-  },
-  {
-    element: ".dropbtn",
-    text: "Click Run to execute the process."
-  }
+  { element: "#sampleDropdown", text: "Select a sample BPMN workflow to load it onto the canvas" },
+  { element: ".dropbtn", text: "Click here to execute the workflow" },
+  { element: "#cockpitBtn", text: "Open the monitoring dashboard to track workflow execution in real time." },
+  { element: ".clear", text: "Clear the canvas to reset the workflow" },
+  { element: "#moreActionsBtn", text: "Click here to open more options, where you can upload a BPMN file or view the workflow XML" },
+  { element: "#canvas", text: "This is the canvas where your BPMN workflow is displayed and designed" },
+  { element: ".djs-palette-entries", text: "Use this palette to drag and drop BPMN elements onto the canvas" },
+  { element: ".djs-element", text: "Click on any element in the diagram to select and modify it" },
+  { element: ".djs-minimap", text: "Use the minimap to quickly navigate across large diagrams" },
+  { element: "#properties", text: "This panel lets you view and edit properties of the selected element" },
+  { element: "#defaultOpen", text: "This is the Output tab where execution results are displayed" },
+  { element: "button[onclick*='Tab2']", text: "Switch to the Problems tab to view errors or issues in the workflow" }
 ];
 
-function startGuide() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("guideBox").style.display = "block";
-  showStep();
+function hideGuide() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("guideBox").style.display = "none";
+  document.querySelectorAll(".highlight").forEach(element => {
+    element.classList.remove("highlight");
+  });
 }
 
 function showStep() {
   const step = guideSteps[stepIndex];
-  const el = document.querySelector(step.element);
+  const element = document.querySelector(step.element);
   const box = document.getElementById("guideBox");
+  const app = document.querySelector(".app");
 
-  // remove old highlight
-  document.querySelectorAll(".highlight").forEach(e => e.classList.remove("highlight"));
-
-  // highlight current element
-  el.classList.add("highlight");
-
-  // position box
-  const rect = el.getBoundingClientRect();
-  box.style.top = rect.bottom + 10 + "px";
-  box.style.left = rect.left + "px";
-
-  document.getElementById("guideText").innerText = step.text;
-  
-
-
-  // scrollToTab("guideBox");
-}
-
-function nextStep() {
-  stepIndex++;
-
-  if (stepIndex >= guideSteps.length) {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("guideBox").style.display = "none";
-    document.querySelectorAll(".highlight").forEach(e => e.classList.remove("highlight"));
+  if (!element || !box || !app) {
+    console.error("Guide element not found:", step.element);
     return;
   }
 
-  showStep();
+  document.querySelectorAll(".highlight").forEach(item => {
+    item.classList.remove("highlight");
+  });
+
+  if (element.matches(".djs-element")) {
+    document.querySelector(".djs-palette-entries")?.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  } else {
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  element.classList.add("highlight");
+
+  const rect = element.getBoundingClientRect();
+  const appRect = app.getBoundingClientRect();
+  box.style.top = element.matches(".djs-element")
+    ? "215px"
+    : `${rect.bottom - appRect.top + 10}px`;
+  box.style.left = element.matches(".djs-element")
+    ? "179px"
+    : `${rect.left - appRect.left}px`;
+  document.getElementById("guideText").textContent = step.text;
 }
 
-window.onload = function () {
-  startGuide();   // ✅ ADD THIS LINE
+window.startGuide = function () {
+  stepIndex = 0;
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("guideBox").style.display = "block";
+  showStep();
 };
+
+window.nextStep = function () {
+  stepIndex++;
+  if (stepIndex >= guideSteps.length) {
+    hideGuide();
+    return;
+  }
+  showStep();
+};
+
+window.skipGuide = function () {
+  hideGuide();
+  stepIndex = 0;
+};
+
+document.getElementById("loadExampleBtn").addEventListener("click", () => {
+  const canvas = document.getElementById("canvas");
+  canvas.style.display = "block";
+  canvas.scrollIntoView({ behavior: "smooth" });
+});
+
+window.addEventListener("load", () => {
+  window.setTimeout(window.startGuide, 500);
+});

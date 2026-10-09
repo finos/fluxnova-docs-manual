@@ -8,7 +8,7 @@ export default defineConfig({
             fileName: 'playground-bundle'
         },
         emptyOutDir: true,
-        outDir: '../static/js/playground'
+        outDir: '../static/playground/js'
         
     }
 });

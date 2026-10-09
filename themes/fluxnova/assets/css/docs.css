@@ -8256,15 +8256,3 @@ svg circle {
 .cam-downloads .links {
   text-align: right;
 }
-
-.breakout {
-  width: 915px; 
-  position: relative;
-  padding-left: calc(10% - 2800px);
-  margin: 30px 0 0 0;
-  z-index: 10;
-}
-
-
-
-   

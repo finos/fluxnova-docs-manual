@@ -31,14 +31,14 @@ jobs:
       - name: Build Fluxnova Playground Assets
         run: |
           cd fluxnova-playground
-          npm install
+          npm ci
           npm run build
           cd ..
 
       - name: Build Fluxnova Initializer Assets
         run: |
           cd fluxnova-initializer
-          npm install
+          npm ci
           npm run build
           cd .. 
 

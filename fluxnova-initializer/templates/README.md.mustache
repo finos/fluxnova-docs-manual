@@ -10,7 +10,7 @@ This project was generated using the **Fluxnova Initializer**.
 
 ## Prerequisites
 - Java 21
-- Maven (wrapper included)
+- Maven 3.9 or later
 {{#features.docker}}
 - Docker (optional, for containerization)
 {{/features.docker}}
@@ -22,7 +22,7 @@ This project was generated using the **Fluxnova Initializer**.
 
 ### 1. Build the project
 ```bash
-./mvnw clean install
+mvn clean install
 ```
 
 ### 2. Run the application
@@ -35,7 +35,7 @@ docker-compose up -d db
 
 Start the Spring Boot app:
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 ### 3. Access Fluxnova
