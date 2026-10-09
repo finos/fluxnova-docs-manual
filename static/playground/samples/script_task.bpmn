@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn" xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0" id="Definitions_1detlv3" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Fluxnova Modeler" exporterVersion="1.2.0" modeler:executionPlatform="Fluxnova Platform" modeler:executionPlatformVersion="2.0.0">
+  <bpmn:process id="Process_1i7cscg" isExecutable="true" camunda:historyTimeToLive="30">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0ew6473</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0ew6473" sourceRef="StartEvent_1" targetRef="Activity_0ejvb5e" />
+    <bpmn:scriptTask id="Activity_0ejvb5e" name="Printing message" scriptFormat="groovy">
+      <bpmn:incoming>Flow_0ew6473</bpmn:incoming>
+      <bpmn:outgoing>Flow_18sb56x</bpmn:outgoing>
+      <bpmn:script>def name = execution.getVariable("name")
+
+if (name == null) {
+    name = "User"
+}
+
+execution.setVariable("message", "Hello " + name + ", your request is approved.")
+execution.setVariable("status", "approved")
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_18sb56x" sourceRef="Activity_0ejvb5e" targetRef="Activity_1mongr4" />
+    <bpmn:userTask id="Activity_1mongr4" name="Viewed message">
+      <bpmn:incoming>Flow_18sb56x</bpmn:incoming>
+      <bpmn:outgoing>Flow_09kda1i</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_1eytrit">
+      <bpmn:incoming>Flow_09kda1i</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_09kda1i" sourceRef="Activity_1mongr4" targetRef="Event_1eytrit" />
+    <bpmn:textAnnotation id="TextAnnotation_17rci4l">
+      <bpmn:text>Process starts when a request is initiated.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_17egb1d" associationDirection="None" sourceRef="StartEvent_1" targetRef="TextAnnotation_17rci4l" />
+    <bpmn:textAnnotation id="TextAnnotation_0n8wr9d">
+      <bpmn:text>A Groovy script fetches the user's name, assigns a default if missing, generates an approval message, and sets the status to "approved".</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0u6yndh" associationDirection="None" sourceRef="Activity_0ejvb5e" targetRef="TextAnnotation_0n8wr9d" />
+    <bpmn:textAnnotation id="TextAnnotation_1tov0qr">
+      <bpmn:text>User views the generated message and acknowledges it.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1xsnexp" associationDirection="None" sourceRef="Activity_1mongr4" targetRef="TextAnnotation_1tov0qr" />
+    <bpmn:textAnnotation id="TextAnnotation_07tr7m3">
+      <bpmn:text>Process ends after the user views the message.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1y0elwo" associationDirection="None" sourceRef="Event_1eytrit" targetRef="TextAnnotation_07tr7m3" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1i7cscg">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tah4fz_di" bpmnElement="Activity_0ejvb5e" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="270" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0omd9zl_di" bpmnElement="Activity_1mongr4">
+        <dc:Bounds x="430" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1eytrit_di" bpmnElement="Event_1eytrit">
+        <dc:Bounds x="592" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_17egb1d_di" bpmnElement="Association_17egb1d">
+        <di:waypoint x="200" y="182" />
+        <di:waypoint x="200" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0u6yndh_di" bpmnElement="Association_0u6yndh">
+        <di:waypoint x="320" y="240" />
+        <di:waypoint x="320" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1xsnexp_di" bpmnElement="Association_1xsnexp">
+        <di:waypoint x="480" y="160" />
+        <di:waypoint x="480" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1y0elwo_di" bpmnElement="Association_1y0elwo">
+        <di:waypoint x="610" y="218" />
+        <di:waypoint x="610" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ew6473_di" bpmnElement="Flow_0ew6473">
+        <di:waypoint x="218" y="200" />
+        <di:waypoint x="270" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18sb56x_di" bpmnElement="Flow_18sb56x">
+        <di:waypoint x="370" y="200" />
+        <di:waypoint x="430" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09kda1i_di" bpmnElement="Flow_09kda1i">
+        <di:waypoint x="530" y="200" />
+        <di:waypoint x="592" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_17rci4l_di" bpmnElement="TextAnnotation_17rci4l" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="150" y="80" width="100" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0n8wr9d_di" bpmnElement="TextAnnotation_0n8wr9d" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="170" y="270" width="340" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1tov0qr_di" bpmnElement="TextAnnotation_1tov0qr" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="400" y="80" width="190" height="40" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_07tr7m3_di" bpmnElement="TextAnnotation_07tr7m3" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="560" y="260" width="150" height="50" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

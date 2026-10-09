@@ -23,6 +23,25 @@ jobs:
           hugo-version: '0.145.0'
           extended: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Build Fluxnova Playground Assets
+        run: |
+          cd fluxnova-playground
+          npm ci
+          npm run build
+          cd ..
+
+      - name: Build Fluxnova Initializer Assets
+        run: |
+          cd fluxnova-initializer
+          npm ci
+          npm run build
+          cd .. 
+
       - name: Build site
         run: hugo --minify --baseURL "https://${{ github.actor }}.github.io/${{ github.event.repository.name }}/pull/${{ github.event.number }}/"
 

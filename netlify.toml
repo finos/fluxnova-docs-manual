@@ -1,0 +1,3 @@
+[build]
+command = "npm --prefix fluxnova-playground ci --registry=https://registry.npmjs.org/ && npm --prefix fluxnova-playground run build && npm --prefix fluxnova-initializer ci --registry=https://registry.npmjs.org/ && npm --prefix fluxnova-initializer run build && hugo --minify"
+publish = "public"

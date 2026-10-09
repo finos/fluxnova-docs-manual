@@ -1,0 +1,22 @@
+{
+  "name": "fluxnova-initializer-client",
+  "version": "1.0.0",
+  "description": "Browser-based Spring Boot project custom layout zip generator",
+  "main": "src/generator.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

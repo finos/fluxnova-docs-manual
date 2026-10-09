@@ -1,0 +1,85 @@
+# {{projectName}}
+
+This project was generated using the **Fluxnova Initializer**.
+
+## Technology Stack
+- **Spring Boot**: {{springBootVersion}}
+- **Fluxnova**: {{fluxnovaVersion}}
+- **Java**: 21
+- **Database**: {{database}}
+
+## Prerequisites
+- Java 21
+- Maven 3.9 or later
+{{#features.docker}}
+- Docker (optional, for containerization)
+{{/features.docker}}
+{{#features.dockerCompose}}
+- Docker Compose (for running dependencies locally)
+{{/features.dockerCompose}}
+
+## Getting Started
+
+### 1. Build the project
+```bash
+mvn clean install
+```
+
+### 2. Run the application
+{{#features.dockerCompose}}
+If you are using MySQL or PostgreSQL, you might want to start the database first:
+```bash
+docker-compose up -d db
+```
+{{/features.dockerCompose}}
+
+Start the Spring Boot app:
+```bash
+mvn spring-boot:run
+```
+
+### 3. Access Fluxnova
+
+{{#isH2}}
+- **H2 Console**: [http://localhost:8080/h2-console](http://localhost:8080/h2-console) (JDBC URL: `jdbc:h2:mem:fluxnova`, User: `sa`, Password: `sa`)
+{{/isH2}}
+{{#isMysql}}
+- **MySQL Database**: Access your database on `localhost:3306` (Database: `{{artifactId}}`, User: `root`, Password: `password`)
+{{/isMysql}}
+{{#isPostgresql}}
+- **PostgreSQL Database**: Access your database on `localhost:5432` (Database: `{{artifactId}}`, User: `postgres`, Password: `password`)
+{{/isPostgresql}}
+{{#features.cockpit}}
+- **Fluxnova Cockpit**: [http://localhost:8080/app/cockpit](http://localhost:8080/app/cockpit)
+{{/features.cockpit}}
+{{#features.tasklist}}
+- **Fluxnova Tasklist**: [http://localhost:8080/app/tasklist](http://localhost:8080/app/tasklist)
+{{/features.tasklist}}
+
+**Default Admin Credentials:**
+- Username: `{{adminUser}}`
+- Password: `{{adminPassword}}`
+
+{{#features.restApi}}
+### REST API
+List deployed process definitions:
+```bash
+curl http://localhost:8080/engine-rest/process-definition
+```
+{{/features.restApi}}
+
+## Project Structure
+```
+{{artifactId}}/
+├── pom.xml
+├── src/main/java/{{packagePath}}/
+│   ├── {{mainClassName}}.java
+│   └── delegate/{{delegateClassName}}.java
+└── src/main/resources/
+    ├── application.yml
+    └── processes/
+        └── {{processId}}.bpmn
+```
+
+## How to Deploy a Process
+Place your `.bpmn` files in `src/main/resources/processes/`. FINOS Fluxnova will automatically deploy them when the application starts.

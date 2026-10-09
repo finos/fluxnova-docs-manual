@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxnova Initializer</title>
+      <link rel="stylesheet" href="css/initializer.css">
+
+</head>
+<body>
+     
+    
+    <h1 id="heading">
+        <img src="img/fluxnova-icon-color.png" alt="" style="width: 50px; height: 50px; vertical-align: middle; margin-right: 0px;">Fluxnova Initializer
+    </h1>
+    
+    <div class="container">
+       
+    <div id="globalError"></div>
+    
+    <form id="initializerForm">
+        <fieldset>
+            <legend>Project Metadata</legend>
+            <div class="form-group">
+                <label for="projectName">Project Name: </label>
+                <input type="text" id="projectName" value="workflow-engine">
+                <span class="error" id="err-projectName">Project Name is required</span>
+            </div>
+            <div class="form-group">
+                <label for="groupId">Group ID: </label>
+                <input type="text" id="groupId" value="com.company">
+                <span class="error" id="err-groupId">Group ID is required</span>
+            </div>
+            <div class="form-group">
+                <label for="artifactId">Artifact ID: </label>
+                <input type="text" id="artifactId" value="workflow-engine">
+                <span class="error" id="err-artifactId">Artifact ID is required</span>
+            </div>
+            <div class="form-group">
+                <label>Java Package: </label>
+                <input type="text" id="javaPackage" disabled>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Build & Runtime</legend>
+            <div class="form-group">
+                <label for="fluxnovaVersion">Fluxnova Version: </label>
+                 <select id="fluxnovaVersion">
+        <option value="2.0.0">2.0.0</option>
+        <option value="3.0.0">3.0.0</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Spring Boot Version:</label>
+    <input type="text" id="springBootVersion" disabled value="3.4.4">
+</div>
+            <div class="form-group">
+                <label for="javaVersion">Java Version: </label>
+                
+                   <select id="javaVersion" disabled>
+                  <option value="21" selected>21</option>
+                    </select>
+
+            </div>
+            <div class="form-group">
+                <label for="bpmnTemplate">BPMN Template: </label>
+                <select id="bpmnTemplate">
+                    <option value="generic">Generic Process</option>
+                    <option value="leave-approval">Leave Approval</option>
+                    <option value="invoice-approval">Invoice Approval</option>
+                    <option value="employee-onboarding">Employee Onboarding</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset class="radio-group">
+            <legend>Database</legend>
+            <label><input type="radio" name="database" value="h2" checked> H2</label>
+            <label><input type="radio" name="database" value="mysql"> MySQL</label>
+            <label><input type="radio" name="database" value="postgresql"> PostgreSQL</label>
+        </fieldset>
+
+        <fieldset class="checkbox-group">
+            <legend>Features</legend>
+            <div><label><input type="checkbox" id="feat-cockpit" checked> WebApp</label></div>
+            <div><label><input type="checkbox" id="feat-restApi" checked> REST API</label></div>
+            <div><label><input type="checkbox" id="feat-docker" checked> Docker</label></div>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Admin Configuration</legend>
+            <div class="form-group">
+                <label for="adminUser">Username: </label>
+                <input type="text" id="adminUser" value="demo">
+                <span class="error" id="err-adminUser">Admin User is required</span>
+            </div>
+            <div class="form-group">
+                <label for="adminPassword">Password: </label>
+                <input type="password" id="adminPassword" value="demo">
+                <span class="error" id="err-adminPassword">Admin Password is required</span>
+            </div>
+        </fieldset>
+
+        <br>
+        <button type="submit" id="submitBtn">Generate Project</button>
+    </form>
+
+    <div class="preview-section">
+    <h2>Live preview</h2>
+
+    <div class="preview-box" id="previewSection">
+        
+    </div>
+</div>
+    </div>
+    
+    <!-- Connect our modular bundler script pipeline -->
+    <script type="module" src="js/init-bundle.js"></script>
+</body>
+</html>

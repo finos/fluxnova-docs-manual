@@ -7,3 +7,7 @@ public/
 hugo
 thumbnails/
 _gen/
+.env
+fluxnova-playground/.env
+/static/playground/js/
+/static/initializer/js/

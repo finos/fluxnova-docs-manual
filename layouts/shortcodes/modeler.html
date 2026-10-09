@@ -1,0 +1,199 @@
+<link rel="stylesheet" href="{{ "playground/css/modeler.css" | relURL }}">
+<link rel="stylesheet" href="{{ "playground/js/playground-bundle.css" | relURL }}">
+
+<div class="shell">
+    <div class="section-rule"></div>
+    <div class="sample-area">
+      <!-- LEFT NAV -->
+      <div class="sample-nav">
+        <button class="sample-item active" data-sample="condition">Condition Task</button>
+        <button class="sample-item" data-sample="user">User Task</button>
+        <button class="sample-item" data-sample="script">Script Task</button>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="sample-detail">
+        <h3 id="sampleTitle">Condition Task</h3>
+
+        <p id="sampleDescription">
+          This example shows how the process chooses one path or another based on data.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Example input JSON</h4>
+            <div class="value" id="sampleData">
+              { "input": { "value": 15 } }
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Expected result</h4>
+            <div class="value" id="sampleResult">
+              Goes to the Yes task because the value is greater than 10.
+            </div>
+          </div>
+        </div>
+
+        <div class="sample-actions">
+          <button class="btn primary" id="loadExampleBtn">
+            Load Example
+          </button>
+        </div>
+
+      </div>
+    </div>
+  
+
+</div>
+<div class="how-to-section">
+  <h3>Take a guided tour of Fluxnova by clicking
+  <button class="inline-btn" onclick="startGuide(); scrollToTab('guideBox')">GUIDE ME</button> 
+  to explore its components.</h3>
+</div>
+<div class="breakout" id="playground" data-asset-base="{{ "playground/" | relURL }}">
+    <!--input box for variables-->
+    <dialog id="myDialog" class="modal">
+        <div class="box">
+            <span id="closeBtn" class="close">&times;</span>
+            <label class="input-label" for="inputBox">Process variables (JSON)</label>
+            <textarea id="inputBox" rows="3" aria-describedby="inputError" placeholder="{&quot;input&quot;: {&quot;value&quot;: 10}}"></textarea>
+            <p id="inputError" class="input-error" role="alert"></p>
+            <div class="input-dialog-actions">
+                <span class="input-help">Enter {} to run without input.</span>
+                <button id="submitBtn" class="input-submit-button" type="button" onclick="submitPopup()">Submit</button>
+            </div>
+        </div>
+    </dialog>
+<div class="app">
+ <div id="overlay" style="display:none;"></div>
+
+<div id="guideBox" style="display:none;">
+  <div id="guideText"></div>
+  <button class="next-btn" onclick="nextStep()">Next</button>
+<button class="skip-btn" onclick="skipGuide()">Skip</button>
+
+</div>
+    
+    
+     
+        <div class="toolbar">
+            <select id="sampleDropdown"></select>
+<button onclick="showTextbox()" class="dropbtn">Run Process<img class="upload-img" src="{{ "playground/img/run.svg" | relURL }}"></button>
+<!--Run button ends -->
+<button id="cockpitBtn" onclick="window.open('https://demo.fluxnova.finos.org/default', '_blank');">Fluxnova Monitoring<img class="upload-img" src="{{ "playground/img/external-link.svg" | relURL }}"></button>
+
+<button class="clear" onclick="clearDiagram()">Clear Canvas <img class="upload-img" src="{{ "playground/img/clear.svg" | relURL }}"></button>
+<!--More actions dropdown starts-->
+<div class="more-actions">
+  <button class="more-btn" id="moreActionsBtn">More actions ▾</button>
+
+  <div class="actionsDropdown" id="actionsMenu">
+    
+
+    <button class="uploadbpmn" onclick="uploadBpmn()">
+      Upload BPMN<img class="upload-img" src="{{ "playground/img/upload.svg" | relURL }}">
+    </button>
+
+    <button class="viewxml" onclick="viewXml()">
+      View XML<img class="upload-img" src="{{ "playground/img/xml.svg" | relURL }}">
+    </button>
+  </div>
+</div>
+<!--More actions dropdown ends-->
+
+        </div>
+        
+    
+    <div class="workspace">
+        <div id="canvas"></div>
+        <div id="properties"></div>
+    </div>
+
+    <input
+  type="file" 
+  id="fileInput"
+  accept=".bpmn,.xml"
+  style="display:none"
+  onchange="handleFileUpload(event)"
+/>
+</div>
+
+    
+<!--div below app for output and problems-->
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">Output</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab2')">Problems</button>
+</div>
+
+<!-- Tab content -->
+<div id="Tab1" class="tabcontent green-message">
+  <p class="green-message">Load a sample or design your own process.
+    Then click the Run button.
+  </p> 
+</div>
+
+<div id="Tab2" class="tabcontent">
+  <div class="no-issues">No problems detected!</div>
+</div>
+
+
+<!--the problems and output tab ends here-->
+</div>
+<div id="xmlModal" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding-left: 300px;
+">
+  <div style="
+    width:80%;
+    height:80%;
+    background:white;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+  ">
+
+    <!-- Header -->
+    <div style="padding:12px; border-bottom:1px solid #ddd; font-weight:bold;">
+      BPMN XML
+    </div>
+
+    <!-- Content -->
+    <textarea id="xmlContent" style="
+      flex:1;
+      border:none;
+      padding:12px;
+      font-family:monospace;
+      font-size:12px;
+      resize:none;
+      outline:none;
+    "></textarea>
+
+    <!-- Footer -->
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      padding:12px;
+      border-top:1px solid #ddd;
+    ">
+      <div>
+        <button onclick="copyXml()">Copy</button>
+        <button onclick="downloadXml()">Download</button>
+      </div>
+      <button onclick="closeXmlModal()">Close</button>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="{{ "playground/js/playground-bundle.js" | relURL }}"></script>
