@@ -167,10 +167,62 @@ It is used to configure Fluxnova in the following distributions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/"&gt;Apache Tomcat&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;div class="note bg-warning docs-warning"&gt;
- &lt;h3&gt;Wildfly&lt;/h3&gt;
- &lt;p&gt;The &lt;code&gt;bpm-platform.xml&lt;/code&gt; file is not used in the Fluxnova distribution for Wildfly. There, the configuration is added to the central application server configuration file (&lt;code&gt;standalone.xml&lt;/code&gt; or &lt;code&gt;domain.xml&lt;/code&gt;). The XML schema is the same (i.e., the same elements and properties can be used). See the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/runtime-container-integration/jboss/"&gt;The Fluxnova Wildfly Subsystem&lt;/a&gt; section of the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/"&gt;User Guide&lt;/a&gt; for more details.&lt;/p&gt;</description></item><item><title>Classic vs Fluent API</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/api/classic-vs-fluent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/api/classic-vs-fluent/</guid><description>&lt;!-- move this to the user guide as soon as there is a concept on how separate CMMN and BPMN concerns in it --&gt;
+&lt;h1 id="xml-schema-namespace"&gt;Xml Schema Namespace&lt;/h1&gt;
+&lt;p&gt;The namespace for the &lt;code&gt;bpm-platform.xml&lt;/code&gt; file is &lt;code&gt;http://www.camunda.org/schema/1.0/BpmPlatform&lt;/code&gt;. The XSD file can be found in the &lt;code&gt;fluxnova-engine.jar&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;bpm-platform&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;xmlns=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;http://www.camunda.org/schema/1.0/BpmPlatform&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;xmlns:xsi=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;http://www.camunda.org/schema/1.0/BpmPlatform http://www.camunda.org/schema/1.0/BpmPlatform &amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;job-executor&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;job-acquisition&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;default&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/job-executor&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;process-engine&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;job-acquisition&amp;gt;&lt;/span&gt;default&lt;span style="color:#f92672"&gt;&amp;lt;/job-acquisition&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;org.finos.fluxnova.bpm.engine.impl.cfg.JtaProcessEngineConfiguration&lt;span style="color:#f92672"&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;datasource&amp;gt;&lt;/span&gt;jdbc/ProcessEngine&lt;span style="color:#f92672"&gt;&amp;lt;/datasource&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;history&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;full&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;databaseSchemaUpdate&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;true&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;transactionManagerJndiName&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;java:appserver/TransactionManager&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;authorizationEnabled&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;true&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/process-engine&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/bpm-platform&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id="syntax-reference"&gt;Syntax Reference&lt;/h1&gt;
+&lt;table class="table table-striped"&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Tag name &lt;/th&gt;
+ &lt;th&gt;Parent tag name&lt;/th&gt;
+ &lt;th&gt;Required?&lt;/th&gt;
+ &lt;th&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;&amp;lt;bpm-platform&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;None.&lt;/td&gt;
+ &lt;td&gt;true&lt;/td&gt;
+ &lt;td&gt;Root element of the bpm-platform.xml file.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;&amp;lt;job-executor&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;&amp;lt;bpm-platform&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;true&lt;/td&gt;
+ &lt;td&gt;See &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/deployment-descriptors/tags/job-executor/"&gt;job-executor Reference&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;&amp;lt;process-engine&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;&amp;lt;bpm-platform&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;false&lt;/td&gt;
+ &lt;td&gt;See &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/deployment-descriptors/tags/process-engine/"&gt;process-engine Reference&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h1 id="configure-location-of-the-bpm-platformxml-file"&gt;Configure Location of the bpm-platform.xml File&lt;/h1&gt;
+&lt;p&gt;You can configure the location of the &lt;code&gt;bpm-platform.xml&lt;/code&gt;, so the file can be stored externally to allow an easy update path of fluxnova-bpm-platform.ear. This negates the work of unpacking / repackaging the ear when you need to change the configuration.&lt;/p&gt;</description></item><item><title>Classic vs Fluent API</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/api/classic-vs-fluent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/api/classic-vs-fluent/</guid><description>&lt;!-- move this to the user guide as soon as there is a concept on how separate CMMN and BPMN concerns in it --&gt;
 &lt;p&gt;To interact with case instances and executions, the process engine offers the case service. It can be retrieved by &lt;code&gt;processEngine.getCaseService()&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;CaseService&lt;/code&gt; offers two API variants. One is in the following referred to as the &lt;em&gt;classic&lt;/em&gt; API, since it is very similar to the API offered by the &lt;code&gt;RuntimeService&lt;/code&gt; for BPMN processes. The &lt;em&gt;fluent&lt;/em&gt; API follows a different concept in that it allows composition of case service commands by method chaining.&lt;/p&gt;</description></item><item><title>Configuration</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/extend/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/extend/configuration/</guid><description>&lt;p&gt;You can override the default configuration of Cockpit using a central configuration file
 located in &lt;code&gt;app/cockpit/scripts/config.js&lt;/code&gt;. The following configuration options are
@@ -323,7 +375,7 @@ the &lt;code&gt;id&lt;/code&gt; attribute of the &lt;code&gt;input&lt;/code&gt; 
 &lt;p&gt;Fluxnova is a flexible framework which can be used in different contexts. See &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/introduction/architecture/"&gt;Architecture Overview&lt;/a&gt; for more details. Based on how you want
 to use Fluxnova, you can choose a different distribution or runtime environment like &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/spring-boot-integration/"&gt;Spring Boot&lt;/a&gt; or &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/installation/docker/"&gt;Docker&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://fluxnova.finos.org/download/"&gt;Download page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/finos/fluxnova-bpm-platform/releases"&gt;Download page&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="full-distribution"&gt;Full Distribution&lt;/h2&gt;
 &lt;p&gt;Download the full distribution if you want to use a &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/introduction/architecture/#shared-container-managed-process-engine"&gt;shared process engine&lt;/a&gt; or if you
@@ -337,14 +389,14 @@ want to get to know Fluxnova quickly, without any additional setup or installati
 &lt;li&gt;Eclipse integrated development environment (IDE)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="fluxnova-platform"&gt;Fluxnova Platform&lt;/h1&gt;
-&lt;p&gt;First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from &lt;a href="https://fluxnova.finos.org/download/platform"&gt;the download page&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Download and Installation (1/6)</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/install/</guid><description>&lt;p&gt;First, you need to install the Fluxnova Platform and the Fluxnova Modeler.&lt;/p&gt;
+&lt;p&gt;First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from the &lt;a href="https://github.com/finos/fluxnova-bpm-platform/releases"&gt;Fluxnova Platform releases&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Download and Installation (1/6)</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/install/</guid><description>&lt;p&gt;First, you need to install the Fluxnova Platform and the Fluxnova Modeler.&lt;/p&gt;
 &lt;p&gt;In the following section, we&amp;rsquo;ll describe how to install the Fluxnova Platform locally on your machine.&lt;/p&gt;
 
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;Hint&lt;/h3&gt;
  &lt;p&gt;&lt;p&gt;If you prefer, you can also run the Fluxnova Platform with Docker:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull fluxnova/fluxnova-bpm-platform:run-latest
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name fluxnova -p 8080:8080 fluxnova/fluxnova-bpm-platform:run-latest
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull finos/fluxnova-bpm-platform:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name fluxnova -p 8080:8080 finos/fluxnova-bpm-platform:latest
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Afterwards, you can &lt;a href="#fluxnova-modeler"&gt;install the Fluxnova Modeler&lt;/a&gt;.&lt;/p&gt;
 &lt;/p&gt;
 &lt;/div&gt;
@@ -2404,7 +2456,7 @@ documentation about &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-
 &lt;p&gt;The 
 &lt;a href="https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/org/finos/fluxnova/bpm/ProcessEngineService.html"&gt;ProcessEngineService&lt;/a&gt; can be accessed by calling &lt;code&gt;BpmPlatform.getProcessEngineService()&lt;/code&gt;. It offers access to the default process engine, as well as any process engine by its name as specified in the process engine configuration. It returns &lt;code&gt;ProcessEngine&lt;/code&gt; objects from which any services for a specific engine can be accessed.&lt;/p&gt;</description></item><item><title>Getting a Distribution</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/getting-a-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/getting-a-distribution/</guid><description>&lt;h1 id="manual-download"&gt;Manual Download&lt;/h1&gt;
 &lt;p&gt;The Forms SDK library can be downloaded from
-&lt;a href="https://github.com/fluxnova/bower-fluxnova-bpm-sdk-js/releases"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://github.com/finos/fluxnova-bpm-platform/releases"&gt;Github&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="bower"&gt;Bower&lt;/h1&gt;
 &lt;p&gt;Alternatively, the Forms SDK can be installed using the Bower package manager:&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;bower install fluxnova-bpm-sdk-js --save
@@ -2469,13 +2521,7 @@ instance by its connector ID, which is &lt;code&gt;http-connector&lt;/code&gt;.&
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;humanTask&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;theHumanTask&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;A Human Task&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A human task in state &lt;code&gt;ENABLED&lt;/code&gt; can be started manually using the &lt;code&gt;CaseService&lt;/code&gt; as follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;caseService.&lt;span style="color:#a6e22e"&gt;manuallyStartCaseExecution&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;aCaseExecutionId&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the human task becomes &lt;code&gt;ACTIVE&lt;/code&gt;, a new task is created in the task list of the user(s) or group(s) assigned to that task.&lt;/p&gt;</description></item><item><title>Install the pre-packaged Distribution</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/pre-packaged/</guid><description>&lt;h1 id="installation-procedure"&gt;Installation Procedure&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;Download the pre-packaged distribution for &lt;a href="https://downloads.camunda.cloud/release/camunda-bpm/wildfly/"&gt;WildFly&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Unpack the distro to a directory.&lt;/li&gt;
-&lt;li&gt;Adjust the datasource according to your needs (see &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/manual/"&gt;Manual Installation&lt;/a&gt;).&lt;/li&gt;
-&lt;li&gt;Startup the server by running &lt;code&gt;fluxnova-welcome.bat&lt;/code&gt; or by using the &lt;code&gt;$WILDFLY_HOME/bin/standalone.{bat/sh}&lt;/code&gt; script.&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Install the Pre-Packaged Distribution</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/pre-packaged/</guid><description>&lt;h1 id="installation-procedure"&gt;Installation Procedure&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the human task becomes &lt;code&gt;ACTIVE&lt;/code&gt;, a new task is created in the task list of the user(s) or group(s) assigned to that task.&lt;/p&gt;</description></item><item><title>Install the Pre-Packaged Distribution</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/pre-packaged/</guid><description>&lt;h1 id="installation-procedure"&gt;Installation Procedure&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Download the pre-packaged distribution from &lt;a href="https://downloads.camunda.cloud/release/camunda-bpm/tomcat/"&gt;https://downloads.camunda.cloud/release/camunda-bpm/tomcat/&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Unpack the distro to a directory.&lt;/li&gt;
@@ -2677,7 +2723,69 @@ After selecting the process to start, complete the start form. Hit &lt;code&gt;S
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;Use the BOM!&lt;/h3&gt;
- &lt;p&gt;Please import the Fluxnova BOM if you use multiple Fluxnova projects. The BOM defines versions for all Fluxnova projects. This way it is ensured that no incompatible versions are imported.&lt;/p&gt;</description></item><item><title>Javadoc</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/javadoc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/javadoc/</guid><description>&lt;p&gt;On production, this should redirect to the following page:&lt;/p&gt;
+ &lt;p&gt;Please import the Fluxnova BOM if you use multiple Fluxnova projects. The BOM defines versions for all Fluxnova projects. This way it is ensured that no incompatible versions are imported.&lt;/p&gt;</description></item><item><title>Fluxnova Playground</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/interactive-playground/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/interactive-playground/</guid><description>&lt;p&gt;Try BPMN workflows directly in your browser without any setup.
+Download Fluxnova Engine from &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/get-started/spring-boot/initializer/"&gt;Fluxnova Initializer&lt;/a&gt; in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/get-started/spring-boot/"&gt;Spring Boot Docs&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="try-a-sample-workflow"&gt;Try a Sample Workflow&lt;/h3&gt;
+&lt;link rel="stylesheet" href="https://docs.fluxnova.finos.org/manual/3.0/playground/css/modeler.css"&gt;
+&lt;link rel="stylesheet" href="https://docs.fluxnova.finos.org/manual/3.0/playground/css/bpmn-vendor.css"&gt;
+
+&lt;div class="shell"&gt;
+ &lt;div class="section-rule"&gt;&lt;/div&gt;
+ &lt;div class="sample-area"&gt;
+ 
+ &lt;div class="sample-nav"&gt;
+ &lt;button class="sample-item active" data-sample="condition"&gt;Condition Task&lt;/button&gt;
+ &lt;button class="sample-item" data-sample="user"&gt;User Task&lt;/button&gt;
+ &lt;button class="sample-item" data-sample="script"&gt;Script Task&lt;/button&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;div class="sample-detail"&gt;
+ &lt;h3 id="sampleTitle"&gt;Condition Task&lt;/h3&gt;
+
+ &lt;p id="sampleDescription"&gt;
+ This example shows how the process chooses one path or another based on data.
+ &lt;/p&gt;
+
+ &lt;div class="info-grid"&gt;
+ &lt;div class="info-box"&gt;
+ &lt;h4&gt;Example input JSON&lt;/h4&gt;
+ &lt;div class="value" id="sampleData"&gt;
+ { "input": { "value": 15 } }
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="info-box"&gt;
+ &lt;h4&gt;Expected result&lt;/h4&gt;
+ &lt;div class="value" id="sampleResult"&gt;
+ Goes to the Yes task because the value is greater than 10.
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="sample-actions"&gt;
+ &lt;button class="btn primary" id="loadExampleBtn"&gt;
+ Load Example
+ &lt;/button&gt;
+ &lt;/div&gt;
+
+ &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="how-to-section"&gt;
+ &lt;h3&gt;Take a guided tour of Fluxnova by clicking
+ &lt;button class="inline-btn" onclick="startGuide(); scrollToTab('guideBox')"&gt;GUIDE ME&lt;/button&gt;
+ to explore its components.&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="breakout"&gt;
+ 
+ &lt;dialog id="myDialog" class="modal"&gt;
+ &lt;div class="box"&gt;
+ &lt;span id="closeBtn" class="close"&gt;&amp;times;&lt;/span&gt;
+ &lt;label class="input-label" for="inputBox"&gt;Process variables (JSON)&lt;/label&gt;
+ &lt;textarea id="inputBox" rows="3" aria-describedby="inputError" placeholder="{&amp;quot;input&amp;quot;: {&amp;quot;value&amp;quot;: 10}}"&gt;&lt;/textarea&gt;
+ &lt;p id="inputError" class="input-error" role="alert"&gt;&lt;/p&gt;</description></item><item><title>Javadoc</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/javadoc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/javadoc/</guid><description>&lt;p&gt;On production, this should redirect to the following page:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;a href="https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/"&gt;Javadoc&lt;/a&gt;&lt;/li&gt;
@@ -2822,7 +2930,23 @@ to the newly created empty model instance.&lt;/p&gt;
 the same 3 steps as the creation of the DMN definitions element:&lt;/p&gt;</description></item><item><title>CSRF Prevention</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/shared-options/csrf-prevention/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/shared-options/csrf-prevention/</guid><description>&lt;p&gt;A CSRF filter is enabled by default, validating each modifying request performed through the webapps. The filter implements a (per-session) &lt;em&gt;Synchronization Token&lt;/em&gt; method for CSRF validation with an optional &lt;em&gt;Same Origin with Standard Headers&lt;/em&gt; verification.&lt;/p&gt;
 &lt;p&gt;In Spring Boot Starter, the configuration needs to be made in the &lt;code&gt;application.yaml&lt;/code&gt;.
 Please read more about it &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/spring-boot-integration/configuration/#csrf"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you would like to enable the additional &lt;em&gt;Same Origin with Standard Headers&lt;/em&gt; verification, the &lt;code&gt;targetOrigin&lt;/code&gt; init-parameter should be set in the &lt;code&gt;web.xml&lt;/code&gt; file of your application. That, and some additional optional initialization parameters are:&lt;/p&gt;</description></item><item><title>Dashboard</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/tasklist/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/tasklist/dashboard/</guid><description>&lt;figure class="image"&gt;
+&lt;p&gt;If you would like to enable the additional &lt;em&gt;Same Origin with Standard Headers&lt;/em&gt; verification, the &lt;code&gt;targetOrigin&lt;/code&gt; init-parameter should be set in the &lt;code&gt;web.xml&lt;/code&gt; file of your application. That, and some additional optional initialization parameters are:&lt;/p&gt;</description></item><item><title>Dashboard</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/dashboard/</guid><description>&lt;figure class="image"&gt;
+ &lt;span&gt;&lt;img
+ src="../../img/dashboard-landing-page.png"
+ 
+ title="Dashboard"
+ /&gt;
+ &lt;/span&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The Dashboard serves as the landing page of Fluxnova Control Center, providing a high-level overview of open incidents and active process instances within the system. It is designed to give users immediate visibility into system health and operational load, enabling quick identification of critical issues and high-volume processes.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The dashboard visualizes incidents and process instances using interactive pie charts, where data is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aggregated by process definition key&lt;/li&gt;
+&lt;li&gt;Sorted in descending order by volume, highlighting the most impacted processes first&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At the center of each pie chart, a numeric indicator represents the total number of open incidents or process instances for the selected timeframe.&lt;/p&gt;</description></item><item><title>Dashboard</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/tasklist/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/tasklist/dashboard/</guid><description>&lt;figure class="image"&gt;
  &lt;span&gt;&lt;img
  src="../img/tasklist-dashboard-detail.png"
  
@@ -2924,7 +3048,25 @@ which is based on the &lt;a href="https://jakarta.ee/specifications/cdi/4.0/jaka
 the CDI 4.0 standard but only implements a subset of it.&lt;/p&gt;
 &lt;p&gt;The Fluxnova Engine offers CDI 4 integration with the &lt;code&gt;fluxnova-engine-cdi-jakarta&lt;/code&gt; module. This module is integrated
 directly into the Quarkus Extension. You can learn more about the features and the programming model
-at &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/cdi-java-ee-integration/"&gt;CDI and Java EE Integration&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Evaluating Decisions using the DMN Engine API</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/dmn-engine/evaluate-decisions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/dmn-engine/evaluate-decisions/</guid><description>&lt;p&gt;The DMN engine 
+at &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/cdi-java-ee-integration/"&gt;CDI and Java EE Integration&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Evaluate Decision Definition</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/dmn/evaluate-decision-definition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/dmn/evaluate-decision-definition/</guid><description>&lt;p&gt;The Evaluate Decision Definition feature allows users to execute and validate decision logic directly within Fluxnova Control Center. It provides a simple interface to test decision outcomes by supplying input data and reviewing the resulting output.&lt;/p&gt;
+&lt;p&gt;This functionality is primarily used for verification, debugging, and analysis of decision models.&lt;/p&gt;
+&lt;h3 id="overview"&gt;Overview&lt;/h3&gt;
+&lt;p&gt;Decision evaluation is available within the Decision Definition Details View and enables users to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Execute decision logic&lt;/li&gt;
+&lt;li&gt;Validate rule behavior using custom input values&lt;/li&gt;
+&lt;li&gt;Quickly test different scenarios and outcomes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="accessing-decision-evaluation"&gt;Accessing Decision Evaluation&lt;/h2&gt;
+&lt;figure class="image"&gt;
+&lt;span&gt;&lt;video loop autoplay width=100%&gt;&lt;source
+ src="../../img/decision-evaluation.mp4"
+ type="video/mp4"
+ 
+ title="Evaluate Decision"
+ /&gt;&lt;/video&gt;&lt;/span&gt;
+&lt;/figure&gt;
+&lt;p&gt;To evaluate a decision definition:&lt;/p&gt;</description></item><item><title>Evaluating Decisions using the DMN Engine API</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/dmn-engine/evaluate-decisions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/dmn-engine/evaluate-decisions/</guid><description>&lt;p&gt;The DMN engine 
 &lt;a href="https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/org/finos/fluxnova/bpm/dmn/engine/DmnEngine.html"&gt;interface&lt;/a&gt; exposes methods
 for parsing and evaluating DMN Decisions.&lt;/p&gt;
 &lt;h1 id="parse-decisions"&gt;Parse Decisions&lt;/h1&gt;
@@ -5364,8 +5506,8 @@ These three standards are defined by the &lt;a href="http://www.omg.org/"&gt;Obj
 Fluxnova supports the 2.0 version of BPMN.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Getting started implementing BPMN Processes: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/"&gt;Quick Start (Java / JS)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Getting to Know BPMN as a Modeling Language: &lt;a href="https://fluxnova.finos.org/bpmn/tutorial/"&gt;BPMN Modeling Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Modeling BPMN: &lt;a href="https://fluxnova.finos.org/bpmn/reference/"&gt;BPMN Modeling Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Getting to Know BPMN as a Modeling Language: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/modeler/bpmn/"&gt;BPMN Modeling Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modeling BPMN: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/"&gt;BPMN Modeling Reference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Tool for modeling BPMN: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/modeler/"&gt;BPMN Modeler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Implementing BPMN Processes: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/"&gt;BPMN Implementation Reference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Executing BPMN: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/"&gt;Process Engine&lt;/a&gt;&lt;/li&gt;
@@ -5376,17 +5518,7 @@ Fluxnova supports the 2.0 version of BPMN.&lt;/p&gt;
 
  &lt;h3&gt;Deprecated Feature&lt;/h3&gt;
 
- &lt;p&gt;This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p&gt;</description></item><item><title>Install the Full Distribution on a JBoss EAP/WildFly Application Server manually</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/manual/</guid><description>&lt;p&gt;This document describes the installation of Fluxnova and its components on a vanilla &lt;a href="http://www.wildfly.org"&gt;WildFly Application Server&lt;/a&gt; or JBoss EAP 7 / 8.&lt;/p&gt;
-
-&lt;div class="note bg-info docs-info"&gt;
- &lt;h3&gt;Reading this Guide&lt;/h3&gt;
- &lt;p&gt;&lt;p&gt;This guide uses a number of variables to denote common path names and constants:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;$WILDFLY_HOME&lt;/code&gt; points to the JBoss EAP/WildFly application server main directory.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$WILDFLY_VERSION&lt;/code&gt; denotes the version of WildFly application server.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$WILDFLY_DISTRIBUTION&lt;/code&gt; represents the downloaded pre-packaged Fluxnova distribution for WildFly, e.g. &lt;code&gt;fluxnova-bpm-wildfly-$PLATFORM_VERSION.zip&lt;/code&gt; or &lt;code&gt;fluxnova-bpm-wildfly-$PLATFORM_VERSION.tar.gz&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$PLATFORM_VERSION&lt;/code&gt; denotes the version of Fluxnova you want to install or already have installed, e.g. &lt;code&gt;1.0.0&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description></item><item><title>Install the Full Distribution on a Tomcat Application Server manually</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/manual/</guid><description>&lt;p&gt;This section describes how you can install Fluxnova and its components on a vanilla &lt;a href="http://tomcat.apache.org/"&gt;Apache Tomcat&lt;/a&gt;, if you are not able to use the pre-packaged Tomcat distribution. In addition, download a &lt;a href="https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.tomcat/fluxnova-tomcat"&gt;Tomcat distribution&lt;/a&gt; to fetch the required Fluxnova modules.&lt;/p&gt;
+ &lt;p&gt;This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p&gt;</description></item><item><title>Install the Full Distribution on a Tomcat Application Server manually</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/tomcat/manual/</guid><description>&lt;p&gt;This section describes how you can install Fluxnova and its components on a vanilla &lt;a href="http://tomcat.apache.org/"&gt;Apache Tomcat&lt;/a&gt;, if you are not able to use the pre-packaged Tomcat distribution. In addition, download a &lt;a href="https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.tomcat/fluxnova-tomcat"&gt;Tomcat distribution&lt;/a&gt; to fetch the required Fluxnova modules.&lt;/p&gt;
 
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;Reading the Guide&lt;/h3&gt;
@@ -5509,16 +5641,12 @@ successfully bootstrapped, and a deployment can be performed.&lt;/p&gt;
  &lt;h3&gt;Limits for Rolling Updates&lt;/h3&gt;
  &lt;p&gt;&lt;p&gt;Note that it is only possible to update from one minor version to the next. For example, it is possible to update from &lt;code&gt;1.0.3&lt;/code&gt; to &lt;code&gt;1.1.2&lt;/code&gt; in a rolling fashion but it is not possible to update from &lt;code&gt;1.0.3&lt;/code&gt; to &lt;code&gt;1.2.1&lt;/code&gt; in one go.
 Before the rolling update from one minor to another can be executed, the latest patch, of the current used minor version, must be applied to all nodes before proceeding to the next minor version.&lt;/p&gt;</description></item><item><title>Run Fluxnova using Docker</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/docker/</guid><description>&lt;h1 id="community-edition"&gt;Community Edition&lt;/h1&gt;
-&lt;p&gt;The Community Edition docker images can be found on &lt;a href="https://github.com/finos/docker-fluxnova-bpm-platform"&gt;GitHub&lt;/a&gt; and &lt;a href="https://hub.docker.com/r/fluxnova/fluxnova-bpm-platform/"&gt;Docker Hub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="start-fluxnova-run-using-docker"&gt;Start Fluxnova Run using Docker&lt;/h2&gt;
-&lt;p&gt;To start &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/"&gt;Fluxnova Run&lt;/a&gt; execute the following commands:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull fluxnova/fluxnova-bpm-platform:run-latest
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name fluxnova -p 8080:8080 fluxnova/fluxnova-bpm-platform:run-latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="start-fluxnova-tomcat-using-docker"&gt;Start Fluxnova (Tomcat) using Docker&lt;/h2&gt;
-&lt;p&gt;To start Fluxnova, execute the following commands:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull fluxnova/fluxnova-bpm-platform:latest
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name fluxnova -p 8080:8080 fluxnova/fluxnova-bpm-platform:latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please note that by default the Apache Tomcat distribution is used. For a guide on how to use one of the other distributions, see the &lt;a href="https://github.com/finos/docker-fluxnova-bpm-platform#supported-tagsreleases"&gt;tag schema&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Send Task</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/send-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/send-task/</guid><description>&lt;p&gt;A Send Task is used to send a message. In Fluxnova this is done by calling Java code.&lt;/p&gt;
+&lt;p&gt;The Community Edition docker images can be found on &lt;a href="https://hub.docker.com/r/finos/fluxnova-bpm-platform/"&gt;Docker Hub&lt;/a&gt;. The Dockerfile used to build the image can be found on &lt;a href="https://github.com/finos/fluxnova-bpm-platform/blob/main/Dockerfile"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="start-fluxnova-using-docker"&gt;Start Fluxnova using Docker&lt;/h2&gt;
+&lt;p&gt;To pull and start the prebuilt &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/"&gt;Fluxnova Run&lt;/a&gt; distribution, execute the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull finos/fluxnova-bpm-platform:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name fluxnova -p 8080:8080 finos/fluxnova-bpm-platform:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This starts a Fluxnova Run instance on port 8080. You can access the web interface at &lt;code&gt;http://localhost:8080/&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Send Task</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/send-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/send-task/</guid><description>&lt;p&gt;A Send Task is used to send a message. In Fluxnova this is done by calling Java code.&lt;/p&gt;
 &lt;p&gt;The Send Task has the same behavior as a Service Task.&lt;/p&gt;
 &lt;div class="bpmn-symbol"&gt;&lt;img src="https://docs.fluxnova.finos.org/manual/3.0//img/short-codes/bpmn-send-task.png" /&gt;&lt;/div&gt;
 
@@ -5688,7 +5816,7 @@ or simply &lt;code&gt;/engine-rest/{rest-methods}&lt;/code&gt;. Any other shared
 &lt;/div&gt;
 
 &lt;h1 id="overview"&gt;Overview&lt;/h1&gt;
-&lt;p&gt;Element templates are a way to extend the &lt;a href="https://fluxnova.org/bpmn/tool/"&gt;Fluxnova Modeler&lt;/a&gt; with domain specific diagram elements such as service and user tasks.&lt;/p&gt;
+&lt;p&gt;Element templates are a way to extend the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/modeler/"&gt;Fluxnova Modeler&lt;/a&gt; with domain specific diagram elements such as service and user tasks.&lt;/p&gt;
 &lt;figure class="image"&gt;
  &lt;span&gt;&lt;img
  src="img/overview.png"
@@ -5793,55 +5921,7 @@ They are useful when clients need to remove sets of deployments efficiently and 
 &lt;p&gt;A case task is a regular task that requires a &lt;code&gt;caseRef&lt;/code&gt; attribute that references a case definition by its key. Such a case task can be defined as follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;caseTask&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;checkCreditCase&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Check credit&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;caseRef=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;checkCreditCase&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The referenced case definition is resolved at runtime. This means that the referenced case can be deployed independently from the calling case, if needed.&lt;/p&gt;
-&lt;p&gt;A case task in state &lt;code&gt;ENABLED&lt;/code&gt; can be started manually using the &lt;code&gt;CaseService&lt;/code&gt; as follows:&lt;/p&gt;</description></item><item><title>Configure the Full Distribution for JBoss EAP/WildFly</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/configuration/</guid><description>&lt;p&gt;This page explains how to configure the full distribution for the JBoss EAP/WildFly application server.&lt;/p&gt;
-&lt;h2 id="ldap"&gt;LDAP&lt;/h2&gt;
-&lt;p&gt;In order to setup LDAP for the JBoss EAP/WildFly Application Server distribution, you have to perform the following steps:&lt;/p&gt;
-&lt;h3 id="adjust-the-process-engine-configuration"&gt;Adjust the Process Engine Configuration&lt;/h3&gt;
-&lt;p&gt;Edit the file &lt;code&gt;standalone.xml&lt;/code&gt; (or &lt;code&gt;domain.xml&lt;/code&gt;) provided by the JBoss EAP/WildFly Application Server and add the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/identity-service/#the-ldap-identity-service"&gt;LDAP Identity Provider Plugin&lt;/a&gt; and the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/authorization-service/#the-administrator-authorization-plugin"&gt;Administrator Authorization Plugin&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;subsystem&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;xmlns=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;urn:org.finos.fluxnova.bpm.jboss:1.1&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;process-engines&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;process-engine&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;default&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;default=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; ...
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;...&lt;span style="color:#f92672"&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;plugins&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;class&amp;gt;&lt;/span&gt;org.finos.fluxnova.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin&lt;span style="color:#f92672"&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;serverUrl&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;ldap://localhost:4334/&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;managerDn&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;uid=jonny,ou=office-berlin,o=fluxnova,c=org&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;managerPassword&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;s3cr3t&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;baseDn&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;o=fluxnova,c=org&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userSearchBase&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;ou=employees&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userSearchFilter&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;(objectclass=person)&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userIdAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;uid&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userFirstnameAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;cn&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userLastnameAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;sn&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userEmailAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;mail&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;userPasswordAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;userpassword&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;groupSearchBase&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;ou=roles&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;groupSearchFilter&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;(objectclass=groupOfNames)&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;groupIdAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;ou&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;groupNameAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;cn&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;groupMemberAttribute&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;member&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;class&amp;gt;&lt;/span&gt;org.finos.fluxnova.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin&lt;span style="color:#f92672"&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;property&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;administratorUserName&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;admin&lt;span style="color:#f92672"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/plugins&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/process-engine&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/process-engines&amp;gt;&lt;/span&gt; ...
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/subsystem&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;administratorUserName&lt;/code&gt; property should contain the user id of the LDAP user you want to grant administrator authorizations to. You can then use this user to log in to the web application and grant authorizations to additional users.&lt;/p&gt;</description></item><item><title>Configure the Full Distribution for Oracle WebLogic</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/wls/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/wls/configuration/</guid><description>&lt;p&gt;This page explains how to configure the full distribution for an Oracle WebLogic application server.&lt;/p&gt;
+&lt;p&gt;A case task in state &lt;code&gt;ENABLED&lt;/code&gt; can be started manually using the &lt;code&gt;CaseService&lt;/code&gt; as follows:&lt;/p&gt;</description></item><item><title>Configure the Full Distribution for Oracle WebLogic</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/full/wls/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/full/wls/configuration/</guid><description>&lt;p&gt;This page explains how to configure the full distribution for an Oracle WebLogic application server.&lt;/p&gt;
 &lt;h2 id="ldap"&gt;LDAP&lt;/h2&gt;
 &lt;p&gt;In order to set up LDAP for the Oracle WebLogic distribution, you have to perform the following steps:&lt;/p&gt;
 &lt;h3 id="add-the-ldap-library"&gt;Add the LDAP Library&lt;/h3&gt;
@@ -5934,7 +6014,7 @@ rule is satisfied and the decision result contains the output entries
 (conclusion) of this rule.&lt;/p&gt;
 &lt;p&gt;A rule is represented by a &lt;code&gt;rule&lt;/code&gt; element inside a &lt;code&gt;decisionTable&lt;/code&gt; XML element.&lt;/p&gt;</description></item><item><title>Embed the API</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/embeddability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/embeddability/</guid><description>&lt;p&gt;The REST API is an artifact of its own, which means that it can be embedded in any other JAX-RS application independently of the engine.&lt;/p&gt;
 &lt;h1 id="prerequisites"&gt;Prerequisites&lt;/h1&gt;
-&lt;p&gt;The REST API classes are tested with &lt;a href="http://www.jboss.org/resteasy/"&gt;RESTEasy&lt;/a&gt; and &lt;a href="http://jersey.java.net/"&gt;Jersey&lt;/a&gt; as the JAX-RS implementation.
+&lt;p&gt;The REST API classes are tested with &lt;a href="https://resteasy.dev/"&gt;RESTEasy&lt;/a&gt; and &lt;a href="https://eclipse-ee4j.github.io/jersey/"&gt;Jersey&lt;/a&gt; as the JAX-RS implementation.
 Furthermore, the engine classes and Jackson&amp;rsquo;s &lt;code&gt;com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider&lt;/code&gt; artifact (as well as transitive Jackson dependencies) have to be on the classpath.&lt;/p&gt;
 &lt;h1 id="required-steps"&gt;Required Steps&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Add the REST API to your project as a Maven dependency.&lt;/p&gt;</description></item><item><title>Entry and Exit Criteria</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/concepts/entry-exit-criteria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/cmmn11/concepts/entry-exit-criteria/</guid><description>&lt;p&gt;Transitions in a CMMN case can happen in two ways: Either by external interaction or by events occurring and conditions being fulfilled. The former refers to any explicit interaction with a case that is triggered from the outside. For example, a human worker completing a human task would be such an interaction. Completing a task means that the corresponding plan item is completed, depending on the actual case model, the case instance may complete.&lt;/p&gt;</description></item><item><title>Event Subprocess</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/subprocesses/event-subprocess/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/subprocesses/event-subprocess/</guid><description>&lt;p&gt;The event subprocess is a subprocess that is triggered by an event. An event subprocess can be added at the process level or at any subprocess level. The event used to trigger an event subprocess is configured using a start event. Therefore, none start events are not supported for event subprocesses. An event subprocess might be triggered using events like message events, error events, signal events, timer events, or compensation events. The subscription to the start event is created when the scope (process instance or subprocess) hosting the event subprocess is created. The subscription is removed when the scope is ended.&lt;/p&gt;</description></item><item><title>Expression Resolving</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/cdi-java-ee-integration/expression-resolving/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/cdi-java-ee-integration/expression-resolving/</guid><description>&lt;p&gt;The &lt;code&gt;fluxnova-engine-cdi&lt;/code&gt; and &lt;code&gt;fluxnova-engine-cdi-jakarta&lt;/code&gt; libraries expose CDI beans via Expression Language,
@@ -6011,7 +6091,7 @@ supports its usage.&lt;/p&gt;</description></item><item><title>Filters</title><l
 &lt;li&gt;Historic case instances plus all related historic data (e.g., historic variable instances, historic task instances, etc.)&lt;/li&gt;
 &lt;li&gt;Historic batches plus all related historic data (historic incidents and job logs)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;History cleanup can be triggered manually or scheduled on a regular basis. Only &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/authorization-service/#the-fluxnova-admin-group"&gt;fluxnova-admins&lt;/a&gt; have permissions to execute history cleanup manually.&lt;/p&gt;</description></item><item><title>History Time To Live</title><link>https://docs.fluxnova.finos.org/manual/3.0/modeler/history-time-to-live/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/modeler/history-time-to-live/</guid><description>&lt;p&gt;Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In Fluxnova, &lt;a href="https://docs.fluxnova.finos.org/user-guide/process-engine/history/"&gt;history cleanup&lt;/a&gt; removes this historic data from the database based on a defined &lt;strong&gt;history time to live (HTTL)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;History cleanup can be triggered manually or scheduled on a regular basis. Only &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/authorization-service/#the-fluxnova-admin-group"&gt;fluxnova-admins&lt;/a&gt; have permissions to execute history cleanup manually.&lt;/p&gt;</description></item><item><title>History Time To Live</title><link>https://docs.fluxnova.finos.org/manual/3.0/modeler/history-time-to-live/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/modeler/history-time-to-live/</guid><description>&lt;p&gt;Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In Fluxnova, &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/history/"&gt;history cleanup&lt;/a&gt; removes this historic data from the database based on a defined &lt;strong&gt;history time to live (HTTL)&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Going forward, you must configure HTTL in one of the following ways:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Define HTTL per model directly in Desktop Modeler.&lt;/li&gt;
@@ -6167,9 +6247,21 @@ form. The most convenient way to use a variable is the &lt;code&gt;cam-variable-
 there are some situations where directive-based usage is inconvenient. In such situations it is
 useful to declare additional variables programmatically:&lt;/p&gt;</description></item><item><title>Process Application Event Listeners</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-event-listeners/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-event-listeners/</guid><description>&lt;p&gt;The process engine supports defining two types of event listeners: &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/delegation-code/#execution-listener"&gt;Task Event Listeners and Execution Event Listeners&lt;/a&gt;.
 Task Event listeners allow to react to Task Events (Tasks are Created, Assigned, Completed). Execution Listeners allow to react to events fired as execution progresses through the diagram: Activities are Started, Ended and Transitions are being taken.&lt;/p&gt;
-&lt;p&gt;When using the process application API, the process engine makes sure that Events are delegated to the right process application. For example, assume there is a process application deployed as &amp;ldquo;invoice.war&amp;rdquo; which deploys a process definition named &amp;ldquo;invoice&amp;rdquo;. The invoice process has a task named &amp;ldquo;archive invoice&amp;rdquo;. The application &amp;ldquo;invoice.war&amp;rdquo; further provides a Java Class implementing the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/delegation-code/#execution-listener"&gt;ExecutionListener&lt;/a&gt; interface and is configured to be invoked whenever the END event is fired on the &amp;ldquo;archive invoice&amp;rdquo; activity. The process engine makes sure that the event is delegated to the listener class located inside the process application:&lt;/p&gt;</description></item><item><title>Process Engine Concepts</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-concepts/</guid><description>&lt;p&gt;This section explains some core process engine concepts that are used in both the process engine API and the internal process engine implementation. Understanding these fundamentals makes it easier to use the process engine API.&lt;/p&gt;
+&lt;p&gt;When using the process application API, the process engine makes sure that Events are delegated to the right process application. For example, assume there is a process application deployed as &amp;ldquo;invoice.war&amp;rdquo; which deploys a process definition named &amp;ldquo;invoice&amp;rdquo;. The invoice process has a task named &amp;ldquo;archive invoice&amp;rdquo;. The application &amp;ldquo;invoice.war&amp;rdquo; further provides a Java Class implementing the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/delegation-code/#execution-listener"&gt;ExecutionListener&lt;/a&gt; interface and is configured to be invoked whenever the END event is fired on the &amp;ldquo;archive invoice&amp;rdquo; activity. The process engine makes sure that the event is delegated to the listener class located inside the process application:&lt;/p&gt;</description></item><item><title>Process Definition</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-definition-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-definition-view/</guid><description>&lt;p&gt;The Process Definitions view provides a centralized interface for managing and analyzing deployed BPMN process models. It allows users to view the latest and all versions process definitions and perform lifecycle operations on them.&lt;/p&gt;
+&lt;h2 id="process-definitions-list-view"&gt;Process Definitions List View&lt;/h2&gt;
+&lt;p&gt;The landing page of this section is the Process Definitions List View, which displays all active and suspended process definitions with an option to view only latest version.&lt;/p&gt;
+&lt;figure class="image"&gt;
+ &lt;span&gt;&lt;img
+ src="../../img/process-definition-list.png"
+ 
+ title="Process Definition List View"
+ /&gt;
+ &lt;/span&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Key capabilities of the list view include:&lt;/p&gt;</description></item><item><title>Process Engine Concepts</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-concepts/</guid><description>&lt;p&gt;This section explains some core process engine concepts that are used in both the process engine API and the internal process engine implementation. Understanding these fundamentals makes it easier to use the process engine API.&lt;/p&gt;
 &lt;h1 id="process-definitions"&gt;Process Definitions&lt;/h1&gt;
-&lt;p&gt;A process definition defines the structure of a process. You could say that the process definition &lt;em&gt;is&lt;/em&gt; the process. Fluxnova uses &lt;a href="http://fluxnova.finos.org/bpmn/tutorial.html"&gt;BPMN 2.0&lt;/a&gt; as its primary modeling language for modeling process definitions.&lt;/p&gt;
+&lt;p&gt;A process definition defines the structure of a process. You could say that the process definition &lt;em&gt;is&lt;/em&gt; the process. Fluxnova uses &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/"&gt;BPMN 2.0&lt;/a&gt; as its primary modeling language for modeling process definitions.&lt;/p&gt;
 
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;BPMN 2.0 Reference&lt;/h3&gt;
@@ -6226,7 +6318,7 @@ Beside the diagram view the process will be displayed as an &lt;a href="#activit
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;version&amp;gt;&lt;/span&gt;{project-version}&lt;span style="color:#f92672"&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By default the application path is &lt;code&gt;engine-rest&lt;/code&gt;, so without any further configuration you can access the api at &lt;code&gt;http://localhost:8080/engine-rest&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Because we use jersey, one can use spring boot&amp;rsquo;s &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html"&gt;common application properties&lt;/a&gt;.
+&lt;p&gt;Because we use jersey, one can use spring boot&amp;rsquo;s &lt;a href="https://docs.spring.io/spring-boot/appendix/application-properties/index.html"&gt;common application properties&lt;/a&gt;.
 For example, to change the application path, use&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-properties" data-lang="properties"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;spring.jersey.application-path&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;myapplicationpath&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To modify the configuration or register additional resources, one can provide a bean which extends from
@@ -6300,8 +6392,8 @@ For example, to change the application path, use&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Write attribute value to Writer&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;attr.&lt;span style="color:#a6e22e"&gt;writeToWriter&lt;/span&gt;(writer);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>XML</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/xml/</guid><description>&lt;p&gt;For working with XML, the Spin functions &lt;code&gt;org.finos.fluxnova.spin.Spin.S&lt;/code&gt; and &lt;code&gt;org.finos.fluxnova.spin.Spin.XML&lt;/code&gt; can be used as entry points. The latter offers strongly-typed access to Spin&amp;rsquo;s XML API and is preferable when writing Java code. In scripting environments, only the &lt;code&gt;S&lt;/code&gt; function is available. The returned Spin wrapper offers methods for manipulating and writing XML as well as mapping XML to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin&amp;rsquo;s intermediary XML format.&lt;/p&gt;</description></item><item><title>Process Application Resource Access</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-resources/</guid><description>&lt;p&gt;Process applications provide and logically group resources specific to the processes they contain. There are resources that are part of the application itself, like a classloader and its classes and resources, as well as resources managed by the process engine at runtime, like a set of &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/scripting/"&gt;scripting engines&lt;/a&gt; or &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/"&gt;Spin data formats&lt;/a&gt;. This section describes under which conditions the process engine looks up resources on process application level and how that lookup can be enforced.&lt;/p&gt;</description></item><item><title>Run Fluxnova using Karaf / OSGi</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/karaf-osgi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/karaf-osgi/</guid><description>&lt;h1 id="community-edition"&gt;Community Edition&lt;/h1&gt;
-&lt;p&gt;If you want to run Fluxnova with Karaf / OSGi, you can find the corresponding distributions on &lt;a href="https://github.com/finos/fluxnova-bpm-platform-osgi/releases"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Add a User Task to the Process (4/6)</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/user-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/user-task/</guid><description>&lt;p&gt;In this section, you&amp;rsquo;ll learn how to involve humans in your process by using BPMN 2.0 &lt;em&gt;User Tasks&lt;/em&gt;.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>XML</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/xml/</guid><description>&lt;p&gt;For working with XML, the Spin functions &lt;code&gt;org.finos.fluxnova.spin.Spin.S&lt;/code&gt; and &lt;code&gt;org.finos.fluxnova.spin.Spin.XML&lt;/code&gt; can be used as entry points. The latter offers strongly-typed access to Spin&amp;rsquo;s XML API and is preferable when writing Java code. In scripting environments, only the &lt;code&gt;S&lt;/code&gt; function is available. The returned Spin wrapper offers methods for manipulating and writing XML as well as mapping XML to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin&amp;rsquo;s intermediary XML format.&lt;/p&gt;</description></item><item><title>Process Application Resource Access</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-applications/process-application-resources/</guid><description>&lt;p&gt;Process applications provide and logically group resources specific to the processes they contain. There are resources that are part of the application itself, like a classloader and its classes and resources, as well as resources managed by the process engine at runtime, like a set of &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/scripting/"&gt;scripting engines&lt;/a&gt; or &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/data-formats/"&gt;Spin data formats&lt;/a&gt;. This section describes under which conditions the process engine looks up resources on process application level and how that lookup can be enforced.&lt;/p&gt;</description></item><item><title>Fluxnova Initializer</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/spring-boot/initializer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/spring-boot/initializer/</guid><description/></item><item><title>Run Fluxnova using Karaf / OSGi</title><link>https://docs.fluxnova.finos.org/manual/3.0/installation/karaf-osgi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/installation/karaf-osgi/</guid><description>&lt;h1 id="community-edition"&gt;Community Edition&lt;/h1&gt;
+&lt;p&gt;If you want to run Fluxnova with Karaf / OSGi, you can find the corresponding distributions on &lt;a href="https://github.com/finos/fluxnova-bpm-platform/releases"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Add a User Task to the Process (4/6)</title><link>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/user-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/user-task/</guid><description>&lt;p&gt;In this section, you&amp;rsquo;ll learn how to involve humans in your process by using BPMN 2.0 &lt;em&gt;User Tasks&lt;/em&gt;.&lt;/p&gt;
 &lt;h1 id="add-a-user-task"&gt;Add a User Task&lt;/h1&gt;
 &lt;p&gt;We want to modify our process so that we can involve humans.&lt;/p&gt;
 &lt;p&gt;To do so, open the process in the Fluxnova Modeler.&lt;/p&gt;
@@ -6444,13 +6536,24 @@ supported by the Fluxnova DMN engine:&lt;/p&gt;</description></item><item><title
  &lt;a href="https://github.com/finos/fluxnova-get-started-dmn/archive/Step-4.zip"&gt;Download as .zip&lt;/a&gt;
  or checkout the corresponding tag with &lt;a class="toggle-instructions"&gt;Git&lt;/a&gt;.
  &lt;/p&gt;</description></item><item><title>Fluent Builder API</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/fluent-builder-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/fluent-builder-api/</guid><description>&lt;p&gt;To create simple BPMN processes we provide a fluent builder API. With this API you can easily create basic
-processes in a few lines of code. In the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/bpmn-model-api/generate-process-fluent-api"&gt;generate process fluent api&lt;/a&gt; quickstart we
-demonstrate how to create a rather complex process with 5 tasks and 2 gateways within less than 50 lines of code.&lt;/p&gt;
-&lt;p&gt;The fluent builder API is not nearly complete but provides you with the following basic elements:&lt;/p&gt;</description></item><item><title>Full Example</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/full-examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/full-examples/</guid><description>&lt;p&gt;Full examples of how to integrate the Forms SDK in a custom application can be found in the &lt;a href="https://github.com/fluxnova/fluxnova-bpm-examples"&gt;Fluxnova Platform Examples Repository&lt;/a&gt; in Github.&lt;/p&gt;
+processes in a few lines of code.&lt;/p&gt;
+&lt;p&gt;The fluent builder API is not nearly complete but provides you with the following basic elements:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/fluxnova/fluxnova-bpm-examples/tree/master/sdk-js/browser-forms"&gt;Example for standalone usage of the SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/fluxnova/fluxnova-bpm-examples/tree/master/sdk-js/browser-forms-angular"&gt;Example for standalone usage of the SDK with AngularJS Integration&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Hypertext Application Language (HAL)</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/hal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/hal/</guid><description>&lt;p&gt;The REST API provides some resources in an additional media type. The
+&lt;li&gt;process&lt;/li&gt;
+&lt;li&gt;start event&lt;/li&gt;
+&lt;li&gt;exclusive gateway&lt;/li&gt;
+&lt;li&gt;parallel gateway&lt;/li&gt;
+&lt;li&gt;script task&lt;/li&gt;
+&lt;li&gt;service task&lt;/li&gt;
+&lt;li&gt;user task&lt;/li&gt;
+&lt;li&gt;signal event definition&lt;/li&gt;
+&lt;li&gt;end event&lt;/li&gt;
+&lt;li&gt;subprocess&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="create-a-process-with-the-fluent-builder-api"&gt;Create a Process With the Fluent Builder API&lt;/h1&gt;
+&lt;p&gt;To create an empty model instance with a new process the method &lt;code&gt;Bpmn.createProcess()&lt;/code&gt; is used. After this,
+you can add as many tasks and gateways as you like. At the end you must call &lt;code&gt;done()&lt;/code&gt; to return the generated
+model instance. For example, a simple process with one user task can be created like this:&lt;/p&gt;</description></item><item><title>Full Example</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/full-examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/integrate/full-examples/</guid><description>&lt;p&gt;Full examples of how to integrate the Forms SDK in a custom application can be found in the &lt;a href="https://github.com/finos/fluxnova-examples"&gt;Fluxnova Platform Examples Repository&lt;/a&gt; in Github.&lt;/p&gt;</description></item><item><title>Hypertext Application Language (HAL)</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/hal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/hal/</guid><description>&lt;p&gt;The REST API provides some resources in an additional media type. The
 &lt;a href="http://stateless.co/hal_specification.html"&gt;HAL&lt;/a&gt; media type &lt;code&gt;application/hal+json&lt;/code&gt; describes a format which contains
 links and information about other resources. This allows us to embed the
 process definition or assignee of a task directly into the response, which in turn
@@ -6602,11 +6705,32 @@ rule task, please refer to the &lt;a href="https://docs.fluxnova.finos.org/manua
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/defaultControl&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/humanTask&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The rule specified in the &lt;code&gt;humanTask&lt;/code&gt; element is valid for all plan items that reference it, here &lt;code&gt;PlanItem_HumanTask_1&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Spring Beans in Processes</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/spring-framework-integration/expressions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/spring-framework-integration/expressions/</guid><description>&lt;h1 id="limit-the-exposed-spring-beans"&gt;Limit the exposed Spring Beans&lt;/h1&gt;
-&lt;p&gt;When using the &lt;code&gt;ProcessEngineFactoryBean&lt;/code&gt;, by default, all expressions and scripts in the BPMN processes will also &amp;ldquo;see&amp;rdquo; all the Spring beans. It&amp;rsquo;s possible to limit the beans you want to expose or even expose no beans at all using a map that you can configure. The example below exposes a single bean (printer), available to use under the key &lt;code&gt;printer&lt;/code&gt;. To expose NO beans at all, pass an empty map as &lt;code&gt;beans&lt;/code&gt; property on the &lt;code&gt;SpringProcessEngineConfiguration&lt;/code&gt;. When no &lt;code&gt;beans&lt;/code&gt; property is set, all Spring beans in the context will be available.&lt;/p&gt;</description></item><item><title>Supported Environments</title><link>https://docs.fluxnova.finos.org/manual/3.0/introduction/supported-environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/introduction/supported-environments/</guid><description>&lt;p&gt;Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our QA infrastructure in the following environments.
+&lt;p&gt;When using the &lt;code&gt;ProcessEngineFactoryBean&lt;/code&gt;, by default, all expressions and scripts in the BPMN processes will also &amp;ldquo;see&amp;rdquo; all the Spring beans. It&amp;rsquo;s possible to limit the beans you want to expose or even expose no beans at all using a map that you can configure. The example below exposes a single bean (printer), available to use under the key &lt;code&gt;printer&lt;/code&gt;. To expose NO beans at all, pass an empty map as &lt;code&gt;beans&lt;/code&gt; property on the &lt;code&gt;SpringProcessEngineConfiguration&lt;/code&gt;. When no &lt;code&gt;beans&lt;/code&gt; property is set, all Spring beans in the context will be available.&lt;/p&gt;</description></item><item><title>Start Process Instance</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/start-a-process-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/start-a-process-instance/</guid><description>&lt;p&gt;Fluxnova Control Center enables users to start a new process instance on demand directly from a selected process definition details view.&lt;/p&gt;
+&lt;p&gt;This feature is typically used for manual triggering, or initiating ad hoc process instances.&lt;/p&gt;
+&lt;figure class="image"&gt;
+&lt;span&gt;&lt;video loop autoplay width=100%&gt;&lt;source
+ src="../../img/start-process-instance.mp4"
+ type="video/mp4"
+ 
+ title="Start a Process Instance"
+ /&gt;&lt;/video&gt;&lt;/span&gt;
+&lt;/figure&gt;
+&lt;h2 id="how-to-start-a-process"&gt;How to Start a Process&lt;/h2&gt;
+&lt;p&gt;To start a process instance:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to the Process Definitions list view&lt;/li&gt;
+&lt;li&gt;Locate and click on the desired process definition ID&lt;/li&gt;
+&lt;li&gt;This opens the Process Definition Details View&lt;/li&gt;
+&lt;li&gt;Click the Start Process button in the top right header&lt;/li&gt;
+&lt;li&gt;This action opens a dialog where input parameters can be provided.&lt;/li&gt;
+&lt;li&gt;Click Confirm to start a process instance for this selected process definition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="process-input-configuration"&gt;Process Input Configuration&lt;/h2&gt;
+&lt;p&gt;When starting a process, users are prompted to provide input data in JSON format.&lt;/p&gt;</description></item><item><title>Supported Environments</title><link>https://docs.fluxnova.finos.org/manual/3.0/introduction/supported-environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/introduction/supported-environments/</guid><description>&lt;p&gt;Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our QA infrastructure in the following environments.
 
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;Supported Environments&lt;/h3&gt;
- &lt;p&gt;Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation to see the environment that fits to your version of Fluxnova. e.g., &lt;a href="http://docs.fluxnova.finos.org/1.0/guides/user-guide/#introduction-supported-environments"&gt;supported environments for version 1.0&lt;/a&gt;&lt;/p&gt;
+ &lt;p&gt;Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation on the docs site to see the environment that fits to your version of Fluxnova.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;h1 id="containerapplication-server-for-runtime-components"&gt;Container/Application Server for Runtime Components&lt;/h1&gt;
@@ -6773,7 +6897,7 @@ We thus need to fetch the variable programatically:&lt;/p&gt;
 located in &lt;code&gt;app/admin/scripts/config.js&lt;/code&gt;. The following configuration options are
 available:&lt;/p&gt;
 &lt;h1 id="ldap"&gt;LDAP&lt;/h1&gt;
-&lt;p&gt;If you connect Fluxnova with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/identity-service/#the-ldap-identity-service"&gt;here&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuring JSON Handling</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/json/05-configuring-json/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/json/05-configuring-json/</guid><description>&lt;p&gt;Spin can be configured to change JSON parsing, writing and mapping settings, for example to tolerate documents that are not strictly compliant to the standard. Spin uses &lt;a href="http://wiki.fasterxml.com/JacksonHome"&gt;Jackson&lt;/a&gt; to handle JSON. The JSON data format therefore uses an instance of &lt;code&gt;com.fasterxml.jackson.databind.ObjectMapper&lt;/code&gt; that can be configured using Spin&amp;rsquo;s &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/spin/extending-spin/#configuring-data-formats"&gt;configuration mechanism&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you connect Fluxnova with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/identity-service/#the-ldap-identity-service"&gt;here&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuring JSON Handling</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/json/05-configuring-json/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/json/05-configuring-json/</guid><description>&lt;p&gt;Spin can be configured to change JSON parsing, writing and mapping settings, for example to tolerate documents that are not strictly compliant to the standard. Spin uses &lt;a href="https://github.com/fasterxml/jackson"&gt;Jackson&lt;/a&gt; to handle JSON. The JSON data format therefore uses an instance of &lt;code&gt;com.fasterxml.jackson.databind.ObjectMapper&lt;/code&gt; that can be configured using Spin&amp;rsquo;s &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/spin/extending-spin/#configuring-data-formats"&gt;configuration mechanism&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The data format class to register a configurator for is &lt;code&gt;org.finos.fluxnova.spin.impl.json.jackson.format.JacksonJsonDataFormat&lt;/code&gt;. An instance of this class provides a setter for an &lt;code&gt;ObjectMapper&lt;/code&gt; that can be used to replace the default object mapper. This logic goes into a configurator class that implements the interface &lt;code&gt;org.finos.fluxnova.spin.spi.DataFormatConfigurator&lt;/code&gt;. Please refer to the &lt;a href="https://fasterxml.github.io/jackson-databind/javadoc/2.4/"&gt;Jackson&amp;rsquo;s documentation&lt;/a&gt; on what configuration options are available.&lt;/p&gt;</description></item><item><title>Error Events</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/error-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/error-events/</guid><description>&lt;p&gt;Error events are events which are triggered by a defined error.&lt;/p&gt;
 &lt;div data-bpmn-diagram="../bpmn/event-error"&gt;&lt;/div&gt;
 &lt;h1 id="business-errors-vs-technical-errors"&gt;Business Errors vs. Technical Errors&lt;/h1&gt;
@@ -6784,7 +6908,7 @@ available:&lt;/p&gt;
 &lt;p&gt;Note that the sequence flows running out of an event-based Gateway are different than ordinary sequence flows. These sequence flows are never actually &amp;ldquo;executed&amp;rdquo;. On the contrary, they allow the process engine to determine which events an execution arriving at an event-based Gateway needs to subscribe to. The following restrictions apply:&lt;/p&gt;</description></item><item><title>Extensions</title><link>https://docs.fluxnova.finos.org/manual/3.0/introduction/extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/introduction/extensions/</guid><description>&lt;p&gt;Fluxnova is developed by Fluxnova as an open source project in collaboration with the community. This is the basis for the Fluxnova product provided by Fluxnova as a commercial offering.&lt;/p&gt;
 &lt;h1 id="community-extensions"&gt;Community Extensions&lt;/h1&gt;
 &lt;p&gt;The Fluxnova Project supports the community in its effort to build additional community extensions under the Fluxnova umbrella. Such community extensions are maintained by the community.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://github.com/finos/fluxnova-community-hub"&gt;Fluxnova Community Hub&lt;/a&gt; is a GitHub organization that serves as the home of Fluxnova open source, community-contributed extensions. You can migrate an extension you&amp;rsquo;ve built to the Hub, search for existing extensions, or get started with open source by helping community extension maintainers with open issue or pull request triage.&lt;/p&gt;</description></item><item><title>Fluxnova Run</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/</guid><description>&lt;p&gt;This guide gives an introduction to Fluxnova Run, a pre-packaged, lightweight distribution of Fluxnova. Fluxnova Run is easy to configure and does not require Java knowledge.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/finos/fluxnova-bpm-platform"&gt;Fluxnova Community Hub&lt;/a&gt; is a GitHub organization that serves as the home of Fluxnova open source, community-contributed extensions. You can migrate an extension you&amp;rsquo;ve built to the Hub, search for existing extensions, or get started with open source by helping community extension maintainers with open issue or pull request triage.&lt;/p&gt;</description></item><item><title>Fluxnova Run</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/</guid><description>&lt;p&gt;This guide gives an introduction to Fluxnova Run, a pre-packaged, lightweight distribution of Fluxnova. Fluxnova Run is easy to configure and does not require Java knowledge.&lt;/p&gt;
 &lt;h1 id="prerequisites-and-audience"&gt;Prerequisites and audience&lt;/h1&gt;
 &lt;p&gt;To use this guide, you should at least know what Fluxnova is and what it does. Check out the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/get-started/quick-start/"&gt;Get Started guides&lt;/a&gt; if you have never used Fluxnova before. The &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/installation/fluxnova-bpm-run/"&gt;Installation guide&lt;/a&gt; is also worth looking at if you are completely new to Fluxnova.&lt;/p&gt;</description></item><item><title>Generating a Business Key</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/javascript/generating-businesskey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/javascript/generating-businesskey/</guid><description>&lt;p&gt;The following example shows how you can generate a business key using Javascript:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;form&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;role&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;form&amp;#34;&lt;/span&gt;&amp;gt;
@@ -6810,7 +6934,10 @@ Event Log&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;History Level&lt;/h3&gt;
  &lt;p&gt;History level &lt;strong&gt;FULL&lt;/strong&gt; is required. Otherwise, no history
-for decisions is created.&lt;/p&gt;</description></item><item><title>Mapping XML</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/xml/05-mapping-xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/xml/05-mapping-xml/</guid><description>&lt;p&gt;Spin can deserialize XML to Java objects and serialize the annotated Java objects to XML by integrating mapping features into its fluent API. JAXB annotations can be added to the involved Java classes to configure the (de-)serialization process but are not required.&lt;/p&gt;
+for decisions is created.&lt;/p&gt;</description></item><item><title>Instance Migration</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-instance-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-instance-migration/</guid><description>&lt;p&gt;As process models evolve to accommodate enhancements, bug fixes, or changing business requirements, it becomes necessary to manage the lifecycle of running process instances that were started on older versions.&lt;/p&gt;
+&lt;p&gt;Instance Migration enables users to move active process instances from one process definition version to another within the same process definition.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;When a new version of a process is deployed, existing instances continue running on the version in which they were started. The migration feature allows these instances to be transitioned to a newer version without restarting them.&lt;/p&gt;</description></item><item><title>Mapping XML</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/xml/05-mapping-xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/spin/xml/05-mapping-xml/</guid><description>&lt;p&gt;Spin can deserialize XML to Java objects and serialize the annotated Java objects to XML by integrating mapping features into its fluent API. JAXB annotations can be added to the involved Java classes to configure the (de-)serialization process but are not required.&lt;/p&gt;
 &lt;h1 id="mapping-between-representations"&gt;Mapping between Representations:&lt;/h1&gt;
 &lt;p&gt;Assume we have a class &lt;code&gt;Customer&lt;/code&gt; defined as follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@XmlRootElement&lt;/span&gt;(name&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;customer&amp;#34;&lt;/span&gt;, namespace&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;http://fluxnova.finos.org/test&amp;#34;&lt;/span&gt;)
@@ -6903,7 +7030,7 @@ This can, for example, be useful when termination did not proceed in a desired w
 &lt;li&gt;Restoring the last state of process instances that have been erroneously canceled&lt;/li&gt;
 &lt;li&gt;Restarting process instances after a termination caused by a wrong decision&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To perform such an operation the process engine offers &lt;em&gt;the process instance restart API&lt;/em&gt;, that is entered via &lt;code&gt;RuntimeService.restartProcessInstances(...)&lt;/code&gt;. This API allows to specify multiple instantiation instructions in one call by using a fluent builder.&lt;/p&gt;</description></item><item><title>Repository Service</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/respository-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/respository-service/</guid><description>&lt;p&gt;It is also possible to access the BPMN model instance by the process definition id using the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-api/#services-api"&gt;Repository Service&lt;/a&gt;, as the following incomplete test sample code shows. Please see the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/bpmn-model-api/generate-jsf-form"&gt;generate-jsf-form&lt;/a&gt; quickstart for a complete example.&lt;/p&gt;
+&lt;p&gt;To perform such an operation the process engine offers &lt;em&gt;the process instance restart API&lt;/em&gt;, that is entered via &lt;code&gt;RuntimeService.restartProcessInstances(...)&lt;/code&gt;. This API allows to specify multiple instantiation instructions in one call by using a fluent builder.&lt;/p&gt;</description></item><item><title>Repository Service</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/respository-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/bpmn-model-api/respository-service/</guid><description>&lt;p&gt;It is also possible to access the BPMN model instance by the process definition id using the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-api/#services-api"&gt;Repository Service&lt;/a&gt;, as the following incomplete test sample code shows.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;testRepositoryService&lt;/span&gt;() {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; runtimeService.&lt;span style="color:#a6e22e"&gt;startProcessInstanceByKey&lt;/span&gt;(PROCESS_KEY);
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; String processDefinitionId &lt;span style="color:#f92672"&gt;=&lt;/span&gt; repositoryService.&lt;span style="color:#a6e22e"&gt;createProcessDefinitionQuery&lt;/span&gt;()
@@ -7011,23 +7138,7 @@ JUnit Rule. The
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to create a DMN engine with a custom configuration, you can pass
-this to the DMN engine rule.&lt;/p&gt;</description></item><item><title>The Fluxnova WildFly Subsystem</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/runtime-container-integration/jboss/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/runtime-container-integration/jboss/</guid><description>&lt;div class="note bg-warning docs-warning"&gt;
-
- &lt;h3&gt;Deprecated Feature&lt;/h3&gt;
-
- &lt;p&gt;This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;div class="note bg-info docs-info"&gt;
- &lt;h3&gt;Installation Guide&lt;/h3&gt;
- &lt;p&gt;&lt;p&gt;If you &lt;a href="http://fluxnova.finos.org/download/"&gt;download a full distribution&lt;/a&gt;, the Fluxnova Wildfly subsystem is readily installed into the application server.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://docs.fluxnova.finos.org/manual/3.0/installation/full/jboss/"&gt;Read the installation guide&lt;/a&gt; to learn how to install the Fluxnova Wildfly subsystem into your Wildfly Server.&lt;/p&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Fluxnova provides advanced integration for Wildfly in the form of a custom &lt;a href="https://docs.wildfly.org/23/Extending_WildFly.html"&gt;Wildfly Subsystem&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Variables in the REST API</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/variables/</guid><description>&lt;p&gt;In the REST API, &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/variables/"&gt;process variables&lt;/a&gt; are represented by JSON objects of the following
+this to the DMN engine rule.&lt;/p&gt;</description></item><item><title>Variables in the REST API</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/rest/overview/variables/</guid><description>&lt;p&gt;In the REST API, &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/variables/"&gt;process variables&lt;/a&gt; are represented by JSON objects of the following
 form:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;String&amp;#34;&lt;/span&gt;,
@@ -7150,7 +7261,19 @@ if no such child element exists, you must create one first.&lt;/p&gt;</descripti
  &lt;/span&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Unresolved incidents of a process instance or a sub process instance are indicated by Cockpit as failed jobs. To localize which instance of a process failed, Cockpit allows you to drill down to the unresolved incident by using the process status dots. Hit a red status dot of the affected instance in the Process Definition View to get an overview of all incidents. The &lt;em&gt;Incidents&lt;/em&gt; tab in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/bpmn/process-instance-view/#detailed-information-panel"&gt;Detailed Information Panel&lt;/a&gt; lists the failed activities with additional information. Furthermore, you have the possibility of going down to the failing instance of a sub process.&lt;/p&gt;</description></item><item><title>Hidden Input Fields</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/hidden/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/hidden/</guid><description>&lt;p&gt;Hidden input elements are HTML controls in the form of&lt;/p&gt;
+&lt;p&gt;Unresolved incidents of a process instance or a sub process instance are indicated by Cockpit as failed jobs. To localize which instance of a process failed, Cockpit allows you to drill down to the unresolved incident by using the process status dots. Hit a red status dot of the affected instance in the Process Definition View to get an overview of all incidents. The &lt;em&gt;Incidents&lt;/em&gt; tab in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/bpmn/process-instance-view/#detailed-information-panel"&gt;Detailed Information Panel&lt;/a&gt; lists the failed activities with additional information. Furthermore, you have the possibility of going down to the failing instance of a sub process.&lt;/p&gt;</description></item><item><title>Heatmap</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/heatmaps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/heatmaps/</guid><description>&lt;p&gt;The Heatmap feature provides a visual representation of process execution patterns directly on the BPMN canvas. It helps users quickly identify high traffic areas, bottlenecks, and overall process behavior based on runtime and historic data.&lt;/p&gt;
+&lt;p&gt;The heatmap overlays execution metrics onto the process model, using color intensity as a visual indicators to highlight quantity and time spent on different activities over a selected timeframe.&lt;/p&gt;
+&lt;figure class="image"&gt;
+ &lt;span&gt;&lt;img
+ src="../../img/heatmap-example.png"
+ 
+ title="Heatmap Example"
+ /&gt;
+ &lt;/span&gt;
+&lt;/figure&gt;
+
+&lt;h2 id="accessing-heatmap"&gt;Accessing Heatmap&lt;/h2&gt;
+&lt;p&gt;To view the heatmap:&lt;/p&gt;</description></item><item><title>Hidden Input Fields</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/hidden/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/hidden/</guid><description>&lt;p&gt;Hidden input elements are HTML controls in the form of&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;input&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;input&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;They are not displayed in the form, but can be used to retrieve values to be used in the context of the form (e.g., using Angular bindings).&lt;/p&gt;
 &lt;h1 id="binding-a-hidden-element-to-a-process-variable"&gt;Binding a Hidden Element to a Process Variable&lt;/h1&gt;
@@ -7297,8 +7420,7 @@ object must be strings representing date formats in accordance with
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id="localization"&gt;Localization&lt;/h1&gt;
-&lt;p&gt;Tasklist can be localized. Fluxnova maintains English and German translation files.
-You can find and download community maintained translation files at the &lt;a href="https://github.com/finos/fluxnova-webapp-translations"&gt;Fluxnova webapp translations repository&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuration</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/welcome/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/welcome/configuration/</guid><description>&lt;p&gt;You can override the default configuration of the Welcome application by using a central configuration file,
+&lt;p&gt;Tasklist can be localized. Fluxnova maintains English and German translation files.&lt;/p&gt;</description></item><item><title>Configuration</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/welcome/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/welcome/configuration/</guid><description>&lt;p&gt;You can override the default configuration of the Welcome application by using a central configuration file,
 located in &lt;code&gt;app/welcome/scripts/config.js&lt;/code&gt;. The following configuration options are
 available:&lt;/p&gt;
 &lt;h1 id="custom-links"&gt;Custom links&lt;/h1&gt;
@@ -7403,7 +7525,35 @@ adding a custom open task dashboard plugin.&lt;/p&gt;
 
 &lt;h2 id="open-tasks"&gt;Open Tasks&lt;/h2&gt;
 &lt;h3 id="assignments-by-type"&gt;Assignments by type&lt;/h3&gt;
-&lt;p&gt;In this category you can see how many open tasks exist. There is also an overview which shows how the open tasks are distributed.&lt;/p&gt;</description></item><item><title>Security Notices</title><link>https://docs.fluxnova.finos.org/manual/3.0/security/notices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/security/notices/</guid><description>&lt;p&gt;On this page, Fluxnova Project publishes security notices &lt;em&gt;after&lt;/em&gt; fixes are available.&lt;/p&gt;
+&lt;p&gt;In this category you can see how many open tasks exist. There is also an overview which shows how the open tasks are distributed.&lt;/p&gt;</description></item><item><title>Process Instance</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-instance-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/process-instance-view/</guid><description>&lt;p&gt;The Process Instances view provides visibility into active and completed executions of BPMN processes. It enables users to monitor instance state, investigate issues, and perform operational actions at scale or on individual instances.&lt;/p&gt;
+&lt;h2 id="process-instances-list-view"&gt;Process Instances List View&lt;/h2&gt;
+&lt;p&gt;By default, the Process Instances List View displays all active process instances, giving users an immediate overview of ongoing executions.&lt;/p&gt;
+&lt;figure class="image"&gt;
+ &lt;span&gt;&lt;img
+ src="../../img/process-instance-list.png"
+ 
+ title="Process Instance List View"
+ /&gt;
+ &lt;/span&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="key-capabilities"&gt;Key Capabilities&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View process instances with key attributes (e.g., state, process definition name, instance ID, business key, etc)&lt;/li&gt;
+&lt;li&gt;Perform bulk actions on selected instances:
+&lt;ul&gt;
+&lt;li&gt;Activate&lt;/li&gt;
+&lt;li&gt;Suspend&lt;/li&gt;
+&lt;li&gt;Terminate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Apply filters to available column&lt;/li&gt;
+&lt;li&gt;Toggle options to customize the view for monitoring or troubleshooting instances with incidents.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="incident-filtering"&gt;Incident Filtering&lt;/h3&gt;
+&lt;p&gt;By default, the list displays instances without incidents
+Enabling the “With Incidents” toggle (top-right corner) updates the view to show only active instances with incidents
+This allows users to quickly focus on problematic executions.&lt;/p&gt;</description></item><item><title>Security Notices</title><link>https://docs.fluxnova.finos.org/manual/3.0/security/notices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/security/notices/</guid><description>&lt;p&gt;On this page, Fluxnova Project publishes security notices &lt;em&gt;after&lt;/em&gt; fixes are available.&lt;/p&gt;
 &lt;p&gt;Security notices of the ancestor software product can be found at &lt;a href="https://docs.camunda.org/security/"&gt;Camunda 7 CE Security Notices&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Suspension</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/bpmn/suspension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/cockpit/bpmn/suspension/</guid><description>&lt;p&gt;In the process definition view and in the process instance view you can suspend the selected process definition or process instance by using the &lt;button class="btn btn-xs"&gt;
  &lt;i class="glyphicon glyphicon-pause" &gt;&lt;/i&gt;
 &lt;/button&gt;
@@ -7486,13 +7636,18 @@ configuration classes that integrate Spring Security with Fluxnova Webapp&amp;rs
 &lt;h2 id="spring-boot"&gt;Spring Boot&lt;/h2&gt;
 &lt;p&gt;In order to enable the Spring Security OAuth2 integration in Spring Boot, add the following dependency to your project:&lt;/p&gt;</description></item><item><title>Task Markers</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/task-markers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/tasks/task-markers/</guid><description>&lt;p&gt;In addition to the various types of tasks, we can mark tasks as loops, multiple instances or compensations. Markers can be combined with task types.&lt;/p&gt;
 &lt;h1 id="multiple-instance"&gt;Multiple Instance&lt;/h1&gt;
-&lt;p&gt;A multi-instance activity is a way of defining repetition for a certain step in a business process. In programming concepts, a multi-instance matches the &lt;code&gt;for each&lt;/code&gt; construct: it allows execution of a certain step or even a complete subprocess for each item in a given collection, sequentially or in parallel.&lt;/p&gt;</description></item><item><title>BPMN Event Buttons</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/bpmn-buttons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/bpmn-buttons/</guid><description>&lt;p&gt;These buttons can be used to trigger error and escalation events in user tasks. They will submit all entered values and activate the corresponding boundary event. To learn more about error and escalation events, see our section about &lt;a href="https://docs.fluxnova.org/manual/latest/reference/bpmn20/events/"&gt;events&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A multi-instance activity is a way of defining repetition for a certain step in a business process. In programming concepts, a multi-instance matches the &lt;code&gt;for each&lt;/code&gt; construct: it allows execution of a certain step or even a complete subprocess for each item in a given collection, sequentially or in parallel.&lt;/p&gt;</description></item><item><title>Token Movement</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/token-movement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/token-movement/</guid><description>&lt;p&gt;The Token Movement feature allows users to manually adjust the execution state of a process instance by relocating, adding, or removing tokens within the BPMN workflow.&lt;/p&gt;
+&lt;p&gt;This advanced capability is primarily used for troubleshooting, error recovery, or correcting process execution paths when standard flow cannot proceed due to issues.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In BPMN, a token represents the current execution point within a process. Token Movement enables users to directly manipulate these execution points on the process diagram.&lt;/p&gt;</description></item><item><title>BPMN Event Buttons</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/bpmn-buttons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/forms/embedded-forms/controls/bpmn-buttons/</guid><description>&lt;p&gt;These buttons can be used to trigger error and escalation events in user tasks. They will submit all entered values and activate the corresponding boundary event. To learn more about error and escalation events, see our section about &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/"&gt;events&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="error"&gt;Error&lt;/h2&gt;
 &lt;p&gt;An Error Button can be bound to an error code and error message using the &lt;code&gt;cam-error-code&lt;/code&gt; and &lt;code&gt;cam-error-message&lt;/code&gt; directive.
 Providing an error message is optional.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;button&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cam-error-code&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;bpmn-error-543&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cam-error-message&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;anErrorMessage&amp;#34;&lt;/span&gt; /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the example above, the button is bound to the error code &lt;code&gt;bpmn-error-543&lt;/code&gt; with the message &lt;code&gt;anErrorMessage&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Report a Vulnerability</title><link>https://docs.fluxnova.finos.org/manual/3.0/security/report-vulnerability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/security/report-vulnerability/</guid><description>&lt;p&gt;If you uncover vulnerabilities in Fluxnova Platform software, please contact &lt;a href="mailto:help@finos.org"&gt;help@finos.org&lt;/a&gt; privately. We aim to respond within 3 working days.&lt;/p&gt;</description></item><item><title>Templating</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/templating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/templating/</guid><description>&lt;p&gt;Fluxnova supports template engines which are implemented as script engines compatible with
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the example above, the button is bound to the error code &lt;code&gt;bpmn-error-543&lt;/code&gt; with the message &lt;code&gt;anErrorMessage&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Job Operations</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/job-operations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/job-operations/</guid><description>&lt;p&gt;The Job Operations functionality in Fluxnova Control Center provides users with the ability to monitor, manage, and recover failed job executions. It offers operational controls for both Job Definitions and individual Jobs, enabling administrators and operators to maintain process execution health and resolve runtime issues efficiently.&lt;/p&gt;
+&lt;h2 id="failed-jobs-overview"&gt;Failed Jobs Overview&lt;/h2&gt;
+&lt;p&gt;Unresolved incidents of a process instance or a sub process instance are indicated by Control Center as failed jobs. To localize which instance of a process failed, Control Center allows you to drill down to the unresolved incident. Hit a red status dot of the affected instance in the Instances tab of the Process Definition Details View to get an overview of all incidents. The Incidents tab lists the failed activities with additional information. Furthermore, you have the possibility to drill-down to the failing instance of a sub process.&lt;/p&gt;</description></item><item><title>Report a Vulnerability</title><link>https://docs.fluxnova.finos.org/manual/3.0/security/report-vulnerability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/security/report-vulnerability/</guid><description>&lt;p&gt;If you uncover vulnerabilities in Fluxnova Platform software, please contact &lt;a href="mailto:help@finos.org"&gt;help@finos.org&lt;/a&gt; privately. We aim to respond within 3 working days.&lt;/p&gt;</description></item><item><title>Templating</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/templating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/templating/</guid><description>&lt;p&gt;Fluxnova supports template engines which are implemented as script engines compatible with
 JSR-223. As a result, templates can be used everywhere where scripts can be used.&lt;/p&gt;
 &lt;p&gt;In community distributions of Fluxnova, the following template engine is provided out of the
 box:&lt;/p&gt;
@@ -7508,7 +7663,7 @@ box:&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.saxonica.com/html/documentation12/using-xsl/"&gt;Saxon XSLT&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The script engine wrapper implementations can be found in the
-&lt;a href="https://github.com/fluxnova-community-hub/fluxnova-7-template-engines-jsr223"&gt;fluxnova-7-template-engines-jsr223&lt;/a&gt; community hub repository.&lt;/p&gt;</description></item><item><title>Terminate Events</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/terminate-event/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/terminate-event/</guid><description>&lt;p&gt;A terminate event ends the complete scope it is raised in and all contained inner scopes.&lt;/p&gt;
+[fluxnova-7-template-engines-jsr223][fluxnova-7-template-engines-jsr223] community hub repository.&lt;/p&gt;</description></item><item><title>Terminate Events</title><link>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/terminate-event/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/reference/bpmn20/events/terminate-event/</guid><description>&lt;p&gt;A terminate event ends the complete scope it is raised in and all contained inner scopes.&lt;/p&gt;
 &lt;p&gt;It is useful if you have a parallel token flow in a process and you want to consume all tokens available in the same scope immediately.&lt;/p&gt;
 &lt;p&gt;A terminate event on process instance level terminates the complete instance. On subprocess level the current scope and all contained processes instances will be terminated.&lt;/p&gt;
 &lt;div data-bpmn-diagram="../bpmn/event-terminate"&gt;&lt;/div&gt;
@@ -7535,7 +7690,7 @@ box:&lt;/p&gt;
 &lt;p&gt;Assert that a process instance is suspended:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;assertThat(processInstance).&lt;span style="color:#a6e22e"&gt;isSuspended&lt;/span&gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="instance-haspassed"&gt;Instance: hasPassed&lt;/h2&gt;
-&lt;p&gt;Assert that a process instance has passed a specified activity:&lt;/p&gt;</description></item><item><title>Connectors</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/connectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/connectors/</guid><description>&lt;p&gt;With the dependency &lt;a href="https://github.com/finos/fluxnova-bpm-platform/tree/master/connect"&gt;fluxnova-connect&lt;/a&gt;, the process engine supports simple
+&lt;p&gt;Assert that a process instance has passed a specified activity:&lt;/p&gt;</description></item><item><title>Connectors</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/connectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/connectors/</guid><description>&lt;p&gt;With the dependency &lt;a href="https://github.com/finos/fluxnova-bpm-platform/tree/main/connect"&gt;fluxnova-connect&lt;/a&gt;, the process engine supports simple
 connectors. Currently the following connector implementations exist:&lt;/p&gt;
 &lt;table class="table"&gt;
  &lt;tr&gt;
@@ -7553,7 +7708,21 @@ connectors. Currently the following connector implementations exist:&lt;/p&gt;
 &lt;/table&gt;
 &lt;p&gt;It is also possible to implement your own custom connector in fluxnova. For more information about extending connectors please visit the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/connect/extending-connect/"&gt;Connector reference&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="configure-fluxnova-connect"&gt;Configure Fluxnova Connect&lt;/h1&gt;
-&lt;p&gt;As Fluxnova Connect is available only partially when using the process engine (check the list below). With a pre-built distribution, Fluxnova Connect is already preconfigured.&lt;/p&gt;</description></item><item><title>Limitations</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/cmmn-model-api/limitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/cmmn-model-api/limitations/</guid><description>&lt;p&gt;The CMMN model API is able to read CMMN 1.1 as well as CMMN 1.0 models. Its primary use case is to work with models of the latest version, such that there are limitations when editing CMMN models of prior versions.&lt;/p&gt;
+&lt;p&gt;As Fluxnova Connect is available only partially when using the process engine (check the list below). With a pre-built distribution, Fluxnova Connect is already preconfigured.&lt;/p&gt;</description></item><item><title>Incidents</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/incidents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/incidents/</guid><description>&lt;h2 id="incidents"&gt;Incidents&lt;/h2&gt;
+&lt;p&gt;All current incidents can be accessed from the Incidents list view. Incidents belonging to a process definition or a process instance can be viewed in their respective details view in the Incidents tab.&lt;/p&gt;
+&lt;p&gt;Available actions on Incidents:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set Retry Count&lt;/li&gt;
+&lt;li&gt;View Stack Trace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="image"&gt;
+ &lt;span&gt;&lt;img
+ src="../../img/incidents-list.png"
+ 
+ title="Incidents List View"
+ /&gt;
+ &lt;/span&gt;
+&lt;/figure&gt;</description></item><item><title>Limitations</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/cmmn-model-api/limitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/model-api/cmmn-model-api/limitations/</guid><description>&lt;p&gt;The CMMN model API is able to read CMMN 1.1 as well as CMMN 1.0 models. Its primary use case is to work with models of the latest version, such that there are limitations when editing CMMN models of prior versions.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ModelElementType#getTypeNamespace()&lt;/code&gt; returns CMMN 1.1 namespace for elements which are present in CMMN 1.0 and CMMN 1.1&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;CMMN#createEmptyModel()&lt;/code&gt; always creates a CMMN 1.1 model. CMMN 1.0 models cannot be created anymore.&lt;/li&gt;
@@ -7568,7 +7737,6 @@ connectors. Currently the following connector implementations exist:&lt;/p&gt;
 
 &lt;p&gt;If you add JSF forms as described below, you can easily use them as &lt;br/&gt;
 &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/task-forms/#external-task-forms"&gt;external task forms&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;A working example can be found in the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/usertask/task-form-external-jsf"&gt;examples repository&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The BPMN process used for this example is shown in the image below:&lt;/p&gt;
 &lt;figure class="image"&gt;
  &lt;span&gt;&lt;img
@@ -7588,7 +7756,9 @@ connectors. Currently the following connector implementations exist:&lt;/p&gt;
 &lt;li&gt;New process instances will run in the new version - unless specified explicitly.&lt;/li&gt;
 &lt;li&gt;Support for migrating process instances to new a version is supported within certain limits.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You can see different versions in the process definition table and the process instances are linked to this:&lt;/p&gt;</description></item><item><title>Process Instance Migration</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-instance-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-instance-migration/</guid><description>&lt;p&gt;Whenever a new version of a process definition is deployed, existing process instances that run
+&lt;p&gt;You can see different versions in the process definition table and the process instances are linked to this:&lt;/p&gt;</description></item><item><title>Suspension</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/suspension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/suspension/</guid><description>&lt;p&gt;In the process definition view and in the process instance view you can suspend the selected process definition or process instance by using the suspend button.&lt;/p&gt;
+&lt;h2 id="process-definition-suspension"&gt;Process Definition Suspension&lt;/h2&gt;
+&lt;p&gt;If you suspend the process definition, you prevent the process definition from being instantiated. No further operations can be done while the process definition is in the suspended state. You can simply re-activate the process definition by using the activate button. You have the option of suspending/reactivating all process instances of the process definition as well as defining if the process definition (and process instances) should instantly be suspended/reactivated or at a specific time in a confirmation dialog. Find more information about this functionality in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-engine-concepts/#suspend-process-definitions"&gt;suspending process definitions&lt;/a&gt; section of the process engine chapter.&lt;/p&gt;</description></item><item><title>Process Instance Migration</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-instance-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/process-instance-migration/</guid><description>&lt;p&gt;Whenever a new version of a process definition is deployed, existing process instances that run
 on previous versions are not affected. That means, the new process definition does not apply
 to them automatically. If process instances are supposed to continue execution on a different process
 definition, the &lt;em&gt;process instance migration&lt;/em&gt; API can be employed.&lt;/p&gt;
@@ -7603,7 +7773,15 @@ activities of the two process definitions. In particular, it maps an activity of
 i.e., the definition process instances are migrated from, to an activity of the &lt;em&gt;target process definition&lt;/em&gt;,
 i.e., the definition process instances are migrated to. A migration instruction ensures that an instance of the source
 activity is migrated into an instance of the target activity. A migration plan is complete when there are instructions for
-all active source activities.&lt;/p&gt;</description></item><item><title>Deployment Cache</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/deployment-cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/deployment-cache/</guid><description>&lt;hr&gt;
+all active source activities.&lt;/p&gt;</description></item><item><title>Canvas &amp; Tabs Interaction</title><link>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/canvas-tabs-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/webapps/control-center/bpmn/canvas-tabs-interaction/</guid><description>&lt;p&gt;The Canvas &amp;amp; Tabs Interaction feature provides a synchronized and intuitive way to explore process behavior by linking the visual process model with detailed data.&lt;/p&gt;
+&lt;p&gt;This interaction enables users to seamlessly navigate between the BPMN diagram (canvas) and the data tables (tabs), improving efficiency in analysis, troubleshooting, and process understanding.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The Process Definition and Process Instance detail views combine:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A BPMN canvas for visualizing the process flow&lt;/li&gt;
+&lt;li&gt;A set of data tabs containing operational details such as instances, incidents, jobs, and variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These components are interconnected through bi-directional interaction, ensuring that selections in one view are reflected in the other.&lt;/p&gt;</description></item><item><title>Deployment Cache</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/deployment-cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/deployment-cache/</guid><description>&lt;hr&gt;
 &lt;p&gt;All process definitions are cached (after they have been parsed) to avoid polling the database every time a process definition is needed and because process definition data doesn&amp;rsquo;t change. This reduces the latency of referencing the process definitions and thus improves the performance of the system.&lt;/p&gt;
 &lt;h1 id="customize-the-maximum-capacity-of-the-cache"&gt;Customize the maximum Capacity of the Cache&lt;/h1&gt;
 &lt;p&gt;If one has many process definitions, the cache might occupy a large amount of memory and the capacity of the working memory may reach its limits. Therefore, after the maximum capacity is reached the least recently used process definition entry is evicted from the cache to satisfy the capacity condition. However, if one still meets out of memory issues, it can be necessary to lower the maximum capacity of the cache.&lt;/p&gt;</description></item><item><title>Password Hashing</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/password-hashing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/process-engine/password-hashing/</guid><description>&lt;p&gt;This chapter is about how cryptographic password hashing is done in Fluxnova. In particular, the hashing algorithm that is being used and the salt generation. If you are not familiar with these topics, we recommend reading the articles about &lt;a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographic hash function&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/Salt_(cryptography)"&gt;salt&lt;/a&gt; and &lt;a href="https://crackstation.net/hashing-security.htm"&gt;secure password hashing&lt;/a&gt;.&lt;/p&gt;
@@ -7629,13 +7807,13 @@ your &lt;code&gt;pom.xml&lt;/code&gt; file:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;fluxnova-bpm-spring-boot-starter-external-task-client&lt;span style="color:#f92672"&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span style="color:#f92672"&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please check out our &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/1.0#external-task-client-spring-boot"&gt;External Task Client Spring Boot Starter Examples&lt;/a&gt;.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please check out the example code in the main &lt;a href="https://github.com/finos/fluxnova-examples"&gt;Fluxnova examples repository&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The Client can subscribe to one or more topic names that are defined in your BPMN process model.
 When the execution waits in an External Task, the Client executes your custom business logic.
 For instance, the customer&amp;rsquo;s credit score is checked, and if successful, the External Task
 can be marked as completed and the execution proceeds.&lt;/p&gt;</description></item><item><title>Logging</title><link>https://docs.fluxnova.finos.org/manual/3.0/user-guide/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.0/user-guide/logging/</guid><description>&lt;p&gt;This page provides information about logging in Fluxnova.&lt;/p&gt;
 &lt;h1 id="slf4j"&gt;SLF4J&lt;/h1&gt;
-&lt;p&gt;Most Fluxnova modules, including the Fluxnova engine, use &lt;a href="http://www.slf4j.org/"&gt;slf4j&lt;/a&gt; as logging &amp;ldquo;facade&amp;rdquo;. This allows users to direct logging output to the logging &amp;ldquo;backend&amp;rdquo; of their choice, such as &lt;a href="http://logback.qos.ch/"&gt;logback&lt;/a&gt; or &lt;a href="http://logging.apache.org/log4j/"&gt;log4j&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Most Fluxnova modules, including the Fluxnova engine, use &lt;a href="https://www.slf4j.org/"&gt;slf4j&lt;/a&gt; as logging &amp;ldquo;facade&amp;rdquo;. This allows users to direct logging output to the logging &amp;ldquo;backend&amp;rdquo; of their choice, such as &lt;a href="https://logback.qos.ch/"&gt;logback&lt;/a&gt; or &lt;a href="https://logging.apache.org/log4j/2.x/index.html"&gt;log4j&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="preconfigured-logging-with-a-shared-process-engine"&gt;Preconfigured Logging with a Shared Process Engine&lt;/h2&gt;
 &lt;p&gt;When installing Fluxnova as a shared process engine in an application server, Fluxnova logging is pre-configured.&lt;/p&gt;
 &lt;p&gt;On all application servers except Wildfly, logging is pre-configured using the slf4j-jdk14 bridge.
@@ -7650,7 +7828,6 @@ extension to the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-gui
 &lt;p&gt;Process engine plugins can be configured&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/reference/deployment-descriptors/"&gt;Fluxnova Deployment Descriptors&lt;/a&gt; (bpm-platform.xml/processes.xml),&lt;/li&gt;
-&lt;li&gt;in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/runtime-container-integration/jboss/"&gt;Wildfly configuration file&lt;/a&gt; (standalone.xml/domain.xml),&lt;/li&gt;
 &lt;li&gt;using &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/spring-framework-integration/#configure-a-process-engine-plugin-in-spring"&gt;Spring Beans XML&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;in the &lt;a href="https://docs.fluxnova.finos.org/manual/3.0/user-guide/fluxnova-bpm-run/#process-engine-plugin-registration"&gt;Fluxnova Run YAML configuration files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;programatically.&lt;/li&gt;
