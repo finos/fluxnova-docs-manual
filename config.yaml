@@ -27,8 +27,12 @@ params:
     name: "Fluxnova Forum"
 
   # base URLs with optional version number in path using placeholder %s
-  openApiBaseURL: "https://docs.fluxnova.finos.org/rest/fluxnova-bpm-platform/%s"
-  javadocsBaseURL: "https://docs.fluxnova.finos.org/javadocs/%s"
+  # Served directly from finos/fluxnova-bpm-platform's own GitHub Pages (its gh-pages branch),
+  # published by that repo's release workflow as openapi/<major.minor>/openapi.json
+  # and javadocs/<major.minor>/... . `version` above must match a <major.minor> folder that
+  # repo has actually published, otherwise these links 404.
+  openApiBaseURL: "https://finos.github.io/fluxnova-bpm-platform/openapi/%s"
+  javadocsBaseURL: "https://finos.github.io/fluxnova-bpm-platform/javadocs/%s"
   
   github:
     repositoryName: "finos/fluxnova-docs-manual"

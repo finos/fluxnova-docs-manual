@@ -2,4 +2,4 @@
 {{ if (strings.Contains $url "%s") }}
   {{- $url = (printf $url $.Site.Params.version) -}}
 {{ end }}
-{{ (urls.JoinPath $url "apidocs") }}/{{ with .Get "page" }}{{.}}{{ end }}
+{{ $url }}/{{ with .Get "page" }}{{.}}{{ end }}
