@@ -5,9 +5,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 on:
   workflow_dispatch:
