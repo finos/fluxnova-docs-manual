@@ -40,7 +40,7 @@ element.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-
 types. For example, you can add a new type for time or change the
 transformation to support a different date format or localized boolean
 constants.</p><p>To do this, implement a new
-<a href=https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/?org/finos/fluxnova/bpm/dmn/engine/impl/spi/type/DmnDataTypeTransformer.html>DmnDataTypeTransformer</a>. The transformation is processed in the
+<a href=https://finos.github.io/fluxnova-bpm-platform/javadocs/3.0/?org/finos/fluxnova/bpm/dmn/engine/impl/spi/type/DmnDataTypeTransformer.html>DmnDataTypeTransformer</a>. The transformation is processed in the
 <code>transform()</code> method and returns a typed value. If it cannot successfully transform a value,
 it must throw an <code>IllegalArgumentException</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CustomDataTypeTransformer</span> <span style=color:#66d9ef>implements</span> DmnDataTypeTransformer {
 </span></span><span style=display:flex><span>

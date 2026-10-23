@@ -60,7 +60,7 @@ the only matched rule.</p><div class=highlight><pre tabindex=0 style=color:#f8f8
 </span></span></code></pre></div><p>It also provides methods to get typed output entries like
 <code>getSingleEntryTyped()</code>. Please refer to the <a href=/manual/3.0/user-guide/process-engine/variables/#typed-value-api>User Guide</a> for
 details about typed values. A complete list of all methods can be found in the
-<a href=https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/org/finos/fluxnova/bpm/dmn/engine/DmnDecisionResult>Java Docs</a>.</p><p>The decision result is available in the local scope of the executing task as a
+<a href=https://finos.github.io/fluxnova-bpm-platform/javadocs/3.0/org/finos/fluxnova/bpm/dmn/engine/DmnDecisionResult>Java Docs</a>.</p><p>The decision result is available in the local scope of the executing task as a
 transient variable named <code>decisionResult</code>. It can be passed into a variable by
 using a predefined or a custom mapping of the decision result, if necessary.</p><h2 id=predefined-mapping-of-the-decision-result>Predefined Mapping of the Decision Result</h2><p>The engine includes predefined mappings of the decision result for common use
 cases. The mapping is similar to an <a href=/manual/3.0/user-guide/process-engine/variables/#input-output-variable-mapping>output variable mapping</a>. It extracts a
@@ -198,7 +198,7 @@ possible to access Spring and CDI Beans from JUEL expressions in decisions.
 For more information on this integration, please see the corresponding
 section in the <a href=/manual/3.0/user-guide/spring-framework-integration/#expression-resolving>Spring</a> and <a href=/manual/3.0/user-guide/cdi-java-ee-integration/expression-resolving/>CDI</a> guides.</p><div class="note bg-info docs-info"><h3>Heads-up!</h3><p>Beans cannot be accessed when using FEEL as expression language.</p></div><h2 id=extending-the-expression-language>Extending the Expression Language</h2><div class="note bg-warning docs-warning"><h3>Use of Internal API</h3><p>These APIs are <strong>not</strong> part of the <a href=/manual/3.0/introduction/public-api/>public API</a> and may change in later releases.</p></div><p>It is possible to add own functions which can be used inside JUEL expressions.
 Therefore a new
-<a href=https://docs.fluxnova.finos.org/javadocs/3.0/apidocs/?org/finos/fluxnova/bpm/engine/impl/javax/el/FunctionMapper.html>FunctionMapper</a> has to be implemented. The function mapper than
+<a href=https://finos.github.io/fluxnova-bpm-platform/javadocs/3.0/?org/finos/fluxnova/bpm/engine/impl/javax/el/FunctionMapper.html>FunctionMapper</a> has to be implemented. The function mapper than
 has to be added to the process engine configuration after it was
 initialized.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-java data-lang=java><span style=display:flex><span>ProcessEngineConfigurationImpl processEngineConfiguration <span style=color:#f92672>=</span> (ProcessEngineConfigurationImpl) processEngine
 </span></span><span style=display:flex><span>  .<span style=color:#a6e22e>getProcessEngineConfiguration</span>();
