@@ -1017,7 +1017,7 @@ supported output types.&lt;/p&gt;
 DMN Engine tries to convert the result value of the corresponding &lt;strong&gt;Literal Expression&lt;/strong&gt;,
 &lt;strong&gt;Input Expression&lt;/strong&gt; or the &lt;strong&gt;Output Entry&lt;/strong&gt;. When no &lt;code&gt;typeRef&lt;/code&gt; attribute is specified, the DMN
 Engine passes the return value of the FEEL Engine directly without any conversion. Please see the
-documentation about &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/dmn-engine/data-types/#supported-data-types"&gt;Supported Data Types in DMN&lt;/a&gt; to learn more about the &lt;code&gt;typeRef&lt;/code&gt; attribute.&lt;/p&gt;</description></item><item><title>Fluxnova BPMN Extension Elements</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-elements/</guid><description>&lt;p&gt;The following attributes are extension attributes for the &lt;code&gt;fluxnova&lt;/code&gt; namespace &lt;code&gt;http://camunda.org/schema/1.0/bpmn&lt;/code&gt;.&lt;/p&gt;
+documentation about &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/dmn-engine/data-types/#supported-data-types"&gt;Supported Data Types in DMN&lt;/a&gt; to learn more about the &lt;code&gt;typeRef&lt;/code&gt; attribute.&lt;/p&gt;</description></item><item><title>Fluxnova BPMN Extension Elements</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-elements/</guid><description>&lt;p&gt;The following attributes are extension attributes for the legacy &lt;code&gt;camunda&lt;/code&gt; namespace &lt;code&gt;http://camunda.org/schema/1.0/bpmn&lt;/code&gt;, which remains fully supported. They can equivalently be declared with the &lt;code&gt;fluxnova&lt;/code&gt; namespace &lt;code&gt;http://fluxnova.finos.org/schema/1.0/bpmn&lt;/code&gt;, for example &lt;code&gt;fluxnova:class&lt;/code&gt; instead of &lt;code&gt;camunda:class&lt;/code&gt;. When a BPMN element has attributes in both namespaces, the &lt;code&gt;camunda:&lt;/code&gt; attribute takes precedence.&lt;/p&gt;
 &lt;h1 id="connector"&gt;connector&lt;/h1&gt;
 &lt;table class="table table-striped"&gt;
  &lt;tr&gt;
@@ -1779,9 +1779,10 @@ documentation about &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;camunda:isTransient&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;isTransient&lt;/code&gt;&lt;/td&gt;
  &lt;td&gt;
  Optional. If set to &lt;code&gt;true&lt;/code&gt;, the mapped variable is transient and is not persisted.
+ The legacy &lt;code&gt;camunda:isTransient&lt;/code&gt; attribute is also accepted.
  &lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
@@ -2043,9 +2044,10 @@ documentation about &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;camunda:isTransient&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;isTransient&lt;/code&gt;&lt;/td&gt;
  &lt;td&gt;
  Optional. If set to &lt;code&gt;true&lt;/code&gt;, the mapped variable is transient and is not persisted.
+ The legacy &lt;code&gt;camunda:isTransient&lt;/code&gt; attribute is also accepted.
  &lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
@@ -2545,7 +2547,7 @@ instance by its connector ID, which is &lt;code&gt;http-connector&lt;/code&gt;.&
 &lt;li&gt;&lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/spring-framework-integration/"&gt;Via Spring&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="shared-container-managed-process-engine"&gt;Shared, Container Managed Process Engine&lt;/h1&gt;
-&lt;p&gt;A container of your choice (e.g., Tomcat, Wildfly or IBM WebSphere) manages the process engine for you. The configuration is carried out in a container specific way, see &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/runtime-container-integration/"&gt;Runtime Container Integration&lt;/a&gt; for details.&lt;/p&gt;</description></item><item><title>Process Engine Configuration</title><link>https://docs.fluxnova.finos.org/manual/3.1/user-guide/spring-framework-integration/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/user-guide/spring-framework-integration/configuration/</guid><description>&lt;p&gt;You can use a Spring application context XML file to bootstrap the process engine. It is possible to bootstrap both application-managed and container-managed process engines through Spring.&lt;/p&gt;
+&lt;p&gt;A supported container can manage the process engine for you. The configuration is carried out in a container-specific way; see &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/runtime-container-integration/"&gt;Runtime Container Integration&lt;/a&gt; and the &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/introduction/supported-environments/"&gt;supported environments&lt;/a&gt; for details.&lt;/p&gt;</description></item><item><title>Process Engine Configuration</title><link>https://docs.fluxnova.finos.org/manual/3.1/user-guide/spring-framework-integration/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/user-guide/spring-framework-integration/configuration/</guid><description>&lt;p&gt;You can use a Spring application context XML file to bootstrap the process engine. It is possible to bootstrap both application-managed and container-managed process engines through Spring.&lt;/p&gt;
 &lt;p&gt;Note that you can also use a &lt;a href="#using-spring-javaconfig"&gt;Spring JavaConfig&lt;/a&gt; for bootstrapping instead of XML.&lt;/p&gt;
 &lt;h1 id="configure-an-application-managed-process-engine"&gt;Configure an Application-Managed Process Engine&lt;/h1&gt;
 &lt;p&gt;The ProcessEngine can be configured as a regular Spring bean. The starting point of the integration is the class &lt;code&gt;org.finos.fluxnova.bpm.engine.spring.ProcessEngineFactoryBean&lt;/code&gt;. That bean takes a process engine configuration and creates the process engine. This means that the creation and configuration of properties for Spring is the same as documented in the configuration section. For Spring integration the configuration and engine beans will look like this:&lt;/p&gt;</description></item><item><title>Quarkus Version Compatibility</title><link>https://docs.fluxnova.finos.org/manual/3.1/user-guide/quarkus-integration/version-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/user-guide/quarkus-integration/version-compatibility/</guid><description>&lt;p&gt;Each version of the Fluxnova Engine Quarkus Extension is bound to a specific version of Fluxnova and Quarkus.
@@ -2681,9 +2683,9 @@ directive:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>The Process Application class</title><link>https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-applications/the-process-application-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-applications/the-process-application-class/</guid><description>&lt;p&gt;You can delegate the bootstrapping of the process engine and process deployment to a process application class. The basic ProcessApplication functionality is provided by the &lt;code&gt;org.finos.fluxnova.bpm.application.AbstractProcessApplication&lt;/code&gt; base class. Based on this class there is a set of environment-specific sub classes that realize integration within a specific environment:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;ServletProcessApplication&lt;/strong&gt;: To be used for process applications in a Servlet container like Apache Tomcat.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;JakartaServletProcessApplication&lt;/strong&gt;: To be used for process applications in a Jakarta Servlet 5.0+ container like WildFly 27 and above.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JakartaServletProcessApplication&lt;/strong&gt;: To be used for process applications in a Jakarta Servlet 5.0+ container.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EjbProcessApplication&lt;/strong&gt;: To be used in a Java EE application server like IBM WebSphere Application Server.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;JakartaEjbProcessApplication&lt;/strong&gt;: To be used in a Jakarta EE 9+ application server like Wildfly 27+.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JakartaEjbProcessApplication&lt;/strong&gt;: To be used in a Jakarta EE 9+ application server.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EmbeddedProcessApplication&lt;/strong&gt;: To be used when embedding the process engine in an ordinary Java SE application.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SpringProcessApplication&lt;/strong&gt;: To be used for bootstrapping the process application from a Spring Application Context.&lt;/li&gt;
 &lt;/ul&gt;
@@ -3907,7 +3909,7 @@ was integrated into Fluxnova.&lt;/p&gt;
 expression in input entries are simple unary tests. These simple unary tests
 test an input value against an expression and return either &lt;code&gt;true&lt;/code&gt; if the test
 is satisfied or &lt;code&gt;false&lt;/code&gt; otherwise. The expression can contain different
-elements which are described in this sections.&lt;/p&gt;</description></item><item><title>Fluxnova BPMN Extension Attributes</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-attributes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-attributes/</guid><description>&lt;p&gt;The following attributes are extension attributes for the &lt;code&gt;fluxnova&lt;/code&gt; namespace &lt;code&gt;http://camunda.org/schema/1.0/bpmn&lt;/code&gt;.&lt;/p&gt;
+elements which are described in this sections.&lt;/p&gt;</description></item><item><title>Fluxnova BPMN Extension Attributes</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-attributes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/bpmn20/custom-extensions/extension-attributes/</guid><description>&lt;p&gt;The following attributes are extension attributes for the legacy &lt;code&gt;camunda&lt;/code&gt; namespace &lt;code&gt;http://camunda.org/schema/1.0/bpmn&lt;/code&gt;, which remains fully supported. They can equivalently be declared with the &lt;code&gt;fluxnova&lt;/code&gt; namespace &lt;code&gt;http://fluxnova.finos.org/schema/1.0/bpmn&lt;/code&gt;, for example &lt;code&gt;fluxnova:assignee&lt;/code&gt; instead of &lt;code&gt;camunda:assignee&lt;/code&gt;. When a BPMN element has attributes in both namespaces, the &lt;code&gt;camunda:&lt;/code&gt; attribute takes precedence.&lt;/p&gt;
 &lt;h1 id="assignee"&gt;assignee&lt;/h1&gt;
 &lt;table class="table table-striped"&gt;
  &lt;tr&gt;
@@ -5810,7 +5812,23 @@ or simply &lt;code&gt;/engine-rest/{rest-methods}&lt;/code&gt;. Any other shared
 &lt;/figure&gt;
 
 &lt;h2 id="build-your-from"&gt;Build your From&lt;/h2&gt;
-&lt;p&gt;Now you can start to build your Fluxnova Form. Add the desired elements from the palette on the left hand side by dragging and dropping them onto the canvas.&lt;/p&gt;</description></item><item><title>Use Element Templates to Extend the Modeler</title><link>https://docs.fluxnova.finos.org/manual/3.1/modeler/element-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/modeler/element-templates/</guid><description>&lt;div class="note bg-info docs-info"&gt;
+&lt;p&gt;Now you can start to build your Fluxnova Form. Add the desired elements from the palette on the left hand side by dragging and dropping them onto the canvas.&lt;/p&gt;</description></item><item><title>Process Configurations</title><link>https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/process-configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/process-configurations/</guid><description>&lt;p&gt;Process configurations are persistent key/value entries managed by the process engine. An entry can be global or scoped to a tenant.&lt;/p&gt;
+&lt;h2 id="java-api"&gt;Java API&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;ConfigurationService&lt;/code&gt; exposed by the process engine to create an entry and retrieve it by its ID:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ConfigurationService configurationService &lt;span style="color:#f92672"&gt;=&lt;/span&gt; processEngine.&lt;span style="color:#a6e22e"&gt;getConfigurationService&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Configuration tenantConfiguration &lt;span style="color:#f92672"&gt;=&lt;/span&gt; configurationService.&lt;span style="color:#a6e22e"&gt;createConfiguration&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;mail.from&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;noreply@example.org&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;tenant-a&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Configuration globalConfiguration &lt;span style="color:#f92672"&gt;=&lt;/span&gt; configurationService.&lt;span style="color:#a6e22e"&gt;createConfiguration&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;mail.from&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;noreply-global@example.org&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Configuration configuration &lt;span style="color:#f92672"&gt;=&lt;/span&gt; configurationService.&lt;span style="color:#a6e22e"&gt;getConfiguration&lt;/span&gt;(tenantConfiguration.&lt;span style="color:#a6e22e"&gt;getId&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;configKey&lt;/code&gt; and &lt;code&gt;configValue&lt;/code&gt; are required. Pass a &lt;code&gt;null&lt;/code&gt; tenant ID to create a global entry; otherwise, the entry applies to the specified tenant. An active key can be created once in each scope, so a global entry and an entry with the same key for a particular tenant are distinct.&lt;/p&gt;</description></item><item><title>Use Element Templates to Extend the Modeler</title><link>https://docs.fluxnova.finos.org/manual/3.1/modeler/element-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/modeler/element-templates/</guid><description>&lt;div class="note bg-info docs-info"&gt;
  &lt;h3&gt;Using Element Templates&lt;/h3&gt;
  &lt;p&gt;Element Templates can be used with Fluxnova Modeler version 1.0 and higher. They are currently available in BPMN diagrams only.&lt;/p&gt;
 &lt;/div&gt;
@@ -6753,31 +6771,9 @@ rule task, please refer to the &lt;a href="https://docs.fluxnova.finos.org/manua
 &lt;h2 id="container-managed-process-engine-and-fluxnova-cockpit-tasklist-admin"&gt;Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache Tomcat 11.0&lt;/li&gt;
-&lt;li&gt;JBoss EAP 8.0&lt;/li&gt;
-&lt;li&gt;WildFly Application Server 33.0 / 35.0 / 37.0&lt;/li&gt;
 &lt;li&gt;Oracle WebLogic Server 14.1.2&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="databases"&gt;Databases&lt;/h1&gt;
-&lt;h2 id="supported-database-products"&gt;Supported Database Products&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;MySQL 8.0&lt;/li&gt;
-&lt;li&gt;Oracle 19c / 23ai&lt;/li&gt;
-&lt;li&gt;IBM DB2 11.5 (excluding IBM z/OS for all versions)&lt;/li&gt;
-&lt;li&gt;PostgreSQL 15 / 16 / 17 / 18&lt;/li&gt;
-&lt;li&gt;Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16 / 17&lt;/li&gt;
-&lt;li&gt;Microsoft SQL Server 2017 / 2019 / 2022 (see &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/database/mssql-configuration/"&gt;Configuration Note&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Microsoft Azure SQL with Fluxnova-supported SQL Server compatibility levels
-(see &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/database/mssql-configuration/#azure-sql-compatibility-levels-supported-by-fluxnova"&gt;Configuration Note&lt;/a&gt;):
-&lt;ul&gt;
-&lt;li&gt;SQL Server on Azure Virtual Machines&lt;/li&gt;
-&lt;li&gt;Azure SQL Managed Instance&lt;/li&gt;
-&lt;li&gt;Azure SQL Database&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;H2 2.3 (not recommended for &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/introduction/architecture/#clustering-model"&gt;Cluster Mode&lt;/a&gt; - see &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/deployments/"&gt;Deployment Note&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="database-clustering--replication"&gt;Database Clustering &amp;amp; Replication&lt;/h2&gt;
-&lt;p&gt;Clustered or replicated databases are supported given the following conditions. The communication between Fluxnova and the database cluster has to match with the corresponding non-clustered / non-replicated configuration. It is especially important that the configuration of the database cluster guarantees the equivalent behavior of READ-COMMITTED isolation level.&lt;/p&gt;</description></item><item><title>System Management</title><link>https://docs.fluxnova.finos.org/manual/3.1/webapps/admin/system-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/webapps/admin/system-management/</guid><description>&lt;figure class="image"&gt;
+&lt;p&gt;Fluxnova no longer provides dedicated JBoss EAP or WildFly distributions; these runtimes are not included in the current tested container-managed environment list.&lt;/p&gt;</description></item><item><title>System Management</title><link>https://docs.fluxnova.finos.org/manual/3.1/webapps/admin/system-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/webapps/admin/system-management/</guid><description>&lt;figure class="image"&gt;
  &lt;span&gt;&lt;img
  src="../img/admin-system-management.png"
  
@@ -7147,23 +7143,14 @@ form:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The REST API supports the &lt;a href="https://docs.fluxnova.finos.org/manual/3.1/user-guide/process-engine/variables/#supported-variable-values"&gt;Value Types&lt;/a&gt; supported by the process engine.&lt;/p&gt;
-&lt;h1 id="valueinfo-flags"&gt;valueInfo Flags&lt;/h1&gt;
-&lt;p&gt;In addition to type-specific metadata, &lt;code&gt;valueInfo&lt;/code&gt; supports the following common flags:&lt;/p&gt;
+&lt;h1 id="variable-instance-business-keys"&gt;Variable Instance Business Keys&lt;/h1&gt;
+&lt;p&gt;Variable-instance and historic-variable-instance query responses include the &lt;code&gt;businessKey&lt;/code&gt; of the process instance that owns the variable.&lt;/p&gt;
+&lt;p&gt;The list endpoints also support filtering by business key:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;transient&lt;/code&gt;: Marks a variable as transient (not persisted).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;restricted&lt;/code&gt;: Marks a variable as restricted and subject to restricted-variable authorization checks.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;businessKey&lt;/code&gt; matches an exact business key.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;businessKeyLike&lt;/code&gt; matches a pattern; use &lt;code&gt;%&lt;/code&gt; as a wildcard for starts-with, ends-with, or contains matches.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;String&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;sensitive value&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;valueInfo&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;restricted&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;transient&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id="capitalization-of-type-names"&gt;Capitalization of Type Names&lt;/h1&gt;
-&lt;p&gt;In the REST API, the type names start with a capital letter, i.e., &lt;code&gt;String&lt;/code&gt; instead of &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Working with Java Objects</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/forms/embedded-forms/java-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/forms/embedded-forms/java-objects/</guid><description>&lt;p&gt;This section explains how to work with serialized Java Objects in embedded task forms.&lt;/p&gt;
+&lt;p&gt;For example, &lt;code&gt;/engine-rest/variable-instance?businessKey=order-123&lt;/code&gt; returns runtime variable instances for the matching process instance, and &lt;code&gt;/engine-rest/history/variable-instance?businessKeyLike=order-%&lt;/code&gt; filters historic variable instances by a business key that starts with &lt;code&gt;order-&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Working with Java Objects</title><link>https://docs.fluxnova.finos.org/manual/3.1/reference/forms/embedded-forms/java-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fluxnova.finos.org/manual/3.1/reference/forms/embedded-forms/java-objects/</guid><description>&lt;p&gt;This section explains how to work with serialized Java Objects in embedded task forms.&lt;/p&gt;
 
 &lt;div class="note "&gt;
  &lt;h3&gt;&lt;/h3&gt;
