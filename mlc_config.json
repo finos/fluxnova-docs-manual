@@ -51,6 +51,10 @@
     {
       "_comment": "Ignores the archived path-based OWASP Tomcat security wiki page to prevent false positive failures",
       "pattern": "^https://wiki\\.owasp\\.org/index\\.php/Securing_tomcat$"
+    },
+    {
+      "_comment": "Ignores legacy bpm-guide.de blog links prone to connection timeouts",
+      "pattern": "^https?://(www\\.)?bpm-guide\\.de/"
     }
   ],
   "retryOn429": true

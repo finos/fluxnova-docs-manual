@@ -10,6 +10,7 @@ menu:
     pre: "All third-party dependencies distributed with Fluxnova artifacts"
 
 ---
+<!-- markdown-link-check-disable -->
 
 # Java Dependencies
 <div><details><summary>logback-classic@1.5.7(<a href="https://opensource.org/licenses/EPL-1.0">EPL 1.0</a>)</summary><pre>Copyright (C) 1999-2024, QOS.ch. All rights reserved.</pre></details></div>
