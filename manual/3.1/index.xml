@@ -2732,7 +2732,7 @@ Download Fluxnova Engine from &lt;a href="https://docs.fluxnova.finos.org/manual
 &lt;link rel="stylesheet" href="https://docs.fluxnova.finos.org/manual/3.1/playground/css/modeler.css"&gt;
 &lt;link rel="stylesheet" href="https://docs.fluxnova.finos.org/manual/3.1/playground/css/bpmn-vendor.css"&gt;
 
-&lt;div class="shell"&gt;
+&lt;div class="shell" id="playgroundShell" data-samples-base="/manual/3.1/samples/"&gt;
  &lt;div class="section-rule"&gt;&lt;/div&gt;
  &lt;div class="sample-area"&gt;
  
