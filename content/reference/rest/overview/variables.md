@@ -42,6 +42,8 @@ In addition to type-specific metadata, `valueInfo` supports the following common
 * `transient`: Marks a variable as transient (not persisted).
 * `restricted`: Marks a variable as restricted and subject to restricted-variable authorization checks.
 
+For updates, the `restricted` flag in the request determines the resulting restriction state. Include `"restricted": true` in `valueInfo` on every update that should leave the variable restricted. If the flag is `false` or omitted, the updated variable becomes unrestricted. Changing the value or restriction state of an existing restricted variable requires Update Restricted permission; an unchanged resubmission that retains `true` does not change either.
+
 Example:
 
 ```json
@@ -119,13 +121,13 @@ Restricted variables use permission checks on the dedicated Variable resource in
 
 ## Read behavior
 
-For read operations, restricted variables follow filtering semantics. If the caller has no Read Restricted permission for a restricted variable, that variable is omitted from response payloads where filtering applies.
+For restricted runtime-variable reads, variables are filtered from response payloads when the caller has neither Read Restricted nor Update Restricted permission. Update Restricted implies Read Restricted for runtime variables. Historic variables remain governed by Read History Restricted. Normal process or task access permissions still apply.
 
 This affects list and query-style variable responses most notably, where non-readable restricted variables are not returned.
 
 ## Write behavior
 
-For create, update, and delete operations on restricted variables, missing Create Restricted, Update Restricted, or Delete Restricted permission results in an authorization error.
+Changing the value or restriction state of an existing restricted variable requires Update Restricted permission. Creating a restricted variable requires Create Restricted; deleting one requires Delete Restricted. Missing permission results in an authorization error. Update Restricted does not grant Read History Restricted or Delete History Restricted.
 
 ## Practical endpoint guidance
 

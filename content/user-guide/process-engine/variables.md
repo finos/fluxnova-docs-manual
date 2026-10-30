@@ -79,15 +79,15 @@ When a variable is marked as restricted, access is evaluated against the dedicat
 | Operation | Permission required | Behavior if permission is missing |
 | --- | --- | --- |
 | Create restricted variable | Create Restricted permission on Variable resource | Operation is rejected with an authorization error |
-| Read restricted runtime variable | Read Restricted permission on Variable resource | Variable is filtered from the response when applicable |
+| Read restricted runtime variable | Read Restricted or Update Restricted permission on Variable resource | Variable is filtered from the response when applicable if neither permission is granted |
 | Read restricted historic variable | Read History Restricted permission on Variable resource | Variable is filtered from the response when applicable |
-| Update restricted variable | Update Restricted permission on Variable resource | Operation is rejected with an authorization error |
+| Change the value or restriction state of a restricted runtime variable | Update Restricted permission on Variable resource | Operation is rejected with an authorization error |
 | Delete restricted runtime variable | Delete Restricted permission on Variable resource | Operation is rejected with an authorization error |
 | Delete restricted historic variable | Delete History Restricted permission on Variable resource | Operation is rejected with an authorization error |
 
 ## Read filtering versus authorization errors
 
-For restricted-variable reads, the default behavior is filtering. This means callers only receive variables they are allowed to read. Variables without read permission are not included in list or payload results where filtering is supported.
+For restricted runtime-variable reads, the default behavior is filtering. A caller with either Read Restricted or Update Restricted can see the value; variables are filtered from list or payload results when the caller has neither permission. Update Restricted implies runtime Read Restricted, but does not grant Read History Restricted for historic variables. Normal process or task access permissions still apply.
 
 For write operations (create, update, delete), missing permission leads to an explicit authorization error.
 
@@ -154,6 +154,10 @@ Alternatively, you can set an untyped restricted variable directly with `Variabl
 ```java
 runtimeService.setVariable(processInstanceId, "creditScore", 720, VariableOptions.options(false, true));
 ```
+
+## Updating the restriction flag
+
+The restricted flag on each update determines the resulting restriction state; the engine does not preserve the previous flag. Include `restricted=true` in every update that should leave the variable restricted. If the flag is `false` or omitted, the updated variable becomes unrestricted. For a restricted variable, changing its value or restriction state requires Update Restricted permission. An unchanged resubmission that retains `restricted=true` does not change the value or restriction state.
 
 
 # Set and Retrieve Variables - Overview

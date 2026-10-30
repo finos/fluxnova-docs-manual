@@ -673,23 +673,26 @@ The following restricted-variable permissions are available:
 The permission model maps to operations as follows:
 
 * Create restricted variable -> Create Restricted permission required
-* Read restricted runtime variable -> Read Restricted permission required
+* Read restricted runtime variable -> Read Restricted or Update Restricted permission required
 * Read restricted historic variable -> Read History Restricted permission required
-* Update restricted variable -> Update Restricted permission required
+* Change the value or restriction state of a restricted runtime variable -> Update Restricted permission required
 * Delete restricted runtime variable -> Delete Restricted permission required
 * Delete restricted historic variable -> Delete History Restricted permission required
 
 Behavior when permission is missing:
 
-* Read operations: restricted variables are filtered from results when filtering applies.
-* Create, update, and delete operations: the operation is rejected with an authorization error.
+* Runtime read operations: restricted variables are filtered when the caller has neither Read Restricted nor Update Restricted permission.
+* Historic read operations: restricted variables are filtered when the caller lacks Read History Restricted permission.
+* Creating or deleting a restricted variable, or changing the value or restriction state of an existing restricted variable: the operation is rejected when the corresponding permission is missing.
+
+Update Restricted implies Read Restricted for runtime variables: a caller allowed to update a restricted runtime variable can also see its value. It does not grant Read History Restricted.
 
 ### Example Role Model
 
 For a process instance that stores both public and restricted variables:
 
 * A reader role can be granted read access to restricted variables and sees only readable data in variable query results.
-* An editor role can additionally be granted create/update/delete access and can modify restricted variables.
+* An editor role can additionally be granted create/update/delete access and can modify restricted variables. Update Restricted also grants visibility of restricted runtime values.
 * A history-focused role can be granted Read History Restricted and Delete History Restricted without receiving runtime write access.
 
 This split allows teams to separate visibility from modification rights while keeping process-variable access auditable.
