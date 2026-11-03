@@ -351,7 +351,7 @@ The server log will contain logs similar to:
 25-Nov-2019 15:45:27.706 FINE [Thread-6] o.c.c.l.BaseLogger.logDebug ENGINE-13006 Finishing command -------------------- AcquireJobsCmd ----------------------
 ```
 
-Find more information for Diagnosing the Job Executor in this blog post - [The Job Executor: What Is Going on in My Process Engine?](https://blog.camunda.com/post/2019/10/job-executor-what-is-going-on-in-my-process-engine/).
+Find more information for Diagnosing the Job Executor in this blog post - [The Job Executor: What Is Going on in My Process Engine?](https://camunda.com/blog/2019/10/job-executor-what-is-going-on-in-my-process-engine/).
 
 #### Diagnosing Deadlocks
 

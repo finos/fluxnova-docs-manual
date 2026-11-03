@@ -29,6 +29,16 @@ border-bottom: 1px solid #ddd;
 background: #fafafa;
 }
 
+.more-actions {
+    position: relative;
+    flex-shrink: 0;
+}
+
+@media (min-width: 1100px) {
+    .toolbar {
+        flex-wrap: nowrap;
+    }
+}
 
 .heading {
 background-color: white;

@@ -5,22 +5,12 @@
 {{ if hasPrefix $file "http"}}
     {{- $url = $file -}}
 {{ else }}
-    {{ if (fileExists (print .Page.File.Dir $file)) -}}
-        <!-- First try as relative path -->
-        {{- $url = (print .Page.Site.BaseURL .Page.File.Dir $file) -}}
-    {{ else }}
-        {{ if $.Site.Params.openApiBaseURL }}
-            <!-- Then as project parameter on openAPI base URL-->
-            {{- $url = $.Site.Params.openApiBaseURL -}}
-            {{ if (strings.Contains $url "%s") }}
-              {{- $url = (printf $url $.Site.Params.version) -}}
-            {{ end }}
-            {{- $url = (urls.JoinPath $url $file) -}}
-        {{ else }}
-            <!-- Then as project-relative path-->
-            {{- $url = (print .Page.Site.BaseURL $file) -}}
-        {{- end }}
-    {{- end }}
+    <!-- Resolve against openApiBaseURL (GitHub Pages of the platform project) -->
+    {{- $url = (or $.Site.Params.openApiBaseURL (errorf "redoc shortcode: params.openApiBaseURL must be set in the site config")) -}}
+    {{ if (strings.Contains $url "%s") }}
+      {{- $url = (printf $url $.Site.Params.version) -}}
+    {{ end }}
+    {{- $url = (urls.JoinPath $url $file) -}}
 {{- end -}}
 
         <!-- CSS style overrides for Redoc API docs -->
@@ -48,7 +38,6 @@
         suppress-warnings="true" 
         lazy-rendering  
         native-scrollbars 
-        scroll-y-offset=".js-navbar-scroll" 
         theme='{
             "colors": {
               "primary": {
@@ -58,4 +47,4 @@
           }'
         {{ $otheroptions }}>
     </redoc>
-    <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@2.5.3/bundles/redoc.standalone.js"></script>
