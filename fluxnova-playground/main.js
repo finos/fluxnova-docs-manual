@@ -489,10 +489,17 @@ if (outputEl) {
 
 };
 
+// Resolve samples against the Hugo base URL so the playground works when the
+// site is hosted under a sub-path such as /manual/3.1/.
+function samplePath(fileName) {
+  const base = document.getElementById("playgroundShell")?.dataset.samplesBase || "/samples/";
+  return new URL(fileName, new URL(base, document.baseURI)).href;
+}
+
 const sampleFiles = [
-  { name: "Condition Task", path: "/samples/condition_task.bpmn" },
-  { name: "User Task", path: "/samples/user_task.bpmn" },
-  { name: "Script Task", path: "/samples/script_task.bpmn" }
+  { name: "Condition Task", path: samplePath("condition_task.bpmn") },
+  { name: "User Task", path: samplePath("user_task.bpmn") },
+  { name: "Script Task", path: samplePath("script_task.bpmn") }
 ];
 
 window.initSampleDropdown = function () {
@@ -621,21 +628,21 @@ if (hasLintingErrors) {
     description: "This example shows how the process chooses one path or another based on data.",
     data: '{ "input": { "value": 15 } }',
     result: "Goes to the Yes task because the value is greater than 10.",
-    path: "/samples/condition_task.bpmn"
+    path: samplePath("condition_task.bpmn")
   },
   user: {
     title: "User Task Example",
     description: "This example shows how the process waits for a person to complete a task.",
     data: '{ "requestId": { "value": "REQ-1001" } }',
     result: "The process pauses until the user task is claimed and completed.",
-    path: "/samples/user_task.bpmn"
+    path: samplePath("user_task.bpmn")
   },
   script: {
     title: "Script Task Example",
     description: "This example shows how the process executes a Groovy script.",
     data: '{ "name": { "value": "your_name" } }',
     result: "The process prints a message for the user.",
-    path: "/samples/script_task.bpmn"
+    path: samplePath("script_task.bpmn")
   }
 };
 
