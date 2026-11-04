@@ -55,7 +55,15 @@
     {
       "_comment": "Ignores legacy bpm-guide.de blog links prone to connection timeouts",
       "pattern": "^https?://(www\\.)?bpm-guide\\.de/"
+    },
+    {
+      "_comment": "Ignores Medium links that block automated checks with Cloudflare 403 challenge",
+      "pattern": "^https?://([a-z0-9-]+\\.)?medium\\.com/"
     }
   ],
-  "retryOn429": true
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "5s",
+  "timeout": "20s",
+  "aliveStatusCodes": [200, 206, 403, 429]
 }
