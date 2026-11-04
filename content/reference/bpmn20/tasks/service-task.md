@@ -166,4 +166,4 @@ To declare a Service Task to be handled externally, the attribute `camunda:type`
 # Additional Resources
 
 * [Tasks]({{< relref "/reference/bpmn20/tasks/" >}}) in the [BPMN 2.0 Modeling Reference]({{< relref "/reference/bpmn20/" >}})
-* [How to call a Webservice from BPMN](http://www.bpm-guide.de/2010/12/09/how-to-call-a-webservice-from-bpmn/). Please note that this article is outdated. However, it is still valid regarding how you would call a Web Service using the process engine.
+* [How to call a Webservice from BPMN](https://www.bpm-guide.de/2010/12/09/how-to-call-a-webservice-from-bpmn/). Please note that this article is outdated. However, it is still valid regarding how you would call a Web Service using the process engine.
