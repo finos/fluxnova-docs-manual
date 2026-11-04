@@ -109,7 +109,7 @@ The Fluxnova web applications are based on a RESTful architecture.
 Frameworks used:
 
 * [JAX-RS](https://jakarta.ee/specifications/restful-ws/) based Rest API
-* [AngularJS](http://angularjs.org)
+* [AngularJS](https://angular.dev)
 * [RequireJS](http://requirejs.org)
 * [jQuery](http://jquery.com)
 * [Twitter Bootstrap](http://getbootstrap.com)
