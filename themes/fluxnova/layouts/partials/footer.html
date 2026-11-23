@@ -27,7 +27,8 @@
     window.DOCSEARCH_CONFIG = {
       appId: "{{ .appId }}",
       apiKey: "{{ .apiKey }}",
-      indexName: "{{ .indexName }}"
+      indexName: "{{ .indexName }}",
+      version: "{{ $.Site.Params.version }}"
     };
   </script>
   {{ end }}
