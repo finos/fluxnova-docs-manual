@@ -134,6 +134,15 @@ jobs:
           echo "Generated versions.json:"
           cat ./public/manual/versions.json
 
+          # --- Part 1b: Crawler entry point ---
+          # Single page linking every published version, so the Algolia crawler
+          # needs only this one startUrl and picks up new versions automatically.
+          {
+            echo '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Fluxnova documentation versions</title></head><body><ul>'
+            echo "$VERSIONS" | sed 's|.*|<li><a href="/manual/&/">&</a></li>|'
+            echo '</ul></body></html>'
+          } > ./public/manual/all-versions.html
+
           # --- Part 2: Create the 'latest' redirect ---
           # The latest version is the first line of our sorted list
           LATEST_VERSION=$(echo "$VERSIONS" | head -n 1)

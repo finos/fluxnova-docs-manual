@@ -28544,14 +28544,83 @@ docLoaded(function () {
 
   // Pages using the fullpage layout (e.g. the OpenAPI spec) have no search slot
   if (!document.querySelector('#docsearch')) return;
+
+  // Scope results to the documentation version being viewed. The URL ("/manual/<version>/...")
+  // is the source of truth, matching how the crawler derives the "version" attribute; Hugo's
+  // params.version only covers URLs without a version segment (e.g. a local "hugo server").
+  var pathMatch = window.location.pathname.match(/\/manual\/([^/]+)/);
+  var version = (pathMatch && pathMatch[1]) || config.version;
+
+  // Algolia does not reject a filter on a facet that is not configured: it silently returns zero
+  // hits. So while the index is not version-aware yet (rollout), an empty filtered result is
+  // checked with an unfiltered probe, and the request is retried without the filter if the index
+  // has matches but no "version" facet.
+  function scopeToVersion(searchClient) {
+    if (!version) return searchClient;
+
+    var originalSearch = searchClient.search.bind(searchClient);
+    var filterByVersion = true;
+
+    // DocSearch calls search({ requests: [{ indexName, query, ...searchParameters }] }).
+    function withParams(query, extra) {
+      return Object.assign({}, query, {
+        requests: query.requests.map(function (request) { return Object.assign({}, request, extra); })
+      });
+    }
+
+    function searchInVersion(query) {
+      return originalSearch(withParams(query, { facetFilters: ['version:' + version] }));
+    }
+
+    function hasHits(response) {
+      return response.results.some(function (result) { return result.nbHits > 0; });
+    }
+
+    // Zero hits means either "nothing matches" or "the index has no version facet yet".
+    // Ask the index (without filter, no hits wanted) whether it knows the version facet.
+    function versionFilterWorks(query) {
+      return originalSearch(withParams(query, { hitsPerPage: 0, facets: ['version'] })).then(function (probe) {
+        var result = probe.results[0];
+        return result.nbHits === 0 || Boolean(result.facets && result.facets.version);
+      });
+    }
+
+    function fallBackToUnfilteredSearch(query) {
+      filterByVersion = false;
+      return originalSearch(query);
+    }
+
+    searchClient.search = function (query) {
+      if (!filterByVersion) return originalSearch(query);
+
+      function onFilteredResponse(response) {
+        if (hasHits(response)) return response;
+
+        return versionFilterWorks(query).then(function (works) {
+          return works ? response : fallBackToUnfilteredSearch(query);
+        });
+      }
+
+      function onFilteredFailure() {
+        return fallBackToUnfilteredSearch(query);
+      }
+
+      return searchInVersion(query).then(onFilteredResponse, onFilteredFailure);
+    };
+
+    return searchClient;
+  }
+
   // Render the modal-driven search field into our targeting anchor slot
   docsearch({
     container: '#docsearch',
     appId: config.appId,
     apiKey: config.apiKey,
-    indexName: config.indexName
+    indexName: config.indexName,
+    transformSearchClient: scopeToVersion
   });
 });
+
 },{"./classList":461,"./utils":463,"@docsearch/js":1,"bpmn-js/lib/Viewer":2,"prismjs":441,"prismjs/components/prism-bash":430,"prismjs/components/prism-css":432,"prismjs/components/prism-css-extras":431,"prismjs/components/prism-git":433,"prismjs/components/prism-http":434,"prismjs/components/prism-java":435,"prismjs/components/prism-less":436,"prismjs/components/prism-markup":437,"prismjs/components/prism-yaml":438,"prismjs/plugins/line-highlight/prism-line-highlight":439,"prismjs/plugins/line-numbers/prism-line-numbers":440,"xhr":459}],463:[function(require,module,exports){
 'use strict';
 /*jshint browser: true*/
